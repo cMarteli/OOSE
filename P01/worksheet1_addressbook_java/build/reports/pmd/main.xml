@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.43.0" timestamp="2022-03-11T14:50:09.604">
+<file name="D:\Uni\OOSE\P01\worksheet1_addressbook_java\src\main\java\AddressBook.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnnecessaryImport" ruleset="Code Style" package="edu.curtin.addressbook" class="AddressBook" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.*'
+</violation>
+</file>
+<file name="D:\Uni\OOSE\P01\worksheet1_addressbook_java\src\main\java\AddressBookApp.java">
+<violation beginline="18" endline="18" begincolumn="16" endcolumn="24" rule="UnusedLocalVariable" ruleset="Best Practices" package="edu.curtin.addressbook" class="AddressBookApp" method="main" variable="entryName" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'entryName'.
+</violation>
+<violation beginline="70" endline="70" begincolumn="46" endcolumn="56" rule="UnusedFormalParameter" ruleset="Best Practices" package="edu.curtin.addressbook" class="AddressBookApp" method="showMenu" variable="addressBook" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused method parameters such as 'addressBook'.
+</violation>
+<violation beginline="75" endline="75" begincolumn="17" endcolumn="22" rule="UnusedLocalVariable" ruleset="Best Practices" package="edu.curtin.addressbook" class="AddressBookApp" method="showMenu" variable="option" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'option'.
+</violation>
+<violation beginline="84" endline="84" begincolumn="32" endcolumn="35" rule="UnusedLocalVariable" ruleset="Best Practices" package="edu.curtin.addressbook" class="AddressBookApp" method="showMenu" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'name'.
+</violation>
+<violation beginline="91" endline="91" begincolumn="32" endcolumn="36" rule="UnusedLocalVariable" ruleset="Best Practices" package="edu.curtin.addressbook" class="AddressBookApp" method="showMenu" variable="email" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'email'.
+</violation>
+</file>
+<file name="D:\Uni\OOSE\P01\worksheet1_addressbook_java\src\main\java\Entry.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnnecessaryImport" ruleset="Code Style" package="edu.curtin.addressbook" class="Entry" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.*'
+</violation>
+</file>
+</pmd>

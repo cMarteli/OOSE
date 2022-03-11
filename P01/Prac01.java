@@ -12,13 +12,19 @@ public class Prac01 {
         list.add("def");
         list.add("ghi");
         list.add("jkl");
+        
+        //make a new collection to store strings to be added
+        List<String> list2 = new ArrayList<>();
+        //iterates and adds to list2
         for(String s : list)
         {
-            list.add(s + s);
+            list2.add(s + s);
         }
+        //System.out.println(list2);
+        //adds collection to original list
+        list.addAll(list2);
+        
         System.out.println(list);
-
-
 
 
     } //end main

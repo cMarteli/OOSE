@@ -39,3 +39,30 @@
 
 
 3. Gotcha:ConcurrentModificationException
+
+	It's trying to add new elements at the of the list that are essentially the first 4 elements but doubled: [abcabc, defdef, ghighi, jkljkl]
+	java doesn't allow the arrayList to be modified multiple times in a single for each loop so it throws: "ConcurrentModificationException"
+
+	A way to fix it would be to create a new temporary collection and use a foreach loop to fill it the elements to be added. Then append the collection to the
+	existing list by using .addAll():
+
+        List<String> list = new ArrayList<>();
+        list.add("abc");
+        list.add("def");
+        list.add("ghi");
+        list.add("jkl");
+        
+        //make a new collection to store strings to be added
+        List<String> list2 = new ArrayList<>();
+        //iterates and adds to list2
+        for(String s : list)
+        {
+            list2.add(s + s);
+        }
+        //adds collection to original list
+        list.addAll(list2);
+        
+        System.out.println(list);
+
+4. Working with Containers
+
