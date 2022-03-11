@@ -1,0 +1,41 @@
+19598552_Worksheet_1.txt
+
+*** Author: C Marteli ***
+
+-- Containers
+
+1. Multiplicity
+
+(a)
+	private City cities[], private Government govt, private Industry industry.
+(b)
+	We use a map due to it's indexing benefits which allow searches to be perfomed at O(1)
+	instead of using iteration O(n) also we can refer to the objects using keys instead of having to
+	get the variable label every time.
+	The map for City objects could be type Map<String, City> city name and Object
+	The map for industry could be Map<String, Industry> industry name(label) and Object.
+
+(c)
+	You could use setPopulation() to add the population values of each city and return a value
+	for the total nation population then store it.
+	getPopulation could be used to return that variable.
+
+(d)
+	getPartyName()
+	getOppositionName()
+	getTotalExport()
+
+
+2. Maps
+
+(a)
+	getProperties()
+	setProperties()
+(b)
+	You cannot rename an object key is hashMap java.
+	Best way is to remove the element and add a new one with updated key:
+	
+	properties.put( "newAddress", properties.remove("oldAdress") );
+
+
+3. Gotcha:ConcurrentModificationException
