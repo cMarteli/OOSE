@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Contains all the address book entries.
  * 
- * @author ...
+ * @author Caio Marteli 19598552
  */
 public class AddressBook
 {
@@ -17,27 +17,18 @@ public class AddressBook
     {
         entries = new HashMap<>();     
     }
-    //TODO may need to change return to Entry type
     public void addEntry(String n, List<String> e)
     {
-        //DEBUG ONLY
-        // System.out.println(n);
-        // System.out.println("Emails:");
-        // for (String s : e) {
-        //     System.out.println(s);            
-        // }
-
-        //creates new entry object
         entries.put(n,new Entry(n,e));
     }
-
+    
+    //uses iterator to go through each key then checks each email list for parsed String
     public String searchEmail(String email)
     {
         Iterator<String> itr = entries.keySet().iterator();
         while(itr.hasNext())
         {
             String key = itr.next();
-            //System.out.println(key);
             //iterates through email list
             for (String s : entries.get(key).getEmailList())
             {
@@ -50,7 +41,7 @@ public class AddressBook
         return("NOT FOUND");
 
     }
-
+    //debugging method prints all entries
     public void printEntries()
     {
         System.out.println(entries);

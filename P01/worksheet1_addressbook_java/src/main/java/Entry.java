@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Represents a single address book entry.
  * 
- * @author ...
+ * @author Caio Marteli 19598552
  */
 public class Entry 
 {

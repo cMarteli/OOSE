@@ -5,7 +5,7 @@ import java.util.*;
 
 /**
  * A simple address book application.
- * @author Dave and ...
+ * @author Dave and Caio Marteli 19598552
  */
 public class AddressBookApp 
 {
@@ -48,17 +48,18 @@ public class AddressBookApp
             while(line != null)
             {
                 String[] parts = line.split(":");
-                
-                //starting loop at index 1 to skip name
-                List<String> email = new ArrayList<>();
-                for (int i = 1; i < parts.length; i++) {
-                    email.add(parts[i]);                    
-                }
-                addressBook.addEntry(parts[0],email);           
-                // FIXME: Insert your code here to add a new address book entry.
                 // Note: 
                 // parts[0] contains the person's name.
                 // parts[1], parts[2], etc. contain the person's email address(es).
+                
+                //creates new arrays list to store emails
+                List<String> email = new ArrayList<>();
+                //starting loop at index 1 to skip name
+                for (int i = 1; i < parts.length; i++) {
+                    email.add(parts[i]);                    
+                }
+                //adds entry
+                addressBook.addEntry(parts[0],email);
                 
                 line = reader.readLine();
             }
@@ -89,7 +90,7 @@ public class AddressBookApp
                         System.out.print("Enter name: ");
                         String name = input.nextLine();
                         
-                        // FIXME: Insert your code here to find an entry by name and display it.
+                        // Find an entry by name and displays it if present
                         if(addressBook.entries.containsKey(name))
                         {
                             System.out.println(addressBook.entries.get(name));
@@ -103,17 +104,14 @@ public class AddressBookApp
                         
                     case 2:
                         System.out.print("Enter email address: ");
-                        String email = input.nextLine();
-                        
-                        // FIXME: Insert your code here to find an entry by email and display it.
-
-                        //System.out.println(addressBook.entries.containsKey(email)); //TODO: searching address of value and not string atm
+                        String email = input.nextLine();                        
+                        //calls searchEmail method
                         System.out.println(addressBook.searchEmail(email));
                         break;
                         
                     case 3:
                         //DEBUG
-                        addressBook.printEntries();
+                        //addressBook.printEntries();
                         done = true;
                         break;
                         
