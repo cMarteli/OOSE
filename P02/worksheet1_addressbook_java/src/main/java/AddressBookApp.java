@@ -32,8 +32,11 @@ public class AddressBookApp
             //adds to hash map if succesfull on read
             Option sbn = new SearchByName(addressBook);
             Option sbe = new SearchByEmail(addressBook);
+            Option dis = new DisplayList(addressBook);
+
             opt.put(1, sbn); //set SearchByName as option w/ label '1'
             opt.put(2, sbe); //set SearchByEmail as option w/ label '2'
+            opt.put(3, dis); //set Display as option w/ label '3'
 
             showMenu(addressBook);
         }
@@ -100,27 +103,37 @@ public class AddressBookApp
         while(!done)
         {
             int option;
-            System.out.println("(1) Search by name, (2) Search by email, (3) Quit");
+            System.out.println("(0) Quit (1) Search by name, (2) Search by email, (3) Display all entries");
 
             try
             {
                 int menuOpt = Integer.parseInt(input.nextLine());
-                if(menuOpt == 1 || menuOpt == 2)
+                if(menuOpt == 0) //exit condition
                 {
-                    System.out.print("Enter name or email address: ");
-                    String searchTerm = input.nextLine();
-                    //prints the string returned by option requested by user
-                    System.out.println(opt.get(menuOpt).doOption(searchTerm));
-                }
-                else if(menuOpt == 3)
-                {
+                    addressBook.printEntries();
                     System.out.println("Good bye...");
                     done = true;
                 }
                 else
                 {
-                    System.out.println("Enter a valid number");
+                    if(opt.containsKey(menuOpt))//checks if option exists
+                    {
+                        String searchTerm = " ";
+                        Option chosenOption = opt.get(menuOpt);
+                        if(chosenOption.requiresText())
+                        {
+                            System.out.print("Enter name or email address: ");
+                            searchTerm = input.nextLine();
+                        }
+                        //prints the string returned by option requested by user
+                        System.out.println(opt.get(menuOpt).doOption(searchTerm));                        
+                    }
+                    else
+                    {
+                        System.out.println("Enter a valid number");
+                    }
                 }
+
             }
             catch(NumberFormatException e)
             {

@@ -10,4 +10,6 @@ import java.util.*;
 public interface Option
 {
     public String doOption(String s);
+
+    public boolean requiresText();
 }

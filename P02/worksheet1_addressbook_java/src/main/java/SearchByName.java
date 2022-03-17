@@ -31,4 +31,10 @@ public class SearchByName implements Option
         }
         return outStr;
     }
+    
+    @Override
+    public boolean requiresText()
+    {
+        return true;
+    }
 }

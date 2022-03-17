@@ -38,4 +38,10 @@ public class SearchByEmail implements Option
         }
         return outStr;
     }
+
+    @Override
+    public boolean requiresText()
+    {
+        return true;
+    }
 }
