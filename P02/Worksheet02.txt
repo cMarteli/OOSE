@@ -1,0 +1,76 @@
+19598552_Worksheet_2.txt
+
+*** Author: C Marteli ***
+
+-- Polymorphism
+
+1. Reasoning about Types
+
+(a)
+	GeographicalFeature var = new Mountain();
+
+(b)
+	Mountain var = new Volcano();
+
+(c)
+	//upcasting
+	GeographicalFeature var = new Mountain();
+	Volcano var2 = var;
+
+(d)
+	//downcasting
+	public Nation createNation(Place x)
+	{
+		return new Nation(x.getName());
+	}
+
+(e)
+	//downcasting
+	public Nation getBetterPlace(Place p)
+	{
+		if(p instanceof Anarchy)
+		{
+			return new Republic();
+		}
+		else if(p instanceof Valley)
+		{
+			return new Volcano();
+		}
+		return null;
+	}
+
+(f)
+	private boolean isInside(GeographicalFeature f, Place y) {...}
+
+	public GeographicalFeature findInside(GeographicalFeature thing, List<Nation> nationList)
+	{
+		for(Nation nat : nationList)
+		{
+			if(isInside(thing, nat))
+		{
+		return thing;
+		}
+		}
+		return null;
+	}
+
+(g)
+	public void find(List<Nation> list, int code)
+	{
+		for(Nation element : list)
+		{
+			if(test(element, code))
+			{
+				System.out.println(element.getName());
+			}
+		}
+	}
+
+	public boolean test(Nation element, int code)
+	{
+		return element.getPrefix() == code;
+	}
+
+2. Template Methods in the Java API
+
+	Java classes InputStream and OutputStream 
