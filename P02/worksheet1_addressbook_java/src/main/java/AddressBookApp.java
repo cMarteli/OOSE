@@ -44,6 +44,14 @@ public class AddressBookApp
     }
 
     /**
+     * Method to add new options search to hashmap
+     */
+    private static void addOption(Integer label, Option newOpt)
+    {
+        opt.put(label, newOpt);
+    }
+
+    /**
      * Read the address book file, containing all the names and email addresses.
      *
      * @param fileName The name of the address book file.
