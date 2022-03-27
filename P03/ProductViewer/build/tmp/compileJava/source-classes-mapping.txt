@@ -1,0 +1,22 @@
+model/ProductEntry.java
+ model.ProductEntry
+model/ProductGroup.java
+ model.ProductGroup
+view/AddProductDialog.java
+ view.AddProductDialog
+view/AddGroupDialog.java
+ view.AddGroupDialog
+controller/ControllerException.java
+ controller.ControllerException
+model/CatalogueException.java
+ model.CatalogueException
+model/Product.java
+ model.Product
+ProductViewer.java
+ ProductViewer
+view/MainWindow.java
+ view.MainWindow
+controller/Controller.java
+ controller.Controller
+model/Catalogue.java
+ model.Catalogue
