@@ -1,14 +1,15 @@
+/**
+ * UserInteface.java
+ * Contains Menu TODO: actual maze
+ * 2022/OOSE Assignment
+ * @author Caio Marteli (19598552)
+ */
 package edu.curtin.app;
 
 import java.util.Scanner;
 
-public class UserInterface
+public class Menu
 {
-    /**
-     * UserInteface.java
-     * 2022/OOSE Assignment
-     * @author Caio Marteli (19598552)
-     */
 
     /** Used to obtain user input. */
     private static Scanner input = new Scanner(System.in);
@@ -33,6 +34,7 @@ public class UserInterface
 
                     case 2:
                         System.out.print("STUB! HELP");
+
                         break;
 
                     case 0:
