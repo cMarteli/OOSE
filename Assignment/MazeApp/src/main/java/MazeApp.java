@@ -38,14 +38,14 @@ public class MazeApp
             // }
 
             //TEST HARNESS FOR MAZE
-            //Maze m = new Maze(4, 6);
-            //m.moveCursor('s');
-            //m.moveCursor('e');
-            // m.moveCursor('s');
-            // m.moveCursor('e');
-            //m.moveCursor('n');
-            // m.moveCursor('w');
-            // m.moveCursor('w');
+            Maze m = new Maze(4, 6);
+            m.moveCursor('s');
+            m.moveCursor('e');
+            m.moveCursor('s');
+            m.moveCursor('e');
+            m.moveCursor('n');
+            m.moveCursor('w');
+            m.moveCursor('w');
 
             //System.out.println("\u253c");
 

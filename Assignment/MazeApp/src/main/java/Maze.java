@@ -6,22 +6,27 @@
  */
 package edu.curtin.app;
 
+import java.util.List;
 import java.util.Map;
 import java.awt.Point;
 
 public class Maze
 {
-    private static int columns;
     private static int rows;
+    private static int columns;
     private String[][] maze;
     public Point cursor;
+    public Point testWall; //TODO: delete
+    public List<Point> vWalls; //TODO: delete
     //Constructor
     public Maze(int x, int y)
     {
-        columns = x;
-        rows = y;
-        maze = new String[columns][rows];
+        rows = x;
+        columns = y;
+        maze = new String[rows][columns];
         cursor = new Point(0,0);
+        testWall = new Point(1,1);
+
 
         updateMaze();
     }
@@ -49,12 +54,13 @@ public class Maze
     {
         //columns = x;
         //rows = y;
-        for(int i = 0; i < columns; i++)
+        for(int i = 0; i < rows; i++)
         {
-            for(int j = 0; j < rows; j++)
+            for(int j = 0; j < columns; j++)
             {
                 maze[i][j] = "[   ]"; //default blank square
-                maze[(int)cursor.getY()][(int)cursor.getX()] = "[ P ]"; //TODO: DEBUG ONLY
+                maze[(int)cursor.getX()][(int)cursor.getY()] = "[ P ]"; //TODO: DEBUG ONLY
+                maze[(int)testWall.getX()][(int)testWall.getY()] = "[|  ]"; //TODO: DEBUG ONLY
                 //add other specific things to fill in maze here
             }
         }
@@ -67,53 +73,70 @@ public class Maze
     */
     public void moveCursor(char dir)
     {
-        boolean moved = false;
         if(dir == 'N' || dir == 'n')
         {
-            if((int)cursor.getY() > 0) //boundary check
-            {
-                System.out.println("Moving cursor north");
-                cursor.translate(0, -1);
-                moved = true;
-            }
-
+            System.out.println("Moving cursor north");
+            moveUp(cursor);
         }
         else if(dir == 'S' || dir == 's')
         {
-            if((int)cursor.getY()+1 < columns) //boundary check
-            {
-                System.out.println("Moving cursor south");
-                cursor.translate(0, 1);
-                moved = true;
-            }
+            System.out.println("Moving cursor south");
+            moveDown(cursor);
         }
         else if(dir == 'E' || dir == 'e')
         {
-            if((int)cursor.getX()+1 < rows) //boundary check
-            {
-                System.out.println("Moving cursor east");
-                cursor.translate(1, 0);
-                moved = true;
-            }
+            System.out.println("Moving cursor east");
+            moveRight(cursor);
         }
         else if(dir == 'W' || dir == 'w')
         {
-            if((int)cursor.getX() > 0) //boundary check
-            {
-                System.out.println("Moving cursor west");
-                cursor.translate(-1, 0);
-                moved = true;
-            }
+            System.out.println("Moving cursor west");
+            moveLeft(cursor);
         }
-        if(moved)
-        {
-            updateMaze();
-        }
-        else
-        {
-            System.out.println("Out of bounds");
-        }
+        updateMaze(); //TODO DEBUG ONLY
+    }
 
+    private void moveUp(Point p)
+    {
+        if((int)p.getX() > 0) //boundary check
+        {
+            p.translate(-1, 0);
+        }
+    }
+
+    private void moveDown(Point p)
+    {
+        if((int)cursor.getX()+1 < columns) //boundary check
+        {
+            p.translate(1, 0);
+        }
+    }
+
+    private void moveLeft(Point p)
+    {
+        if((int)p.getY() > 0) //boundary check
+        {
+            p.translate(0, -1);
+        }
+    }
+
+    private void moveRight(Point p)
+    {
+        if((int)p.getY()+1 < rows) //boundary check
+        {
+            p.translate(0, 1);
+        }
+    }
+
+    private boolean checkHorizontal(Point p) //TODO:
+    {
+
+        if(vWalls.contains(p.getLocation()))
+        {
+            System.out.println("STUB");
+
+        }
+        return false;
     }
 
 }
