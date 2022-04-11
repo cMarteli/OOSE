@@ -38,8 +38,16 @@ public class MazeApp
             // }
 
             //TEST HARNESS FOR MAZE
-            Maze m = new Maze(4, 4);
+            //Maze m = new Maze(4, 6);
+            //m.moveCursor('s');
+            //m.moveCursor('e');
+            // m.moveCursor('s');
+            // m.moveCursor('e');
+            //m.moveCursor('n');
+            // m.moveCursor('w');
+            // m.moveCursor('w');
 
+            //System.out.println("\u253c");
 
 
             //Menu.showMenu();
@@ -48,6 +56,11 @@ public class MazeApp
         catch (Exception e)
         {
             System.out.println("Error: " + e.getMessage());
+            System.out.println("The Program will now close...");
+        }
+        finally
+        {
+            Keyboard.close(); //only to satisfy PMD
         }
 
     }

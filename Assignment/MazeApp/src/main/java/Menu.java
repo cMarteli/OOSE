@@ -6,13 +6,9 @@
  */
 package edu.curtin.app;
 
-import java.util.Scanner;
-
 public class Menu
 {
 
-    /** Used to obtain user input. */
-    private static Scanner input = new Scanner(System.in);
 
     /** Displays Menu */
     public static void showMenu()
@@ -25,7 +21,7 @@ public class Menu
 
             try
             {
-                switch(Integer.parseInt(input.nextLine()))
+                switch(Integer.parseInt(Keyboard.nextLine()))
                 {
                     case 1:
                         System.out.print("STUB! PLAY ");
