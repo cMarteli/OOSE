@@ -6,6 +6,7 @@
  */
 package edu.curtin.app;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.awt.Point;
@@ -26,6 +27,8 @@ public class Maze
         maze = new String[rows][columns];
         cursor = new Point(0,0);
         testWall = new Point(1,1);
+        vWalls = new ArrayList<>();
+        vWalls.add(testWall);
 
 
         updateMaze();
@@ -59,8 +62,13 @@ public class Maze
             for(int j = 0; j < columns; j++)
             {
                 maze[i][j] = "[   ]"; //default blank square
-                maze[(int)cursor.getX()][(int)cursor.getY()] = "[ P ]"; //TODO: DEBUG ONLY
                 maze[(int)testWall.getX()][(int)testWall.getY()] = "[|  ]"; //TODO: DEBUG ONLY
+                maze[(int)cursor.getX()][(int)cursor.getY()] = "[ P ]"; //TODO: DEBUG ONLY
+                if(testWall.getLocation().equals(cursor.getLocation()))
+                {
+                    maze[(int)cursor.getX()][(int)cursor.getY()] = "[|P ]";
+                }
+
                 //add other specific things to fill in maze here
             }
         }
@@ -114,7 +122,7 @@ public class Maze
 
     private void moveLeft(Point p)
     {
-        if((int)p.getY() > 0) //boundary check
+        if((int)p.getY() > 0 && leftIsClear()) //boundary check
         {
             p.translate(0, -1);
         }
@@ -122,21 +130,39 @@ public class Maze
 
     private void moveRight(Point p)
     {
-        if((int)p.getY()+1 < rows) //boundary check
+        if((int)p.getY()+1 < rows && rightIsClear()) //boundary check
         {
             p.translate(0, 1);
         }
     }
-
-    private boolean checkHorizontal(Point p) //TODO:
+    //if going right check if dest is on list if it is block
+    //if going left check if current location is on list if so block
+    private boolean leftIsClear() //TODO:
     {
 
-        if(vWalls.contains(p.getLocation()))
+        if(vWalls.contains(cursor))
         {
-            System.out.println("STUB");
+            System.out.println("collision - left wall");
+            return false;
 
         }
-        return false;
+        return true;
+    }
+        //if going right check if dest is on list if it is block
+    //if going left check if current location is on list if so block
+
+    private boolean rightIsClear()
+    {
+        Point dest = cursor.getLocation();
+        dest.translate(0, 1);
+
+        if(vWalls.contains(dest))
+        {
+            System.out.println("collision - right wall");
+            return false;
+
+        }
+        return true;
     }
 
 }

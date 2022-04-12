@@ -17,11 +17,6 @@ public class Keyboard
         return KBD.next();
     }
 
-    public static boolean nextBoolean()
-    {
-        return KBD.nextBoolean();
-    }
-
     public static double nextDouble()
     {
         return KBD.nextDouble();

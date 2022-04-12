@@ -46,6 +46,9 @@ public class MazeApp
             m.moveCursor('n');
             m.moveCursor('w');
             m.moveCursor('w');
+            m.moveCursor('n');
+            m.moveCursor('w');
+            m.moveCursor('s');
 
             //System.out.println("\u253c");
 
