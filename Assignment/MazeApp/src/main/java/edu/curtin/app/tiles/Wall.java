@@ -4,12 +4,25 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app.tiles;
+import java.awt.Point;
 
-public interface Wall extends Tile
+public abstract class Wall implements Tile
 {
-     //Every key opens a door
-    public String description();
+    private Point location;
 
-    // public Point getLocation();
+    public Wall(Point l)
+    {
+        location = l;
+    }
+
+    public String description()
+    {
+        return "Wall object";
+    }
+
+    public Point getLocation()
+    {
+        return location;
+    }
 
 }

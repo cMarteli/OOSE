@@ -18,6 +18,11 @@ public class BlueKey implements Key
         return "Opens BLUE DOOR";
 
     }
+    @Override
+    public Boolean use(String colour) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
     // public Point getLocation();
 

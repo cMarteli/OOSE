@@ -7,11 +7,26 @@ package edu.curtin.app.tiles;
 
 public interface Key
 {
-
-
-     //Every key opens a door
-    public String description();
-
-    // public Point getLocation();
+    public Boolean use(String colour);
 
 }
+
+// class Unlocks implements Key
+// {
+//     public String colour;
+//     public Boolean use(String clr)
+//     {
+//         System.out.println("Door was unlocked!");
+//         return true;
+//     }
+// }
+
+// class DoesNotUnlock implements Key
+// {
+//     public String colour;
+//     public Boolean use(String clr)
+//     {
+//         System.out.println("No matching key...");
+//         return false;
+//     }
+// }

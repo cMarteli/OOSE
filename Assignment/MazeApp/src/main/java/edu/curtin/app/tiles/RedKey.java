@@ -18,6 +18,11 @@ public class RedKey implements Key
         return "Opens RED DOOR";
 
     }
+    @Override
+    public Boolean use(String colour) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
     // public Point getLocation();
 

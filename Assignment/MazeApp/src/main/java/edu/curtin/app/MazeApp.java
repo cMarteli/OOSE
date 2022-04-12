@@ -5,6 +5,8 @@
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
+// Marteli, C (2021) DSA source code (Version 1.0) [Source code]. https://github.com/cMarteli/
+// Some methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
 package edu.curtin.app;
 
 //import java.util.ArrayList;
@@ -38,22 +40,22 @@ public class MazeApp
             // }
 
             //TEST HARNESS FOR MAZE
-            Maze m = new Maze(4, 6);
-            m.moveCursor('s');
-            m.moveCursor('e');
-            m.moveCursor('s');
-            m.moveCursor('e');
-            m.moveCursor('n');
-            m.moveCursor('w');
-            m.moveCursor('w');
-            m.moveCursor('n');
-            m.moveCursor('w');
-            m.moveCursor('s');
+            // Maze m = new Maze(4, 6);
+            // m.moveCursor('s');
+            // m.moveCursor('e');
+            // m.moveCursor('s');
+            // m.moveCursor('e');
+            // m.moveCursor('n');
+            // m.moveCursor('w');
+            // m.moveCursor('w');
+            // m.moveCursor('n');
+            // m.moveCursor('w');
+            // m.moveCursor('s');
 
             //System.out.println("\u253c");
 
 
-            //Menu.showMenu();
+            Menu.showMenu();
 
         }
         catch (Exception e)
