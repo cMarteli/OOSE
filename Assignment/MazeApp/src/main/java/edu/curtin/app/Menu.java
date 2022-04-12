@@ -8,8 +8,6 @@
  */
 package edu.curtin.app;
 
-import java.util.InputMismatchException;
-
 public class Menu
 {
 
@@ -19,42 +17,67 @@ public class Menu
     ************************************************************/
     public static void showMenu()
     {
+        boolean fileLoaded = false;
         boolean done = false;
         while(!done)
         {
-            try
+            switch(checkInteger("(1) Play (2) Load File (3) Help (0) Quit"))
             {
-                switch(checkInteger("(1) Play (2) Help (0) Quit"))
-                {
-                    case 1:
-                        //TODO: ask for name of file to read here
-                        String fileName = checkFileName(".txt");
+                case 1://Option Play
+                    if(fileLoaded)
+                    {
+                        play();//game start
+                    }
+                    else
+                    {
+                        System.out.println("Please load an input file first!");
+                    }
+                    break;
 
-                        System.out.print("Starting Game");
-                        Game g = new Game(4, 6);//TODO Hardcoded change to obtained from file
+                case 2: //Option load file
 
-                        break;
+                    fileLoaded = loadFile();
+                    break;
 
-                    case 2:
-                        System.out.print("STUB! HELP");
+                case 3:
+                    System.out.print("STUB! HELP");
 
-                        break;
+                    break;
 
-                    case 0:
-                        done = true;
-                        break;
+                case 0:
+                    done = true;
+                    break;
 
-                    default:
-                        System.out.println("Enter a valid number");
-                        break;
-                }
+                default:
+                    System.out.println("Enter a valid number");
+                    break;
             }
-            catch(NumberFormatException e)
-            {
-                // if not a numerical value.
-                System.out.println("Must be a number");
-            }
+
         }
+    }
+
+    /************************************************************
+    IMPORT:
+    EXPORT:
+    ASSERTION: Starts game
+    ************************************************************/
+    private static void play()
+    {
+        System.out.print("Starting Game");
+        Game g = new Game(4, 6);//TODO Hardcoded change to obtained from file
+    }
+
+    /************************************************************
+    IMPORT:
+    EXPORT:
+    ASSERTION: Loads file using FileReader class
+    ************************************************************/
+    private static boolean loadFile()
+    {
+        String fileName = checkFileName(".txt");
+        //TODO: call filereader method
+        return true;//change to return success or fail
+
     }
 
     /************************************************************
@@ -94,25 +117,19 @@ public class Menu
     public static int checkInteger(String prompt)
     {
         int userInt = 0;
-        String error = "(Invalid Number)\n";
-        String outStr = prompt;
         boolean isValid = false;
 
-        while (isValid == false)
+        while (!isValid)
         {
             try
             {
-                System.out.println(outStr);
-                outStr = error + prompt;
-                userInt = Keyboard.nextInt();
+                System.out.println(prompt);
+                userInt = Integer.parseInt(Keyboard.nextLine());
                 isValid = true;
             }
-            catch(InputMismatchException e)
+            catch(NumberFormatException e)
             {
-                System.out.print(error);
-                userInt = 0;
-                outStr = prompt;
-                isValid = false;
+                System.out.println("Enter a valid number");
             }
         }
 
