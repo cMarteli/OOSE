@@ -22,7 +22,6 @@ public class Maze extends Graphics
     //Constructor
     public Maze(int x, int y)
     {
-        System.out.println(RED + "test" + RESET);
         rows = x;
         columns = y;
         maze = new String[rows][columns];

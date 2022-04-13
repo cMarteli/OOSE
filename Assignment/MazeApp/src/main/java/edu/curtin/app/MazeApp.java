@@ -12,10 +12,10 @@ package edu.curtin.app;
 //import java.util.ArrayList;
 //import java.util.List;
 
-public class MazeApp
+public class MazeApp extends Graphics
 {
 
-    public static final String SPLASH = "******************\n* MAZE APP	*\n******************\n";
+    public static final String SPLASH = YELLOW+ "*************************\n" + RESET + "*\tMAZE APP\t*" + MAGENTA + "\n*************************\n" + RESET;
     /**
      * @param args the command line arguments
      */

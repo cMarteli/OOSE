@@ -8,7 +8,7 @@
  */
 package edu.curtin.app;
 
-public class Menu
+public class Menu extends Graphics
 {
 
 
@@ -21,7 +21,7 @@ public class Menu
         boolean done = false;
         while(!done)
         {
-            switch(checkInteger("(1) Play (2) Load File (3) Help (0) Quit"))
+            switch(checkInteger(GREEN +"(1) Play "+ CYAN +"(2) Load File "+ YELLOW +"(3) Help "+ RED +"(0) Quit"+ RESET))
             {
                 case 1://Option Play
                     if(fileLoaded)
@@ -40,7 +40,8 @@ public class Menu
                     break;
 
                 case 3:
-                    System.out.print("STUB! HELP");
+                    System.out.print("Testing");
+                    gfxTest(); //DEBUG
 
                     break;
 
@@ -63,7 +64,7 @@ public class Menu
     ************************************************************/
     private static void play()
     {
-        System.out.print("Starting Game");
+        System.out.println("Starting Game");
         Game g = new Game(4, 6);//TODO Hardcoded change to obtained from file
     }
 
