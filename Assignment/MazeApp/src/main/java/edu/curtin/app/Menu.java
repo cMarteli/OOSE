@@ -4,7 +4,7 @@
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  * Marteli, C (2021) DSA source code (Version 1.0) [Source code]. https://github.com/cMarteli/
- * Some methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
+ * May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
  */
 package edu.curtin.app;
 
@@ -13,7 +13,9 @@ public class Menu extends Graphics
 
 
     /************************************************************
-    Displays menu and launches game
+    * IMPORT: none
+    * EXPORT: void
+    * ASSERTION: Displays menu, launches game and loads input
     ************************************************************/
     public static void showMenu()
     {
@@ -24,9 +26,9 @@ public class Menu extends Graphics
             switch(checkInteger(GREEN +"(1) Play "+ CYAN +"(2) Load File "+ YELLOW +"(3) Help "+ RED +"(0) Quit"+ RESET))
             {
                 case 1://Option Play
-                    if(fileLoaded)
+                    if(!fileLoaded) //TODO: Temporarily disabled. remove '!'
                     {
-                        play();//game start
+                        play();//game start TODO Parse Object from file reader here
                     }
                     else
                     {
@@ -50,7 +52,7 @@ public class Menu extends Graphics
                     break;
 
                 default:
-                    System.out.println("Enter a valid number");
+                    System.out.println("Enter a number");
                     break;
             }
 
@@ -58,19 +60,19 @@ public class Menu extends Graphics
     }
 
     /************************************************************
-    IMPORT:
-    EXPORT:
+    IMPORT: none
+    EXPORT: void
     ASSERTION: Starts game
     ************************************************************/
     private static void play()
     {
         System.out.println("Starting Game");
-        Game g = new Game(4, 6);//TODO Hardcoded change to obtained from file
+        Game g = new Game();//TODO Parse Object from file reader here
     }
 
     /************************************************************
     IMPORT:
-    EXPORT:
+    EXPORT: boolean (success status of load)
     ASSERTION: Loads file using FileReader class
     ************************************************************/
     private static boolean loadFile()
@@ -82,9 +84,9 @@ public class Menu extends Graphics
     }
 
     /************************************************************
-    IMPORT: ext (String)
+    IMPORT: file extension (String)
     EXPORT: filename (String)
-    ASSERTION: Lets user enter the file name
+    ASSERTION: Lets user enter the file name and validates input
     ************************************************************/
     public static String checkFileName(String ext)
     {
@@ -130,7 +132,7 @@ public class Menu extends Graphics
             }
             catch(NumberFormatException e)
             {
-                System.out.println("Enter a valid number");
+                System.out.println("Enter a number");
             }
         }
 

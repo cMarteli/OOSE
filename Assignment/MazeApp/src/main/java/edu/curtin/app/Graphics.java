@@ -1,8 +1,9 @@
 /**
- *
+ * Graphics.java
+ * Abstract class, contains ANSI codes for colour and special character display
  *
  * 2022/OOSE Assignment
- * @author Caio Marteli (19598552), Carey Brown (https://coderanch.com/t/685118/java/FYI-wrapper-class-Scanner-System, 2018)
+ * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
 public abstract class Graphics
@@ -43,20 +44,23 @@ public abstract class Graphics
     //game symbols
 
     //doors
-    public static final String RED_DOOR = RED + DOOR_SYMBOL + RESET; // red door
-    public static final String GRN_DOOR = GREEN + DOOR_SYMBOL + RESET; // green door
-    public static final String YLW_DOOR = YELLOW + DOOR_SYMBOL + RESET; // yellow door
-    public static final String BLU_DOOR = BLUE + DOOR_SYMBOL + RESET; // blue door
-    public static final String MGT_DOOR = MAGENTA + DOOR_SYMBOL + RESET; // magenta door
-    public static final String CYA_DOOR = CYAN + DOOR_SYMBOL + RESET; // cyan door
+    public static final String RED_DOOR = "\033[31m\u2592\033[m"; // red door
+    public static final String GRN_DOOR = "\033[32m\u2592\033[m"; // green door
+    public static final String YLW_DOOR = "\033[33m\u2592\033[m"; // yellow door
+    public static final String BLU_DOOR = "\033[34m\u2592\033[m"; // blue door
+    public static final String MGT_DOOR = "\033[35m\u2592\033[m"; // magenta door
+    public static final String CYA_DOOR = "\033[36m\u2592\033[m"; // cyan door
 
     //keys
-    public static final String RED_KEY = RED + KEY_SYMBOL + RESET; // red key
-    public static final String GRN_KEY = GREEN + KEY_SYMBOL + RESET; // green key
-    public static final String YLW_KEY = YELLOW + KEY_SYMBOL + RESET; // yellow key
-    public static final String BLU_KEY = BLUE + KEY_SYMBOL + RESET; // blue key
-    public static final String MGT_KEY = MAGENTA + KEY_SYMBOL + RESET; // magenta key
-    public static final String CYA_KEY = CYAN + KEY_SYMBOL + RESET; // cyan key
+    public static final String RED_KEY = "\033[31m\u2555\033[m"; // red key
+    public static final String GRN_KEY = "\033[32m\u2555\033[m"; // green key
+    public static final String YLW_KEY = "\033[33m\u2555\033[m"; // yellow key
+    public static final String BLU_KEY = "\033[34m\u2555\033[m"; // blue key
+    public static final String MGT_KEY = "\033[35m\u2555\033[m"; // magenta key
+    public static final String CYA_KEY = "\033[36m\u2555\033[m"; // cyan key
+
+    //player
+    public static final String PLAYER_SYMBOL = "\033[31mP\033[m"; // red 'P'
 
 
 
@@ -87,9 +91,6 @@ public abstract class Graphics
         System.out.println(BLU_KEY);
         System.out.println(MGT_KEY);
         System.out.println(CYA_KEY);
-
-
-
 
 
 

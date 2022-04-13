@@ -1,12 +1,11 @@
 /**
- * KeyRing.java
- * Default empty key ring for player char
+ * Maze.java
+ * Handles Maze drawing methods
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
 
-import java.util.ArrayList;
 import java.util.List;
 //import java.util.Map;
 import java.awt.Point;
@@ -16,153 +15,127 @@ public class Maze extends Graphics
     private static int rows;
     private static int columns;
     private String[][] maze;
-    public Point cursor;
-    public Point testWall; //TODO: delete
     public List<Point> vWalls; //TODO: delete
     //Constructor
-    public Maze(int x, int y)
+    public Maze(int x, int y, List<Point> walls)
     {
+        vWalls = walls;
+
         rows = x;
         columns = y;
         maze = new String[rows][columns];
-        cursor = new Point(0,0);
-        testWall = new Point(1,1);
-        vWalls = new ArrayList<>();
-        vWalls.add(testWall);
 
-
-        updateMaze();
     }
-    /*
-    * Method to display maze and update visual feed
-    */
-    private void displayMaze(String[][] currMaze)
+
+    /************************************************************
+    * IMPORT: none
+    * EXPORT: void
+    * ASSERTION: Display maze and update visual feed
+    ************************************************************/
+    public void displayMaze()
     {
-        for(String[] i: currMaze)
+        //System.out.print(CLEAR);
+        printPadding("___"); //TODO: HARDCODED
+
+        for(int x = 0; x < rows; x++)
         {
-            System.out.println();
-            for(String j : i)
+            System.out.println(); //new row
+            for(int y = 0; y < columns; y++)
             {
-                System.out.print(j + "\t"); //might not need the tab
+                if(y == 0)
+                {
+                    System.out.print("|" + maze[x][y]);//if last column print a wall
+                }
+                else if(y == columns-1)
+                {
+                    System.out.print(maze[x][y] + "|");//if last column print a wall
+                }
+                else
+                {
+                    System.out.print(maze[x][y]);//prints each cell
+                }
+
             }
         }
         System.out.println();
 
+        printPadding("```"); //TODO: HARDCODED
+        System.out.println();
+
+
     }
 
-    /*
-    * Method to fill maze with new data, updates cursor
-    */
-    private void updateMaze()
+    /************************************************************
+    * IMPORT: symbol to draw (String)
+    * EXPORT: void
+    * ASSERTION: prints roof or base of maze array //TODO: corners
+    ************************************************************/
+    private void printPadding(String symbol)
     {
-        //columns = x;
-        //rows = y;
+        System.out.print(" ");
+        for(int i = 1; i <= columns; i++)
+        {
+            System.out.print(symbol);  //TODO: corners
+        }
+
+    }
+
+    /************************************************************
+    * IMPORT: coordinate (Point), symbol to draw (String)
+    * EXPORT: void
+    * ASSERTION: Edits a single cell of the maze array
+    ************************************************************/
+    private void drawCell(Point p, String s)
+    {
+        maze[(int)p.getX()][(int)p.getY()] = s;
+    }
+
+
+    /************************************************************
+    * IMPORT: coordinate (Point), symbol to draw (String)
+    * EXPORT: void
+    * ASSERTION: Fills maze with data, updates cursor
+    ************************************************************/
+    public void updateMaze(Point p)
+    {
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < columns; j++)
             {
-                maze[i][j] = "[   ]"; //default blank square
-                maze[(int)testWall.getX()][(int)testWall.getY()] = "[|  ]"; //TODO: DEBUG ONLY
-                maze[(int)cursor.getX()][(int)cursor.getY()] = "[ P ]"; //TODO: DEBUG ONLY
-                if(testWall.getLocation().equals(cursor.getLocation()))
-                {
-                    maze[(int)cursor.getX()][(int)cursor.getY()] = "[|P ]";
-                }
-
+                maze[i][j] = "   "; //default blank square
+                drawCell(p, " " + PLAYER_SYMBOL + " "); //Cursor
                 //add other specific things to fill in maze here
             }
         }
-        displayMaze(maze); //displays
+        //draw walls to maze array
+        for (Point w : vWalls)
+        {
+            drawCell(w, "|  ");
+            if(w.equals(p)) //checks if player is overlapping wall
+            {
+                drawCell(w, "|"+PLAYER_SYMBOL + " ");
+            }
+
+        }
+        displayMaze(); //displays
     }
 
-    /*
-    * Method to move cursor in  direction parsed
-    * n = north, s = south, e = east, w = west
-    */
-    public void moveCursor(char dir)
+    /************************************************************
+    ACCESSORS
+    ************************************************************/
+    public int getRows()
     {
-        if(dir == 'N' || dir == 'n')
-        {
-            System.out.println("Moving cursor north");
-            moveUp(cursor);
-        }
-        else if(dir == 'S' || dir == 's')
-        {
-            System.out.println("Moving cursor south");
-            moveDown(cursor);
-        }
-        else if(dir == 'E' || dir == 'e')
-        {
-            System.out.println("Moving cursor east");
-            moveRight(cursor);
-        }
-        else if(dir == 'W' || dir == 'w')
-        {
-            System.out.println("Moving cursor west");
-            moveLeft(cursor);
-        }
-        updateMaze(); //TODO DEBUG ONLY
+        return rows;
     }
 
-    private void moveUp(Point p)
+    public int getColumns()
     {
-        if((int)p.getX() > 0) //boundary check
-        {
-            p.translate(-1, 0);
-        }
+        return columns;
     }
 
-    private void moveDown(Point p)
+    public List<Point> getWalls()
     {
-        if((int)cursor.getX()+1 < columns) //boundary check
-        {
-            p.translate(1, 0);
-        }
-    }
-
-    private void moveLeft(Point p)
-    {
-        if((int)p.getY() > 0 && leftIsClear()) //boundary check
-        {
-            p.translate(0, -1);
-        }
-    }
-
-    private void moveRight(Point p)
-    {
-        if((int)p.getY()+1 < rows && rightIsClear()) //boundary check
-        {
-            p.translate(0, 1);
-        }
-    }
-    //if going right check if dest is on list if it is block
-    //if going left check if current location is on list if so block
-    private boolean leftIsClear() //TODO:
-    {
-
-        if(vWalls.contains(cursor))
-        {
-            System.out.println("collision - left wall");
-            return false;
-
-        }
-        return true;
-    }
-        //if going right check if dest is on list if it is block
-    //if going left check if current location is on list if so block
-
-    private boolean rightIsClear()
-    {
-        Point dest = cursor.getLocation();
-        dest.translate(0, 1);
-
-        if(vWalls.contains(dest))
-        {
-            System.out.println("collision - right wall");
-            return false;
-
-        }
-        return true;
+        return vWalls;
     }
 
 }
