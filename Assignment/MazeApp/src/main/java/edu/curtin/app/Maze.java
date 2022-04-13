@@ -11,7 +11,7 @@ import java.util.List;
 //import java.util.Map;
 import java.awt.Point;
 
-public class Maze
+public class Maze extends Graphics
 {
     private static int rows;
     private static int columns;
@@ -22,6 +22,7 @@ public class Maze
     //Constructor
     public Maze(int x, int y)
     {
+        System.out.println(RED + "test" + RESET);
         rows = x;
         columns = y;
         maze = new String[rows][columns];
