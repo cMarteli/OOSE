@@ -36,27 +36,27 @@ public class Maze extends Graphics
     {
         //System.out.print(CLEAR);
         printPadding("___"); //TODO: HARDCODED
+        Point tempWall = new Point();
 
         for(int x = 0; x < rows; x++)
         {
-            System.out.println(); //new row
+            System.out.println("|"); //right edge
+            System.out.print("|"); //left edge
             for(int y = 0; y < columns; y++)
             {
-                if(y == 0)
+                tempWall.setLocation(x, y);
+                if(vWalls.contains(tempWall)) //if first column OR contains wall print a wall to left
                 {
-                    System.out.print("|" + maze[x][y]);//if last column print a wall
-                }
-                else if(y == columns-1)
-                {
-                    System.out.print(maze[x][y] + "|");//if last column print a wall
+                    System.out.print("| " + maze[x][y] + " ");
                 }
                 else
                 {
-                    System.out.print(maze[x][y]);//prints each cell
+                    System.out.print(" " + maze[x][y] + " ");//prints each cell
                 }
 
             }
         }
+        System.out.print("|");
         System.out.println();
 
         printPadding("```"); //TODO: HARDCODED
@@ -72,8 +72,8 @@ public class Maze extends Graphics
     ************************************************************/
     private void printPadding(String symbol)
     {
-        System.out.print(" ");
-        for(int i = 1; i <= columns; i++)
+        //System.out.print(" ");
+        for(int i = 1; i <= columns+1; i++)
         {
             System.out.print(symbol);  //TODO: corners
         }
@@ -102,21 +102,21 @@ public class Maze extends Graphics
         {
             for(int j = 0; j < columns; j++)
             {
-                maze[i][j] = "   "; //default blank square
-                drawCell(p, " " + PLAYER_SYMBOL + " "); //Cursor
+                maze[i][j] = " "; //default blank square
+                drawCell(p, PLAYER_SYMBOL); //Cursor
                 //add other specific things to fill in maze here
             }
         }
         //draw walls to maze array
-        for (Point w : vWalls)
-        {
-            drawCell(w, "|  ");
-            if(w.equals(p)) //checks if player is overlapping wall
-            {
-                drawCell(w, "|"+PLAYER_SYMBOL + " ");
-            }
+        // for (Point w : vWalls)
+        // {
+        //     drawCell(w, "|  ");
+        //     if(w.equals(p)) //checks if player is overlapping wall
+        //     {
+        //         drawCell(w, "|"+PLAYER_SYMBOL + " ");
+        //     }
 
-        }
+        // }
         displayMaze(); //displays
     }
 
