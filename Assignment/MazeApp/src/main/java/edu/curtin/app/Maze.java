@@ -37,14 +37,15 @@ public class Maze extends Graphics
     public void displayMaze()
     {
         //System.out.print(CLEAR);
-        printPadding(EDG_HOR, CNR_TOP_L, CNR_TOP_R); //Top padding
+        printTopRow(vWalls); //Top padding
         Point tempVWall = new Point(); //temp vertical wall to check
         Point tempHWall = new Point(); //temp horizontal wall to check
 
+        //** OBJECT AND PLAYER LINE CREATOR */
         for(int x = 0; x < rows; x++)
         {
             System.out.println(); //new line
-            System.out.print(EDG_VER); //Left Edge
+            System.out.print(EDG_VER); //Left Edge - vert wall line start
             for(int y = 0; y < columns; y++)
             {
                 tempVWall.setLocation(x, y);
@@ -59,27 +60,48 @@ public class Maze extends Graphics
 
             }
             System.out.print(EDG_VER); //Right Edge
-            System.out.println(); //jumps line
-            System.out.print(EDG_VER); //horizontal wall line starts here
-            for(int y = 0; y < columns; y++)
+
+            //** H WALL AND H DOOR LINE CREATOR */
+            if(x != rows-1) //checks if final line if so skips it
             {
-                tempHWall.setLocation(x+1, y); //sets and translates to x+1 since it needs to printed north
-                if(hWalls.contains(tempHWall)) //if contains point
+                System.out.println(); //jumps line
+                tempHWall.setLocation(x+1, 0);
+                if(hWalls.contains(tempHWall)) // checks if left edge needs to a join tile
                 {
-                    System.out.print(WALL_HOR);//prints horizontal wall
+                    System.out.print(JOIN_L);
                 }
                 else
                 {
-                    System.out.print("   ");
+                    System.out.print(EDG_VER); //Left edge - horizontal wall line start
                 }
+
+                for(int y = 0; y < columns; y++)
+                {
+
+                    tempHWall.setLocation(x+1, y); //sets and translates to x+1 since it needs to printed north
+                    if(hWalls.contains(tempHWall)) //if contains point
+                    {
+                        System.out.print(WALL_HOR);//prints horizontal wall
+                    }
+                    else if(hWalls.contains(tempVWall.getLocation()))
+                    {
+
+                    }
+                    else
+                    {
+                        System.out.print("   ");
+                    }
+
+                }
+
+                System.out.print(EDG_VER); //Right edge - line end TODO:Left side joins
             }
-            System.out.print(EDG_VER);
 
         }
 
         System.out.println();
 
-        printPadding(EDG_HOR, CNR_BTM_L, CNR_BTM_R); //Bottom
+        printBottomRow(vWalls); //Bottom
         System.out.println();
 
 
@@ -113,17 +135,51 @@ public class Maze extends Graphics
     /************************************************************
     * IMPORT: symbol to draw (String)
     * EXPORT: void
+    * ASSERTION: prints roof of maze array
+    ************************************************************/
+    private void printTopRow(List<Point> vWalls)
+    {
+        Point tempW = new Point();
+        System.out.print(CNR_TOP_L);
+        for(int i = 0; i < columns; i++)
+        {
+            tempW.setLocation(0, i);
+            if(vWalls.contains(tempW)) //checks if there's a wall below
+            {
+                System.out.print(JOIN_TOP + EDG_HOR + EDG_HOR);
+
+            }
+            else
+            {
+                System.out.print(EDG_HOR + EDG_HOR + EDG_HOR);
+            }
+        }
+        System.out.print(CNR_TOP_R);
+    }
+
+    /************************************************************
+    * IMPORT: symbol to draw (String)
+    * EXPORT: void
     * ASSERTION: prints roof or base of maze array //TODO: corners
     ************************************************************/
-    private void printPadding(String wall, String cnrL, String cnrR)
+    private void printBottomRow(List<Point> vWalls)
     {
-        System.out.print(cnrL);
-        for(int i = 1; i <= columns*3; i++)
+        Point tempW = new Point();
+        System.out.print(CNR_BTM_L);
+        for(int i = 0; i < columns; i++)
         {
-            System.out.print(wall);  //TODO: corners
-        }
-        System.out.print(cnrR);
+            tempW.setLocation(rows-1, i);
+            if(vWalls.contains(tempW)) //checks if there's a wall below
+            {
+                System.out.print(JOIN_BTM + EDG_HOR + EDG_HOR);
 
+            }
+            else
+            {
+                System.out.print(EDG_HOR + EDG_HOR + EDG_HOR);
+            }
+        }
+        System.out.print(CNR_BTM_R);
     }
 
     /************************************************************

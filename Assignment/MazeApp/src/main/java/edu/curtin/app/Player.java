@@ -73,7 +73,7 @@ public class Player
 
     private void moveUp(Point p)
     {
-        if((int)p.getX() > 0) //boundary check
+        if(upIsClear()) //boundary check
         {
             p.translate(-1, 0);
         }
@@ -81,7 +81,7 @@ public class Player
 
     private void moveDown(Point p)
     {
-        if((int)cursor.getX()+1 < rows) //boundary check
+        if(downIsClear()) //boundary check
         {
             p.translate(1, 0);
         }
@@ -125,12 +125,22 @@ public class Player
         dest.translate(0, 1);
 
         return(!vWalls.contains(dest) && ((int)cursor.getY()+1 < columns));
-
     }
 
+    //Check if current location is not on horizontal wall list AND X-coordinate is greater than zero
+    private boolean upIsClear()
+    {
+        return (!hWalls.contains(cursor) && ((int)cursor.getX() > 0)); //wall check && outside boundary check
+    }
 
+    //Check if destination is not on vertical wall list AND X-coordinate(+1) is greater than max number of rows
+    private boolean downIsClear()
+    {
+        Point dest = cursor.getLocation();
+        dest.translate(1, 0);
 
-
+        return(!hWalls.contains(dest) && ((int)cursor.getX()+1 < columns)); //TODO
+    }
 
 
 
