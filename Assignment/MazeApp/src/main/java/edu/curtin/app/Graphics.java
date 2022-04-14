@@ -26,17 +26,17 @@ public abstract class Graphics
     public static final String CYAN = "\033[36m";    // CYAN
 
     //symbols
-    public static final String BORDER_01 = "\u2500"; // ─  
-    public static final String BORDER_02 = "\u2502"; // │
-    public static final String BORDER_03 = "\u250c"; // ┌ 
-    public static final String BORDER_04 = "\u2510"; // ┐
-    public static final String BORDER_05 = "\u2514"; // └ 
-    public static final String BORDER_06 = "\u2518"; // ┘
-    public static final String BORDER_07 = "\u251c"; // ├
-    public static final String BORDER_08 = "\u2524"; // ┤
-    public static final String BORDER_09 = "\u252c"; // ┬
-    public static final String BORDER_10 = "\u2534"; // ┴
-    public static final String BORDER_11 = "\u253c"; // ┼
+    public static final String EDG_HOR = "\u2500"; // ─  
+    public static final String EDG_VER = "\u2502"; // │
+    public static final String CNR_TOP_L = "\u250c"; // ┌ 
+    public static final String CNR_TOP_R = "\u2510"; // ┐
+    public static final String CNR_BTM_L = "\u2514"; // └ 
+    public static final String CNR_BTM_R = "\u2518"; // ┘
+    public static final String JOIN_L = "\u251c"; // ├
+    public static final String JOIN_R = "\u2524"; // ┤
+    public static final String JOIN_TOP = "\u252c"; // ┬
+    public static final String JOIN_BTM = "\u2534"; // ┴
+    public static final String JOIN_MID = "\u253c"; // ┼
 
     public static final String DOOR_SYMBOL = "\u2592"; // ▒
     public static final String KEY_SYMBOL = "\u2555"; // ╕
@@ -75,7 +75,7 @@ public abstract class Graphics
         // System.out.println(MAGENTA + "MAGENTA" + RESET);
         // System.out.println(CYAN + "CYAN" + RESET);
 
-        System.out.println(BORDER_01);
+        System.out.println(EDG_HOR);
         System.out.println(KEY_SYMBOL);
 
         System.out.println(RED_DOOR);
