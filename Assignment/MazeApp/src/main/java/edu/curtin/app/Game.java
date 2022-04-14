@@ -27,6 +27,7 @@ public class Game
     {
         Point playerStart = new Point(0,0); //TODO: get this from file reader not here
         List<Point> vWalls = new LinkedList<>(); //get this from file reader not here
+        List<Point> hWalls = new LinkedList<>(); //get this from file reader not here
         //TODO: get this from file reader not here
         vWalls.add(new Point(0,1));
         vWalls.add(new Point(0,3));
@@ -34,7 +35,12 @@ public class Game
         vWalls.add(new Point(2,1));
         vWalls.add(new Point(3,2));
 
-        gameMaze = new Maze(4, 4, vWalls); //TODO: get this from file reader not here
+        hWalls.add(new Point(1,1));
+        hWalls.add(new Point(2,0));
+        hWalls.add(new Point(2,2));
+        hWalls.add(new Point(3,2));
+
+        gameMaze = new Maze(4, 4, vWalls, hWalls); //TODO: get this from file reader not here
         player = new Player(gameMaze, playerStart);
 
         controller();

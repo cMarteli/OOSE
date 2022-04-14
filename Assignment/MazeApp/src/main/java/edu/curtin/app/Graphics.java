@@ -62,6 +62,9 @@ public abstract class Graphics
     //player
     public static final String PLAYER_SYMBOL = "\033[31mP\033[m"; // red 'P'
 
+    //Horizontal wall
+    public static final String WALL_HOR = "\u2500\u2500\u2500"; // ─── 
+
 
 
 

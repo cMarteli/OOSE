@@ -12,7 +12,7 @@ public class Player
     private Point cursor; //stores player location
     private int rows; //for boundary checking
     private int columns;
-    private List<Point> vWalls;
+    private List<Point> vWalls, hWalls;
 
 
 
@@ -25,7 +25,8 @@ public class Player
         cursor = start;
         rows = m.getRows();
         columns = m.getColumns();
-        vWalls = m.getWalls();
+        vWalls = m.getVWalls();
+        hWalls = m.getHWalls();
 
         m.updateMaze(start);
 
