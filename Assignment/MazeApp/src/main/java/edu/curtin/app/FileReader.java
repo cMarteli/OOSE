@@ -5,8 +5,14 @@
 // Marteli, C (2021) source code (Version 1.0) [Source code]. https://github.com/cMarteli/
 // # previously submitted for DSA Modified March 2022 for MazeApp.java
 package edu.curtin.app;
+import edu.curtin.app.tiles.*;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 //import java.io.File;
-//import java.util.Scanner;
+import java.awt.Point;
 
 //@SuppressWarnings("unchecked")
 public class FileReader {
@@ -58,7 +64,30 @@ ASSERTION: Imports a text file and writes it to a graph
 //         }
 
 //         return graph;
+    //TODO: STUB should read from file
+    public static Map<Point, Tile> readFile(String filename)
+    {
+        Map m = new HashMap<Point, Tile>();
 
+        Point playerStart = new Point(0,0); //TODO: get this from file reader not here
+        List<Point> vWalls = new LinkedList<>(); //get this from file reader not here
+        List<Point> hWalls = new LinkedList<>(); //get this from file reader not here
+        //TODO: get this from file reader not here
+        vWalls.add(new Point(0,1));
+        vWalls.add(new Point(0,3));
+        vWalls.add(new Point(1,3));
+        vWalls.add(new Point(2,1));
+        vWalls.add(new Point(3,2));
+
+        hWalls.add(new Point(1,1));
+        hWalls.add(new Point(2,0));
+        hWalls.add(new Point(2,2));
+        hWalls.add(new Point(3,2));
+
+
+        return m;
+
+    }
 
     //}//end readfile()
 

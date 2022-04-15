@@ -7,9 +7,16 @@
  * May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
  */
 package edu.curtin.app;
+import edu.curtin.app.tiles.*;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.awt.Point;
 
 public class Menu extends Graphics
 {
+
+    public static Map<Point, Tile> map; //TODO
 
 
     /************************************************************
@@ -62,11 +69,12 @@ public class Menu extends Graphics
     /************************************************************
     IMPORT: none
     EXPORT: void
-    ASSERTION: Starts game
+    ASSERTION: Starts game - only runs if file loaded = true
     ************************************************************/
     private static void play()
     {
         System.out.println("Starting Game");
+        //TODO Parse Object from file reader here
         Game g = new Game();//TODO Parse Object from file reader here
     }
 
@@ -77,7 +85,7 @@ public class Menu extends Graphics
     ************************************************************/
     private static boolean loadFile()
     {
-        String fileName = checkFileName(".txt");
+        map = FileReader.readFile(checkFileName(".txt"));
         //TODO: call filereader method
         return true;//change to return success or fail
 

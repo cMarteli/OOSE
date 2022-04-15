@@ -6,13 +6,13 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
-//import edu.curtin.app.tiles.*;
+import edu.curtin.app.tiles.*;
 
+import java.util.HashMap;
 import java.util.InputMismatchException;
-//import java.util.HashMap;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-//import java.util.Map;
 import java.awt.Point;
 
 public class Game
