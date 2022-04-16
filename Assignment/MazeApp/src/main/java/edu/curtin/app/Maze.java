@@ -16,25 +16,22 @@ public class Maze extends Graphics
 {
     private int rows;
     private int columns;
+    private Point startP;
+    private Point endP;
     private String[][] maze; //Maze to draw to CLI
-    private HashMap<String, SpecialTile> sTiles; //start, end and dimension values
     private HashMap<Point, Wall> vWalls; // Vertical wall list
     private HashMap<Point, Wall> hWalls; // Horizontal wall list
+    private HashMap<Point, Tile> sTiles; // Special tile list
+
     //Constructor
-    public Maze(HashMap<String, SpecialTile> spTiles, HashMap<Point, Wall> verWalls, HashMap<Point, Wall> horWalls)
+    public Maze(int x, int y)
     {
-        vWalls = verWalls;
-        hWalls = horWalls;
-        sTiles = spTiles;
-
-        //DEBUG
-        //System.out.println("Rows: " + getRows() + "Columns: " + getColumns());
-        //System.out.println("Start: " + getStart().toString() + "End: " + getEnd().toString());
-        rows = getRows();
-        columns = getColumns();
-
-        maze = new String[rows][columns];
-
+        rows = x;
+        columns = y;
+        setVertWalls(new HashMap<Point, Wall>());
+        setHoriWalls(new HashMap<Point, Wall>());
+        setTiles(new HashMap<Point, Tile>());
+        maze = new String[rows][columns]; //creates maze
     }
 
     /************************************************************
@@ -193,27 +190,28 @@ public class Maze extends Graphics
 
     }
 
+
     /************************************************************
     ACCESSORS
     ************************************************************/
     public int getRows()
     {
-        return sTiles.get("dimension").getX();
+        return rows;
     }
 
     public int getColumns()
     {
-        return sTiles.get("dimension").getY();
+        return columns;
     }
 
     public Point getStart()
     {
-        return sTiles.get("start").getCoordinate();
+        return startP;
     }
 
     public Point getEnd()
     {
-        return sTiles.get("end").getCoordinate();
+        return endP;
     }
 
     public HashMap<Point, Wall> getVWalls()
@@ -226,4 +224,57 @@ public class Maze extends Graphics
         return hWalls;
     }
 
+    public HashMap<Point, Tile> getTiles() {
+        return sTiles;
+    }
+
+    /************************************************************
+    MUTATORS
+    ************************************************************/
+    public void addHoriWalls(int x, int y)
+    {
+        hWalls.put(new Point(x, y), new Wall(0));
+    }
+
+    public void addVertWalls(int x, int y)
+    {
+        vWalls.put(new Point(x, y),  new Wall(1));
+    }
+
+    public void addTiles(int x, int y, String m)
+    {
+        Point p = new Point(x, y);
+        if(!sTiles.containsValue(p)) //if tile doesn't exist create tile
+        {
+            sTiles.put(p, new SpecialTile(x, y, m));
+        }
+        else
+        {
+            sTiles.get(p).setValue(m);
+        }
+    }
+
+    public void setVertWalls(HashMap<Point, Wall> w)
+    {
+        vWalls = w;
+    }
+
+    public void setHoriWalls(HashMap<Point, Wall> w)
+    {
+        hWalls = w;
+    }
+
+    public void setStart(int x, int y)
+    {
+        startP = new Point(x,y);
+    }
+
+    public void setEnd(int x, int y)
+    {
+        endP = new Point(x,y);
+    }
+
+    public void setTiles(HashMap<Point, Tile> t) {
+        sTiles = t;
+    }
 }

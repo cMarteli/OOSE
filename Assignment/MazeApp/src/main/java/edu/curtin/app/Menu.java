@@ -8,6 +8,8 @@
  */
 package edu.curtin.app;
 
+import java.io.IOException;
+
 public class Menu extends Graphics
 {
     public static final String FILE_EXTENSION = ".txt"; //Hardcoded value for input file extension
@@ -24,14 +26,7 @@ public class Menu extends Graphics
             switch(checkInteger(GREEN +"(1) New Game "+ YELLOW +"(2) Help "+ RED +"(0) Quit"+ RESET))
             {
                 case 1://Option Play
-                    // if(!fileLoaded) //TODO: Temporarily disabled. remove '!'
-                    // {
                         play();
-                    // }
-                    // else
-                    // {
-                    //     System.out.println("Please load an input file first!");
-                    // }
                     break;
 
                 case 2:
@@ -59,8 +54,27 @@ public class Menu extends Graphics
     ************************************************************/
     private static void play()
     {
-        Maze m = FileReader.readFile("");
-        Game game = new Game(m);
+        //String fileName = checkFileName(FILE_EXTENSION); //gets file name from user
+        String fileName = "input.txt"; //TODO: DEBUG ONLY
+        try
+        {
+            Maze m = FileIO.readMazeFile(fileName);
+
+
+            Game game = new Game(m);
+
+            game.controller(); //starts player input
+            FileIO.readMazeFile(fileName);
+
+
+        }
+        catch (IOException e)
+        {
+            System.out.println("Could not read from " + fileName + ": " + e.getMessage());
+        }
+
+
+
     }
 
     /************************************************************

@@ -47,7 +47,13 @@ public class SpecialTile implements Tile
     }
 
     @Override
-    public String getType()
+    public void setValue(String s)
+    {
+        type += ", " + s;
+    }
+
+    @Override
+    public String getValue()
     {
         return type;
     }

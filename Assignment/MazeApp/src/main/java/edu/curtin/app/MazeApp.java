@@ -9,10 +9,6 @@
 // May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
 package edu.curtin.app;
 
-import edu.curtin.app.tiles.*;
-import java.util.HashMap;
-import java.awt.Point;
-
 public class MazeApp extends Graphics
 {
 
@@ -31,7 +27,7 @@ public class MazeApp extends Graphics
         }
         catch (Exception e) //only general exception to let program "fail gracefully"
         {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error: " + e);
             System.out.println("The Program will now close...");
         }
         finally

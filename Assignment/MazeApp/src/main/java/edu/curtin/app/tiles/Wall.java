@@ -16,7 +16,7 @@ public class Wall implements Tile
     }
 
     @Override
-    public String getType() {
+    public String getValue() {
         if(orientation == 0)
         {
             return "Horizontal Wall";
@@ -25,6 +25,12 @@ public class Wall implements Tile
         {
             return "Vertical Wall";
         }
+    }
+
+    @Override
+    public void setValue(String s) {
+        // TODO Auto-generated method stub
+
     }
 
 

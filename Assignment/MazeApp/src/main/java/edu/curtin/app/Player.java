@@ -23,15 +23,15 @@ public class Player
     CONSTRUCTOR
     ASSERTION: Sets starting location for player character
     ************************************************************/
-    public Player(Maze m, Point start)
+    public Player(Maze m)
     {
-        cursor = start;
+        cursor = m.getStart();
         //rows = m.getRows();
         columns = m.getColumns();
         vWalls = m.getVWalls();
         hWalls = m.getHWalls();
 
-        m.updateMaze(start);
+        m.updateMaze(cursor);
 
     }
 
@@ -150,7 +150,7 @@ public class Player
         Point dest = cursor.getLocation();
         dest.translate(1, 0);
 
-        return(!hWalls.containsKey(dest) && ((int)cursor.getX()+1 < columns)); //TODO
+        return(!hWalls.containsKey(dest) && ((int)cursor.getX()+1 < columns));
     }
 
 

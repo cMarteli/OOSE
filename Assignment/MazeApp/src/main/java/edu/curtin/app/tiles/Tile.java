@@ -8,7 +8,9 @@ package edu.curtin.app.tiles;
 public interface Tile
 {
 
-    //Returns coordinates of this tile
-    public String getType();
+    //Returns contents of this tile
+    public String getValue();
+
+    public void setValue(String s);
 
 }

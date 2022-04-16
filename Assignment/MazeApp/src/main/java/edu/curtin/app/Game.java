@@ -7,7 +7,6 @@
  */
 package edu.curtin.app;
 import java.util.InputMismatchException;
-import java.awt.Point;
 
 public class Game
 {
@@ -20,9 +19,7 @@ public class Game
     public Game(Maze m)
     {
         gameMaze = m;
-        player = new Player(gameMaze, new Point(0,0)); //TODO: get player vars from file reader not here
-
-        controller();
+        player = new Player(gameMaze);
 
     }
 
