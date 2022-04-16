@@ -1,37 +1,33 @@
 /**
- * EWwall.java
- * East -> West wall
+ * NSwall.java
+ * North -> South wall
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app.tiles;
+
 import java.awt.Point;
-import java.security.Principal;
 import java.util.ArrayList;
-import java.awt.Point;
 
-public class EWwall implements Tile
+public class Wall implements Tile
 {
-    private Point location;
-    private ArrayList<Tile> list;
+    public static int orientation; //0 - horizontal, 1 - Vertical
 
-    public EWwall(Point p, ArrayList<Tile> l)
+    public Wall(int o)
     {
-        list = l;
-        location = p;
-
+        orientation = o;
     }
 
     @Override
     public ArrayList<Tile> contains() {
         // TODO Auto-generated method stub
-        return list;
+        return null;
     }
 
     @Override
     public Point getLocation() {
         // TODO Auto-generated method stub
-        return location;
+        return null;
     }
 
 

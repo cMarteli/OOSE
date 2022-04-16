@@ -7,10 +7,7 @@
 package edu.curtin.app;
 import edu.curtin.app.tiles.*;
 
-import java.util.Map;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 //import java.io.File;
 import java.awt.Point;
 
@@ -65,24 +62,27 @@ ASSERTION: Imports a text file and writes it to a graph
 
 //         return graph;
     //TODO: STUB should read from file
-    public static Map<Point, Tile> readFile(String filename)
+    public static Maze readFile(String filename)
     {
-        Map m = new HashMap<Point, Tile>();
+        Maze m;
 
-        Point playerStart = new Point(0,0); //TODO: get this from file reader not here
-        List<Point> vWalls = new LinkedList<>(); //get this from file reader not here
-        List<Point> hWalls = new LinkedList<>(); //get this from file reader not here
-        //TODO: get this from file reader not here
-        vWalls.add(new Point(0,1));
-        vWalls.add(new Point(0,3));
-        vWalls.add(new Point(1,3));
-        vWalls.add(new Point(2,1));
-        vWalls.add(new Point(3,2));
+        //Point playerStart = new Point(0,0); //TODO: get this from file reader not here
+        int px = 0, py = 0;
+        HashMap<Point, Wall> vWalls = new HashMap<Point, Wall>();
+        HashMap<Point, Wall> hWalls = new HashMap<Point, Wall>();
+        //TODO: get this from file reader not here!!!!!!!!!!!
+        vWalls.put(new Point(0,1), new Wall(1));
+        vWalls.put(new Point(0,3), new Wall(1));
+        vWalls.put(new Point(1,3), new Wall(1));
+        vWalls.put(new Point(2,1), new Wall(1));
+        vWalls.put(new Point(3,2), new Wall(1));
 
-        hWalls.add(new Point(1,1));
-        hWalls.add(new Point(2,0));
-        hWalls.add(new Point(2,2));
-        hWalls.add(new Point(3,2));
+        hWalls.put(new Point(1,1), new Wall(1));
+        hWalls.put(new Point(2,0), new Wall(1));
+        hWalls.put(new Point(2,2), new Wall(1));
+        hWalls.put(new Point(3,2), new Wall(1));
+
+        m = new Maze(px, py, vWalls, hWalls);
 
 
         return m;

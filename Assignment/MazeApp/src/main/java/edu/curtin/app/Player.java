@@ -5,14 +5,17 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
+import edu.curtin.app.tiles.*;
+
 import java.awt.Point;
-import java.util.List;
+import java.util.HashMap;
 public class Player
 {
     private Point cursor; //stores player location
-    private int rows; //for boundary checking
+    //private int rows; //for boundary checking
     private int columns;
-    private List<Point> vWalls, hWalls;
+    private HashMap<Point, Wall> vWalls = new HashMap<Point, Wall>();
+    private HashMap<Point, Wall> hWalls = new HashMap<Point, Wall>();
 
 
 
@@ -23,7 +26,7 @@ public class Player
     public Player(Maze m, Point start)
     {
         cursor = start;
-        rows = m.getRows();
+        //rows = m.getRows();
         columns = m.getColumns();
         vWalls = m.getVWalls();
         hWalls = m.getHWalls();
@@ -115,7 +118,7 @@ public class Player
     //Check if current location is not on vertical wall list AND Y-coordinate is greater than zero
     private boolean leftIsClear()
     {
-        return (!vWalls.contains(cursor) && ((int)cursor.getY() > 0)); //wall check && outside boundary check
+        return (!vWalls.containsKey(cursor) && ((int)cursor.getY() > 0)); //wall check && outside boundary check
     }
 
     //Check if destination is not on vertical wall list AND Y-coordinate(+1) is greater than max number of columns
@@ -124,13 +127,13 @@ public class Player
         Point dest = cursor.getLocation();
         dest.translate(0, 1);
 
-        return(!vWalls.contains(dest) && ((int)cursor.getY()+1 < columns));
+        return(!vWalls.containsKey(dest) && ((int)cursor.getY()+1 < columns));
     }
 
     //Check if current location is not on horizontal wall list AND X-coordinate is greater than zero
     private boolean upIsClear()
     {
-        return (!hWalls.contains(cursor) && ((int)cursor.getX() > 0)); //wall check && outside boundary check
+        return (!hWalls.containsKey(cursor) && ((int)cursor.getX() > 0)); //wall check && outside boundary check
     }
 
     //Check if destination is not on vertical wall list AND X-coordinate(+1) is greater than max number of rows
@@ -139,7 +142,7 @@ public class Player
         Point dest = cursor.getLocation();
         dest.translate(1, 0);
 
-        return(!hWalls.contains(dest) && ((int)cursor.getX()+1 < columns)); //TODO
+        return(!hWalls.containsKey(dest) && ((int)cursor.getX()+1 < columns)); //TODO
     }
 
 

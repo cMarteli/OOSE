@@ -7,18 +7,10 @@
  * May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
  */
 package edu.curtin.app;
-import edu.curtin.app.tiles.*;
-
-import java.util.Map;
-import java.util.HashMap;
-import java.awt.Point;
 
 public class Menu extends Graphics
 {
-
-    public static Map<Point, Tile> map; //TODO
-
-
+    public static final String FILE_EXTENSION = ".txt"; //Hardcoded value for input file extension
     /************************************************************
     * IMPORT: none
     * EXPORT: void
@@ -26,26 +18,26 @@ public class Menu extends Graphics
     ************************************************************/
     public static void showMenu()
     {
-        boolean fileLoaded = false;
+        //boolean fileLoaded = false;
         boolean done = false;
         while(!done)
         {
-            switch(checkInteger(GREEN +"(1) Play "+ CYAN +"(2) Load File "+ YELLOW +"(3) Help "+ RED +"(0) Quit"+ RESET))
+            switch(checkInteger(GREEN +"(1) New Game "+ CYAN +"(2) Load File "+ YELLOW +"(3) Help "+ RED +"(0) Quit"+ RESET))
             {
                 case 1://Option Play
-                    if(!fileLoaded) //TODO: Temporarily disabled. remove '!'
-                    {
-                        play();//game start TODO Parse Object from file reader here
-                    }
-                    else
-                    {
-                        System.out.println("Please load an input file first!");
-                    }
+                    // if(!fileLoaded) //TODO: Temporarily disabled. remove '!'
+                    // {
+                        Game game = new Game(loadFile());
+                    // }
+                    // else
+                    // {
+                    //     System.out.println("Please load an input file first!");
+                    // }
                     break;
 
                 case 2: //Option load file
 
-                    fileLoaded = loadFile();
+                    loadFile();
                     break;
 
                 case 3:
@@ -71,11 +63,10 @@ public class Menu extends Graphics
     EXPORT: void
     ASSERTION: Starts game - only runs if file loaded = true
     ************************************************************/
-    private static void play()
+    private static Game play()
     {
-        System.out.println("Starting Game");
-        //TODO Parse Object from file reader here
-        Game g = new Game();//TODO Parse Object from file reader here
+        //stubbed
+        return null;
     }
 
     /************************************************************
@@ -83,11 +74,12 @@ public class Menu extends Graphics
     EXPORT: boolean (success status of load)
     ASSERTION: Loads file using FileReader class
     ************************************************************/
-    private static boolean loadFile()
+    private static Maze loadFile()
     {
-        map = FileReader.readFile(checkFileName(".txt"));
-        //TODO: call filereader method
-        return true;//change to return success or fail
+        Maze gameMaze = FileReader.readFile(checkFileName(FILE_EXTENSION));
+
+
+        return gameMaze;
 
     }
 

@@ -5,9 +5,10 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
+import edu.curtin.app.tiles.*;
 
-import java.util.List;
-//import java.util.Map;
+
+import java.util.HashMap;
 import java.awt.Point;
 
 public class Maze extends Graphics
@@ -15,10 +16,10 @@ public class Maze extends Graphics
     private static int rows;
     private static int columns;
     private String[][] maze;
-    public List<Point> vWalls; //TODO: delete
-    public List<Point> hWalls; //TODO: delete
+    private HashMap<Point, Wall> vWalls; //TODO: delete
+    private HashMap<Point, Wall> hWalls; //TODO: delete
     //Constructor
-    public Maze(int x, int y, List<Point> verWalls, List<Point> horWalls)
+    public Maze(int x, int y, HashMap<Point, Wall> verWalls, HashMap<Point, Wall> horWalls)
     {
         vWalls = verWalls;
         hWalls = horWalls;
@@ -37,7 +38,7 @@ public class Maze extends Graphics
     public void displayMaze()
     {
         //System.out.print(CLEAR);
-        printTopRow(vWalls); //Top padding
+        printTopRow(); //Top padding
         Point tempVWall = new Point(); //temp vertical wall to check
         Point tempHWall = new Point(); //temp horizontal wall to check
 
@@ -49,7 +50,7 @@ public class Maze extends Graphics
             for(int y = 0; y < columns; y++)
             {
                 tempVWall.setLocation(x, y);
-                if(vWalls.contains(tempVWall)) //if first column OR contains wall print a wall to left
+                if(vWalls.containsKey(tempVWall)) //if first column OR contains wall print a wall to left
                 {
                     System.out.print(EDG_VER + maze[x][y] + " ");
                 }
@@ -66,7 +67,7 @@ public class Maze extends Graphics
             {
                 System.out.println(); //jumps line
                 tempHWall.setLocation(x+1, 0);
-                if(hWalls.contains(tempHWall)) // checks if left edge needs to a join tile
+                if(hWalls.containsKey(tempHWall)) // checks if left edge needs to a join tile
                 {
                     System.out.print(JOIN_L);
                 }
@@ -79,11 +80,11 @@ public class Maze extends Graphics
                 {
 
                     tempHWall.setLocation(x+1, y); //sets and translates to x+1 since it needs to printed north
-                    if(hWalls.contains(tempHWall)) //if contains point
+                    if(hWalls.containsKey(tempHWall)) //if contains point
                     {
                         System.out.print(WALL_HOR);//prints horizontal wall
                     }
-                    else if(hWalls.contains(tempVWall.getLocation()))
+                    else if(hWalls.containsKey(tempVWall.getLocation()))
                     {
 
                     }
@@ -101,7 +102,7 @@ public class Maze extends Graphics
 
         System.out.println();
 
-        printBottomRow(vWalls); //Bottom
+        printBottomRow(); //Bottom
         System.out.println();
 
 
@@ -137,14 +138,14 @@ public class Maze extends Graphics
     * EXPORT: void
     * ASSERTION: prints roof of maze array
     ************************************************************/
-    private void printTopRow(List<Point> vWalls)
+    private void printTopRow()
     {
         Point tempW = new Point();
         System.out.print(CNR_TOP_L);
         for(int i = 0; i < columns; i++)
         {
             tempW.setLocation(0, i);
-            if(vWalls.contains(tempW)) //checks if there's a wall below
+            if(vWalls.containsKey(tempW)) //checks if there's a wall below
             {
                 System.out.print(JOIN_TOP + EDG_HOR + EDG_HOR);
 
@@ -162,14 +163,14 @@ public class Maze extends Graphics
     * EXPORT: void
     * ASSERTION: prints roof or base of maze array //TODO: corners
     ************************************************************/
-    private void printBottomRow(List<Point> vWalls)
+    private void printBottomRow()
     {
         Point tempW = new Point();
         System.out.print(CNR_BTM_L);
         for(int i = 0; i < columns; i++)
         {
             tempW.setLocation(rows-1, i);
-            if(vWalls.contains(tempW)) //checks if there's a wall below
+            if(vWalls.containsKey(tempW)) //checks if there's a wall below
             {
                 System.out.print(JOIN_BTM + EDG_HOR + EDG_HOR);
 
@@ -226,12 +227,12 @@ public class Maze extends Graphics
         return columns;
     }
 
-    public List<Point> getVWalls()
+    public HashMap<Point, Wall> getVWalls()
     {
         return vWalls;
     }
 
-    public List<Point> getHWalls()
+    public HashMap<Point, Wall> getHWalls()
     {
         return hWalls;
     }
