@@ -9,6 +9,9 @@
 // May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
 package edu.curtin.app;
 
+import edu.curtin.app.tiles.*;
+import java.util.HashMap;
+import java.awt.Point;
 
 public class MazeApp extends Graphics
 {

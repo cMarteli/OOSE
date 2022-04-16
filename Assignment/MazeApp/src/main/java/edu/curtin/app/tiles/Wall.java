@@ -6,12 +6,9 @@
  */
 package edu.curtin.app.tiles;
 
-import java.awt.Point;
-import java.util.ArrayList;
-
 public class Wall implements Tile
 {
-    public static int orientation; //0 - horizontal, 1 - Vertical
+    private int orientation; //0 - horizontal, 1 - Vertical
 
     public Wall(int o)
     {
@@ -19,15 +16,15 @@ public class Wall implements Tile
     }
 
     @Override
-    public ArrayList<Tile> contains() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Point getLocation() {
-        // TODO Auto-generated method stub
-        return null;
+    public String getType() {
+        if(orientation == 0)
+        {
+            return "Horizontal Wall";
+        }
+        else
+        {
+            return "Vertical Wall";
+        }
     }
 
 

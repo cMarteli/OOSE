@@ -80,6 +80,10 @@ public class Player
         {
             p.translate(-1, 0);
         }
+        else
+        {
+            System.out.println("collision - north wall");
+        }
     }
 
     private void moveDown(Point p)
@@ -87,6 +91,10 @@ public class Player
         if(downIsClear()) //boundary check
         {
             p.translate(1, 0);
+        }
+        else
+        {
+            System.out.println("collision - south wall");
         }
     }
 
@@ -98,7 +106,7 @@ public class Player
         }
         else
         {
-            System.out.println("collision - left wall");
+            System.out.println("collision - west wall");
         }
     }
 
@@ -110,7 +118,7 @@ public class Player
         }
         else
         {
-            System.out.println("collision - right wall");
+            System.out.println("collision - east wall");
         }
     }
 

@@ -9,23 +9,30 @@ import edu.curtin.app.tiles.*;
 
 
 import java.util.HashMap;
+
 import java.awt.Point;
 
 public class Maze extends Graphics
 {
-    private static int rows;
-    private static int columns;
-    private String[][] maze;
-    private HashMap<Point, Wall> vWalls; //TODO: delete
-    private HashMap<Point, Wall> hWalls; //TODO: delete
+    private int rows;
+    private int columns;
+    private String[][] maze; //Maze to draw to CLI
+    private HashMap<String, SpecialTile> sTiles; //start, end and dimension values
+    private HashMap<Point, Wall> vWalls; // Vertical wall list
+    private HashMap<Point, Wall> hWalls; // Horizontal wall list
     //Constructor
-    public Maze(int x, int y, HashMap<Point, Wall> verWalls, HashMap<Point, Wall> horWalls)
+    public Maze(HashMap<String, SpecialTile> spTiles, HashMap<Point, Wall> verWalls, HashMap<Point, Wall> horWalls)
     {
         vWalls = verWalls;
         hWalls = horWalls;
+        sTiles = spTiles;
 
-        rows = x;
-        columns = y;
+        //DEBUG
+        //System.out.println("Rows: " + getRows() + "Columns: " + getColumns());
+        //System.out.println("Start: " + getStart().toString() + "End: " + getEnd().toString());
+        rows = getRows();
+        columns = getColumns();
+
         maze = new String[rows][columns];
 
     }
@@ -101,37 +108,9 @@ public class Maze extends Graphics
         }
 
         System.out.println();
-
         printBottomRow(); //Bottom
         System.out.println();
-
-
     }
-
-    /************************************************************
-    * IMPORT: symbol to draw (String)
-    * EXPORT: void
-    * ASSERTION:  //TODO: corners
-    ************************************************************/
-    // private void printRow()
-    // {
-    //     Point w = new Point();
-    //     System.out.print(EDG_VER);
-    //     for(int y = 0; y < columns; y++)
-    //     {
-    //         w.setLocation(x, y);
-    //         if(vWalls.contains(w)) //if contains point
-    //         {
-    //             System.out.print(WALL_HOR);//prints horizontal wall
-    //         }
-    //         else
-    //         {
-    //             System.out.print("   ");
-    //         }
-    //     }
-    //     System.out.print(EDG_VER);
-
-    // }
 
     /************************************************************
     * IMPORT: symbol to draw (String)
@@ -219,12 +198,22 @@ public class Maze extends Graphics
     ************************************************************/
     public int getRows()
     {
-        return rows;
+        return sTiles.get("dimension").getX();
     }
 
     public int getColumns()
     {
-        return columns;
+        return sTiles.get("dimension").getY();
+    }
+
+    public Point getStart()
+    {
+        return sTiles.get("start").getCoordinate();
+    }
+
+    public Point getEnd()
+    {
+        return sTiles.get("end").getCoordinate();
     }
 
     public HashMap<Point, Wall> getVWalls()

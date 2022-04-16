@@ -10,6 +10,7 @@ import edu.curtin.app.tiles.*;
 import java.util.HashMap;
 //import java.io.File;
 import java.awt.Point;
+import java.io.IOException;
 
 //@SuppressWarnings("unchecked")
 public class FileReader {
@@ -61,16 +62,21 @@ ASSERTION: Imports a text file and writes it to a graph
 //         }
 
 //         return graph;
-    //TODO: STUB should read from file
-    public static Maze readFile(String filename)
+
+    public static Maze readFile(String filename)// throws IOException
     {
-        Maze m;
 
         //Point playerStart = new Point(0,0); //TODO: get this from file reader not here
-        int px = 0, py = 0;
+        HashMap<String, SpecialTile> mainTiles = new HashMap<String, SpecialTile>(); //Start - "s" End - "e" Dimensions - "d"
         HashMap<Point, Wall> vWalls = new HashMap<Point, Wall>();
         HashMap<Point, Wall> hWalls = new HashMap<Point, Wall>();
+
         //TODO: get this from file reader not here!!!!!!!!!!!
+
+        mainTiles.put("dimension", new SpecialTile(4, 4, "dimension"));
+        mainTiles.put("start", new SpecialTile(0,0, "start"));
+        mainTiles.put("end", new SpecialTile(0,3, "end"));
+
         vWalls.put(new Point(0,1), new Wall(1));
         vWalls.put(new Point(0,3), new Wall(1));
         vWalls.put(new Point(1,3), new Wall(1));
@@ -82,7 +88,7 @@ ASSERTION: Imports a text file and writes it to a graph
         hWalls.put(new Point(2,2), new Wall(1));
         hWalls.put(new Point(3,2), new Wall(1));
 
-        m = new Maze(px, py, vWalls, hWalls);
+        Maze m = new Maze(mainTiles, vWalls, hWalls);
 
 
         return m;

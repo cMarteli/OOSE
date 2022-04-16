@@ -18,16 +18,15 @@ public class Menu extends Graphics
     ************************************************************/
     public static void showMenu()
     {
-        //boolean fileLoaded = false;
         boolean done = false;
         while(!done)
         {
-            switch(checkInteger(GREEN +"(1) New Game "+ CYAN +"(2) Load File "+ YELLOW +"(3) Help "+ RED +"(0) Quit"+ RESET))
+            switch(checkInteger(GREEN +"(1) New Game "+ YELLOW +"(2) Help "+ RED +"(0) Quit"+ RESET))
             {
                 case 1://Option Play
                     // if(!fileLoaded) //TODO: Temporarily disabled. remove '!'
                     // {
-                        Game game = new Game(loadFile());
+                        play();
                     // }
                     // else
                     // {
@@ -35,12 +34,7 @@ public class Menu extends Graphics
                     // }
                     break;
 
-                case 2: //Option load file
-
-                    loadFile();
-                    break;
-
-                case 3:
+                case 2:
                     System.out.print("Testing");
                     gfxTest(); //DEBUG
 
@@ -61,26 +55,12 @@ public class Menu extends Graphics
     /************************************************************
     IMPORT: none
     EXPORT: void
-    ASSERTION: Starts game - only runs if file loaded = true
+    ASSERTION: Starts game - loads file
     ************************************************************/
-    private static Game play()
+    private static void play()
     {
-        //stubbed
-        return null;
-    }
-
-    /************************************************************
-    IMPORT:
-    EXPORT: boolean (success status of load)
-    ASSERTION: Loads file using FileReader class
-    ************************************************************/
-    private static Maze loadFile()
-    {
-        Maze gameMaze = FileReader.readFile(checkFileName(FILE_EXTENSION));
-
-
-        return gameMaze;
-
+        Maze m = FileReader.readFile("");
+        Game game = new Game(m);
     }
 
     /************************************************************
