@@ -8,6 +8,8 @@
 package edu.curtin.app;
 import java.util.InputMismatchException;
 
+import edu.curtin.app.tiles.Key;
+
 public class Game
 {
     private Maze gameMaze;
@@ -27,10 +29,12 @@ public class Game
         {
             System.out.println(gameMaze.getTiles().get(player.getLocation()).getContent().toString()); //Gets message from tile and prints it
         }
-        // else if(gameMaze.getEnd().equals(player.getLocation()))
-        // {
-        //     System.out.println("GAME OVER!");
-        // }
+        else if(gameMaze.getKeys().containsKey(player.getLocation())) //checks if player is standing on a key
+        {
+            Key k = gameMaze.getKeys().get(player.getLocation());
+            System.out.println("Obtained a "+ k.getClr() +" Key!");
+            gameMaze.getKeys().remove(player.getLocation()); //remove key from map
+        }
     }
 
 

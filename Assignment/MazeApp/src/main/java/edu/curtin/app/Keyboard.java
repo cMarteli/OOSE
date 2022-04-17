@@ -2,7 +2,7 @@
  * Wrapper class for scanner methods
  * Used to so scanner doesn't have to be constantly be instantiated
  * 2022/OOSE Assignment
- * @author Caio Marteli (19598552), Carey Brown (https://coderanch.com/t/685118/java/FYI-wrapper-class-Scanner-System, 2018)
+ * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
 import java.util.Scanner;

@@ -13,7 +13,7 @@ public class Door extends ColourTile
     {
         setX(inX);
         setY(inY);
-        setContent(o);
+        orientation = o;
         setClr(clr);
     }
 

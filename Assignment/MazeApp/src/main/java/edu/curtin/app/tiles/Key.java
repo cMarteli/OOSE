@@ -4,6 +4,7 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app.tiles;
+import static edu.curtin.app.Graphics.*; //imports GFX class
 
 public class Key extends ColourTile
 {
@@ -18,7 +19,24 @@ public class Key extends ColourTile
     @Override
     public Object getContent()
     {
-        return "Key";
+        String k;
+        if(getClr().equals("RED")){
+            k = RED_KEY;
+        }else if(getClr().equals("GREEN")){
+            k = GRN_KEY;
+        }else if(getClr().equals("YELLOW")){
+            k = YLW_KEY;
+        }else if(getClr().equals("BLUE")){
+            k = BLU_KEY;
+        }else if(getClr().equals("MAGENTA")){
+            k = MGT_KEY;
+        }else if(getClr().equals("CYAN")){
+            k = CYA_KEY;
+        }else
+        {
+            k = KEY_SYMBOL;
+        }
+        return k;
     }
 
     @Override

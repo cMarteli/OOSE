@@ -38,12 +38,4 @@ public abstract class ColourTile extends Tile
         }
     }
 
-
-
-    public abstract Object getContent();
-
-    public abstract void setContent(Object o);
-
-
-
 }

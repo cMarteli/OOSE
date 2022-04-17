@@ -67,7 +67,7 @@ public class Maze
                 {
                     System.out.print(EDG_VER + maze[x][y] + " ");
                 }
-                else if(doors.containsKey(tempVWall)) //if vert wall
+                else if(isDoor(tempVWall, "VERTICAL")) //if vert DOOR
                 {
                     System.out.print(DOOR_SYMBOL + maze[x][y] + " ");
                 }
@@ -101,9 +101,9 @@ public class Maze
                     {
                         System.out.print(WALL_HOR);//prints horizontal wall
                     }
-                    else if(hWalls.containsKey(tempVWall.getLocation())) //TODO: STUB
+                    else if(isDoor(tempHWall, "HORIZONTAL")) //if vert wall
                     {
-                        System.out.println("STUB");
+                        System.out.print(" " + DOOR_SYMBOL + DOOR_SYMBOL);
                     }
                     else
                     {
@@ -195,12 +195,42 @@ public class Maze
             for(int j = 0; j < columns; j++)
             {
                 maze[i][j] = " "; //default blank square
+                drawKeys(); // draws any keys on map
                 fillCell(p,PLAYER_SYMBOL); //Cursor
-                //add other specific things to fill in maze here
             }
         }
         displayMaze(); //displays
+    }
 
+    private void drawKeys()
+    {
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < columns; j++)
+            {
+                Point p = new Point(i,j);
+                if(keys.containsKey(p))
+                {
+                    fillCell(p, keys.get(p).getContent().toString()); //Colours key
+                }
+            }
+        }
+        displayMaze(); //displays
+    }
+
+
+    //checks if door needs to be printed
+    //Point: coordinate, String Orientation
+    private boolean isDoor(Point p, String s)
+    {
+        if(doors.containsKey(p))
+        {
+            return doors.get(p).getContent().equals(s);
+        }
+        else
+        {
+            return false;
+        }
     }
 
 
