@@ -9,7 +9,9 @@
 // May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
 package edu.curtin.app;
 
-public class MazeApp extends Graphics
+import static edu.curtin.app.Graphics.*; //imports GFX class
+@SuppressWarnings("PMD.AvoidCatchingGenericException")
+public class MazeApp
 {
 
     public static final String SPLASH = YELLOW+ "*************************\n" + RESET + "*\tMAZE APP\t*" + MAGENTA + "\n*************************\n" + RESET;
@@ -25,14 +27,14 @@ public class MazeApp extends Graphics
             Menu.showMenu();
 
         }
-        catch (Exception e) //only general exception to let program "fail gracefully"
+        catch (Exception e) //only generic exception to let program "fail gracefully" still returns error to user
         {
             System.out.println("Error: " + e);
             System.out.println("The Program will now close...");
         }
         finally
         {
-            Keyboard.close(); //closes Scanner therefore closing System.in - only to satisfy PMD
+            Keyboard.close(); //closes Scanner therefore closing System.in - to satisfy PMD
         }
 
     }

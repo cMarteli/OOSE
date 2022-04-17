@@ -8,9 +8,10 @@
  */
 package edu.curtin.app;
 
+import static edu.curtin.app.Graphics.*; //imports GFX class
 import java.io.IOException;
 
-public class Menu extends Graphics
+public class Menu
 {
     public static final String FILE_EXTENSION = ".txt"; //Hardcoded value for input file extension
     /************************************************************
@@ -84,11 +85,11 @@ public class Menu extends Graphics
     ************************************************************/
     public static String checkFileName(String ext)
     {
-        String prompt = "Please enter a file name:", filename = "";
-        int ans = 0;
+        String prompt = "Please enter a file name:";
+        int ans;
 
         System.out.println(prompt);
-        filename = Keyboard.next() + ext;
+        String filename = Keyboard.next() + ext;
         prompt = "File name: <" + filename + ">\nIs this correct? [1]Confirm [2]Cancel\n";
         do
         {

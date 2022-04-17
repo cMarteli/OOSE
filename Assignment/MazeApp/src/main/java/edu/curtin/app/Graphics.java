@@ -1,12 +1,12 @@
 /**
  * Graphics.java
- * Abstract class, contains ANSI codes for colour and special character display
+ * Final class, contains ANSI codes for colour and special character display
  *
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
-public abstract class Graphics
+public final class Graphics
 {
     //Reset colour to default
     public static final String RESET = "\033[m";
@@ -94,8 +94,6 @@ public abstract class Graphics
         System.out.println(BLU_KEY);
         System.out.println(MGT_KEY);
         System.out.println(CYA_KEY);
-
-
 
     }
 

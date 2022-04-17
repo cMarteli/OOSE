@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-//@SuppressWarnings("unchecked")
+@SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool, see lines 82,89
 public class FileIO {
 
 
@@ -79,14 +79,14 @@ public class FileIO {
             }
             else
             {
-                sc.close();
+                sc.close(); //close scanner
                 throw new IOException("Invalid command in input file: " + command);
 
             }
 
         }
 
-        sc.close();
+        sc.close(); //close scanner
         return m;
     }
 

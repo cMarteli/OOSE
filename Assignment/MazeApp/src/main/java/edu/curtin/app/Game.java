@@ -12,8 +12,8 @@ public class Game
 {
     // private static Map<Point, Tile> mazeMap; , HashMap<Point, Tile> map
 
-    Maze gameMaze;
-    Player player;
+    private Maze gameMaze;
+    private Player player;
 
     //constructor
     public Game(Maze m)
@@ -23,17 +23,25 @@ public class Game
 
     }
 
+    public void checkTile() //checks if player is in a special tile
+    {
+        if(gameMaze.getTiles().containsKey(player.getLocation())) //if player's current tile is a message tile
+        {
+            System.out.println(gameMaze.getTiles().get(player.getLocation()).getValue()); //Gets message from tile and prints it
+        }
+    }
+
 
     public void controller()
     {
         boolean done = false;
-        char input  = ' ';
         while(!done)
         {
+            checkTile(); //checks for messages
             System.out.println("Which direction? (N)orth (S)outh (E)ast (W)est \n(Q)uit");
             try
             {
-                input = Keyboard.next().toLowerCase().charAt(0);
+                char input = Keyboard.next().toLowerCase().charAt(0);
                 switch (input) {
                     case 'n':
                         player.moveCursor('n', gameMaze);

@@ -5,23 +5,23 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
+
 import edu.curtin.app.tiles.*;
-
-
+import static edu.curtin.app.Graphics.*; //imports GFX class
 import java.util.HashMap;
-
+import java.util.Map;
 import java.awt.Point;
 
-public class Maze extends Graphics
+public class Maze
 {
     private int rows;
     private int columns;
     private Point startP;
     private Point endP;
     private String[][] maze; //Maze to draw to CLI
-    private HashMap<Point, Wall> vWalls; // Vertical wall list
-    private HashMap<Point, Wall> hWalls; // Horizontal wall list
-    private HashMap<Point, Tile> sTiles; // Special tile list
+    private Map<Point, Wall> vWalls; // Vertical wall list
+    private Map<Point, Wall> hWalls; // Horizontal wall list
+    private Map<Point, Tile> sTiles; // Special tile list
 
     //Constructor
     public Maze(int x, int y)
@@ -88,9 +88,9 @@ public class Maze extends Graphics
                     {
                         System.out.print(WALL_HOR);//prints horizontal wall
                     }
-                    else if(hWalls.containsKey(tempVWall.getLocation()))
+                    else if(hWalls.containsKey(tempVWall.getLocation())) //TODO: STUB
                     {
-
+                        System.out.println("STUB");
                     }
                     else
                     {
@@ -164,7 +164,7 @@ public class Maze extends Graphics
     * EXPORT: void
     * ASSERTION: Edits a single cell of the maze array
     ************************************************************/
-    private void drawCell(Point p, String s)
+    private void fillCell(Point p, String s)
     {
         maze[(int)p.getX()][(int)p.getY()] = s;
     }
@@ -182,7 +182,7 @@ public class Maze extends Graphics
             for(int j = 0; j < columns; j++)
             {
                 maze[i][j] = " "; //default blank square
-                drawCell(p,PLAYER_SYMBOL); //Cursor
+                fillCell(p,PLAYER_SYMBOL); //Cursor
                 //add other specific things to fill in maze here
             }
         }
@@ -214,17 +214,17 @@ public class Maze extends Graphics
         return endP;
     }
 
-    public HashMap<Point, Wall> getVWalls()
+    public Map<Point, Wall> getVWalls()
     {
         return vWalls;
     }
 
-    public HashMap<Point, Wall> getHWalls()
+    public Map<Point, Wall> getHWalls()
     {
         return hWalls;
     }
 
-    public HashMap<Point, Tile> getTiles() {
+    public Map<Point, Tile> getTiles() {
         return sTiles;
     }
 
@@ -244,22 +244,23 @@ public class Maze extends Graphics
     public void addTiles(int x, int y, String m)
     {
         Point p = new Point(x, y);
-        if(!sTiles.containsValue(p)) //if tile doesn't exist create tile
-        {
-            sTiles.put(p, new SpecialTile(x, y, m));
-        }
-        else
+        if(sTiles.containsKey(p)) //if tile already exists add message
         {
             sTiles.get(p).setValue(m);
         }
+        else //if tile doesn't exist create one
+        {
+            sTiles.put(p, new SpecialTile(x, y, m));
+
+        }
     }
 
-    public void setVertWalls(HashMap<Point, Wall> w)
+    public void setVertWalls(Map<Point, Wall> w)
     {
         vWalls = w;
     }
 
-    public void setHoriWalls(HashMap<Point, Wall> w)
+    public void setHoriWalls(Map<Point, Wall> w)
     {
         hWalls = w;
     }
@@ -274,7 +275,7 @@ public class Maze extends Graphics
         endP = new Point(x,y);
     }
 
-    public void setTiles(HashMap<Point, Tile> t) {
+    public void setTiles(Map<Point, Tile> t) {
         sTiles = t;
     }
 }

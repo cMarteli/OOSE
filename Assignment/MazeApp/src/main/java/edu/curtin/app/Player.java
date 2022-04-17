@@ -8,14 +8,14 @@ package edu.curtin.app;
 import edu.curtin.app.tiles.*;
 
 import java.awt.Point;
-import java.util.HashMap;
+import java.util.Map;
 public class Player
 {
     private Point cursor; //stores player location
     //private int rows; //for boundary checking
     private int columns;
-    private HashMap<Point, Wall> vWalls = new HashMap<Point, Wall>();
-    private HashMap<Point, Wall> hWalls = new HashMap<Point, Wall>();
+    private Map<Point, Wall> vWalls;
+    private Map<Point, Wall> hWalls;
 
 
 
@@ -26,7 +26,6 @@ public class Player
     public Player(Maze m)
     {
         cursor = m.getStart();
-        //rows = m.getRows();
         columns = m.getColumns();
         vWalls = m.getVWalls();
         hWalls = m.getHWalls();
