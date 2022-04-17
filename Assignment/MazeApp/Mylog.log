@@ -750,3 +750,271 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-17T15:42:52.995185Z</date>
+  <millis>1650210172995</millis>
+  <nanos>185000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.app.MazeApp</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.util.NoSuchElementException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-17T15:47:37.827113Z</date>
+  <millis>1650210457827</millis>
+  <nanos>113000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.app.MazeApp</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.util.NoSuchElementException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-17T15:48:44.288418Z</date>
+  <millis>1650210524288</millis>
+  <nanos>418000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:47.288126Z</date>
+  <millis>1650210527288</millis>
+  <nanos>126000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor west</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:47.288893Z</date>
+  <millis>1650210527288</millis>
+  <nanos>893000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveLeft</method>
+  <thread>1</thread>
+  <message>collision - west wall</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:48.288146Z</date>
+  <millis>1650210528288</millis>
+  <nanos>146000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor east</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:49.288158Z</date>
+  <millis>1650210529288</millis>
+  <nanos>158000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor east</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:51.288569Z</date>
+  <millis>1650210531288</millis>
+  <nanos>569000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor north</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:53.288792Z</date>
+  <millis>1650210533288</millis>
+  <nanos>792000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor west</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:55.289079Z</date>
+  <millis>1650210535289</millis>
+  <nanos>79000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor east</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:57.289198Z</date>
+  <millis>1650210537289</millis>
+  <nanos>198000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:58.289611Z</date>
+  <millis>1650210538289</millis>
+  <nanos>611000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor east</message>
+</record>
+<record>
+  <date>2022-04-17T15:48:58.290810Z</date>
+  <millis>1650210538290</millis>
+  <nanos>810000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveRight</method>
+  <thread>1</thread>
+  <message>collision - east wall</message>
+</record>
+<record>
+  <date>2022-04-17T15:49:01.289934Z</date>
+  <millis>1650210541289</millis>
+  <nanos>934000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor west</message>
+</record>
+<record>
+  <date>2022-04-17T15:49:03.290246Z</date>
+  <millis>1650210543290</millis>
+  <nanos>246000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T15:49:04.290456Z</date>
+  <millis>1650210544290</millis>
+  <nanos>456000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T15:49:05.290631Z</date>
+  <millis>1650210545290</millis>
+  <nanos>631000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor west</message>
+</record>
+<record>
+  <date>2022-04-17T15:49:06.290825Z</date>
+  <millis>1650210546290</millis>
+  <nanos>825000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor north</message>
+</record>
+<record>
+  <date>2022-04-17T15:49:08.291195Z</date>
+  <millis>1650210548291</millis>
+  <nanos>195000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T15:49:09.464981Z</date>
+  <millis>1650210549464</millis>
+  <nanos>981000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.app.MazeApp</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.util.NoSuchElementException</message>
+</record>
+</log>

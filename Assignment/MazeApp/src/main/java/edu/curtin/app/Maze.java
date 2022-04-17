@@ -69,7 +69,7 @@ public class Maze
                 }
                 else if(isDoor(tempVWall, "VERTICAL")) //if vert DOOR
                 {
-                    System.out.print(DOOR_SYMBOL + maze[x][y] + " ");
+                    System.out.print(doors.get(tempVWall).getContent().toString() + maze[x][y] + " ");
                 }
                 else
                 {
@@ -101,9 +101,10 @@ public class Maze
                     {
                         System.out.print(WALL_HOR);//prints horizontal wall
                     }
-                    else if(isDoor(tempHWall, "HORIZONTAL")) //if vert wall
+                    else if(isDoor(tempHWall, "HORIZONTAL")) //if horizontal door
                     {
-                        System.out.print(" " + DOOR_SYMBOL + DOOR_SYMBOL);
+                        String symbol = doors.get(tempHWall).getContent().toString();
+                        System.out.print(" " + symbol + symbol);
                     }
                     else
                     {
@@ -225,7 +226,7 @@ public class Maze
     {
         if(doors.containsKey(p))
         {
-            return doors.get(p).getContent().equals(s);
+            return doors.get(p).getOrientation().equals(s);
         }
         else
         {
