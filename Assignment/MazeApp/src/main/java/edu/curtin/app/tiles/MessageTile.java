@@ -5,12 +5,12 @@
  */
 package edu.curtin.app.tiles;
 
-//A special tyle is not repeatable
-public class SpecialTile extends Tile
+//A special tile is not repeatable
+public class MessageTile extends Tile
 {
     private String content;
 
-    public SpecialTile(int inX, int inY, String s)
+    public MessageTile(int inX, int inY, String s)
     {
         setX(inX);
         setY(inY);

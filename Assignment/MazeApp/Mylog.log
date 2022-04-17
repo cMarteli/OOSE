@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-17T12:07:03.219573300Z</date>
+  <millis>1650197223219</millis>
+  <nanos>573300</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T12:07:04.221924Z</date>
+  <millis>1650197224221</millis>
+  <nanos>924000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T12:07:04.223885800Z</date>
+  <millis>1650197224223</millis>
+  <nanos>885800</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveDown</method>
+  <thread>1</thread>
+  <message>collision - south wall</message>
+</record>
+<record>
+  <date>2022-04-17T12:07:05.794459300Z</date>
+  <millis>1650197225794</millis>
+  <nanos>459300</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.app.MazeApp</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.util.NoSuchElementException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-17T13:03:58.041999600Z</date>
+  <millis>1650200638041</millis>
+  <nanos>999600</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T13:03:59.212990Z</date>
+  <millis>1650200639212</millis>
+  <nanos>990000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.app.MazeApp</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.util.NoSuchElementException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-17T14:13:41.884287400Z</date>
+  <millis>1650204821884</millis>
+  <nanos>287400</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.app.MazeApp</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.lang.NullPointerException: Cannot invoke "java.util.Map.put(Object, Object)" because "this.doors" is null</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-17T14:16:14.084126500Z</date>
+  <millis>1650204974084</millis>
+  <nanos>126500</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T14:16:15.088609100Z</date>
+  <millis>1650204975088</millis>
+  <nanos>609100</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor east</message>
+</record>
+<record>
+  <date>2022-04-17T14:16:16.099516800Z</date>
+  <millis>1650204976099</millis>
+  <nanos>516800</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor east</message>
+</record>
+<record>
+  <date>2022-04-17T14:16:17.103401200Z</date>
+  <millis>1650204977103</millis>
+  <nanos>401200</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor east</message>
+</record>
+<record>
+  <date>2022-04-17T14:16:17.105411Z</date>
+  <millis>1650204977105</millis>
+  <nanos>411000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveRight</method>
+  <thread>1</thread>
+  <message>collision - east wall</message>
+</record>
+<record>
+  <date>2022-04-17T14:16:18.108773800Z</date>
+  <millis>1650204978108</millis>
+  <nanos>773800</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveCursor</method>
+  <thread>1</thread>
+  <message>Moving cursor south</message>
+</record>
+<record>
+  <date>2022-04-17T14:16:18.108773800Z</date>
+  <millis>1650204978108</millis>
+  <nanos>773800</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>INFO</level>
+  <class>edu.curtin.app.Player</class>
+  <method>moveDown</method>
+  <thread>1</thread>
+  <message>collision - south wall</message>
+</record>
+<record>
+  <date>2022-04-17T14:16:25.995664100Z</date>
+  <millis>1650204985995</millis>
+  <nanos>664100</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.app.MazeApp</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.util.NoSuchElementException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-17T14:23:33.079952200Z</date>
+  <millis>1650205413079</millis>
+  <nanos>952200</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.app.MazeApp</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.app.MazeApp</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.util.NoSuchElementException</message>
+</record>
+</log>

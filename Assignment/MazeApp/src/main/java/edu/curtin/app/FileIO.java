@@ -68,15 +68,27 @@ public class FileIO {
                 int y = sc.nextInt();
                 m.setEnd(x, y);
             }
-            else if(command.equals("DV") || command.equals("DH"))
+            else if(command.equals("DV"))
             {
-                System.out.println("door"); //DEBUG
-                sc.nextLine();
+                int x = sc.nextInt();
+                int y = sc.nextInt();
+                int clr = sc.nextInt();
+                m.addDoors(x, y, clr, "VERTICAL");
+            }
+            else if(command.equals("DH"))
+            {
+                int x = sc.nextInt();
+                int y = sc.nextInt();
+                int clr = sc.nextInt();
+                m.addDoors(x, y, clr, "HORIZONTAL");
             }
             else if(command.equals("K"))
             {
-                System.out.println("key"); //DEBUG
-                sc.nextLine();
+                int x = sc.nextInt();
+                int y = sc.nextInt();
+                int clr = sc.nextInt();
+                m.addKeys(x, y, clr);
+
             }
             else
             {

@@ -22,6 +22,10 @@ public class Maze
     private String[][] maze; //Maze to draw to CLI
     private Map<Point, Wall> vWalls; // Vertical wall list
     private Map<Point, Wall> hWalls; // Horizontal wall list
+    private Map<Point, Door> doors; // Vertical wall list
+    private Map<Point, Key> keys; // Vertical wall list
+
+
     private Map<Point, Tile> sTiles; // Special tile list
 
     //Constructor
@@ -32,8 +36,12 @@ public class Maze
         setVertWalls(new HashMap<Point, Wall>());
         setHoriWalls(new HashMap<Point, Wall>());
         setTiles(new HashMap<Point, Tile>());
+        setDoors(new HashMap<Point, Door>());
+        setKeys(new HashMap<Point, Key>());
         maze = new String[rows][columns]; //creates maze
     }
+
+
 
     /************************************************************
     * IMPORT: none
@@ -58,6 +66,10 @@ public class Maze
                 if(vWalls.containsKey(tempVWall)) //if first column OR contains wall print a wall to left
                 {
                     System.out.print(EDG_VER + maze[x][y] + " ");
+                }
+                else if(doors.containsKey(tempVWall)) //if vert wall
+                {
+                    System.out.print(DOOR_SYMBOL + maze[x][y] + " ");
                 }
                 else
                 {
@@ -251,9 +263,19 @@ public class Maze
         }
         else //if tile doesn't exist create one
         {
-            sTiles.put(p, new SpecialTile(x, y, m));
+            sTiles.put(p, new MessageTile(x, y, m));
 
         }
+    }
+
+    public void addKeys(int x, int y, int clr)
+    {
+        keys.put(new Point(x, y), new Key(x, y, clr));
+    }
+
+    public void addDoors(int x, int y, int clr, String orientation)
+    {
+        doors.put(new Point(x, y),  new Door(x, y, clr, orientation));
     }
 
     public void setVertWalls(Map<Point, Wall> w)
@@ -278,5 +300,21 @@ public class Maze
 
     public void setTiles(Map<Point, Tile> t) {
         sTiles = t;
+    }
+
+    public Map<Point, Door> getDoors() {
+        return doors;
+    }
+
+    public void setDoors(Map<Point, Door> doors) {
+        this.doors = doors;
+    }
+
+    public Map<Point, Key> getKeys() {
+        return keys;
+    }
+
+    public void setKeys(Map<Point, Key> keys) {
+        this.keys = keys;
     }
 }

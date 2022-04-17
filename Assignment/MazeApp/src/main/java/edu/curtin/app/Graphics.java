@@ -100,16 +100,4 @@ public final class Graphics
     }
 
 
-
-
-}
-//Enum Class to hold 'legal' colour parameters
-enum Colour
-{
-    RED,
-    GREEN,
-    YELLOW,
-    BLUE,
-    MAGENTA,
-    CYAN;
 }
