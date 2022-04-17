@@ -8,6 +8,8 @@
 package edu.curtin.app;
 public final class Graphics
 {
+    public static final String FILE_EXTENSION = ".txt"; //Hardcoded value for input file extension
+
     //Reset colour to default
     public static final String RESET = "\033[m";
 
@@ -98,4 +100,16 @@ public final class Graphics
     }
 
 
+
+
+}
+//Enum Class to hold 'legal' colour parameters
+enum Colour
+{
+    RED,
+    GREEN,
+    YELLOW,
+    BLUE,
+    MAGENTA,
+    CYAN;
 }

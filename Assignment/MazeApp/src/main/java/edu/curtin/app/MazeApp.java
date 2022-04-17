@@ -10,7 +10,13 @@
 package edu.curtin.app;
 
 import static edu.curtin.app.Graphics.*; //imports GFX class
-@SuppressWarnings("PMD.AvoidCatchingGenericException")
+
+import java.util.logging.Logger;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+@SuppressWarnings("PMD.AvoidCatchingGenericException") //See line 30
 public class MazeApp
 {
 
@@ -22,13 +28,18 @@ public class MazeApp
 
         try
         {
+            setupLogger();// sets up logging
             System.out.println(SPLASH); //displays title
 
             Menu.showMenu();
 
         }
-        catch (Exception e) //only generic exception to let program "fail gracefully" still returns error to user
+        catch (Exception e) //only generic exception to let program "fail gracefully" still returns error to user and is logged
         {
+            if (LOGR.isLoggable(Level.SEVERE))
+            {
+                LOGR.log(Level.SEVERE, "Total Crash: " + e);
+            }
             System.out.println("Error: " + e);
             System.out.println("The Program will now close...");
         }
@@ -39,6 +50,27 @@ public class MazeApp
 
     }
 
+    /**
+     * Logger
+     */
+    private final static Logger LOGR = Logger.getLogger(MazeApp.class.getName());
+    private static void setupLogger() {
+        LogManager.getLogManager().reset();
+        LOGR.setLevel(Level.ALL);
+
+        ConsoleHandler ch = new ConsoleHandler();
+        ch.setLevel(Level.SEVERE);
+        LOGR.addHandler(ch);
+
+        try {
+            FileHandler fh = new FileHandler("Mylog.log", true);
+            fh.setLevel(Level.FINE);
+            LOGR.addHandler(fh);
+        } catch (java.io.IOException e)
+        {
+            LOGR.log(Level.SEVERE, "Logger broke.", e);
+        }
+    }
 
 
 }

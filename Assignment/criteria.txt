@@ -1,0 +1,59 @@
+Justification
+Caio Marteli - 19598552
+
+Criteria (2) - Containers
+I utilised HashMaps to store values related to tiles and a 2D array
+to hold the Strings used to draw the maze.
+Hash tables were implemented with a Point object as the key, this allowed
+any coordinate to quickly return the corresponding tile object.
+Initially an array list was considered but the need to iterate over the
+list several times made HashMap seem like the better choice.
+
+As for the drawing of the maze itself a 2D array was used due to easy manipulation
+of the index which allowed for direct insertion into any cell. This was very
+useful when drawing.
+
+Criteria (3) - Class/method/interface responsibilites
+This submission includes over 15 classes. I separated them based on few concerns
+a) Classes which print to screen
+Menu and Game are the classes which can call println methods.
+
+b) Classes that receive direct input from the user
+Keyboard.java is the only class with a Scanner(System.in) call, it is static and
+used whenever needed it is closed when the App wrapper class (MazeApp.java) is closed.
+FileIO.java handles file Input/Output and reading to object.
+
+c) Classes related to graphics
+Maze.java holds all methods related to drawing the maze to an array and it's fields.
+Graphics.java is a final class holding final static fields related to ANSI characters.
+
+d) Classes related to the tiles
+Tile.java(Abstract), Door.java, Key.java, etc... Are responsible for the objects 
+contained within tiles that the player interacts with.
+
+e) Classes related to game logic
+Game.java handles the logic associated with each game round.
+
+e) Classes related to player movement
+Player.java handles input and allows for movement of player character as well as
+collision validation.
+
+Criteria (4) - error handling/logging
+Validator methods in Menu.java such as checkInteger catch NumberFormatExceptions
+FileIO.java readMazeFile() method throws IOException which is caught back in the
+menu when it's called. The whole App is wrapped with the only generic exception
+to let program "fail gracefully" still returns error to user in a print statement. 
+This may be controversial but it's a deliberate use to at least provide a message
+formatted in a useful format to the user instead of just letting the program crash.
+
+A logging class is included in MazeApp.java it is is referenced in FileIO.java and PLAYER.java
+it can be set to receive detailed info or just exceptions. SEVERE/INFO the output file
+is named mylog.xml
+
+Criteria (5) - Template method Pattern
+Template method was used so I could have a useful abstract class in the form of
+Tile.java this allowed me to have access to the x y coordinates of the multiple
+tile types in the program without having to repeat code.
+
+
+Criteria (6) - Decorator Pattern

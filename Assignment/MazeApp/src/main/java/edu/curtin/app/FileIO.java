@@ -8,9 +8,16 @@ package edu.curtin.app;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool, see lines 82,89
 public class FileIO {
+
+     /**
+     * Logger from MazeApp.java
+     */
+    private final static Logger LOGR = Logger.getLogger(MazeApp.class.getName());
 
 
     /************************************************************
@@ -24,7 +31,6 @@ public class FileIO {
         Scanner sc = new Scanner(inFile);
         int row = sc.nextInt();
         int col = sc.nextInt();
-        //System.out.println("Dimensions: " + row + "," + col); //DEBUG
         Maze m = new Maze(row, col); //creates maze with parameters on first line
 
         while(sc.hasNextLine())
@@ -35,21 +41,18 @@ public class FileIO {
             {
                 int x = sc.nextInt();
                 int y = sc.nextInt();
-                //System.out.println("Vertical: " + x + "," + y); //DEBUG
                 m.addVertWalls(x, y);
             }
             else if(command.equals("WH")) //case finds WH
             {
                 int x = sc.nextInt();
                 int y = sc.nextInt();
-                //System.out.println("Horizontal: " + x + "," + y); //DEBUG
                 m.addHoriWalls(x, y);
             }
             else if(command.equals("S")) //case finds S
             {
                 int x = sc.nextInt();
                 int y = sc.nextInt();
-                //System.out.println("Start Point: " + x + "," + y); //DEBUG
                 m.setStart(x,y);
             }
             else if(command.equals("M")) //case finds Message
@@ -57,28 +60,30 @@ public class FileIO {
                 int x = sc.nextInt();
                 int y = sc.nextInt();
                 String message = sc.nextLine();
-                //System.out.println("Message at: " + x + "," + y + " Reads: " + message); //DEBUG
                 m.addTiles(x, y, message);
             }
             else if(command.equals("E")) //case finds end point
             {
                 int x = sc.nextInt();
                 int y = sc.nextInt();
-                //System.out.println("End Point: " + x + "," + y); //DEBUG
                 m.setEnd(x, y);
             }
             else if(command.equals("DV") || command.equals("DH"))
             {
-                System.out.println("door");
+                System.out.println("door"); //DEBUG
                 sc.nextLine();
             }
             else if(command.equals("K"))
             {
-                System.out.println("key");
+                System.out.println("key"); //DEBUG
                 sc.nextLine();
             }
             else
             {
+                if (LOGR.isLoggable(Level.FINE))
+                {
+                    LOGR.log(Level.FINE, "Invalid command in input file: " + command);
+                }
                 sc.close(); //close scanner
                 throw new IOException("Invalid command in input file: " + command);
 
@@ -89,7 +94,5 @@ public class FileIO {
         sc.close(); //close scanner
         return m;
     }
-
-
 
 }

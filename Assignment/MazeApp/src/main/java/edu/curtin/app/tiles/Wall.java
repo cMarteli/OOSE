@@ -6,33 +6,27 @@
  */
 package edu.curtin.app.tiles;
 
-public class Wall implements Tile
+public class Wall extends Tile
 {
-    private int orientation; //0 - horizontal, 1 - Vertical
+    private String content;
 
-    public Wall(int o)
+    public Wall(int inX, int inY, String s)
     {
-        orientation = o;
+        setX(inX);
+        setY(inY);
+        content = s;
     }
 
     @Override
-    public String getValue() {
-        if(orientation == 0)
-        {
-            return "Horizontal Wall";
-        }
-        else
-        {
-            return "Vertical Wall";
-        }
+    public void setContent(Object s)
+    {
+        content = s.toString();
     }
 
     @Override
-    public void setValue(String s) {
-        // TODO Auto-generated method stub
-
+    public String getContent()
+    {
+        return content;
     }
-
-
 
 }

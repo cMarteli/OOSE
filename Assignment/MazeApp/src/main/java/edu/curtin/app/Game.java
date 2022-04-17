@@ -10,8 +10,6 @@ import java.util.InputMismatchException;
 
 public class Game
 {
-    // private static Map<Point, Tile> mazeMap; , HashMap<Point, Tile> map
-
     private Maze gameMaze;
     private Player player;
 
@@ -27,8 +25,12 @@ public class Game
     {
         if(gameMaze.getTiles().containsKey(player.getLocation())) //if player's current tile is a message tile
         {
-            System.out.println(gameMaze.getTiles().get(player.getLocation()).getValue()); //Gets message from tile and prints it
+            System.out.println(gameMaze.getTiles().get(player.getLocation()).getContent().toString()); //Gets message from tile and prints it
         }
+        // else if(gameMaze.getEnd().equals(player.getLocation()))
+        // {
+        //     System.out.println("GAME OVER!");
+        // }
     }
 
 

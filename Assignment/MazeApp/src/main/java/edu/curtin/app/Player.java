@@ -5,44 +5,32 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app;
-import edu.curtin.app.tiles.*;
 
 import java.awt.Point;
-import java.util.Map;
+import java.util.logging.Logger;
 public class Player
 {
     private Point cursor; //stores player location
-    //private int rows; //for boundary checking
-    private int columns;
-    private Map<Point, Wall> vWalls;
-    private Map<Point, Wall> hWalls;
+    private int columns; //for boundary checking
+
+     /**
+     * Logger from MazeApp.java
+     */
+    private final static Logger LOGR = Logger.getLogger(MazeApp.class.getName());
 
 
 
     /************************************************************
     CONSTRUCTOR
-    ASSERTION: Sets starting location for player character
+    IMPORT: m (Maze)
+    ASSERTION: Sets starting location for player character and draws maze
     ************************************************************/
     public Player(Maze m)
     {
         cursor = m.getStart();
         columns = m.getColumns();
-        vWalls = m.getVWalls();
-        hWalls = m.getHWalls();
-
         m.updateMaze(cursor);
-
     }
-
-    /************************************************************
-    ACCESSOR
-    ASSERTION: Returns current location
-    ************************************************************/
-    public Point getLocation()
-    {
-        return cursor;
-    }
-
 
     /************************************************************
     Moves cursor in  direction parsed
@@ -52,106 +40,121 @@ public class Player
     {
         if(dir == 'N' || dir == 'n')
         {
-            System.out.println("Moving cursor north");
-            moveUp(cursor);
+            LOGR.info("Moving cursor north");
+            moveUp(cursor, m);
         }
         else if(dir == 'S' || dir == 's')
         {
-            System.out.println("Moving cursor south");
-            moveDown(cursor);
+            LOGR.info("Moving cursor south");
+            moveDown(cursor, m);
         }
         else if(dir == 'E' || dir == 'e')
         {
-            System.out.println("Moving cursor east");
-            moveRight(cursor);
+            LOGR.info("Moving cursor east");
+            moveRight(cursor, m);
         }
         else if(dir == 'W' || dir == 'w')
         {
-            System.out.println("Moving cursor west");
-            moveLeft(cursor);
+            LOGR.info("Moving cursor west");
+            moveLeft(cursor, m);
         }
         m.updateMaze(cursor);
     }
 
-    private void moveUp(Point p)
+    /************************************************************
+    Helper methods for moveCursor()
+    ASSERTION: move point on corresponding axis
+    ************************************************************/
+    private void moveUp(Point p, Maze m)
     {
-        if(upIsClear()) //boundary check
+        if(upIsClear(m)) //boundary check
         {
             p.translate(-1, 0);
         }
         else
         {
-            System.out.println("collision - north wall");
+            LOGR.info("collision - north wall");
         }
     }
 
-    private void moveDown(Point p)
+    private void moveDown(Point p, Maze m)
     {
-        if(downIsClear()) //boundary check
+        if(downIsClear(m)) //boundary check
         {
             p.translate(1, 0);
         }
         else
         {
-            System.out.println("collision - south wall");
+            LOGR.info("collision - south wall");
         }
     }
 
-    private void moveLeft(Point p)
+    private void moveLeft(Point p, Maze m)
     {
-        if(leftIsClear()) //boundary check
+        if(leftIsClear(m)) //boundary check
         {
             p.translate(0, -1);
         }
         else
         {
-            System.out.println("collision - west wall");
+            LOGR.info("collision - west wall");
         }
     }
 
-    private void moveRight(Point p)
+    private void moveRight(Point p, Maze m)
     {
-        if(rightIsClear()) //boundary check
+        if(rightIsClear(m)) //boundary check
         {
             p.translate(0, 1);
         }
         else
         {
-            System.out.println("collision - east wall");
+            LOGR.info("collision - east wall");
+            //System.out.println("collision - east wall");
         }
     }
 
-
+    /************************************************************
+    Validator methods for moveCursor()
+    ASSERTION: Check boundaries for collision
+    ************************************************************/
     //Check if current location is not on vertical wall list AND Y-coordinate is greater than zero
-    private boolean leftIsClear()
+    private boolean leftIsClear(Maze m)
     {
-        return (!vWalls.containsKey(cursor) && ((int)cursor.getY() > 0)); //wall check && outside boundary check
+        return (!m.getVWalls().containsKey(cursor) && ((int)cursor.getY() > 0)); //wall check && outside boundary check
     }
 
     //Check if destination is not on vertical wall list AND Y-coordinate(+1) is greater than max number of columns
-    private boolean rightIsClear()
+    private boolean rightIsClear(Maze m)
     {
         Point dest = cursor.getLocation();
         dest.translate(0, 1);
 
-        return(!vWalls.containsKey(dest) && ((int)cursor.getY()+1 < columns));
+        return(!m.getVWalls().containsKey(dest) && ((int)cursor.getY()+1 < columns));
     }
 
     //Check if current location is not on horizontal wall list AND X-coordinate is greater than zero
-    private boolean upIsClear()
+    private boolean upIsClear(Maze m)
     {
-        return (!hWalls.containsKey(cursor) && ((int)cursor.getX() > 0)); //wall check && outside boundary check
+        return (!m.getHWalls().containsKey(cursor) && ((int)cursor.getX() > 0)); //wall check && outside boundary check
     }
 
     //Check if destination is not on vertical wall list AND X-coordinate(+1) is greater than max number of rows
-    private boolean downIsClear()
+    private boolean downIsClear(Maze m)
     {
         Point dest = cursor.getLocation();
         dest.translate(1, 0);
 
-        return(!hWalls.containsKey(dest) && ((int)cursor.getX()+1 < columns));
+        return(!m.getHWalls().containsKey(dest) && ((int)cursor.getX()+1 < columns));
     }
 
+    /************************************************************
+    ACCESSORS
+    ************************************************************/
+    public Point getLocation()
+    {
+        return cursor;
+    }
 
 
 }

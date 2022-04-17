@@ -13,7 +13,6 @@ import java.io.IOException;
 
 public class Menu
 {
-    public static final String FILE_EXTENSION = ".txt"; //Hardcoded value for input file extension
     /************************************************************
     * IMPORT: none
     * EXPORT: void
@@ -55,8 +54,7 @@ public class Menu
     ************************************************************/
     private static void play()
     {
-        //String fileName = checkFileName(FILE_EXTENSION); //gets file name from user
-        String fileName = "input.txt"; //TODO: DEBUG ONLY
+        String fileName = checkFileName(FILE_EXTENSION); //gets file name from user
         try
         {
             Maze m = FileIO.readMazeFile(fileName);
@@ -73,9 +71,6 @@ public class Menu
         {
             System.out.println("Could not read from " + fileName + ": " + e.getMessage());
         }
-
-
-
     }
 
     /************************************************************

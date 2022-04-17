@@ -7,6 +7,7 @@
 package edu.curtin.app;
 
 import edu.curtin.app.tiles.*;
+
 import static edu.curtin.app.Graphics.*; //imports GFX class
 import java.util.HashMap;
 import java.util.Map;
@@ -41,7 +42,7 @@ public class Maze
     ************************************************************/
     public void displayMaze()
     {
-        //System.out.print(CLEAR);
+        System.out.print(CLEAR); //clears screen
         printTopRow(); //Top padding
         Point tempVWall = new Point(); //temp vertical wall to check
         Point tempHWall = new Point(); //temp horizontal wall to check
@@ -233,12 +234,12 @@ public class Maze
     ************************************************************/
     public void addHoriWalls(int x, int y)
     {
-        hWalls.put(new Point(x, y), new Wall(0));
+        hWalls.put(new Point(x, y), new Wall(x,y,"HORIZONTAL"));
     }
 
     public void addVertWalls(int x, int y)
     {
-        vWalls.put(new Point(x, y),  new Wall(1));
+        vWalls.put(new Point(x, y),  new Wall(x,y,"VERTICAL"));
     }
 
     public void addTiles(int x, int y, String m)
@@ -246,7 +247,7 @@ public class Maze
         Point p = new Point(x, y);
         if(sTiles.containsKey(p)) //if tile already exists add message
         {
-            sTiles.get(p).setValue(m);
+            sTiles.get(p).setContent(m);
         }
         else //if tile doesn't exist create one
         {

@@ -4,58 +4,29 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.app.tiles;
-import java.awt.Point;
 
 //A special tyle is not repeatable
-public class SpecialTile implements Tile
+public class SpecialTile extends Tile
 {
-    private int x;
-    private int y;
-    private Point coordinate;
-    private String type;
+    private String content;
 
-    public SpecialTile(int inX, int inY, String inType)
+    public SpecialTile(int inX, int inY, String s)
     {
         setX(inX);
         setY(inY);
-        type = inType;
-        setCoordinate(new Point(x,y));
-    }
-
-    public Point getCoordinate() {
-        return coordinate;
-    }
-
-    public void setCoordinate(Point coordinate) {
-        this.coordinate = coordinate;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
+        content = s;
     }
 
     @Override
-    public void setValue(String s)
+    public void setContent(Object s)
     {
-        type += ", " + s;
+        content += ", " + s.toString();
     }
 
     @Override
-    public String getValue()
+    public String getContent()
     {
-        return type;
+        return content;
     }
 
 }
