@@ -37,5 +37,17 @@ public abstract class ColourTile extends Tile
             throw new InputMismatchException("Invalid parameters for door colour: " + colour);
         }
     }
+    //Takes in another tile and checks if the colour matches
+    public boolean keyMatches(ColourTile ct)
+    {
+        if(ct.getClr().equals(colour))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }

@@ -9,6 +9,7 @@ import static edu.curtin.app.Graphics.*; //imports GFX class
 public class Door extends ColourTile
 {
     private String orientation;
+    private boolean locked;
 
     public Door(int inX, int inY, int clr, String o)
     {
@@ -16,6 +17,17 @@ public class Door extends ColourTile
         setY(inY);
         orientation = o;
         setClr(clr);
+        locked = true; //default lock status is true
+    }
+
+    public boolean isLocked()
+    {
+        return locked;
+    }
+
+    public void setLockStatus(boolean ls)
+    {
+        locked = ls;
     }
 
 

@@ -216,7 +216,6 @@ public class Maze
                 }
             }
         }
-        displayMaze(); //displays
     }
 
 

@@ -16,3 +16,8 @@ Use the console to navigate hit the corresponding key then press 'enter'(N)orth 
 
 PS.
 Input file provide is "input.txt" on root directory
+
+KNOWN ISSUES
+Door lock/unlock function is unimplemented
+Edges of some walls are missing
+sometimes double prints are you sure message when reading file

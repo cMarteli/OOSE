@@ -7,7 +7,7 @@
  */
 package edu.curtin.app;
 import java.util.InputMismatchException;
-
+import edu.curtin.app.tiles.Door;
 import edu.curtin.app.tiles.Key;
 
 public class Game
@@ -29,11 +29,27 @@ public class Game
         {
             System.out.println(gameMaze.getTiles().get(player.getLocation()).getContent().toString()); //Gets message from tile and prints it
         }
-        else if(gameMaze.getKeys().containsKey(player.getLocation())) //checks if player is standing on a key
+
+        if(gameMaze.getKeys().containsKey(player.getLocation())) //checks if player is standing on a key
         {
             Key k = gameMaze.getKeys().get(player.getLocation());
             System.out.println("Obtained a "+ k.getClr() +" Key!");
             gameMaze.getKeys().remove(player.getLocation()); //remove key from map
+            unlockDoors(k);
+        }
+    }
+
+    //unlocks all doors of the the colour corresponding to key
+    public void unlockDoors(Key k)
+    {
+        for(Door d : gameMaze.getDoors().values())
+        {
+            if(d.keyMatches(k))
+            {
+                System.out.println("Unlocked all doors of " + k.getClr() + " colour.");
+                d.setLockStatus(false);
+            }
+
         }
     }
 
