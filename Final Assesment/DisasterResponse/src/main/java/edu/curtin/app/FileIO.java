@@ -54,7 +54,6 @@ public class FileIO {
             location = sc.nextLine(); //location
 
             Event e = new Event(time, dis, location);
-            //System.out.println(e.toString());
 
             for (Event ev : list) //checks for duplicate events
             {

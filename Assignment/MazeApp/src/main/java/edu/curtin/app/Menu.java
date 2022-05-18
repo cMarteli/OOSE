@@ -30,7 +30,7 @@ public class Menu
                     break;
 
                 case 2:
-                    System.out.print("Testing");
+                    System.out.print("Running GFX test...");
                     gfxTest(); //DEBUG
 
                     break;
@@ -88,6 +88,7 @@ public class Menu
         prompt = "File name: <" + filename + ">\nIs this correct? [1]Confirm [2]Cancel\n";
         do
         {
+            Keyboard.nextLine();
             ans = checkInteger(prompt);
         }
         while(ans != 1 && ans != 2);

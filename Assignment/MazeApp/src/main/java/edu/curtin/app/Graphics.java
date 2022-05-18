@@ -73,13 +73,6 @@ public final class Graphics
     //function to test graphics display
     public static void gfxTest()
     {
-        // System.out.println(RED + "RED" + RESET);
-        // System.out.println(GREEN + "GREEN" + RESET);
-        // System.out.println(YELLOW + "YELLOW" + RESET);
-        // System.out.println(BLUE + "BLUE" + RESET);
-        // System.out.println(MAGENTA + "MAGENTA" + RESET);
-        // System.out.println(CYAN + "CYAN" + RESET);
-
         System.out.println(EDG_HOR);
         System.out.println(KEY_SYMBOL);
 

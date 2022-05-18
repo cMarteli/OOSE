@@ -50,7 +50,8 @@ public class Maze
     ************************************************************/
     public void displayMaze()
     {
-        System.out.print(CLEAR); //clears screen
+        System.out.print(CLEAR+RESET_CURSOR); //clears screen
+
         printTopRow(); //Top padding
         Point tempVWall = new Point(); //temp vertical wall to check
         Point tempHWall = new Point(); //temp horizontal wall to check
