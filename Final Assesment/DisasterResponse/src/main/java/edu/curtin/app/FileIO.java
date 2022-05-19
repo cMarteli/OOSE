@@ -7,8 +7,6 @@
 package edu.curtin.app;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 @SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool, see lines 82,89
@@ -19,12 +17,12 @@ public class FileIO {
     EXPORT: m (Maze)
     ASSERTION: Imports a text file and writes it to a maze object
     ************************************************************/
-    public static List<Event> readFile(String filename) throws IOException
+    public static Simulation readFile(String filename) throws IOException
     {
         File inFile = new File(filename);
         Scanner sc = new Scanner(inFile);
 
-        ArrayList<Event> list = new ArrayList<>();
+        Simulation sim = new Simulation();
 
         while(sc.hasNextLine())
         {
@@ -55,21 +53,17 @@ public class FileIO {
 
             Event e = new Event(time, dis, location);
 
-            for (Event ev : list) //checks for duplicate events
+            if(sim.checkDupes(e)) //checks for duplicate events - throws IO exception
             {
-                if(e.isSame(ev))
-                {
-                    sc.close(); //close scanner
-                    throw new IOException("Duplicate event: " + e.toString());
-                }
+                sc.close(); //close scanner
+                throw new IOException("Duplicate event: " + e.toString());
             }
 
-            list.add(e);
-
+            sim.addEvent(e);
         }
 
         sc.close(); //close scanner
-        return list;
+        return sim;
     }
 
 }

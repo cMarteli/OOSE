@@ -8,7 +8,6 @@
  */
 package edu.curtin.app;
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 public class Menu
@@ -29,6 +28,7 @@ public class Menu
             {
                 case 1://Option Play
                     start();
+
                     break;
 
                 case 2:
@@ -55,15 +55,12 @@ public class Menu
     private static void start()
     {
         String fileName = checkFileName(FILE_EXTENSION); //gets file name from user
-        ArrayList<Event> list;
+        Simulation sim = new Simulation();
 
         try
         {
-            list = (ArrayList<Event>) FileIO.readFile(fileName); //safe cast
-            for (Event e : list) //prints list contents
-            {
-                System.out.println(e.toString());
-            }
+            sim = FileIO.readFile(fileName);
+            sim.printEventList();
 
         }
         catch (IOException e)

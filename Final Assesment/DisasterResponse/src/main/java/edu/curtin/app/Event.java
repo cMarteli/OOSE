@@ -3,18 +3,17 @@
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
-// Marteli, C (2021) DSA source code (Version 1.0) [Source code]. https://github.com/cMarteli/
-// May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
 package edu.curtin.app;
 
 
 public class Event
 {
-    enum Disaster {
+    enum Disaster
+    {
         FIRE,
         FLOOD,
         CHEMICAL
-      }
+    }
     int time;
     String location;
     Disaster dis;
