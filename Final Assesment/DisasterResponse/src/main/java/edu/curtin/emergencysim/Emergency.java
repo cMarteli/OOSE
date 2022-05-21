@@ -4,7 +4,7 @@
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
-package edu.curtin.app;
+package edu.curtin.emergencysim;
 
 
 public class Emergency

@@ -2,8 +2,9 @@
  * EventNotifier.java
  * * Observable
  */
-package edu.curtin.app;
+package edu.curtin.emergencysim;
 import java.util.ArrayList;
+
 
 
 public class EventNotifier
@@ -29,6 +30,23 @@ public class EventNotifier
     public void removeEvent(Emergency e)
     {
         events.remove(e);
+    }
+
+    //get next by arrival time
+    public Emergency getNext()
+    {
+        Emergency next = events.get(0); //sets index 0 as next
+        int temp = next.getTime(); //gets it's time
+        for (Emergency em : events)
+        {
+            if(em.getTime() < temp) //if lower arrival time
+            {
+                next = em; //make it next
+                temp = em.getTime();
+            }
+        }
+
+        return next;
     }
 
     public void printEventList()

@@ -6,7 +6,7 @@
  * Marteli, C (2021) DSA source code (Version 1.0) [Source code]. https://github.com/cMarteli/
  * May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
  */
-package edu.curtin.app;
+package edu.curtin.emergencysim;
 import java.io.IOException;
 
 
@@ -54,12 +54,13 @@ public class Menu
     private static void start()
     {
         String fileName = checkFileName(FILE_EXTENSION); //gets file name from user
-        EventNotifier sim = new EventNotifier();
+        EventNotifier en = new EventNotifier();
 
         try
         {
-            sim = FileIO.readFile(fileName);
-            sim.printEventList();
+            en = FileIO.readFile(fileName);
+            Simulation sim = new Simulation(en);
+            sim.start();
         }
         catch (IOException e)
         {

@@ -4,7 +4,7 @@
 */
 // Marteli, C (2021) source code (Version 1.0) [Source code]. https://github.com/cMarteli/
 // # previously submitted for DSA Modified March 2022 for MazeApp.java
-package edu.curtin.app;
+package edu.curtin.emergencysim;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;

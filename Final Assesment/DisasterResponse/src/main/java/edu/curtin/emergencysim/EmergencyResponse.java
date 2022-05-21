@@ -1,5 +1,5 @@
 /**
- * DisasterResponse.java
+ * EmergencyResponse.java
  * Main class MazeApp, handles command line parameters
  * and catches any unhandled exceptions that may have fallen through.
  * 2022/OOSE Assignment
@@ -7,13 +7,13 @@
  */
 // Marteli, C (2021) DSA source code (Version 1.0) [Source code]. https://github.com/cMarteli/
 // May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
-package edu.curtin.app;
+package edu.curtin.emergencysim;
+import static edu.curtin.emergencysim.Constants.*; //imports GFX class
 
-
-public class DisasterResponse
+public class EmergencyResponse
 {
 
-    public static final String SPLASH = "*********************************\n*\tDISASTER RESPONSE\t*\n*********************************\n";
+    public static final String SPLASH = BLUE+ "**************************\n*" + RESET + " EMERGENCY RESPONSE SIM " + MAGENTA + "*\n**************************\n" + RESET;
     /**
      * @param args the command line arguments
      */

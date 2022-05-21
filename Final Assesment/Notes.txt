@@ -1,0 +1,35 @@
+Notes.txt
+
+/** poll() method - incoming messages **/
+
+// program must call poll() to receive comms from responders
+// will return all comms received since last called
+// will usually be empty or have one string but may have multiple
+//eg. flood rescuers arrive in midtown
+	flood + Midtown
+//eg2. chemical cleanup crews have left Westtown
+	chemical - Westtown
+// format: ('+' means arrival a '-' means departure) (.+ means any string. it's for the location)
+	end|(fire|flood|chemical) [+-] .+
+// a special string containing the word "end" can be sent also
+//eg3.
+	end
+// this notifies the entire simulation to shut down
+// any invalid message should be logged without stopping the sim
+
+
+/** send() method - status events **/
+
+// notifies responders of events in the simulation
+//eg. flood in Midtown is over
+	flood end Midtown
+//eg2. fire in Hill Valley is now low-intensity
+	fire low Hill Valley
+// format: (low and high are only for fires) (.+ means any string. it's for the location)
+	(fire|flood|chemical) (start|end|low|high) .+
+
+// Loss Events - (Hospitalization, Propert dmg or environmental contamination)
+//eg. New Person hospitalized due fire in Midtown, injury tally is now 2 (this event)
+fire casualty 2 Midtown
+//eg2. New Property damaged due to flood in Hill valley, prprty dmg tally is now 3 (this event)
+
