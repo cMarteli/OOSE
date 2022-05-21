@@ -17,32 +17,32 @@ public class FileIO {
     EXPORT: m (Maze)
     ASSERTION: Imports a text file and writes it to a maze object
     ************************************************************/
-    public static Simulation readFile(String filename) throws IOException
+    public static EventNotifier readFile(String filename) throws IOException
     {
         File inFile = new File(filename);
         Scanner sc = new Scanner(inFile);
 
-        Simulation sim = new Simulation();
+        EventNotifier sim = new EventNotifier();
 
         while(sc.hasNextLine())
         {
             int time = sc.nextInt(); //time
             String location = " ";
-            Event.Disaster dis;
+            Emergency.Disaster dis;
             String command = sc.next(); //gets command to read
 
 
             if(command.toLowerCase().equals("flood"))//case flood
             {
-                dis = Event.Disaster.FLOOD;
+                dis = Emergency.Disaster.FLOOD;
             }
             else if(command.toLowerCase().equals("fire")) //case fire
             {
-                dis = Event.Disaster.FIRE;
+                dis = Emergency.Disaster.FIRE;
             }
             else if(command.toLowerCase().equals("chemical")) //case chemical
             {
-                dis = Event.Disaster.CHEMICAL;
+                dis = Emergency.Disaster.CHEMICAL;
             }
             else //invalid
             {
@@ -51,7 +51,7 @@ public class FileIO {
             }
             location = sc.nextLine(); //location
 
-            Event e = new Event(time, dis, location);
+            Emergency e = new Emergency(time, dis, location);
 
             if(sim.checkDupes(e)) //checks for duplicate events - throws IO exception
             {

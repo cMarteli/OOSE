@@ -28,7 +28,6 @@ public class Menu
             {
                 case 1://Option Play
                     start();
-
                     break;
 
                 case 2:
@@ -40,7 +39,7 @@ public class Menu
                     break;
 
                 default:
-                    System.out.println("Enter a number");
+                    System.out.println("Enter a number:");
                     break;
             }
 
@@ -55,13 +54,12 @@ public class Menu
     private static void start()
     {
         String fileName = checkFileName(FILE_EXTENSION); //gets file name from user
-        Simulation sim = new Simulation();
+        EventNotifier sim = new EventNotifier();
 
         try
         {
             sim = FileIO.readFile(fileName);
             sim.printEventList();
-
         }
         catch (IOException e)
         {
@@ -122,7 +120,6 @@ public class Menu
                 System.out.println("Enter a number");
             }
         }
-
         return userInt;
     }
 
