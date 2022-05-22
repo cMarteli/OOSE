@@ -19,6 +19,9 @@ public class Event
     private String location;
     private Disaster dis;
 
+    /************************************************************
+    Constructor
+    ************************************************************/
     public Event(int time, Disaster dis, String location) {
         this.time = time;
         this.location = location;

@@ -1,6 +1,6 @@
 /**
  * EventNotifier.java
- * * Observable
+ * Observable
  */
 package edu.curtin.emergencysim;
 import java.util.ArrayList;
@@ -14,9 +14,7 @@ public class EventNotifier
     private List<Event> events; //reference to observers
 
     /************************************************************
-    IMPORT: none
-    EXPORT: void
-    ASSERTION: Constructor
+    Constructor
     ************************************************************/
     public EventNotifier()
     {
@@ -55,7 +53,11 @@ public class EventNotifier
         return events;
     }
 
-    //checks for duplicate events used by fileIO.java
+    /************************************************************
+    IMPORT: e (Event)
+    EXPORT: result (boolean)
+    Checks for duplicate events. Used by fileIO.java
+    ************************************************************/
     public boolean checkDupes(Event e)
     {
         boolean result = false;

@@ -1,15 +1,16 @@
 /**
- * FileReader.java
+ * FileIO.java
  * @author Caio Marteli (19598552)
 */
 // Marteli, C (2021) source code (Version 1.0) [Source code]. https://github.com/cMarteli/
-// # previously submitted for DSA Modified March 2022 for MazeApp.java
+// # may contain code previously submitted for DSA Modified March 2022 for EmergencyResponse.java
+// Modified May,2022 for EmergencyResponse.java
 package edu.curtin.emergencysim;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-@SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool, see lines 82,89
+@SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool
 public class FileIO {
 
     /************************************************************

@@ -5,8 +5,9 @@
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
-// Marteli, C (2021) DSA source code (Version 1.0) [Source code]. https://github.com/cMarteli/
-// May contain methods previously submitted for DSA final assignment Modified in 2022 for MazeApp.java
+// Marteli, C (2021) OOSE source code (Version 1.2) [Source code]. https://github.com/cMarteli/
+// Program may contain methods previously submitted for DSA/OOSE
+// Modified May,2022 for EmergencyResponse.java
 package edu.curtin.emergencysim;
 import static edu.curtin.emergencysim.Constants.*; //imports GFX class
 

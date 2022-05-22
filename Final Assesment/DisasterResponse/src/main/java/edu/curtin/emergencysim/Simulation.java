@@ -19,6 +19,10 @@ public class Simulation
     ResponderComm rci;
 
 
+    /************************************************************
+    IMPORT: inEn (EventNotifier)
+    Constructor: creates new RNG and RCI
+    ************************************************************/
     public Simulation(EventNotifier inEn)
     {
         en = inEn;
@@ -26,15 +30,23 @@ public class Simulation
         rci = new ResponderCommImpl(); //if clock desyncs move this to run()
     }
 
+    /************************************************************
+    IMPORT: nxt (Event)
+    EXPORT: outStr (String)
+    Creates outgoing message and validates it. Throws IllegalArgumentException()
+    ************************************************************/
     public void run() throws InterruptedException
     {
         boolean simIsActive = true;
-        int seconds = 0;
+        int seconds = 0; //timer
+        List<Event> queue = en.getEvents(); //gets event queue
+        List<String> newEvents;
         System.out.println("Starting Simulation...");
 
         while (simIsActive) {
+
             //poll()
-            List<String> newEvents = rci.poll();
+            newEvents = rci.poll(); //TODO: Should do more with this
             if(!newEvents.isEmpty()) //if poll list is not empty
             {
                 for (String s : newEvents) {
@@ -45,19 +57,18 @@ public class Simulation
                     }
                 }
             }
+
             //send()
-            try {
-                List<Event> eList = en.getEvents();
-                for (Event ev : eList) {
-                    if(ev.getTime() == seconds) //checks if there any events scheduled to start that second
-                    {
-                        rci.send(update(ev)); //sends events to responder
+            for (Event nxt : queue) {
+                if(nxt.getTime() == seconds) //checks if there any events scheduled to start this second
+                {
+                    try {
+                        rci.send(update(nxt)); //sends events to responder
+                    }
+                    catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
                     }
                 }
-            }
-            catch (IllegalArgumentException e)
-            {
-                System.out.println(e.getMessage());
             }
 
             System.out.println(seconds + "s"); //DEBUG TODO
@@ -69,9 +80,14 @@ public class Simulation
 
     }
 
-    public String update(Event nxt)
+    /************************************************************
+    IMPORT: nxt (Event)
+    EXPORT: outStr (String)
+    Creates outgoing message and validates it.
+    ************************************************************/
+    public String update(Event nxt) throws IllegalArgumentException
     {
-        String outStr = "error!";
+        String outStr;
         switch (nxt.getDis())
         {
             case FIRE:
@@ -96,7 +112,7 @@ public class Simulation
                 break;
 
             default:
-                break;
+                throw new IllegalArgumentException("Invalid Emergency type: '" + nxt.getDis() + "'");
         }
         return outStr;
     }
@@ -104,7 +120,7 @@ public class Simulation
     /************************************************************
     IMPORT: probability (double)
     EXPORT: boolean
-    ASSERTION: Generates random double to 2decimals given probability
+    Generates random double to 2decimals given probability
     if r is lower or equal to probability returns true
     ************************************************************/
     public boolean roll(double probability)
