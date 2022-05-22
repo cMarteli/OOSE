@@ -9,8 +9,9 @@ Notes.txt
 	flood + Midtown
 //eg2. chemical cleanup crews have left Westtown
 	chemical - Westtown
-// format: ('+' means arrival a '-' means departure) (.+ means any string. it's for the location)
+// format: 
 	end|(fire|flood|chemical) [+-] .+
+//('+' means arrival a '-' means departure) (.+ means any string. it's for the location)
 // a special string containing the word "end" can be sent also
 //eg3.
 	end
@@ -25,8 +26,10 @@ Notes.txt
 	flood end Midtown
 //eg2. fire in Hill Valley is now low-intensity
 	fire low Hill Valley
-// format: (low and high are only for fires) (.+ means any string. it's for the location)
+// format:
 	(fire|flood|chemical) (start|end|low|high) .+
+//(low and high are only for fires) (.+ means any string. it's for the location)
+	
 
 // Loss Events - (Hospitalization, Propert dmg or environmental contamination)
 //eg. New Person hospitalized due fire in Midtown, injury tally is now 2 (this event)

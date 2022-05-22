@@ -34,21 +34,21 @@ public class FileIO {
         {
             int time = sc.nextInt(); //time
             String location;
-            Event.Disaster dis;
+            Event.Emergency dis;
             String command = sc.next(); //gets command to read
 
 
             if(command.toLowerCase().equals("flood"))//case flood
             {
-                dis = Event.Disaster.FLOOD;
+                dis = Event.Emergency.FLOOD;
             }
             else if(command.toLowerCase().equals("fire")) //case fire
             {
-                dis = Event.Disaster.FIRE;
+                dis = Event.Emergency.FIRE;
             }
             else if(command.toLowerCase().equals("chemical")) //case chemical
             {
-                dis = Event.Disaster.CHEMICAL;
+                dis = Event.Emergency.CHEMICAL;
             }
             else //invalid
             {

@@ -6,32 +6,57 @@
  */
 package edu.curtin.emergencysim;
 
-
 public class Event
 {
-    enum Disaster
+    enum Emergency
     {
         FIRE,
         FLOOD,
         CHEMICAL
     }
-    private int time;
+
+
+
+    private int time, casualtyCount, dmgCount;
     private String location;
-    private Disaster dis;
+    private Emergency emergencyType;
 
     /************************************************************
     Constructor
     ************************************************************/
-    public Event(int time, Disaster dis, String location) {
-        this.time = time;
-        this.location = location;
-        this.dis = dis;
+    public Event(int t, Emergency e, String l) {
+        time = t;
+        emergencyType = e;
+        location = l;
+
+        setCasualtyCount(0); //initalizes counts to 0
+        setDmgCount(0);
     }
+
+
+
+    public int getDmgCount() {
+        return dmgCount;
+    }
+
+    public void setDmgCount(int dc) {
+        dmgCount = dc;
+    }
+
+    public int getCasualtyCount() {
+        return casualtyCount;
+    }
+
+    public void setCasualtyCount(int cc) {
+        casualtyCount = cc;
+    }
+
+
 
     //Compares if event is the same as another
     public boolean isSame(Event e)
     {
-        if(dis == e.getDis() &&
+        if(emergencyType == e.getEmergencyType() &&
             location.toLowerCase().equals(e.getLocation().toLowerCase()))
         {
             return true;
@@ -40,33 +65,22 @@ public class Event
         {
             return false;
         }
-
     }
 
     public int getTime() {
         return time;
     }
-    public void setTime(int time) {
-        this.time = time;
-    }
 
     public String getLocation() {
         return location;
     }
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public Disaster getDis() {
-        return dis;
-    }
-    public void setDis(Disaster dis) {
-        this.dis = dis;
+    public Emergency getEmergencyType() {
+        return emergencyType;
     }
 
     @Override
     public String toString() {
-        return "Event [dis=" + dis + ", location=" + location + ", time=" + time + "]";
+        return "Event [Type:" + emergencyType + ", Location:" + location + ", Start Time:" + time + "]";
     }
 
 

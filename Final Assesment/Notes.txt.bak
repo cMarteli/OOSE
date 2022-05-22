@@ -40,6 +40,7 @@ store time each responder is on the job
 make so user is informed when jobs end
 add the ability for events to increase in size or dissipate
 
+
 remember:
 -use logger
 -periodically check with PMD linting tool "./gradlew check"

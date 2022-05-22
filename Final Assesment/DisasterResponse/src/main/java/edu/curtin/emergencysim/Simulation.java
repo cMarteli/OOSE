@@ -10,6 +10,7 @@ import static edu.curtin.emergencysim.Constants.*; //imports GFX class
 import java.util.List;
 import java.util.Random;
 import java.util.logging.*;
+import java.util.regex.*;
 
 import edu.curtin.emergencysim.responders.*;
 
@@ -23,6 +24,10 @@ public class Simulation
      * Logger from EmergencyResponse.java
      */
     private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
+
+     // A regular expression for validating and extracting parts of outgoing ('send') messages.
+     private static final Pattern SEND_REGEX = Pattern.compile(
+        "(?<emergency>fire|flood|chemical) ((?<status>start|end|low|high)|(?<lossType>casualty|damage|contam) (?<lossCount>[0-9]+)) (?<location>.+)");
 
 
     /************************************************************
@@ -52,11 +57,12 @@ public class Simulation
         while (simIsActive) {
 
             //poll()
-            newEvents = rci.poll(); //TODO: Should do more with this
+            newEvents = rci.poll(); //poll() call
             if(!newEvents.isEmpty()) //if poll list is not empty
             {
                 for (String s : newEvents) {
-                    System.out.println(s); //prints all poll messages
+                    System.out.println(s); //TODO: Should do more with this
+
                     if(s.equals("end")) //checks for end condition
                     {
                         simIsActive = false;
@@ -69,7 +75,7 @@ public class Simulation
                 if(nxt.getTime() == seconds) //checks if there any events scheduled to start this second
                 {
                     try {
-                        rci.send(update(nxt)); //sends events to responder
+                        rci.send(createSendMessage(nxt)); //sends events to responder
                     }
                     catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
@@ -88,24 +94,45 @@ public class Simulation
 
     }
 
+    //TODO: INCOMPLETE
+    public void displayMessage(String s) throws IllegalArgumentException
+    {
+        Matcher m = SEND_REGEX.matcher(s);
+        if(!m.matches())
+        {
+            throw new IllegalArgumentException("Invalid message format: '" + s + "'");
+        }
+        String emergency = m.group("emergency");
+        String status = m.group("status");
+        String lossType = m.group("lossType");
+        String lossCount = m.group("lossCount");
+        String location = m.group("location");
+
+        System.out.printf("%s at %s: ", emergency, location);
+        if(status != null)
+        {
+            System.out.println(status);
+        }
+        else
+        {
+            System.out.printf("%s #%s", lossType, lossCount);
+        }
+
+    }
+
+
     /************************************************************
     IMPORT: nxt (Event)
     EXPORT: outStr (String)
     Creates outgoing message and validates it.
     ************************************************************/
-    public String update(Event nxt) throws IllegalArgumentException
+    public String createSendMessage(Event nxt) throws IllegalArgumentException
     {
         String outStr;
-        switch (nxt.getDis())
+        switch (nxt.getEmergencyType())
         {
             case FIRE:
-                String intensity = "low";
-
-                if(roll(FIRE_HIGH_CASUALTY_PROB)) //TODO
-                {
-                    intensity = "high";
-                }
-                outStr = "fire " + intensity + nxt.getLocation();
+                outStr = "fire low"+ nxt.getLocation(); //fire always starts at low intensity
 
                 break;
 
@@ -120,7 +147,7 @@ public class Simulation
                 break;
 
             default:
-                throw new IllegalArgumentException("Invalid Emergency type: '" + nxt.getDis() + "'");
+                throw new IllegalArgumentException("Invalid Emergency type: '" + nxt.getEmergencyType() + "'");
         }
         return outStr;
     }
