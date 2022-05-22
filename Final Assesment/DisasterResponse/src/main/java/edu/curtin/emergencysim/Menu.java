@@ -54,7 +54,7 @@ public class Menu
     private static void start()
     {
         String fileName = checkFileName(FILE_EXTENSION); //gets file name from user
-        EventNotifier en = new EventNotifier();
+        EventNotifier en;
 
         try
         {

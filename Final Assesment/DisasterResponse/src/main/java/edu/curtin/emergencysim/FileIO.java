@@ -9,9 +9,14 @@ package edu.curtin.emergencysim;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
+import java.util.logging.*;
 @SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool
 public class FileIO {
+
+    /**
+     * Logger from EmergencyResponse.java
+     */
+    private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
 
     /************************************************************
     IMPORT: filename (String)
@@ -28,7 +33,7 @@ public class FileIO {
         while(sc.hasNextLine())
         {
             int time = sc.nextInt(); //time
-            String location = " ";
+            String location;
             Event.Disaster dis;
             String command = sc.next(); //gets command to read
 
@@ -47,8 +52,13 @@ public class FileIO {
             }
             else //invalid
             {
+                String err = "Invalid command in input file: " + command;
+                if (LOGR.isLoggable(Level.FINE))
+                {
+                    LOGR.log(Level.FINE, err);
+                }
                 sc.close(); //close scanner
-                throw new IOException("Invalid command in input file: " + command);
+                throw new IOException(err);
             }
             location = sc.nextLine(); //location
 
@@ -56,8 +66,13 @@ public class FileIO {
 
             if(sim.checkDupes(e)) //checks for duplicate events - throws IO exception
             {
+                String err = "Duplicate event: " + e.toString();
+                if (LOGR.isLoggable(Level.FINE))
+                {
+                    LOGR.log(Level.FINE, err);
+                }
                 sc.close(); //close scanner
-                throw new IOException("Duplicate event: " + e.toString());
+                throw new IOException(err);
             }
 
             sim.addEvent(e);

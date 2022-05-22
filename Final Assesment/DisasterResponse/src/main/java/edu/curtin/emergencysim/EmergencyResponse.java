@@ -9,8 +9,11 @@
 // Program may contain methods previously submitted for DSA/OOSE
 // Modified May,2022 for EmergencyResponse.java
 package edu.curtin.emergencysim;
-import static edu.curtin.emergencysim.Constants.*; //imports GFX class
 
+import static edu.curtin.emergencysim.Constants.*; //imports GFX class
+import java.util.logging.*;
+
+@SuppressWarnings("PMD.AvoidCatchingGenericException") //See line 29
 public class EmergencyResponse
 {
 
@@ -21,6 +24,7 @@ public class EmergencyResponse
     public static void main(String[] args) {
         try
         {
+            setupLogger();// sets up logging
             System.out.println(SPLASH); //displays title
 
             Menu.showMenu();
@@ -28,7 +32,11 @@ public class EmergencyResponse
         }
         catch (Exception e) //only generic exception to let program "fail gracefully" still returns error to user and is logged
         {
-            e.printStackTrace();
+            if (LOGR.isLoggable(Level.SEVERE))
+            {
+                LOGR.log(Level.SEVERE, "Total Crash: " + e);
+            }
+            System.out.println("Error: " + e);
             System.out.println("The Program will now close...");
         }
         finally
@@ -36,6 +44,28 @@ public class EmergencyResponse
             Keyboard.close(); //closes Scanner therefore closing System.in - to satisfy PMD
         }
 
+    }
+
+    /**
+     * Logger
+     */
+    private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
+    private static void setupLogger() {
+        LogManager.getLogManager().reset();
+        LOGR.setLevel(Level.ALL);
+
+        ConsoleHandler ch = new ConsoleHandler();
+        ch.setLevel(Level.SEVERE);
+        LOGR.addHandler(ch);
+
+        try {
+            FileHandler fh = new FileHandler("Mylog.log", true);
+            fh.setLevel(Level.FINE);
+            LOGR.addHandler(fh);
+        } catch (java.io.IOException e)
+        {
+            LOGR.log(Level.SEVERE, "Logger broke.", e);
+        }
     }
 
 

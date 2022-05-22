@@ -9,6 +9,7 @@ import static edu.curtin.emergencysim.Constants.*; //imports GFX class
 
 import java.util.List;
 import java.util.Random;
+import java.util.logging.*;
 
 import edu.curtin.emergencysim.responders.*;
 
@@ -16,7 +17,12 @@ public class Simulation
 {
     private EventNotifier en;
     private Random rand;
-    ResponderComm rci;
+    private ResponderComm rci;
+
+     /**
+     * Logger from EmergencyResponse.java
+     */
+    private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
 
 
     /************************************************************
@@ -71,7 +77,9 @@ public class Simulation
                 }
             }
 
-            System.out.println(seconds + "s"); //DEBUG TODO
+            if (LOGR.isLoggable(Level.INFO)) {
+            LOGR.info(seconds + "s"); }
+            //System.out.println(seconds + "s"); //debug
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
         }

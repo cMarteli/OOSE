@@ -14,10 +14,10 @@ public class ResponderCommImpl implements ResponderComm
      */
     private static class REvent
     {
-        long time;
-        String type;
-        boolean arriving;
-        String location;
+        /* default */ long time;
+        /* default */ String type;
+        /* default */ boolean arriving;
+        /* default */ String location;
 
         public REvent(long time, String type, boolean arriving, String location)
         {
