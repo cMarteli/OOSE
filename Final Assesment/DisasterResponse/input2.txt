@@ -1,0 +1,5 @@
+24 flood Midtown
+6 fire Midtown
+12 fire Hill Valley
+24 flood Hill Valley
+24 chemical Westtown

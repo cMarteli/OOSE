@@ -4,13 +4,14 @@
  */
 package edu.curtin.emergencysim;
 import java.util.ArrayList;
+import java.util.List;
 
 
 
 public class EventNotifier
 {
 
-    private ArrayList<Emergency> events; //reference to observers
+    private List<Event> events; //reference to observers
 
     /************************************************************
     IMPORT: none
@@ -22,22 +23,22 @@ public class EventNotifier
         events = new ArrayList<>();
     }
 
-    public void addEvent(Emergency e)
+    public void addEvent(Event e)
     {
         events.add(e);
     }
 
-    public void removeEvent(Emergency e)
+    public void removeEvent(Event e)
     {
         events.remove(e);
     }
 
-    //get next by arrival time
-    public Emergency getNext()
+    //get next by arrival time TODO: Currently not used
+    public Event getNext()
     {
-        Emergency next = events.get(0); //sets index 0 as next
+        Event next = events.get(0); //sets index 0 as next
         int temp = next.getTime(); //gets it's time
-        for (Emergency em : events)
+        for (Event em : events)
         {
             if(em.getTime() < temp) //if lower arrival time
             {
@@ -49,19 +50,16 @@ public class EventNotifier
         return next;
     }
 
-    public void printEventList()
+    public List<Event> getEvents() //TODO possible place for generics <Event> <E>
     {
-        for (Emergency e : events) //prints list contents
-        {
-            System.out.println(e.toString()); //prints array info
-        }
+        return events;
     }
 
-    //checks for duplicate events
-    public boolean checkDupes(Emergency e)
+    //checks for duplicate events used by fileIO.java
+    public boolean checkDupes(Event e)
     {
         boolean result = false;
-        for (Emergency ev : events)
+        for (Event ev : events)
         {
             if(e.isSame(ev))
             {

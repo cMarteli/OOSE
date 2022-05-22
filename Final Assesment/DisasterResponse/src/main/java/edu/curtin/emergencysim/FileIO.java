@@ -14,8 +14,8 @@ public class FileIO {
 
     /************************************************************
     IMPORT: filename (String)
-    EXPORT: m (Maze)
-    ASSERTION: Imports a text file and writes it to a maze object
+    EXPORT: sim (EventNotifier)
+    ASSERTION: Imports a text file and writes it to an object
     ************************************************************/
     public static EventNotifier readFile(String filename) throws IOException
     {
@@ -28,21 +28,21 @@ public class FileIO {
         {
             int time = sc.nextInt(); //time
             String location = " ";
-            Emergency.Disaster dis;
+            Event.Disaster dis;
             String command = sc.next(); //gets command to read
 
 
             if(command.toLowerCase().equals("flood"))//case flood
             {
-                dis = Emergency.Disaster.FLOOD;
+                dis = Event.Disaster.FLOOD;
             }
             else if(command.toLowerCase().equals("fire")) //case fire
             {
-                dis = Emergency.Disaster.FIRE;
+                dis = Event.Disaster.FIRE;
             }
             else if(command.toLowerCase().equals("chemical")) //case chemical
             {
-                dis = Emergency.Disaster.CHEMICAL;
+                dis = Event.Disaster.CHEMICAL;
             }
             else //invalid
             {
@@ -51,7 +51,7 @@ public class FileIO {
             }
             location = sc.nextLine(); //location
 
-            Emergency e = new Emergency(time, dis, location);
+            Event e = new Event(time, dis, location);
 
             if(sim.checkDupes(e)) //checks for duplicate events - throws IO exception
             {

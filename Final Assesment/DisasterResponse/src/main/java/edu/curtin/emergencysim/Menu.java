@@ -60,11 +60,15 @@ public class Menu
         {
             en = FileIO.readFile(fileName);
             Simulation sim = new Simulation(en);
-            sim.start();
+            sim.run();
         }
         catch (IOException e)
         {
             System.out.println("Could not read from " + fileName + ": " + e.getMessage());
+        }
+        catch (InterruptedException ex)
+        {
+            System.out.println("Simulation was interupted: " + ex.getMessage());
         }
     }
 

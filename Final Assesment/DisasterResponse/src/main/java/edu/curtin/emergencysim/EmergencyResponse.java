@@ -21,21 +21,13 @@ public class EmergencyResponse
         try
         {
             System.out.println(SPLASH); //displays title
-            // boolean simIsActive = true; //TODO: Hardcoded
-            // int seconds = 0;
-            // while (simIsActive) {
-            //     //if check() == true;  //check if anything has happened
-            //         //action(); //if so perform action
-            //     System.out.println(seconds + "s");
-            //     Thread.sleep(1000);
-            //     seconds++;
-            // }
+
             Menu.showMenu();
 
         }
         catch (Exception e) //only generic exception to let program "fail gracefully" still returns error to user and is logged
         {
-            System.out.println("Error: " + e);
+            e.printStackTrace();
             System.out.println("The Program will now close...");
         }
         finally

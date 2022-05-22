@@ -7,7 +7,7 @@
 package edu.curtin.emergencysim;
 
 
-public class Emergency
+public class Event
 {
     enum Disaster
     {
@@ -19,14 +19,14 @@ public class Emergency
     private String location;
     private Disaster dis;
 
-    public Emergency(int time, Disaster dis, String location) {
+    public Event(int time, Disaster dis, String location) {
         this.time = time;
         this.location = location;
         this.dis = dis;
     }
 
     //Compares if event is the same as another
-    public boolean isSame(Emergency e)
+    public boolean isSame(Event e)
     {
         if(dis == e.getDis() &&
             location.toLowerCase().equals(e.getLocation().toLowerCase()))
