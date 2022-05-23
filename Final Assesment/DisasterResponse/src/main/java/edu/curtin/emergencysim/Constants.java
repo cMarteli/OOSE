@@ -11,7 +11,7 @@ public final class Constants
 
     //fire
     public static final int FIRE_LOW_TO_HIGH_TIME = 10; //time(seconds) it takes for a low intensity fire to turn high intensity
-    public static final int FIRE_LOW_CLEANP_TIME = 5; //time(seconds) to actively extinguish a low intensity fire
+    public static final int FIRE_LOW_CLEANUP_TIME = 5; //time(seconds) to actively extinguish a low intensity fire
     public static final int FIRE_HIGH_TO_LOW_TIME = 30; //time(seconds) it takes for a high intensity fire to turn low intensity
 
     public static final double FIRE_LOW_CASUALTY_PROB = 0.15; //low intensity fire - probability (0–1) of hospitalising someone

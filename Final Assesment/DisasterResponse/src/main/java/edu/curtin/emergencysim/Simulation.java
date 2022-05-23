@@ -5,7 +5,7 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.emergencysim;
-import static edu.curtin.emergencysim.Constants.*; //imports GFX class
+//import static edu.curtin.emergencysim.Constants.*; //imports GFX class
 
 import java.util.List;
 import java.util.Random;
@@ -27,7 +27,7 @@ public class Simulation
 
      // A regular expression for validating and extracting parts of outgoing ('send') messages.
      private static final Pattern SEND_REGEX = Pattern.compile(
-        "(?<emergency>fire|flood|chemical) ((?<status>start|end|low|high)|(?<lossType>casualty|damage|contam) (?<lossCount>[0-9]+)) (?<location>.+)");
+        "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
 
 
     /************************************************************
@@ -61,11 +61,19 @@ public class Simulation
             if(!newEvents.isEmpty()) //if poll list is not empty
             {
                 for (String s : newEvents) {
-                    System.out.println(s); //TODO: Should do more with this
-
                     if(s.equals("end")) //checks for end condition
                     {
                         simIsActive = false;
+                    }
+                    else
+                    {
+                        try {
+                            update(s); //formats message TODO: Should do more with this
+
+                        }
+                        catch (IllegalArgumentException e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
                 }
             }
@@ -75,7 +83,7 @@ public class Simulation
                 if(nxt.getTime() == seconds) //checks if there any events scheduled to start this second
                 {
                     try {
-                        rci.send(createSendMessage(nxt)); //sends events to responder
+                        rci.send(createMessage(nxt)); //sends events to responder
                     }
                     catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
@@ -83,6 +91,7 @@ public class Simulation
                 }
             }
 
+            //logs time passed
             if (LOGR.isLoggable(Level.INFO)) {
             LOGR.info(seconds + "s"); }
             //System.out.println(seconds + "s"); //debug
@@ -94,28 +103,30 @@ public class Simulation
 
     }
 
-    //TODO: INCOMPLETE
-    public void displayMessage(String s) throws IllegalArgumentException
+    //Validates then Formats message
+    public void update(String s) throws IllegalArgumentException
     {
-        Matcher m = SEND_REGEX.matcher(s);
+        Matcher m = SEND_REGEX.matcher(s); //checks string against regex
         if(!m.matches())
         {
             throw new IllegalArgumentException("Invalid message format: '" + s + "'");
         }
         String emergency = m.group("emergency");
         String status = m.group("status");
-        String lossType = m.group("lossType");
-        String lossCount = m.group("lossCount");
         String location = m.group("location");
 
-        System.out.printf("%s at %s: ", emergency, location);
-        if(status != null)
+        //TODO: get active event and match it with this one
+        //TODO: subtract one cleanup time every second
+
+
+        //displays message
+        if(status.equals("+"))
         {
-            System.out.println(status);
+            System.out.println(emergency + " team arrived in " + location);
         }
         else
         {
-            System.out.printf("%s #%s", lossType, lossCount);
+            System.out.println(emergency + " team departed from " + location);
         }
 
     }
@@ -125,8 +136,10 @@ public class Simulation
     IMPORT: nxt (Event)
     EXPORT: outStr (String)
     Creates outgoing message and validates it.
+    TODO: Need to send randomly generated casualties, dmg, etc
+    as well as fire intensity increase events
     ************************************************************/
-    public String createSendMessage(Event nxt) throws IllegalArgumentException
+    public String createMessage(Event nxt) throws IllegalArgumentException
     {
         String outStr;
         switch (nxt.getEmergencyType())
