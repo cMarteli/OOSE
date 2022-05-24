@@ -94,7 +94,7 @@ public class Simulation
             //logs time passed
             if (LOGR.isLoggable(Level.INFO)) {
             LOGR.info(seconds + "s"); }
-            //System.out.println(seconds + "s"); //debug
+            System.out.println(seconds + "s"); //debug
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
         }
