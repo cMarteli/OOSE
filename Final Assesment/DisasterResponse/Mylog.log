@@ -1,0 +1,2268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-05-25T07:28:35.655612Z</date>
+  <millis>1653463715655</millis>
+  <nanos>612000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>0s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:36.669828Z</date>
+  <millis>1653463716669</millis>
+  <nanos>828000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>1s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:37.672103Z</date>
+  <millis>1653463717672</millis>
+  <nanos>103000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>2s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:38.674256Z</date>
+  <millis>1653463718674</millis>
+  <nanos>256000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>3s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:39.676122Z</date>
+  <millis>1653463719676</millis>
+  <nanos>122000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>4s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:40.677340Z</date>
+  <millis>1653463720677</millis>
+  <nanos>340000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>5s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:41.686623Z</date>
+  <millis>1653463721686</millis>
+  <nanos>623000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>6s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:42.687490Z</date>
+  <millis>1653463722687</millis>
+  <nanos>490000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>7s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:43.688916Z</date>
+  <millis>1653463723688</millis>
+  <nanos>916000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>8s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:44.690217Z</date>
+  <millis>1653463724690</millis>
+  <nanos>217000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>9s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:45.705644Z</date>
+  <millis>1653463725705</millis>
+  <nanos>644000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>10s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:46.706946Z</date>
+  <millis>1653463726706</millis>
+  <nanos>946000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>11s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:47.711551Z</date>
+  <millis>1653463727711</millis>
+  <nanos>551000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>12s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:48.713889Z</date>
+  <millis>1653463728713</millis>
+  <nanos>889000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>13s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:49.715318Z</date>
+  <millis>1653463729715</millis>
+  <nanos>318000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>14s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:50.717092Z</date>
+  <millis>1653463730717</millis>
+  <nanos>92000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>15s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:51.718967Z</date>
+  <millis>1653463731718</millis>
+  <nanos>967000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>16s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:52.720725Z</date>
+  <millis>1653463732720</millis>
+  <nanos>725000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>17s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:53.721808Z</date>
+  <millis>1653463733721</millis>
+  <nanos>808000</nanos>
+  <sequence>18</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>18s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:54.723341Z</date>
+  <millis>1653463734723</millis>
+  <nanos>341000</nanos>
+  <sequence>19</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>19s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:55.724874Z</date>
+  <millis>1653463735724</millis>
+  <nanos>874000</nanos>
+  <sequence>20</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>20s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:56.726419Z</date>
+  <millis>1653463736726</millis>
+  <nanos>419000</nanos>
+  <sequence>21</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>21s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:57.728091Z</date>
+  <millis>1653463737728</millis>
+  <nanos>91000</nanos>
+  <sequence>22</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>22s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:58.730415Z</date>
+  <millis>1653463738730</millis>
+  <nanos>415000</nanos>
+  <sequence>23</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>23s</message>
+</record>
+<record>
+  <date>2022-05-25T07:28:59.736016Z</date>
+  <millis>1653463739736</millis>
+  <nanos>16000</nanos>
+  <sequence>24</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>24s</message>
+</record>
+<record>
+  <date>2022-05-25T07:29:00.738426Z</date>
+  <millis>1653463740738</millis>
+  <nanos>426000</nanos>
+  <sequence>25</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>25s</message>
+</record>
+<record>
+  <date>2022-05-25T07:29:01.741954Z</date>
+  <millis>1653463741741</millis>
+  <nanos>954000</nanos>
+  <sequence>26</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>26s</message>
+</record>
+<record>
+  <date>2022-05-25T07:29:02.743529Z</date>
+  <millis>1653463742743</millis>
+  <nanos>529000</nanos>
+  <sequence>27</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>27s</message>
+</record>
+<record>
+  <date>2022-05-25T07:29:03.745705Z</date>
+  <millis>1653463743745</millis>
+  <nanos>705000</nanos>
+  <sequence>28</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>28s</message>
+</record>
+<record>
+  <date>2022-05-25T07:29:04.748172Z</date>
+  <millis>1653463744748</millis>
+  <nanos>172000</nanos>
+  <sequence>29</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>29s</message>
+</record>
+<record>
+  <date>2022-05-25T07:29:05.751264Z</date>
+  <millis>1653463745751</millis>
+  <nanos>264000</nanos>
+  <sequence>30</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>30s</message>
+</record>
+<record>
+  <date>2022-05-25T07:41:39.062756Z</date>
+  <millis>1653464499062</millis>
+  <nanos>756000</nanos>
+  <sequence>31</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>SEVERE</level>
+  <class>edu.curtin.emergencysim.EmergencyResponse</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total Crash: java.util.NoSuchElementException</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-05-25T07:41:54.941932Z</date>
+  <millis>1653464514941</millis>
+  <nanos>932000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>0s</message>
+</record>
+<record>
+  <date>2022-05-25T07:41:55.956783Z</date>
+  <millis>1653464515956</millis>
+  <nanos>783000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>1s</message>
+</record>
+<record>
+  <date>2022-05-25T07:41:56.959645Z</date>
+  <millis>1653464516959</millis>
+  <nanos>645000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>2s</message>
+</record>
+<record>
+  <date>2022-05-25T07:41:57.962089Z</date>
+  <millis>1653464517962</millis>
+  <nanos>89000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>3s</message>
+</record>
+<record>
+  <date>2022-05-25T07:41:58.963415Z</date>
+  <millis>1653464518963</millis>
+  <nanos>415000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>4s</message>
+</record>
+<record>
+  <date>2022-05-25T07:41:59.965561Z</date>
+  <millis>1653464519965</millis>
+  <nanos>561000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>5s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:00.975748Z</date>
+  <millis>1653464520975</millis>
+  <nanos>748000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>6s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:01.976706Z</date>
+  <millis>1653464521976</millis>
+  <nanos>706000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>7s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:02.978053Z</date>
+  <millis>1653464522978</millis>
+  <nanos>53000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>8s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:03.979785Z</date>
+  <millis>1653464523979</millis>
+  <nanos>785000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>9s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:04.996734Z</date>
+  <millis>1653464524996</millis>
+  <nanos>734000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>10s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:05.997690Z</date>
+  <millis>1653464525997</millis>
+  <nanos>690000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>11s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:07.002935Z</date>
+  <millis>1653464527002</millis>
+  <nanos>935000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>12s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:08.005353Z</date>
+  <millis>1653464528005</millis>
+  <nanos>353000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>13s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:09.006527Z</date>
+  <millis>1653464529006</millis>
+  <nanos>527000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>14s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:10.008320Z</date>
+  <millis>1653464530008</millis>
+  <nanos>320000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>15s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:11.010107Z</date>
+  <millis>1653464531010</millis>
+  <nanos>107000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>16s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:12.011710Z</date>
+  <millis>1653464532011</millis>
+  <nanos>710000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>17s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:13.012685Z</date>
+  <millis>1653464533012</millis>
+  <nanos>685000</nanos>
+  <sequence>18</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>18s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:14.014583Z</date>
+  <millis>1653464534014</millis>
+  <nanos>583000</nanos>
+  <sequence>19</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>19s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:15.015693Z</date>
+  <millis>1653464535015</millis>
+  <nanos>693000</nanos>
+  <sequence>20</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>20s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:16.016637Z</date>
+  <millis>1653464536016</millis>
+  <nanos>637000</nanos>
+  <sequence>21</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>21s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:17.018083Z</date>
+  <millis>1653464537018</millis>
+  <nanos>83000</nanos>
+  <sequence>22</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>22s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:18.019297Z</date>
+  <millis>1653464538019</millis>
+  <nanos>297000</nanos>
+  <sequence>23</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>23s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:19.025354Z</date>
+  <millis>1653464539025</millis>
+  <nanos>354000</nanos>
+  <sequence>24</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>24s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:20.027908Z</date>
+  <millis>1653464540027</millis>
+  <nanos>908000</nanos>
+  <sequence>25</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>25s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:21.030606Z</date>
+  <millis>1653464541030</millis>
+  <nanos>606000</nanos>
+  <sequence>26</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>26s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:22.032999Z</date>
+  <millis>1653464542032</millis>
+  <nanos>999000</nanos>
+  <sequence>27</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>27s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:23.034916Z</date>
+  <millis>1653464543034</millis>
+  <nanos>916000</nanos>
+  <sequence>28</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>28s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:24.035549Z</date>
+  <millis>1653464544035</millis>
+  <nanos>549000</nanos>
+  <sequence>29</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>29s</message>
+</record>
+<record>
+  <date>2022-05-25T07:42:25.036726Z</date>
+  <millis>1653464545036</millis>
+  <nanos>726000</nanos>
+  <sequence>30</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>30s</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-05-25T08:06:43.060853Z</date>
+  <millis>1653466003060</millis>
+  <nanos>853000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>0s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:44.067613Z</date>
+  <millis>1653466004067</millis>
+  <nanos>613000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>1s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:45.069085Z</date>
+  <millis>1653466005069</millis>
+  <nanos>85000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>2s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:46.070276Z</date>
+  <millis>1653466006070</millis>
+  <nanos>276000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>3s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:47.072643Z</date>
+  <millis>1653466007072</millis>
+  <nanos>643000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>4s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:48.074546Z</date>
+  <millis>1653466008074</millis>
+  <nanos>546000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>5s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:49.089289Z</date>
+  <millis>1653466009089</millis>
+  <nanos>289000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>6s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:50.090966Z</date>
+  <millis>1653466010090</millis>
+  <nanos>966000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>7s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:51.093217Z</date>
+  <millis>1653466011093</millis>
+  <nanos>217000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>8s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:52.094599Z</date>
+  <millis>1653466012094</millis>
+  <nanos>599000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>9s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:53.107526Z</date>
+  <millis>1653466013107</millis>
+  <nanos>526000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>10s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:54.108463Z</date>
+  <millis>1653466014108</millis>
+  <nanos>463000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>11s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:55.111248Z</date>
+  <millis>1653466015111</millis>
+  <nanos>248000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>12s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:56.113171Z</date>
+  <millis>1653466016113</millis>
+  <nanos>171000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>13s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:57.114939Z</date>
+  <millis>1653466017114</millis>
+  <nanos>939000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>14s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:58.116772Z</date>
+  <millis>1653466018116</millis>
+  <nanos>772000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>15s</message>
+</record>
+<record>
+  <date>2022-05-25T08:06:59.119502Z</date>
+  <millis>1653466019119</millis>
+  <nanos>502000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>16s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:00.122246Z</date>
+  <millis>1653466020122</millis>
+  <nanos>246000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>17s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:01.123600Z</date>
+  <millis>1653466021123</millis>
+  <nanos>600000</nanos>
+  <sequence>18</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>18s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:02.125032Z</date>
+  <millis>1653466022125</millis>
+  <nanos>32000</nanos>
+  <sequence>19</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>19s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:03.125731Z</date>
+  <millis>1653466023125</millis>
+  <nanos>731000</nanos>
+  <sequence>20</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>20s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:04.126484Z</date>
+  <millis>1653466024126</millis>
+  <nanos>484000</nanos>
+  <sequence>21</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>21s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:05.127793Z</date>
+  <millis>1653466025127</millis>
+  <nanos>793000</nanos>
+  <sequence>22</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>22s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:06.129353Z</date>
+  <millis>1653466026129</millis>
+  <nanos>353000</nanos>
+  <sequence>23</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>23s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:07.139704Z</date>
+  <millis>1653466027139</millis>
+  <nanos>704000</nanos>
+  <sequence>24</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>24s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:08.145727Z</date>
+  <millis>1653466028145</millis>
+  <nanos>727000</nanos>
+  <sequence>25</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>25s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:09.151541Z</date>
+  <millis>1653466029151</millis>
+  <nanos>541000</nanos>
+  <sequence>26</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>26s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:10.157208Z</date>
+  <millis>1653466030157</millis>
+  <nanos>208000</nanos>
+  <sequence>27</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>27s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:11.160864Z</date>
+  <millis>1653466031160</millis>
+  <nanos>864000</nanos>
+  <sequence>28</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>28s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:12.163571Z</date>
+  <millis>1653466032163</millis>
+  <nanos>571000</nanos>
+  <sequence>29</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>29s</message>
+</record>
+<record>
+  <date>2022-05-25T08:07:13.167041Z</date>
+  <millis>1653466033167</millis>
+  <nanos>41000</nanos>
+  <sequence>30</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>30s</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-05-25T08:26:39.699977Z</date>
+  <millis>1653467199699</millis>
+  <nanos>977000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>0s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:40.708486Z</date>
+  <millis>1653467200708</millis>
+  <nanos>486000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>1s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:41.710263Z</date>
+  <millis>1653467201710</millis>
+  <nanos>263000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>2s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:42.711610Z</date>
+  <millis>1653467202711</millis>
+  <nanos>610000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>3s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:43.712553Z</date>
+  <millis>1653467203712</millis>
+  <nanos>553000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>4s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:44.713869Z</date>
+  <millis>1653467204713</millis>
+  <nanos>869000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>5s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:45.725730Z</date>
+  <millis>1653467205725</millis>
+  <nanos>730000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>6s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:46.727264Z</date>
+  <millis>1653467206727</millis>
+  <nanos>264000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>7s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:47.728897Z</date>
+  <millis>1653467207728</millis>
+  <nanos>897000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>8s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:48.730526Z</date>
+  <millis>1653467208730</millis>
+  <nanos>526000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>9s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:49.748698Z</date>
+  <millis>1653467209748</millis>
+  <nanos>698000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>10s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:50.750191Z</date>
+  <millis>1653467210750</millis>
+  <nanos>191000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>11s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:51.754379Z</date>
+  <millis>1653467211754</millis>
+  <nanos>379000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>12s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:52.755432Z</date>
+  <millis>1653467212755</millis>
+  <nanos>432000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>13s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:53.756222Z</date>
+  <millis>1653467213756</millis>
+  <nanos>222000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>14s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:54.757632Z</date>
+  <millis>1653467214757</millis>
+  <nanos>632000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>15s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:55.760934Z</date>
+  <millis>1653467215760</millis>
+  <nanos>934000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>16s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:56.762219Z</date>
+  <millis>1653467216762</millis>
+  <nanos>219000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>17s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:57.763164Z</date>
+  <millis>1653467217763</millis>
+  <nanos>164000</nanos>
+  <sequence>18</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>18s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:58.764124Z</date>
+  <millis>1653467218764</millis>
+  <nanos>124000</nanos>
+  <sequence>19</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>19s</message>
+</record>
+<record>
+  <date>2022-05-25T08:26:59.765249Z</date>
+  <millis>1653467219765</millis>
+  <nanos>249000</nanos>
+  <sequence>20</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>20s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:00.767061Z</date>
+  <millis>1653467220767</millis>
+  <nanos>61000</nanos>
+  <sequence>21</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>21s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:01.768843Z</date>
+  <millis>1653467221768</millis>
+  <nanos>843000</nanos>
+  <sequence>22</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>22s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:02.770197Z</date>
+  <millis>1653467222770</millis>
+  <nanos>197000</nanos>
+  <sequence>23</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>23s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:03.773587Z</date>
+  <millis>1653467223773</millis>
+  <nanos>587000</nanos>
+  <sequence>24</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>24s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:04.776169Z</date>
+  <millis>1653467224776</millis>
+  <nanos>169000</nanos>
+  <sequence>25</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>25s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:05.777542Z</date>
+  <millis>1653467225777</millis>
+  <nanos>542000</nanos>
+  <sequence>26</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>26s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:06.778627Z</date>
+  <millis>1653467226778</millis>
+  <nanos>627000</nanos>
+  <sequence>27</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>27s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:07.779783Z</date>
+  <millis>1653467227779</millis>
+  <nanos>783000</nanos>
+  <sequence>28</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>28s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:08.781434Z</date>
+  <millis>1653467228781</millis>
+  <nanos>434000</nanos>
+  <sequence>29</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>29s</message>
+</record>
+<record>
+  <date>2022-05-25T08:27:09.784068Z</date>
+  <millis>1653467229784</millis>
+  <nanos>68000</nanos>
+  <sequence>30</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>30s</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-05-25T08:36:26.632592Z</date>
+  <millis>1653467786632</millis>
+  <nanos>592000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>0s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:27.646381Z</date>
+  <millis>1653467787646</millis>
+  <nanos>381000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>1s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:28.648868Z</date>
+  <millis>1653467788648</millis>
+  <nanos>868000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>2s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:29.651805Z</date>
+  <millis>1653467789651</millis>
+  <nanos>805000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>3s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:30.653365Z</date>
+  <millis>1653467790653</millis>
+  <nanos>365000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>4s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:31.656005Z</date>
+  <millis>1653467791656</millis>
+  <nanos>5000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>5s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:32.665025Z</date>
+  <millis>1653467792665</millis>
+  <nanos>25000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>6s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:33.665822Z</date>
+  <millis>1653467793665</millis>
+  <nanos>822000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>7s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:34.666787Z</date>
+  <millis>1653467794666</millis>
+  <nanos>787000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>8s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:35.668125Z</date>
+  <millis>1653467795668</millis>
+  <nanos>125000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>9s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:36.681542Z</date>
+  <millis>1653467796681</millis>
+  <nanos>542000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>10s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:37.682274Z</date>
+  <millis>1653467797682</millis>
+  <nanos>274000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>11s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:38.689363Z</date>
+  <millis>1653467798689</millis>
+  <nanos>363000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>12s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:39.695067Z</date>
+  <millis>1653467799695</millis>
+  <nanos>67000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>13s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:40.698329Z</date>
+  <millis>1653467800698</millis>
+  <nanos>329000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>14s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:41.700244Z</date>
+  <millis>1653467801700</millis>
+  <nanos>244000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>15s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:42.705969Z</date>
+  <millis>1653467802705</millis>
+  <nanos>969000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>16s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:43.706845Z</date>
+  <millis>1653467803706</millis>
+  <nanos>845000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>17s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:44.707752Z</date>
+  <millis>1653467804707</millis>
+  <nanos>752000</nanos>
+  <sequence>18</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>18s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:45.709613Z</date>
+  <millis>1653467805709</millis>
+  <nanos>613000</nanos>
+  <sequence>19</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>19s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:46.710786Z</date>
+  <millis>1653467806710</millis>
+  <nanos>786000</nanos>
+  <sequence>20</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>20s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:47.712542Z</date>
+  <millis>1653467807712</millis>
+  <nanos>542000</nanos>
+  <sequence>21</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>21s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:48.714051Z</date>
+  <millis>1653467808714</millis>
+  <nanos>51000</nanos>
+  <sequence>22</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>22s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:49.715352Z</date>
+  <millis>1653467809715</millis>
+  <nanos>352000</nanos>
+  <sequence>23</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>23s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:50.718596Z</date>
+  <millis>1653467810718</millis>
+  <nanos>596000</nanos>
+  <sequence>24</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>24s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:51.719992Z</date>
+  <millis>1653467811719</millis>
+  <nanos>992000</nanos>
+  <sequence>25</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>25s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:52.721525Z</date>
+  <millis>1653467812721</millis>
+  <nanos>525000</nanos>
+  <sequence>26</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>26s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:53.722915Z</date>
+  <millis>1653467813722</millis>
+  <nanos>915000</nanos>
+  <sequence>27</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>27s</message>
+</record>
+<record>
+  <date>2022-05-25T08:36:54.724308Z</date>
+  <millis>1653467814724</millis>
+  <nanos>308000</nanos>
+  <sequence>28</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>28s</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-05-25T09:10:13.807844Z</date>
+  <millis>1653469813807</millis>
+  <nanos>844000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>0s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:14.815753Z</date>
+  <millis>1653469814815</millis>
+  <nanos>753000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>1s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:15.817076Z</date>
+  <millis>1653469815817</millis>
+  <nanos>76000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>2s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:16.818533Z</date>
+  <millis>1653469816818</millis>
+  <nanos>533000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>3s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:17.819935Z</date>
+  <millis>1653469817819</millis>
+  <nanos>935000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>4s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:18.821006Z</date>
+  <millis>1653469818821</millis>
+  <nanos>6000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>5s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:19.831972Z</date>
+  <millis>1653469819831</millis>
+  <nanos>972000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>6s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:20.832674Z</date>
+  <millis>1653469820832</millis>
+  <nanos>674000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>7s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:21.833722Z</date>
+  <millis>1653469821833</millis>
+  <nanos>722000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>8s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:22.835957Z</date>
+  <millis>1653469822835</millis>
+  <nanos>957000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>9s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:23.847135Z</date>
+  <millis>1653469823847</millis>
+  <nanos>135000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>10s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:24.847949Z</date>
+  <millis>1653469824847</millis>
+  <nanos>949000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>11s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:25.851191Z</date>
+  <millis>1653469825851</millis>
+  <nanos>191000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>12s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:26.853355Z</date>
+  <millis>1653469826853</millis>
+  <nanos>355000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>13s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:27.854717Z</date>
+  <millis>1653469827854</millis>
+  <nanos>717000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>14s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:28.856287Z</date>
+  <millis>1653469828856</millis>
+  <nanos>287000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>15s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:29.857977Z</date>
+  <millis>1653469829857</millis>
+  <nanos>977000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>16s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:30.859512Z</date>
+  <millis>1653469830859</millis>
+  <nanos>512000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>17s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:31.860668Z</date>
+  <millis>1653469831860</millis>
+  <nanos>668000</nanos>
+  <sequence>18</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>18s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:32.862237Z</date>
+  <millis>1653469832862</millis>
+  <nanos>237000</nanos>
+  <sequence>19</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>19s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:33.863229Z</date>
+  <millis>1653469833863</millis>
+  <nanos>229000</nanos>
+  <sequence>20</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>20s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:34.864453Z</date>
+  <millis>1653469834864</millis>
+  <nanos>453000</nanos>
+  <sequence>21</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>21s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:35.866010Z</date>
+  <millis>1653469835866</millis>
+  <nanos>10000</nanos>
+  <sequence>22</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>22s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:36.867248Z</date>
+  <millis>1653469836867</millis>
+  <nanos>248000</nanos>
+  <sequence>23</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>23s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:37.871353Z</date>
+  <millis>1653469837871</millis>
+  <nanos>353000</nanos>
+  <sequence>24</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>24s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:38.873596Z</date>
+  <millis>1653469838873</millis>
+  <nanos>596000</nanos>
+  <sequence>25</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>25s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:39.875368Z</date>
+  <millis>1653469839875</millis>
+  <nanos>368000</nanos>
+  <sequence>26</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>26s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:40.876660Z</date>
+  <millis>1653469840876</millis>
+  <nanos>660000</nanos>
+  <sequence>27</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>27s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:41.877847Z</date>
+  <millis>1653469841877</millis>
+  <nanos>847000</nanos>
+  <sequence>28</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>28s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:42.879053Z</date>
+  <millis>1653469842879</millis>
+  <nanos>53000</nanos>
+  <sequence>29</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>29s</message>
+</record>
+<record>
+  <date>2022-05-25T09:10:43.880356Z</date>
+  <millis>1653469843880</millis>
+  <nanos>356000</nanos>
+  <sequence>30</sequence>
+  <logger>edu.curtin.emergencysim.EmergencyResponse</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>30s</message>
+</record>
+</log>

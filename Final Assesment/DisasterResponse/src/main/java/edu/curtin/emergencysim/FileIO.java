@@ -23,12 +23,12 @@ public class FileIO {
     EXPORT: sim (EventNotifier)
     ASSERTION: Imports a text file and writes it to an object
     ************************************************************/
-    public static EventNotifier readFile(String filename) throws IOException
+    public static EventNotifier<Event> readFile(String filename) throws IOException
     {
         File inFile = new File(filename);
         Scanner sc = new Scanner(inFile);
 
-        EventNotifier sim = new EventNotifier();
+        EventNotifier<Event> sim = new EventNotifierImpl();
 
         while(sc.hasNextLine())
         {

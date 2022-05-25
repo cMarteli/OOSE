@@ -48,3 +48,14 @@ remember:
 -use logger
 -periodically check with PMD linting tool "./gradlew check"
 
+
+Observer pattern:
+
+Observers are the ones who receive notifications of new events as they occur
+in this case Rescuers (usually has an update method, in our case "send" and "poll")
+
+Subject is what is being observed (event notifier?) and they may have an event subclass which hold the info of events (event)
+
+Explanation of Generics:
+Event notifier interface takes in a generic instead of Event.
+This was done to decouple the class from needing a specific 'Event' if future implementations of the software choose to utilise another class (such as string). This removes need to refactor the interface as only the implementation is affected. This is important for compatibility.

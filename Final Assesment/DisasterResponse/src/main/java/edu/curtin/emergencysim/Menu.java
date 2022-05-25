@@ -31,7 +31,8 @@ public class Menu
                     break;
 
                 case 2:
-                    System.out.print("Testing"); //TODO STUB
+                    System.out.println("[To start the simulation select '1' from the menu then enter the file name.\n" +
+                     "The simulation will continue until it receives an 'End' signal from the responders.]\n");
                     break;
 
                 case 0:
@@ -54,19 +55,17 @@ public class Menu
     private static void start()
     {
         String fileName = checkFileName(FILE_EXTENSION); //gets file name from user
-        EventNotifier en;
 
         try
         {
-            en = FileIO.readFile(fileName);
-            Simulation sim = new Simulation(en);
-            sim.run();
+            Simulation sim = new Simulation(fileName);
+            sim.run(); //starts simulation
         }
-        catch (IOException e)
+        catch (IOException e) //for instatiation
         {
             System.out.println("Could not read from " + fileName + ": " + e.getMessage());
         }
-        catch (InterruptedException ex)
+        catch (InterruptedException ex) //for .run()
         {
             System.out.println("Simulation was interupted: " + ex.getMessage());
         }

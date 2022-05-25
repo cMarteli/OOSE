@@ -29,8 +29,9 @@ public class Event
         emergencyType = e;
         location = l;
 
-        setCasualtyCount(0); //initalizes counts to 0
-        setDmgCount(0);
+        //initalizes counts to 0
+        casualtyCount = 0;
+        dmgCount = 0;
         resetCleanupTime(e);
     }
 
@@ -49,8 +50,8 @@ public class Event
     }
 
 
-    //initiates cleanup time
-    public void resetCleanupTime(Emergency e) {
+    //initiates cleanup time - method is final as it's used during construction
+    public final void resetCleanupTime(Emergency e) {
         if(e == Emergency.FIRE)
         {
             cleanupTime = FIRE_LOW_CLEANUP_TIME;

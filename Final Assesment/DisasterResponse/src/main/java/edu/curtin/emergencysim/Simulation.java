@@ -7,16 +7,16 @@
 package edu.curtin.emergencysim;
 //import static edu.curtin.emergencysim.Constants.*; //imports GFX class
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.*;
-import java.util.regex.*;
 
 import edu.curtin.emergencysim.responders.*;
 
 public class Simulation
 {
-    private EventNotifier en;
+    private EventNotifier<Event> en;
     private Random rand;
     private ResponderComm rci;
 
@@ -25,18 +25,18 @@ public class Simulation
      */
     private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
 
-     // A regular expression for validating and extracting parts of outgoing ('send') messages.
-     private static final Pattern SEND_REGEX = Pattern.compile(
-        "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
+    //  // A regular expression for validating and extracting parts of outgoing ('send') messages.
+    //  private static final Pattern SEND_REGEX = Pattern.compile(
+    //     "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
 
 
     /************************************************************
     IMPORT: inEn (EventNotifier)
     Constructor: creates new RNG and RCI
     ************************************************************/
-    public Simulation(EventNotifier inEn)
+    public Simulation(String fileName) throws IOException
     {
-        en = inEn;
+        en = FileIO.readFile(fileName); //throws exception here and object is not constructed
         rand = new Random();
         rci = new ResponderCommImpl(); //if clock desyncs move this to run()
     }
@@ -48,6 +48,7 @@ public class Simulation
     ************************************************************/
     public void run() throws InterruptedException
     {
+
         boolean simIsActive = true;
         int seconds = 0; //timer
         List<Event> queue = en.getEvents(); //gets event queue
@@ -68,8 +69,7 @@ public class Simulation
                     else
                     {
                         try {
-                            update(s); //formats message TODO: Should do more with this
-
+                            en.receive(s); //formats message TODO: Should do more with this
                         }
                         catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
@@ -83,7 +83,7 @@ public class Simulation
                 if(nxt.getTime() == seconds) //checks if there any events scheduled to start this second
                 {
                     try {
-                        rci.send(createMessage(nxt)); //sends events to responder
+                        rci.send(en.notify(nxt)); //sends events to responder
                     }
                     catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
@@ -103,78 +103,16 @@ public class Simulation
 
     }
 
-    //Validates then Formats message
-    public void update(String s) throws IllegalArgumentException
-    {
-        Matcher m = SEND_REGEX.matcher(s); //checks string against regex
-        if(!m.matches())
-        {
-            throw new IllegalArgumentException("Invalid message format: '" + s + "'");
-        }
-        String emergency = m.group("emergency");
-        String status = m.group("status");
-        String location = m.group("location");
-
-        //TODO: get active event and match it with this one
-        //TODO: subtract one cleanup time every second
-
-
-        //displays message
-        if(status.equals("+"))
-        {
-            System.out.println(emergency + " team arrived in " + location);
-        }
-        else
-        {
-            System.out.println(emergency + " team departed from " + location);
-        }
-
-    }
-
-
-    /************************************************************
-    IMPORT: nxt (Event)
-    EXPORT: outStr (String)
-    Creates outgoing message and validates it.
-    TODO: Need to send randomly generated casualties, dmg, etc
-    as well as fire intensity increase events
-    ************************************************************/
-    public String createMessage(Event nxt) throws IllegalArgumentException
-    {
-        String outStr;
-        switch (nxt.getEmergencyType())
-        {
-            case FIRE:
-                outStr = "fire low"+ nxt.getLocation(); //fire always starts at low intensity
-
-                break;
-
-            case FLOOD:
-                outStr = "flood start " + nxt.getLocation();
-
-                break;
-
-            case CHEMICAL:
-                outStr = "chemical start " + nxt.getLocation();
-
-                break;
-
-            default:
-                throw new IllegalArgumentException("Invalid Emergency type: '" + nxt.getEmergencyType() + "'");
-        }
-        return outStr;
-    }
-
     /************************************************************
     IMPORT: probability (double)
     EXPORT: boolean
     Generates random double to 2decimals given probability
     if r is lower or equal to probability returns true
     ************************************************************/
-    public boolean roll(double probability)
+    public boolean roll(double prob)
     {
         double r = Math.floor(rand.nextDouble()*100) / 100;
-        System.out.println("(" + r + "/" + probability + ")" ); //debug
-        return (r <= probability);
+        System.out.println("(" + r + "/" + prob + ")" ); //debug
+        return (r <= prob);
     }
 }
