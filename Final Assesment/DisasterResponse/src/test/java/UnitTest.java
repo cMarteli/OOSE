@@ -1,10 +1,14 @@
+/**
+ * UnitTest.java
+ * Testing Harness
+ * 2022/OOSE Assignment 2
+ * @author Caio Marteli (19598552)
+ */
 import edu.curtin.emergencysim.*;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class UnitTest
 {

@@ -5,13 +5,8 @@
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.emergencysim;
-//import static edu.curtin.emergencysim.Constants.*; //imports GFX class
-
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.logging.*;
 
 import edu.curtin.emergencysim.responders.*;
@@ -19,7 +14,6 @@ import edu.curtin.emergencysim.responders.*;
 public class Simulation
 {
     private EventNotifier<Event> en;
-    private Random rand;
     private ResponderComm rci;
 
      /**
@@ -28,8 +22,9 @@ public class Simulation
     private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
 
     /************************************************************
-    IMPORT: inEn (EventNotifier)
-    Constructor: creates new RNG and RCI
+     * Constructor: creates new RNG and RCI
+     * @param fileName
+     * @throws IOException
     ************************************************************/
     public Simulation(String fileName) throws IOException
     {
@@ -37,17 +32,15 @@ public class Simulation
         en = new EventNotifierImpl();
 
         fio.readFile(fileName, en); //throws exception here if object is not constructed
-        rand = new Random();
         rci = new ResponderCommImpl(); //if clock desyncs move this to run()
 
-        //System.out.println("TEST"); for(Event e : en.getEventQueue()){System.out.println(e.toString());} //TODO DEBUG - Prints event queue
+        //System.out.println("TEST"); for(Event e : en.getEventQueue()){System.out.println(e.toString());} //DEBUG - Prints event queue
     }
 
     /************************************************************
-    IMPORT: nxt (Event)
-    EXPORT: outStr (String)
-    Creates outgoing message and validates it. Throws IllegalArgumentException()
-    ************************************************************/
+     * outgoing message and validates it.
+     * @throws InterruptedException
+     ************************************************************/
     public void run() throws InterruptedException
     {
 
@@ -59,12 +52,12 @@ public class Simulation
         while (simIsActive) {
 
             simIsActive = poll(simIsActive, activeEvents);
-            send(seconds);
+            send(seconds, activeEvents); //sends message to responders, adds to active event list
 
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
 
-            System.out.println("[t="+seconds+"]"); //TODO: DEBUG prints seconds
+            System.out.println("[t="+seconds+"]"); //DEBUG: prints seconds
             //System.out.println("TEST - Active Events: {"); for(Event e : activeEvents.values()){System.out.println(e.toString());}
 
             if(LOGR.isLoggable(Level.INFO)){ LOGR.info(seconds + "s"); } //LOGGER: time passed LVL=INFO
@@ -75,27 +68,30 @@ public class Simulation
     }
 
     /************************************************************
-    IMPORT:
-    EXPORT:
-    poll()/receive()
-    ************************************************************/
+     * gets message from responders and formats the prints; clocktick
+     * TODO: need to get responders arrival status state pattern?
+     * @param simIsActive
+     * @param activeEvents
+     * @return
+     ************************************************************/
     private boolean poll(boolean simIsActive, Map<String, Event> activeEvents) {
         List<String> messageList;
 
-        messageList = rci.poll(); //poll() call
-        if(!messageList.isEmpty()) //if poll list is not empty
+        messageList = rci.poll(); //gets latest message list from Responders
+        if(!messageList.isEmpty()) //if message list is not empty
         {
             for (String s : messageList) {
-                if(s.equals("end")) //checks for end condition
+                if(s.equals("end")) //checks for end message
                 {
-                    simIsActive = false;
+                    simIsActive = false; //end simulation
                 }
                 else
                 {
                     try
                     {
-                        en.receive(s); //TODO: Crashing
-                        //clockTick(activeEvents); //reduce timer on active events every second
+                        en.receive(s); //Prints message
+                        //TODO: need to get responders arrival status state pattern?
+                        clockTick(activeEvents); //reduce timer on every active event by 1
                     }
                     catch (IllegalArgumentException e) {System.out.println(e.getMessage());}
                 }
@@ -105,16 +101,18 @@ public class Simulation
     }
 
     /************************************************************
-    IMPORT: seconds (int)
-    EXPORT: none
-    send()/notify()
-    ************************************************************/
-    private void send(int seconds) {
+     * checks event queue for any events scheduled to start this second
+     * @param seconds
+     * @param activeEvents
+     ************************************************************/
+    private void send(int seconds, Map<String, Event> activeEvents) {
         for (Event nxt : en.getEventQueue()) {
-            if(nxt.getTime() == seconds) //checks if there any events scheduled to start this second
+            if(nxt.getStartTime() == seconds) //if there any events scheduled to start this second
             {
                 try {
-                    rci.send(en.notify(nxt)); //sends events to responder
+                    //if(activeEvents.containsKey(nxt.getKey()))
+                    activeEvents.put(nxt.getKey(), nxt); //add event to hashmap
+                    rci.send(en.notify(nxt)); //sends events to responder - prints
                 }
                 catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
@@ -124,42 +122,44 @@ public class Simulation
     }
 
     /************************************************************
-    IMPORT:
-    EXPORT:
-    clock tick
+    @param active (Map<String, Event>)
+    Iterates through active event map and ticks the clock down on each
+    also removes events which are over
+    TODO: Clock tick needs to only happen if arrival status = true
     ************************************************************/
     private void clockTick(Map<String, Event> active)
     {
-        Event toRemove = null;
-        boolean remove = false;
+        Event temp = null;
+        boolean needsRemoval = false;
         for (Event event : active.values())
         {
-            if(!event.isOver())//checks if already over
+            if(!event.isOver() && event.rescuersPresent())//if not over && rescuers are present
             {
-                event.cleanupTick();
+                event.cleanup();
             }
             else
             {
                 System.out.println(event.getEmergencyType() + " at " + event.getLocation() + " is over");
-                toRemove = event;
-                remove = true;
+                temp = event;
+                needsRemoval = true;
             }
         }
-        if(remove)
+        if(needsRemoval)
         {
-            active.remove(toRemove.getKey()); //removes event from active list
+            active.remove(temp.getKey()); //removes event from active list
         }
 
     }
 
     /************************************************************
-    IMPORT: probability (double)
-    EXPORT: boolean
-    Generates random double to 2decimals given probability
-    if r is lower or equal to probability returns true
-    ************************************************************/
+     * Generates random double to 2decimals given probability if
+     * r is lower or equal to probability returns true TODO: Currently not used
+     * @param prob
+     * @return
+     ************************************************************/
     public boolean roll(double prob)
     {
+        Random rand = new Random();
         double r = Math.floor(rand.nextDouble()*100) / 100;
         System.out.println("(" + r + "/" + prob + ")" ); //debug
         return (r <= prob);

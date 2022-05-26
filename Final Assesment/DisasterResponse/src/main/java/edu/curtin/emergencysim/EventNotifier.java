@@ -1,6 +1,7 @@
 /**
  * EventNotifier.java
  * Observable/Subject Interface
+ * @author Caio Marteli (19598552)
  */
 package edu.curtin.emergencysim;
 
@@ -8,7 +9,11 @@ import java.util.List;
 
 public interface EventNotifier<E>
 {
-    public List<E> getEventQueue(); //Generic type allows for the use of either string or event class depending on implementation
+    /**
+     * Generic type allows for the use of either string or event class depending on implementation
+     * @return
+     */
+    public List<E> getEventQueue();
 
     public void receive(String s);
 

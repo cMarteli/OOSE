@@ -2,6 +2,7 @@
  * EventNotifier.java
  * Observable/Subject
  * Implentation which uses Event class
+ * @author Caio Marteli (19598552)
  */
 package edu.curtin.emergencysim;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
         eventQueue = new ArrayList<>();
     }
 
+    /** Setters */
     @Override
     public void addEvent(Event e)
     {
@@ -48,22 +50,23 @@ public class EventNotifierImpl implements EventNotifier<Event>
     }
 
     //get next by arrival time TODO: Currently not used
-    public Event getNext()
-    {
-        Event next = eventQueue.get(0); //sets index 0 as next
-        int temp = next.getTime(); //gets it's time
-        for (Event em : eventQueue)
-        {
-            if(em.getTime() < temp) //if lower arrival time
-            {
-                next = em; //make it next
-                temp = em.getTime();
-            }
-        }
+    // public Event getNext()
+    // {
+    //     Event next = eventQueue.get(0); //sets index 0 as next
+    //     int temp = next.getStartTime(); //gets it's time
+    //     for (Event em : eventQueue)
+    //     {
+    //         if(em.getStartTime() < temp) //if lower arrival time
+    //         {
+    //             next = em; //make it next
+    //             temp = em.getStartTime();
+    //         }
+    //     }
 
-        return next;
-    }
+    //     return next;
+    // }
 
+    /** Getters */
     @Override
     public List<Event> getEventQueue()
     {
@@ -72,9 +75,9 @@ public class EventNotifierImpl implements EventNotifier<Event>
 
 
     /************************************************************
-    IMPORT: e (Event)
-    EXPORT: result (boolean)
-    Checks for duplicate events. Used by fileIO.java
+    * Checks for duplicate events. Used by fileIO.java
+    * @param type (String)
+    * @param loc (String)
     ************************************************************/
     @Override
     public boolean checkDupes(String type, String loc)
@@ -91,7 +94,10 @@ public class EventNotifierImpl implements EventNotifier<Event>
     }
 
 
-    //Validates then Formats message
+    /************************************************************
+     * Validates then Formats message
+     * TODO: needs to return information on Event as well as location to Simulation class maybe look at state pattern fo solution
+    ************************************************************/
     @Override
     public void receive(String s) throws IllegalArgumentException
     {
@@ -118,11 +124,10 @@ public class EventNotifierImpl implements EventNotifier<Event>
 
 
     /************************************************************
-    IMPORT: nxt (Event)
-    EXPORT: outStr (String)
-    Creates outgoing message and validates it.
-    TODO: Need to send randomly generated casualties, dmg, etc
-    as well as fire intensity increase events
+    * Creates outgoing message and validates it.
+    * TODO: Need to send randomly generated casualties, dmg, etc + fire intensity increase events
+    * @param e (Event)
+    * @export outStr (String)
     ************************************************************/
     @Override
     public String notify(Event e) throws IllegalArgumentException

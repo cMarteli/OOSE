@@ -1,6 +1,5 @@
 /**
  * Event.java
- *
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
@@ -16,57 +15,37 @@ public class Event
         CHEMICAL
     }
 
-    private int time, casualtyCount, dmgCount;
+    private int startTime;
+    //, casualtyCount, dmgCount;
     private String location;
     private Emergency eType;
     private int cleanupTime;
     private boolean rescuersPresent;
 
-    /************************************************************
-    Constructor
-    ************************************************************/
+    /**
+     * Constructor
+     * @param t
+     * @param et
+     * @param l
+     */
     public Event(int t, String et, String l) {
-        time = t;
+        startTime = t;
         //cleanup time is set to total time needed for cleanup depending on event type
         setType(et); //sets enum according to string
         location = l;
 
         //initalizes counts to 0
-        casualtyCount = 0;
-        dmgCount = 0;
+        //casualtyCount = 0;
+        //dmgCount = 0;
+
+        //rescuers are not present at start
+        rescuersPresent();
     }
 
-    public boolean areRescuersPresent() {
-        return rescuersPresent;
-    }
-
-    public void setRescuersPresent(boolean rescuersPresent) {
-        this.rescuersPresent = rescuersPresent;
-    }
-
-    //returns true if cleanuptime is 0 or less
-    public boolean isOver()
-    {
-        return cleanupTime <= 0;
-    }
-
-    public int getCleanupTime() {
-        return cleanupTime;
-    }
-
-    public void setCleanupTime(int cleanupTime) {
-        this.cleanupTime = cleanupTime;
-    }
-
-    //ticks down cleanuptime one second
-    public void cleanupTick()
-    {
-        cleanupTime--;
-        //System.out.println(eType+"@"+location+": clnpTim=" + cleanupTime);//TODO: DEBUG
-    }
-
-
-    //sets type and initiates cleanup time - method is final as it's used during construction
+    /**
+     * sets type and initiates cleanup time - method is final as it's used during construction
+     * @param et (String)
+     */
     public final void setType(String et)
     {
         if(et.equals(Emergency.FIRE.toString()))
@@ -92,25 +71,11 @@ public class Event
         // }
     }
 
-    public int getDmgCount() {
-        return dmgCount;
-    }
-
-    public void setDmgCount(int dc) {
-        dmgCount = dc;
-    }
-
-    public int getCasualtyCount() {
-        return casualtyCount;
-    }
-
-    public void setCasualtyCount(int cc) {
-        casualtyCount = cc;
-    }
-
-
-
-    //Compares if event is the same as another
+    /**
+     * Compares if event is the same as another
+     * @param e (Event)
+     * @return
+     */
     public boolean isSame(Event e)
     {
         if(eType == e.getEmergencyType() &&
@@ -124,7 +89,12 @@ public class Event
         }
     }
 
-    //Overloaded method Compares with just location and type
+    /**
+     * Overloaded method Compares with just location and type
+     * @param inType (String)
+     * @param inLoc (String)
+     * @return
+     */
     public boolean isSame(String inType, String inLoc)
     {
         if(eType.toString().toUpperCase().equals(inType.toUpperCase()) &&
@@ -138,31 +108,44 @@ public class Event
         }
     }
 
-    public int getTime() {
-        return time;
+    /** Getters  */
+    public boolean rescuersPresent() {
+        return rescuersPresent;
     }
-
+    public int getStartTime() {
+        return startTime;
+    }
     public String getLocation() {
         return location;
     }
     public Emergency getEmergencyType() {
         return eType;
     }
-
-    //utility to make a key for hashmap
+    /**@return true if cleanuptime is 0 or less */
+    public boolean isOver()
+    {
+        return cleanupTime <= 0;
+    }
+    /**@return key for hashmap  */
     public String getKey()
     {
         return eType.toString().toUpperCase()+location;
     }
 
+    /** Setters  */
+    public void setRescuersPresent(boolean status) {
+        rescuersPresent = status;
+    }
+    /**ticks down cleanuptime one second */
+    public void cleanup()
+    {
+        cleanupTime--;
+        //System.out.println(eType+"@"+location+": clnpTim=" + cleanupTime);//TODO: DEBUG
+    }
     @Override
     public String toString() {
-        return "Event [Type:" + eType + ", Location:" + location + ", Start Time:" + time + "]";
+        return "Event [Type:" + eType + ", Location:" + location + ", Start Time:" + startTime + "]";
     }
-
-
-
-
 
 
 }

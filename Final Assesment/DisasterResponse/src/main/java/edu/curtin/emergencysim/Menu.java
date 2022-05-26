@@ -15,9 +15,7 @@ public class Menu
     private static final String FILE_EXTENSION = ".txt";
 
     /************************************************************
-    * IMPORT: none
-    * EXPORT: void
-    * ASSERTION: Displays menu, launches game and loads input
+    * Displays terminal based menu
     ************************************************************/
     public static void showMenu()
     {
@@ -26,16 +24,16 @@ public class Menu
         {
             switch(checkInteger("(1) Start Simulation (2) Help (0) Quit"))
             {
-                case 1://Option Play
+                case 1: //Option 1 - Start Sim
                     start();
                     break;
 
-                case 2:
+                case 2: //Option 2 - Help
                     System.out.println("[To start the simulation select '1' from the menu then enter the file name.\n" +
                      "The simulation will continue until it receives an 'End' signal from the responders.]\n");
                     break;
 
-                case 0:
+                case 0: //Option 2 - Quit
                     done = true;
                     break;
 
@@ -48,9 +46,7 @@ public class Menu
     }
 
     /************************************************************
-    IMPORT: none
-    EXPORT: void
-    ASSERTION: Starts sim - loads file
+    * Starts simulation, catches exceptions
     ************************************************************/
     private static void start()
     {
@@ -72,10 +68,10 @@ public class Menu
     }
 
     /************************************************************
-    IMPORT: file extension (String)
-    EXPORT: filename (String)
-    ASSERTION: Lets user enter the file name and validates input
-    ************************************************************/
+     * Lets user enter the file name and validates input
+     * @param ext (String)
+     * @return filename (String)
+     ************************************************************/
     public static String checkFileName(String ext)
     {
         String prompt = "Please enter a file name:";
@@ -102,9 +98,9 @@ public class Menu
     }
 
     /************************************************************
-    IMPORT: prompt (String)
-    EXPORT: userInt (integer)
-    ASSERTION: Validator Method. Gets user integer and repeats until it's a valid input
+     * Validator Method. Gets user integer and repeats until it's a valid input
+     * @param prompt (String)
+     * @return userInt (integer)
     ************************************************************/
     public static int checkInteger(String prompt)
     {

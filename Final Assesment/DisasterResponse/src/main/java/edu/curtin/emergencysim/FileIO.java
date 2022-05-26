@@ -1,10 +1,10 @@
 /**
  * FileIO.java
  * @author Caio Marteli (19598552)
+ * Marteli, C (2021) source code (Version 1.0) [Source code]. https://github.com/cMarteli/
+ * may contain code previously submitted for DSA Modified March 2022 for EmergencyResponse.java
+ * Modified May,2022 for EmergencyResponse.java
 */
-// Marteli, C (2021) source code (Version 1.0) [Source code]. https://github.com/cMarteli/
-// # may contain code previously submitted for DSA Modified March 2022 for EmergencyResponse.java
-// Modified May,2022 for EmergencyResponse.java
 package edu.curtin.emergencysim;
 
 import java.io.File;
@@ -20,10 +20,11 @@ public class FileIO<E>{
     private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
 
     /************************************************************
-    IMPORT: filename (String)
-    EXPORT: sim (EventNotifier)
-    ASSERTION: Imports a text file and writes it to an object
-    ************************************************************/
+     * Imports a text file and writes it to an object
+     * @param filename (String)
+     * @param en (EventNotifier)
+     * @throws IOException
+     ************************************************************/
     public void readFile(String filename, EventNotifier<E> en) throws IOException
     {
         File inFile = new File(filename);

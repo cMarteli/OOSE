@@ -1,13 +1,13 @@
 /**
  * EmergencyResponse.java
- * Main class MazeApp, handles command line parameters
- * and catches any unhandled exceptions that may have fallen through.
+ * Main class of Emergency Response App
+ * Catches any unhandled exceptions that may have fallen through.
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
+ * Marteli, C (2022) OOSE source code (Version 1.2) [Source code]. https://github.com/cMarteli/
+ * Program may contain methods previously submitted for DSA/OOSE
+ * Modified May,2022 for EmergencyResponse.java
  */
-// Marteli, C (2021) OOSE source code (Version 1.2) [Source code]. https://github.com/cMarteli/
-// Program may contain methods previously submitted for DSA/OOSE
-// Modified May,2022 for EmergencyResponse.java
 package edu.curtin.emergencysim;
 
 import static edu.curtin.emergencysim.Constants.*; //imports GFX class
