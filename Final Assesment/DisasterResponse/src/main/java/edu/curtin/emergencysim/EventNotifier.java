@@ -18,10 +18,6 @@ public interface EventNotifier<E>
 
     public void addEvent(int time, String type, String loc);
 
-    public E getActEvent(String type, String loc);
-
-    public List<E> getActiveList();
-
     public void removeEvent(E e);
 
     public boolean checkDupes(String type, String loc);

@@ -3,6 +3,9 @@ import edu.curtin.emergencysim.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UnitTest
 {
     EventNotifier<Event> en;
@@ -50,15 +53,16 @@ public class UnitTest
         assertEquals(false, e1.isSame("FIRE", "Anywhere"));
     }
 
-    @Test
-    public void getActEvent()
-    {
-        en.addEvent(24, "FLOOD", "Midtown");
-        en.addEvent(6, "FIRE", "Midtown");
-        en.addEvent(12, "FIRE", "Hill Valley");
-        en.addEvent(24, "FLOOD", "Hill Valley");
+    // @Test
+    // public void getActEvent()
+    // {
+    //     en.addEvent(24, "FLOOD", "Midtown");
+    //     en.addEvent(6, "FIRE", "Midtown");
+    //     en.addEvent(12, "FIRE", "Hill Valley");
+    //     en.addEvent(24, "FLOOD", "Hill Valley");
 
-    }
+
+    // }
 
 
 }

@@ -16,8 +16,6 @@ public class EventNotifierImpl implements EventNotifier<Event>
 
     private List<Event> eventQueue; //list of references to events in file
 
-    private List<Event> activeEvents; //list of references to current events
-
     // A regular expression for validating and extracting parts of outgoing ('send') messages.
     private static final Pattern SEND_REGEX = Pattern.compile(
     "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
@@ -28,7 +26,6 @@ public class EventNotifierImpl implements EventNotifier<Event>
     public EventNotifierImpl()
     {
         eventQueue = new ArrayList<>();
-        activeEvents = new ArrayList<>();
     }
 
     @Override
@@ -73,11 +70,6 @@ public class EventNotifierImpl implements EventNotifier<Event>
         return eventQueue;
     }
 
-    @Override
-    public List<Event> getActiveList()
-    {
-        return activeEvents;
-    }
 
     /************************************************************
     IMPORT: e (Event)
@@ -112,16 +104,15 @@ public class EventNotifierImpl implements EventNotifier<Event>
         String status = m.group("status");
         String location = m.group("location");
 
-        //displays message - sets rescuer status
+        //displays message
         if(status.equals("+"))
         {
             System.out.println(emergency + " team arrived in " + location);
-            getActEvent(emergency, location).setRescuersPresent(true); //crashes TODO
+
         }
         else
         {
             System.out.println(emergency + " team departed from " + location);
-            getActEvent(emergency, location).setRescuersPresent(false);
         }
     }
 
@@ -158,24 +149,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
             default:
                 throw new IllegalArgumentException("Invalid Emergency type: '" + e.getEmergencyType() + "'");
         }
-        activeEvents.add(e); //add event to active list
         return outStr;
-    }
-
-    @Override
-    public Event getActEvent(String type, String loc)
-    {
-        type = type.toUpperCase();
-        //searches through active event list
-        for (Event e : getActiveList())
-        {
-            if(e.isSame(type, loc))
-            {
-                return e; //found
-            }
-        }
-        //if not found throw error
-        throw new IllegalArgumentException("Couldn't find event of type '" + type + "' at " + loc);
     }
 
 

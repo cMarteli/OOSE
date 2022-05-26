@@ -36,7 +36,7 @@ public class Event
         dmgCount = 0;
     }
 
-    public boolean isRescuersPresent() {
+    public boolean areRescuersPresent() {
         return rescuersPresent;
     }
 
@@ -147,6 +147,12 @@ public class Event
     }
     public Emergency getEmergencyType() {
         return eType;
+    }
+
+    //utility to make a key for hashmap
+    public String getKey()
+    {
+        return eType.toString().toUpperCase()+location;
     }
 
     @Override
