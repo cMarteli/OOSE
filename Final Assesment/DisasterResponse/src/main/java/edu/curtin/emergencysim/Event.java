@@ -20,6 +20,7 @@ public class Event
     private String location;
     private Emergency eType;
     private int cleanupTime;
+    private boolean rescuersPresent;
 
     /************************************************************
     Constructor
@@ -33,6 +34,14 @@ public class Event
         //initalizes counts to 0
         casualtyCount = 0;
         dmgCount = 0;
+    }
+
+    public boolean isRescuersPresent() {
+        return rescuersPresent;
+    }
+
+    public void setRescuersPresent(boolean rescuersPresent) {
+        this.rescuersPresent = rescuersPresent;
     }
 
     //returns true if cleanuptime is 0 or less
@@ -76,10 +85,10 @@ public class Event
             eType = Emergency.CHEMICAL;
             cleanupTime = CHEM_CLEANUP_TIME;
         }
-        else //This should never happen
-        {
-            assert false: "ERROR: No match found when contructing event of type: " + et;
-        }
+        // else //This should never happen
+        // {
+        //     assert false: "ERROR: No match found when contructing event of type: " + et;
+        // }
     }
 
     public int getDmgCount() {
@@ -104,7 +113,7 @@ public class Event
     public boolean isSame(Event e)
     {
         if(eType == e.getEmergencyType() &&
-            location.toLowerCase().equals(e.getLocation().toLowerCase()))
+            location.equals(e.getLocation()))
         {
             return true;
         }
@@ -117,8 +126,8 @@ public class Event
     //Overloaded method Compares with just location and type
     public boolean isSame(String inType, String inLoc)
     {
-        if(eType.toString().toLowerCase().equals(inType) &&
-            location.toLowerCase().equals(inLoc.toLowerCase()))
+        if(eType.toString().equals(inType) &&
+            location.equals(inLoc))
         {
             return true;
         }

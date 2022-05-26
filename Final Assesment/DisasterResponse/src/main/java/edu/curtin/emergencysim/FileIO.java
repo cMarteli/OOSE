@@ -24,7 +24,7 @@ public class FileIO<E>{
     EXPORT: sim (EventNotifier)
     ASSERTION: Imports a text file and writes it to an object
     ************************************************************/
-    public void readFile(String filename, EventNotifier<E> sim) throws IOException
+    public void readFile(String filename, EventNotifier<E> en) throws IOException
     {
         File inFile = new File(filename);
         Scanner sc = new Scanner(inFile);
@@ -53,7 +53,7 @@ public class FileIO<E>{
             }
             location = sc.nextLine(); //location
 
-            if(sim.checkDupes(eType, location)) //checks for duplicate events - throws IO exception
+            if(en.checkDupes(eType, location)) //checks for duplicate events - throws IO exception
             {
                 String err = "Duplicate " + eType + " event at: " + location;
                 if (LOGR.isLoggable(Level.FINE))
@@ -64,7 +64,7 @@ public class FileIO<E>{
                 throw new IOException(err);
             }
 
-            sim.addEvent(time, eType, location);
+            en.addEvent(time, eType, location);
         }
 
         sc.close(); //close scanner

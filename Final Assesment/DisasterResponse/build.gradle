@@ -3,10 +3,7 @@ plugins {
     id 'application'
     id 'pmd'
 }
-run
-{
-    enableAssertions = true
-}
+
 repositories {
     mavenCentral()
 }
@@ -30,4 +27,13 @@ pmd {
     rulesMinimumPriority = 5
     ruleSets = []
     ruleSetFiles = files('oose-pmd-rules.xml')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }

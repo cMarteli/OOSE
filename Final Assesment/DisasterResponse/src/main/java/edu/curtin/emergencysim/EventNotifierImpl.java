@@ -73,6 +73,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
         return eventQueue;
     }
 
+    @Override
     public List<Event> getActiveEvents()
     {
         return activeEvents;
@@ -100,7 +101,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
 
     //Validates then Formats message
     @Override
-    public void receive(String s) throws IllegalArgumentException
+    public Event receive(String s) throws IllegalArgumentException
     {
         Matcher m = SEND_REGEX.matcher(s); //checks string against regex
         if(!m.matches())
@@ -111,21 +112,22 @@ public class EventNotifierImpl implements EventNotifier<Event>
         String status = m.group("status");
         String location = m.group("location");
 
-
-        //TODO: get active event and match it with this one
-        //TODO: subtract one cleanup time every second
+        Event event = getActiveEvent(emergency, location); //throws exception if not found
 
 
-        //displays message
+        //displays message - sets rescuer status
         if(status.equals("+"))
         {
             System.out.println(emergency + " team arrived in " + location);
+            event.setRescuersPresent(true);
         }
         else
         {
             System.out.println(emergency + " team departed from " + location);
+            event.setRescuersPresent(false);
         }
 
+        return event;
     }
 
 
@@ -164,5 +166,22 @@ public class EventNotifierImpl implements EventNotifier<Event>
         activeEvents.add(e); //add event to active list
         return outStr;
     }
+
+    @Override
+    public Event getActiveEvent(String type, String loc)
+    {
+        type = type.toUpperCase();
+        //searches through active event list
+        for (Event e : activeEvents)
+        {
+            if(e.isSame(type, loc))
+            {
+                return e; //found
+            }
+        }
+        //if not found throw error
+        throw new IllegalArgumentException("Couldn't find event of type '" + type + "' at " + loc);
+    }
+
 
 }

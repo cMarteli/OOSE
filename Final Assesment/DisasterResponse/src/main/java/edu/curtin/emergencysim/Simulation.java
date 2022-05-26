@@ -39,12 +39,12 @@ public class Simulation
         rand = new Random();
         rci = new ResponderCommImpl(); //if clock desyncs move this to run()
 
-        System.out.println("TEST");
-        for (Event e : en.getEventQueue()) {
-            System.out.println(e.toString());
-        }
+        // System.out.println("TEST");
+        // for (Event e : en.getEventQueue()) {
+        //     System.out.println(e.toString());
+        // }
 
-        System.out.println("END");
+        // System.out.println("END");
     }
 
     /************************************************************
@@ -63,7 +63,7 @@ public class Simulation
 
         while (simIsActive) {
 
-            //poll()
+            //poll()/receive()
             newEvents = rci.poll(); //poll() call
             if(!newEvents.isEmpty()) //if poll list is not empty
             {
@@ -75,7 +75,15 @@ public class Simulation
                     else
                     {
                         try {
-                            en.receive(s); //formats message TODO: Should do more with this
+                            if(!en.receive(s).isOver())
+                            {
+                                //reduce timer every second
+                                clockTick(en.getActiveEvents());
+                            }
+                            else
+                            {
+                                System.out.println("Event is over!"); //TODO: add more info
+                            }
                         }
                         catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
@@ -84,7 +92,7 @@ public class Simulation
                 }
             }
 
-            //send()
+            //send()/notify()
             for (Event nxt : queue) {
                 if(nxt.getTime() == seconds) //checks if there any events scheduled to start this second
                 {
@@ -103,9 +111,26 @@ public class Simulation
             System.out.println(seconds + "s"); //debug
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
+
+            System.out.println("TEST - Active Events");
+            for (Event e : en.getActiveEvents()) {
+                System.out.println(e.toString());
+            }
+
+            System.out.println("END - TEST");
+
         }
 
         System.out.println("End of Simulation.");
+
+    }
+
+    private void clockTick(List<Event> active)
+    {
+        for (Event event : active)
+        {
+            event.cleanupTick();
+        }
 
     }
 
