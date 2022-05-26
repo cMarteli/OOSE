@@ -6,12 +6,13 @@
 // # may contain code previously submitted for DSA Modified March 2022 for EmergencyResponse.java
 // Modified May,2022 for EmergencyResponse.java
 package edu.curtin.emergencysim;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.*;
 @SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool
-public class FileIO {
+public class FileIO<E>{
 
     /**
      * Logger from EmergencyResponse.java
@@ -23,36 +24,26 @@ public class FileIO {
     EXPORT: sim (EventNotifier)
     ASSERTION: Imports a text file and writes it to an object
     ************************************************************/
-    public static EventNotifier<Event> readFile(String filename) throws IOException
+    public void readFile(String filename, EventNotifier<E> sim) throws IOException
     {
         File inFile = new File(filename);
         Scanner sc = new Scanner(inFile);
-
-        EventNotifier<Event> sim = new EventNotifierImpl();
 
         while(sc.hasNextLine())
         {
             int time = sc.nextInt(); //time
             String location;
-            Event.Emergency dis;
+            String eType;
             String command = sc.next(); //gets command to read
+            command = command.toUpperCase(); //converts to upper case
 
-
-            if(command.toLowerCase().equals("flood"))//case flood
+            if(command.equals("FLOOD") || command.equals("FIRE") || command.equals("CHEMICAL"))//valid
             {
-                dis = Event.Emergency.FLOOD;
+                eType = command;
             }
-            else if(command.toLowerCase().equals("fire")) //case fire
+            else //invalid type
             {
-                dis = Event.Emergency.FIRE;
-            }
-            else if(command.toLowerCase().equals("chemical")) //case chemical
-            {
-                dis = Event.Emergency.CHEMICAL;
-            }
-            else //invalid
-            {
-                String err = "Invalid command in input file: " + command;
+                String err = "Invalid emergency type in input file: " + command;
                 if (LOGR.isLoggable(Level.FINE))
                 {
                     LOGR.log(Level.FINE, err);
@@ -62,11 +53,9 @@ public class FileIO {
             }
             location = sc.nextLine(); //location
 
-            Event e = new Event(time, dis, location);
-
-            if(sim.checkDupes(e)) //checks for duplicate events - throws IO exception
+            if(sim.checkDupes(eType, location)) //checks for duplicate events - throws IO exception
             {
-                String err = "Duplicate event: " + e.toString();
+                String err = "Duplicate " + eType + " event at: " + location;
                 if (LOGR.isLoggable(Level.FINE))
                 {
                     LOGR.log(Level.FINE, err);
@@ -75,11 +64,10 @@ public class FileIO {
                 throw new IOException(err);
             }
 
-            sim.addEvent(e);
+            sim.addEvent(time, eType, location);
         }
 
         sc.close(); //close scanner
-        return sim;
     }
 
 }

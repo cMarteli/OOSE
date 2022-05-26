@@ -18,24 +18,24 @@ public class Event
 
     private int time, casualtyCount, dmgCount;
     private String location;
-    private Emergency emergencyType;
+    private Emergency eType;
     private int cleanupTime;
 
     /************************************************************
     Constructor
     ************************************************************/
-    public Event(int t, Emergency e, String l) {
+    public Event(int t, String et, String l) {
         time = t;
-        emergencyType = e;
+        //cleanup time is set to total time needed for cleanup depending on event type
+        setType(et); //sets enum according to string
         location = l;
 
         //initalizes counts to 0
         casualtyCount = 0;
         dmgCount = 0;
-        resetCleanupTime(e);
     }
 
-    //returns 0 if cleanuptime is 0 or less
+    //returns true if cleanuptime is 0 or less
     public boolean isOver()
     {
         return cleanupTime <= 0;
@@ -49,26 +49,38 @@ public class Event
         this.cleanupTime = cleanupTime;
     }
 
-
-    //initiates cleanup time - method is final as it's used during construction
-    public final void resetCleanupTime(Emergency e) {
-        if(e == Emergency.FIRE)
-        {
-            cleanupTime = FIRE_LOW_CLEANUP_TIME;
-
-        }
-        else if(e == Emergency.FLOOD) //Flood does not 'cleanup' it has an end time
-        {
-            cleanupTime = FLOOD_END_TIME;
-
-        }
-        else if(e == Emergency.CHEMICAL)
-        {
-            cleanupTime = CHEM_CLEANUP_TIME;
-        }
+    //ticks down cleanuptime one second
+    public void cleanupTick()
+    {
+        cleanupTime--;
     }
 
 
+    //sets type and initiates cleanup time - method is final as it's used during construction
+    public final void setType(String et)
+    {
+        if(et.equals(Emergency.FIRE.toString()))
+        {
+            eType = Emergency.FIRE;
+            cleanupTime = FIRE_LOW_CLEANUP_TIME;
+
+        }
+        else if(et.equals(Emergency.FLOOD.toString()))
+        {
+            eType = Emergency.FLOOD;
+            cleanupTime = FLOOD_END_TIME;
+
+        }
+        else if(et.equals(Emergency.CHEMICAL.toString()))
+        {
+            eType = Emergency.CHEMICAL;
+            cleanupTime = CHEM_CLEANUP_TIME;
+        }
+        else //This should never happen
+        {
+            assert false: "ERROR: No match found when contructing event of type: " + et;
+        }
+    }
 
     public int getDmgCount() {
         return dmgCount;
@@ -91,8 +103,22 @@ public class Event
     //Compares if event is the same as another
     public boolean isSame(Event e)
     {
-        if(emergencyType == e.getEmergencyType() &&
+        if(eType == e.getEmergencyType() &&
             location.toLowerCase().equals(e.getLocation().toLowerCase()))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    //Overloaded method Compares with just location and type
+    public boolean isSame(String inType, String inLoc)
+    {
+        if(eType.toString().toLowerCase().equals(inType) &&
+            location.toLowerCase().equals(inLoc.toLowerCase()))
         {
             return true;
         }
@@ -110,12 +136,12 @@ public class Event
         return location;
     }
     public Emergency getEmergencyType() {
-        return emergencyType;
+        return eType;
     }
 
     @Override
     public String toString() {
-        return "Event [Type:" + emergencyType + ", Location:" + location + ", Start Time:" + time + "]";
+        return "Event [Type:" + eType + ", Location:" + location + ", Start Time:" + time + "]";
     }
 
 

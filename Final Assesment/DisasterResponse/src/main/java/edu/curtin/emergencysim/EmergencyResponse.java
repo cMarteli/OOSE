@@ -17,7 +17,7 @@ import java.util.logging.*;
 public class EmergencyResponse
 {
 
-    public static final String SPLASH = BLUE+ "**************************\n*" + RESET + " EMERGENCY RESPONSE SIM " + MAGENTA + "*\n**************************\n" + RESET;
+    private static final String SPLASH = BLUE+ "**************************\n*" + RESET + " EMERGENCY RESPONSE SIM " + MAGENTA + "*\n**************************\n" + RESET;
     /**
      * @param args the command line arguments
      */
@@ -34,9 +34,9 @@ public class EmergencyResponse
         {
             if (LOGR.isLoggable(Level.SEVERE))
             {
-                LOGR.log(Level.SEVERE, "Total Crash: " + e);
+                LOGR.log(Level.SEVERE, "Total Crash: " + e.getMessage());
             }
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e.getMessage());
             System.out.println("The Program will now close...");
         }
         finally

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface EventNotifier<E>
 {
-    public List<E> getEvents(); //Generic type allows for the use of either string or event class depending on implementation
+    public List<E> getEventQueue(); //Generic type allows for the use of either string or event class depending on implementation
 
     public void receive(String s);
 
@@ -16,8 +16,10 @@ public interface EventNotifier<E>
 
     public void addEvent(E e);
 
+    public void addEvent(int time, String type, String loc);
+
     public void removeEvent(E e);
 
-    public boolean checkDupes(E e);
+    public boolean checkDupes(String type, String loc);
 
 }

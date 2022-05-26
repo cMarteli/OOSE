@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class Menu
 {
-    public static final String FILE_EXTENSION = ".txt";
+    private static final String FILE_EXTENSION = ".txt";
 
     /************************************************************
     * IMPORT: none

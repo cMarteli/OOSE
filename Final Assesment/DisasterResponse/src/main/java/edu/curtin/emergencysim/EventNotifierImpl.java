@@ -14,7 +14,9 @@ import java.util.regex.Pattern;
 public class EventNotifierImpl implements EventNotifier<Event>
 {
 
-    private List<Event> events; //list of references to what's being observed
+    private List<Event> eventQueue; //list of references to events in file
+
+    private List<Event> activeEvents; //list of references to current events
 
     // A regular expression for validating and extracting parts of outgoing ('send') messages.
     private static final Pattern SEND_REGEX = Pattern.compile(
@@ -25,27 +27,35 @@ public class EventNotifierImpl implements EventNotifier<Event>
     ************************************************************/
     public EventNotifierImpl()
     {
-        events = new ArrayList<>();
+        eventQueue = new ArrayList<>();
+        activeEvents = new ArrayList<>();
     }
 
     @Override
     public void addEvent(Event e)
     {
-        events.add(e);
+        eventQueue.add(e);
+    }
+
+    @Override
+    public void addEvent(int time, String type, String loc)
+    {
+        Event e = new Event(time, type, loc);
+        eventQueue.add(e);
     }
 
     @Override
     public void removeEvent(Event e)
     {
-        events.remove(e);
+        eventQueue.remove(e);
     }
 
     //get next by arrival time TODO: Currently not used
     public Event getNext()
     {
-        Event next = events.get(0); //sets index 0 as next
+        Event next = eventQueue.get(0); //sets index 0 as next
         int temp = next.getTime(); //gets it's time
-        for (Event em : events)
+        for (Event em : eventQueue)
         {
             if(em.getTime() < temp) //if lower arrival time
             {
@@ -58,9 +68,14 @@ public class EventNotifierImpl implements EventNotifier<Event>
     }
 
     @Override
-    public List<Event> getEvents() //TODO possible place for generics <Event> <E>
+    public List<Event> getEventQueue()
     {
-        return events;
+        return eventQueue;
+    }
+
+    public List<Event> getActiveEvents()
+    {
+        return activeEvents;
     }
 
     /************************************************************
@@ -69,12 +84,12 @@ public class EventNotifierImpl implements EventNotifier<Event>
     Checks for duplicate events. Used by fileIO.java
     ************************************************************/
     @Override
-    public boolean checkDupes(Event e)
+    public boolean checkDupes(String type, String loc)
     {
         boolean result = false;
-        for (Event ev : events)
+        for (Event ev : eventQueue)
         {
-            if(e.isSame(ev))
+            if(ev.isSame(type, loc))
             {
                 result = true;
             }
@@ -95,6 +110,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
         String emergency = m.group("emergency");
         String status = m.group("status");
         String location = m.group("location");
+
 
         //TODO: get active event and match it with this one
         //TODO: subtract one cleanup time every second
@@ -124,6 +140,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
     public String notify(Event e) throws IllegalArgumentException
     {
         String outStr;
+
         switch (e.getEmergencyType())
         {
             case FIRE:
@@ -144,6 +161,8 @@ public class EventNotifierImpl implements EventNotifier<Event>
             default:
                 throw new IllegalArgumentException("Invalid Emergency type: '" + e.getEmergencyType() + "'");
         }
+        activeEvents.add(e); //add event to active list
         return outStr;
     }
+
 }

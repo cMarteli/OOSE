@@ -49,6 +49,8 @@ remember:
 -periodically check with PMD linting tool "./gradlew check"
 
 
+**Design notes**
+
 Observer pattern:
 
 Observers are the ones who receive notifications of new events as they occur
@@ -58,4 +60,12 @@ Subject is what is being observed (event notifier?) and they may have an event s
 
 Explanation of Generics:
 Event notifier interface takes in a generic instead of Event.
-This was done to decouple the class from needing a specific 'Event' if future implementations of the software choose to utilise another class (such as string). This removes need to refactor the interface as only the implementation is affected. This is important for compatibility.
+This was done to decouple the class from needing a specific 'Event' class if future implementations of the software choose to utilise another class (such as string). This removes need to refactor the interface as only the implementation is affected. This is important for compatibility.
+
+Dependency injection: Only interfaces are directly referecended between classes.
+
+fileIO.java originally instantiated the EventNotifierImpl (the concrete class of the EventNotifier interface) it also instantiated the Event.java class and used the EventNotiferImpl.add(Event e) method to add to the list of Events.
+
+This was completely changed to loosen coupling and decrease dependencies.
+fileIO now takes a generic parameter and an additional overloaded version of .add() was created to take in strings and integers as parameters so the implementation of the interface can handle the creation of the new events. 
+This way fileIO.java does not need to know of the existence of Event.java or the EventNotifierImpl only the interface.

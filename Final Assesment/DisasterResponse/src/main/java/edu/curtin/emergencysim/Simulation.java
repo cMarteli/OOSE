@@ -19,16 +19,12 @@ public class Simulation
     private EventNotifier<Event> en;
     private Random rand;
     private ResponderComm rci;
+    private FileIO<Event> fio;
 
      /**
      * Logger from EmergencyResponse.java
      */
     private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
-
-    //  // A regular expression for validating and extracting parts of outgoing ('send') messages.
-    //  private static final Pattern SEND_REGEX = Pattern.compile(
-    //     "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
-
 
     /************************************************************
     IMPORT: inEn (EventNotifier)
@@ -36,9 +32,19 @@ public class Simulation
     ************************************************************/
     public Simulation(String fileName) throws IOException
     {
-        en = FileIO.readFile(fileName); //throws exception here and object is not constructed
+        fio = new FileIO<Event>(); //creates new file IO object that uses event
+        en = new EventNotifierImpl();
+
+        fio.readFile(fileName, en); //throws exception here and object is not constructed
         rand = new Random();
         rci = new ResponderCommImpl(); //if clock desyncs move this to run()
+
+        System.out.println("TEST");
+        for (Event e : en.getEventQueue()) {
+            System.out.println(e.toString());
+        }
+
+        System.out.println("END");
     }
 
     /************************************************************
@@ -51,7 +57,7 @@ public class Simulation
 
         boolean simIsActive = true;
         int seconds = 0; //timer
-        List<Event> queue = en.getEvents(); //gets event queue
+        List<Event> queue = en.getEventQueue(); //gets event queue
         List<String> newEvents;
         System.out.println("Starting Simulation...");
 

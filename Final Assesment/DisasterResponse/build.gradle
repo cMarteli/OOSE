@@ -3,7 +3,10 @@ plugins {
     id 'application'
     id 'pmd'
 }
-
+run
+{
+    enableAssertions = true
+}
 repositories {
     mavenCentral()
 }
