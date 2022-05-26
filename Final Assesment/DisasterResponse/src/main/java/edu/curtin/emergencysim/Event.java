@@ -62,6 +62,7 @@ public class Event
     public void cleanupTick()
     {
         cleanupTime--;
+        //System.out.println(eType+"@"+location+": clnpTim=" + cleanupTime);//TODO: DEBUG
     }
 
 
@@ -126,8 +127,8 @@ public class Event
     //Overloaded method Compares with just location and type
     public boolean isSame(String inType, String inLoc)
     {
-        if(eType.toString().equals(inType) &&
-            location.equals(inLoc))
+        if(eType.toString().toUpperCase().equals(inType.toUpperCase()) &&
+            location.toUpperCase().equals(inLoc.toUpperCase()))
         {
             return true;
         }

@@ -74,7 +74,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
     }
 
     @Override
-    public List<Event> getActiveEvents()
+    public List<Event> getActiveList()
     {
         return activeEvents;
     }
@@ -101,7 +101,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
 
     //Validates then Formats message
     @Override
-    public Event receive(String s) throws IllegalArgumentException
+    public void receive(String s) throws IllegalArgumentException
     {
         Matcher m = SEND_REGEX.matcher(s); //checks string against regex
         if(!m.matches())
@@ -112,22 +112,17 @@ public class EventNotifierImpl implements EventNotifier<Event>
         String status = m.group("status");
         String location = m.group("location");
 
-        Event event = getActiveEvent(emergency, location); //throws exception if not found
-
-
         //displays message - sets rescuer status
         if(status.equals("+"))
         {
             System.out.println(emergency + " team arrived in " + location);
-            event.setRescuersPresent(true);
+            getActEvent(emergency, location).setRescuersPresent(true); //crashes TODO
         }
         else
         {
             System.out.println(emergency + " team departed from " + location);
-            event.setRescuersPresent(false);
+            getActEvent(emergency, location).setRescuersPresent(false);
         }
-
-        return event;
     }
 
 
@@ -168,11 +163,11 @@ public class EventNotifierImpl implements EventNotifier<Event>
     }
 
     @Override
-    public Event getActiveEvent(String type, String loc)
+    public Event getActEvent(String type, String loc)
     {
         type = type.toUpperCase();
         //searches through active event list
-        for (Event e : activeEvents)
+        for (Event e : getActiveList())
         {
             if(e.isSame(type, loc))
             {

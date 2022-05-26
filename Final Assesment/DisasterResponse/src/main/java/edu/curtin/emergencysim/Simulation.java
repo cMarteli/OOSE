@@ -74,20 +74,13 @@ public class Simulation
                     }
                     else
                     {
-                        try {
-                            if(!en.receive(s).isOver())
-                            {
-                                //reduce timer every second
-                                clockTick(en.getActiveEvents());
-                            }
-                            else
-                            {
-                                System.out.println("Event is over!"); //TODO: add more info
-                            }
+
+                        try
+                        {
+                            en.receive(s); //TODO: Crashing
+                            clockTick(en.getActiveList()); //reduce timer on active events every second
                         }
-                        catch (IllegalArgumentException e) {
-                            System.out.println(e.getMessage());
-                        }
+                        catch (IllegalArgumentException e) {System.out.println(e.getMessage());}
                     }
                 }
             }
@@ -108,16 +101,18 @@ public class Simulation
             //logs time passed
             if (LOGR.isLoggable(Level.INFO)) {
             LOGR.info(seconds + "s"); }
-            System.out.println(seconds + "s"); //debug
+
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
 
-            System.out.println("TEST - Active Events");
-            for (Event e : en.getActiveEvents()) {
-                System.out.println(e.toString());
-            }
+            // //TODO DEBUG
+            System.out.print("[t="+seconds+"]"); //prints seconds
+            // System.out.println("TEST - Active Events: {");
+            // for (Event e : en.getActiveList()) {
+            //     System.out.println(e.toString());
+            // }
 
-            System.out.println("END - TEST");
+            // System.out.print("}");
 
         }
 
@@ -127,9 +122,24 @@ public class Simulation
 
     private void clockTick(List<Event> active)
     {
+        Event toRemove = null;
+        boolean remove = false;
         for (Event event : active)
         {
-            event.cleanupTick();
+            if(!event.isOver())//checks if already over
+            {
+                event.cleanupTick();
+            }
+            else
+            {
+                System.out.println(event.getEmergencyType() + " at " + event.getLocation() + " is over");
+                toRemove = event;
+                remove = true;
+            }
+        }
+        if(remove)
+        {
+            active.remove(toRemove); //removes event from active list
         }
 
     }

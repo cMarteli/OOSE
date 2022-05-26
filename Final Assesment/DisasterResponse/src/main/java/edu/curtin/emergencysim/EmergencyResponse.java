@@ -22,27 +22,27 @@ public class EmergencyResponse
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try
-        {
+   //     try
+     //   {
             setupLogger();// sets up logging
             System.out.println(SPLASH); //displays title
 
             Menu.showMenu();
 
-        }
-        catch (Exception e) //only generic exception to let program "fail gracefully" still returns error to user and is logged
-        {
-            if (LOGR.isLoggable(Level.SEVERE))
-            {
-                LOGR.log(Level.SEVERE, "Total Crash: " + e.getMessage());
-            }
-            System.out.println("Error: " + e.getMessage());
-            System.out.println("The Program will now close...");
-        }
-        finally
-        {
-            Keyboard.close(); //closes Scanner therefore closing System.in - to satisfy PMD
-        }
+        // }
+        // catch (Exception e) //only generic exception to let program "fail gracefully" still returns error to user and is logged
+        // {
+        //     if (LOGR.isLoggable(Level.SEVERE))
+        //     {
+        //         LOGR.log(Level.SEVERE, "Total Crash: " + e.getMessage());
+        //     }
+        //     System.out.println("Error: " + e.getMessage());
+        //     System.out.println("The Program will now close...");
+        // }
+        // finally
+        // {
+        //     Keyboard.close(); //closes Scanner therefore closing System.in - to satisfy PMD
+        // }
 
     }
 
