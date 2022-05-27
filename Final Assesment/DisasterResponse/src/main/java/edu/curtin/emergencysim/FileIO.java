@@ -21,13 +21,13 @@ public class FileIO<E>{
 
     /************************************************************
      * Imports a text file and writes it to an object
-     * @param filename (String)
+     * @param fileName (String)
      * @param en (EventNotifier)
      * @throws IOException
      ************************************************************/
-    public void readFile(String filename, EventNotifier<E> en) throws IOException
+    public void readFile(String fileName, EventNotifier<E> en) throws IOException
     {
-        File inFile = new File(filename);
+        File inFile = new File(fileName);
         Scanner sc = new Scanner(inFile);
 
         while(sc.hasNextLine())
@@ -69,6 +69,63 @@ public class FileIO<E>{
         }
 
         sc.close(); //close scanner
+    }
+
+
+    /************************************************************
+     * Lets user enter the file name and validates input
+     * @param ext (String)
+     * @return filename (String)
+     ************************************************************/
+    public String checkFileName(String ext)
+    {
+        String prompt = "Please enter a file name:";
+        int ans;
+
+        System.out.println(prompt);
+        String filename = Keyboard.next() + ext;
+        prompt = "File name: <" + filename + ">\nIs this correct? [1]Confirm [2]Cancel\n";
+        do
+        {
+            Keyboard.nextLine(); //clears keyboard buffer
+            ans = checkInteger(prompt);
+        }
+        while(ans != 1 && ans != 2);
+
+        if(ans == 1)
+        {
+            return filename;
+        }
+        else
+        {
+            return checkFileName(ext);
+        }
+    }
+
+    /************************************************************
+     * Validator Method. Gets user integer and repeats until it's a valid input
+     * @param prompt (String)
+     * @return userInt (integer)
+    ************************************************************/
+    public int checkInteger(String prompt)
+    {
+        int userInt = 0;
+        boolean isValid = false;
+
+        while (!isValid)
+        {
+            try
+            {
+                System.out.println(prompt);
+                userInt = Integer.parseInt(Keyboard.nextLine());
+                isValid = true;
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Enter a number");
+            }
+        }
+        return userInt;
     }
 
 }

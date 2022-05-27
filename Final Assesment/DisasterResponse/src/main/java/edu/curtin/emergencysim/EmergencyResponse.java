@@ -11,6 +11,9 @@
 package edu.curtin.emergencysim;
 
 import static edu.curtin.emergencysim.Constants.*; //imports GFX class
+import edu.curtin.emergencysim.responders.*;
+
+import java.io.IOException;
 import java.util.logging.*;
 
 @SuppressWarnings("PMD.AvoidCatchingGenericException") //See line 29
@@ -21,28 +24,49 @@ public class EmergencyResponse
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-   //     try
-     //   {
-            setupLogger();// sets up logging
-            System.out.println(SPLASH); //displays title
+    private static final String FILE_EXTENSION = ".txt";
+    public static void main(String[] args)
+    {
+        setupLogger();// sets up logging
+        System.out.println(SPLASH); //displays splash title
 
-            Menu.showMenu();
+        //instantiates classes to be injected into simulation
+        FileIO<Event> fio = new FileIO<Event>(); //creates new file IO object that uses event
+        EventNotifier<Event> en = new EventNotifierImpl(); //Event notifier class
+        ResponderComm rci;
+        Simulation sim;
 
-        // }
-        // catch (Exception e) //only generic exception to let program "fail gracefully" still returns error to user and is logged
-        // {
-        //     if (LOGR.isLoggable(Level.SEVERE))
-        //     {
-        //         LOGR.log(Level.SEVERE, "Total Crash: " + e.getMessage());
-        //     }
-        //     System.out.println("Error: " + e.getMessage());
-        //     System.out.println("The Program will now close...");
-        // }
-        // finally
-        // {
-        //     Keyboard.close(); //closes Scanner therefore closing System.in - to satisfy PMD
-        // }
+        String fileName = fio.checkFileName(FILE_EXTENSION); //gets file name from user
+
+        try //load file
+        {
+            fio.readFile(fileName, en); //loads file into EventNotifier
+        }
+        catch (IOException e) //for instatiation
+        {
+            System.out.println("Could not read from " + fileName + ": " + e.getMessage());
+        }
+
+        rci = new ResponderCommImpl(); //needs to be just before run() to avoid clock desyncs
+        sim = new Simulation(en, rci);
+
+        try
+        {
+            sim.run(); //starts simulation
+        }
+        catch (InterruptedException ex) //for .run()
+        {
+            if (LOGR.isLoggable(Level.SEVERE))
+            {
+                LOGR.log(Level.SEVERE, "Total Crash: " + ex.getMessage());
+            }
+            System.out.println("Simulation was interupted: " + ex.getMessage());
+            System.out.println("The Program will now close...");
+        }
+        finally
+        {
+            Keyboard.close(); //closes Scanner therefore closing System.in - to satisfy PMD
+        }
 
     }
 

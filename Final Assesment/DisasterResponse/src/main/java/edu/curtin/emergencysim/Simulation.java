@@ -26,13 +26,10 @@ public class Simulation
      * @param fileName
      * @throws IOException
     ************************************************************/
-    public Simulation(String fileName) throws IOException
+    public Simulation(EventNotifier<Event> inEn, ResponderComm inRci)
     {
-        FileIO<Event> fio = new FileIO<Event>(); //creates new file IO object that uses event
-        en = new EventNotifierImpl();
-
-        fio.readFile(fileName, en); //throws exception here if object is not constructed
-        rci = new ResponderCommImpl(); //if clock desyncs move this to run()
+        en = inEn;
+        rci = inRci; //if clock desyncs move this to run()
 
         //System.out.println("TEST"); for(Event e : en.getEventQueue()){System.out.println(e.toString());} //DEBUG - Prints event queue
     }

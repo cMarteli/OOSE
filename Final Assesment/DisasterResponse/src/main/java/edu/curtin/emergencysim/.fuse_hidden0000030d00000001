@@ -1,0 +1,24 @@
+/**
+ * SimulationRepository.java
+ * Dependancy Injection interface
+ * 2022/OOSE Assignment
+ * @author Caio Marteli (19598552)
+ */
+package edu.curtin.emergencysim;
+import java.util.*;
+
+import edu.curtin.emergencysim.responders.*;
+
+public interface SimulationRepository
+{
+    // private EventNotifier<Event> en;
+    // private ResponderComm rci;
+    /*Factory method*/
+    public void addNotifier();
+
+    public void add(Event e);
+
+    List<Event> getAll();
+
+     
+}
