@@ -70,4 +70,10 @@ This was completely changed to loosen coupling and decrease dependencies.
 fileIO now takes a generic parameter and an additional overloaded version of .add() was created to take in strings and integers as parameters so the implementation of the interface can handle the creation of the new events. 
 This way fileIO.java does not need to know of the existence of Event.java or the EventNotifierImpl only the interface.
 
-Dependency injection: Add to Simulation class
+Dependency injection:
+Originally the simulation class had all files instantiated in the constructor.
+To enable easier unit testing and implement DI I decided to use my Main class as a bootstrap that instantiates all objects relevant to the simulation and injects it into the constructor of the simulator class.
+
+This solution did not require the use of factory methods, and for code simplicity sake I've elected not to implement them as the purpose of easier testing was achieved.
+
+State Pattern:

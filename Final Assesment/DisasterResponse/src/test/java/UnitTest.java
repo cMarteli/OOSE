@@ -4,18 +4,16 @@
  * 2022/OOSE Assignment 2
  * @author Caio Marteli (19598552)
  */
-import edu.curtin.emergencysim.*;
+package edu.curtin.emergencysim;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.*;
+//import java.util.*;
 
 public class UnitTest
 {
-
-
-
-    final String INPUT_FILE = "input2.txt";
+    public static final String INPUT_FILE = "input2.txt";
     //initializes classes for tests
 
     @Test

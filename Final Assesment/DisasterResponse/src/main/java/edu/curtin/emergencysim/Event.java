@@ -39,7 +39,7 @@ public class Event
         //dmgCount = 0;
 
         //rescuers are not present at start
-        rescuersPresent();
+        rescuersPresent = false;
     }
 
     /**
