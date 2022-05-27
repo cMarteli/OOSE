@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.logging.*;
 
+import edu.curtin.emergencysim.events.*;
+import edu.curtin.emergencysim.notifier.*;
 import edu.curtin.emergencysim.responders.*;
 
 public class Simulation
@@ -108,7 +110,7 @@ public class Simulation
             {
                 try {
                     //if(activeEvents.containsKey(nxt.getKey()))
-                    activeEvents.put(nxt.getKey(), nxt); //add event to hashmap
+                    //activeEvents.put(nxt.getKey(), nxt); //add event to hashmap
                     rci.send(en.notify(nxt)); //sends events to responder - prints
                 }
                 catch (IllegalArgumentException e) {
@@ -126,25 +128,26 @@ public class Simulation
     ************************************************************/
     private void clockTick(Map<String, Event> active)
     {
-        Event temp = null;
-        boolean needsRemoval = false;
-        for (Event event : active.values())
-        {
-            if(!event.isOver() && event.rescuersPresent())//if not over && rescuers are present
-            {
-                event.cleanup();
-            }
-            else
-            {
-                System.out.println(event.getEmergencyType() + " at " + event.getLocation() + " is over");
-                temp = event;
-                needsRemoval = true;
-            }
-        }
-        if(needsRemoval)
-        {
-            active.remove(temp.getKey()); //removes event from active list
-        }
+        // Event temp = null;
+        // boolean needsRemoval = false;
+        // for (Event event : active.values())
+        // {
+        //     if(!event.isOver() && event.rescuersPresent())//if not over && rescuers are present
+        //     {
+        //         event.cleanup();
+        //     }
+        //     else
+        //     {
+        //         System.out.println(event.getEmergencyType() + " at " + event.getLocation() + " is over");
+        //         temp = event;
+        //         needsRemoval = true;
+        //     }
+        // }
+        // if(needsRemoval)
+        // {
+        //     active.remove(temp.getKey()); //removes event from active list
+        // }
+        System.out.println("STUB");
 
     }
 

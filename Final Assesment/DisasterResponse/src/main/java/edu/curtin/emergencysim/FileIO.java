@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.*;
+import edu.curtin.emergencysim.notifier.*;
+
 @SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool
 public class FileIO<E>{
 

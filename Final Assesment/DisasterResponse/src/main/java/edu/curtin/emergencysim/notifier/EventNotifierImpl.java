@@ -4,11 +4,13 @@
  * Implentation which uses Event class
  * @author Caio Marteli (19598552)
  */
-package edu.curtin.emergencysim;
+package edu.curtin.emergencysim.notifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import edu.curtin.emergencysim.events.Event;
 
 
 
@@ -85,7 +87,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
         boolean result = false;
         for (Event ev : eventQueue)
         {
-            if(ev.isSame(type, loc))
+            if(ev.compare(type, loc))
             {
                 result = true;
             }
@@ -132,29 +134,29 @@ public class EventNotifierImpl implements EventNotifier<Event>
     @Override
     public String notify(Event e) throws IllegalArgumentException
     {
-        String outStr;
+        // String outStr;
 
-        switch (e.getEmergencyType())
-        {
-            case FIRE:
-                outStr = "fire low"+ e.getLocation(); //fire always starts at low intensity
+        // switch (e.getEmergencyType())
+        // {
+        //     case FIRE:
+        //         outStr = "fire low"+ e.getLocation(); //fire always starts at low intensity
 
-                break;
+        //         break;
 
-            case FLOOD:
-                outStr = "flood start " + e.getLocation();
+        //     case FLOOD:
+        //         outStr = "flood start " + e.getLocation();
 
-                break;
+        //         break;
 
-            case CHEMICAL:
-                outStr = "chemical start " + e.getLocation();
+        //     case CHEMICAL:
+        //         outStr = "chemical start " + e.getLocation();
 
-                break;
+        //         break;
 
-            default:
-                throw new IllegalArgumentException("Invalid Emergency type: '" + e.getEmergencyType() + "'");
-        }
-        return outStr;
+        //     default:
+        //         throw new IllegalArgumentException("Invalid Emergency type: '" + e.getEmergencyType() + "'");
+        // }
+        return "[Notify STUBBED]";
     }
 
 

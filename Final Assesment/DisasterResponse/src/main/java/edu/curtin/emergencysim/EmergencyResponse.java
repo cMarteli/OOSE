@@ -12,7 +12,9 @@
  */
 package edu.curtin.emergencysim;
 
-import static edu.curtin.emergencysim.Constants.*; //imports GFX class
+import static edu.curtin.emergencysim.Colours.*; //imports GFX class
+import edu.curtin.emergencysim.events.*;
+import edu.curtin.emergencysim.notifier.*;
 import edu.curtin.emergencysim.responders.*;
 import java.util.logging.*;
 

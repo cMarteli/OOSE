@@ -3,7 +3,7 @@
  * Observable/Subject Interface
  * @author Caio Marteli (19598552)
  */
-package edu.curtin.emergencysim;
+package edu.curtin.emergencysim.notifier;
 
 import java.util.List;
 
