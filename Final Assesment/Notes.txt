@@ -40,14 +40,16 @@ fire casualty 2 Midtown
 TODO:
 
 store time each responder is on the job
-make so user is informed when jobs end
+make so user is informed when jobs end - Done! 
 add the ability for events to increase in size or dissipate
 
 
-remember:
--use logger
--periodically check with PMD linting tool "./gradlew check"
-
+***** Remember *****
+- Use logger
+- Periodically check with PMD linting tool "./gradlew check"
+- Create a UML state chart(s)!!
+- Marking criteria file! (Use stuff from this file)
+*******************
 
 **Design notes**
 
