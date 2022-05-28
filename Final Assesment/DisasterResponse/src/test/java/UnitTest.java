@@ -6,11 +6,8 @@
  */
 package edu.curtin.emergencysim;
 
-import static edu.curtin.emergencysim.Colours.*; //imports GFX class
-
 import edu.curtin.emergencysim.events.*;
-// import edu.curtin.emergencysim.notifier.*;
-// import edu.curtin.emergencysim.responders.*;
+import edu.curtin.emergencysim.notifier.*;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class UnitTest
 {
-    public static final String INPUT_FILE = "input2.txt";
+    //public static final String INPUT_FILE = "input2.txt";
     //initializes classes for tests
     // EventNotifier<Event> en;
     // ResponderComm rci;
@@ -33,33 +30,40 @@ public class UnitTest
     //     rci = new ResponderCommImpl();
     // }
 
-    @Test
+    //@Test
     public void testEvent() {
-        //Simulation sim = new Simulation(INPUT_FILE);
-        Event e1 = new Event(6, "FIRE", "Midtown");
-        Event e2 = new Event(8, "FIRE", "Midtown");
-        Event e3 = new Event(69, "FLOOD", "Midtown");
+        Event[] e = new Event[3];
+        e[0] = new Event(6, "FIRE", "Midtown");
+        e[1] = new Event(8, "FIRE", "Midtown");
+        e[2] = new Event(69, "FLOOD", "Midtown");
 
-        //Fire Midtown both events, should be true
-        assertTrue(e1.isSame(e2));
-        assertTrue(e1.compare("FIRE", "Midtown"));
-        assertTrue(e1.compare("fire", "Midtown"));
+        assertTrue(e[0].compare("FIRE", "Midtown"));
+        assertTrue(e[0].compare("fire", "Midtown"));
         //Flood != fire Should be false
-        assertFalse(e1.isSame(e3));
-        assertFalse(e1.compare("flood", "Midtown"));
-        assertFalse(e1.compare("FIRE", "Anywhere"));
+        assertFalse(e[0].compare("flood", "Midtown"));
+        assertFalse(e[0].compare("FIRE", "Anywhere"));
+
+        for (int i = 0; i < e.length; i++) {
+        // sanity check for probability
+            for (int j = 0; j < 100; j++) { //test each 100 times
+                assertFalse(e[i].roll(0.00)); //0 chance should always be false
+                assertTrue(e[i].roll(1.0)); //max chance should always be true
+            }
+        }
+
     }
 
-    @Test
+    //@Test
     public void testEventNotifier()
     {
-        en = new EventNotifierImpl();
+        EventNotifier en = new EventNotifierImpl();
         en.addEvent(24, "FLOOD", "Midtown");
         en.addEvent(6, "FIRE", "Midtown");
         en.addEvent(12, "FIRE", "Hill Valley");
         en.addEvent(24, "FLOOD", "Hill Valley");
 
-        //assertEquals(30, )
+        assertFalse(en.checkDupes("FLOOD", "Anywhere"));
+        assertTrue(en.checkDupes("FLOOD", "Hill Valley"));
     }
 
     // @Test
@@ -70,6 +74,71 @@ public class UnitTest
     //     sim = new Simulation(en, rci);
 
     // }
+
+    @Test
+    public void testFireLow()
+    {
+        System.out.println("Testing low fire:");
+        Event fl = new Event(5, "FIRE", "Midtown");
+        //casualty
+        for (int i = 0; i < 1000; i++) {
+            fl.checkCasualty();
+        }
+        System.out.println("Casualty count: " + fl.getCasualtyCount());
+        //damage
+        for (int i = 0; i < 1000; i++) {
+            fl.checkDamage();
+        }
+        System.out.println("Damage count: " + fl.getDmgCount());
+    }
+
+    @Test
+    public void testFireHigh()
+    {
+        System.out.println("Testing high fire:");
+        Event fh = new Event(5, "FIRE", "Midtown");
+
+        fh.intensityChange(); //changes to high here
+        //casualty
+        for (int i = 0; i < 1000; i++) {
+            fh.checkCasualty();
+        }
+        System.out.println("Casualty count: " + fh.getCasualtyCount());
+        //damage
+        for (int i = 0; i < 1000; i++) {
+            fh.checkDamage();
+        }
+        System.out.println("Damage count: " + fh.getDmgCount());
+    }
+
+    @Test
+    public void testLowToHighFire()
+    {
+        System.out.println("Testing low-high fire:");
+        Event f = new Event(5, "FIRE", "Midtown");
+
+        //casualty - low
+        for (int i = 0; i < 500; i++) {
+            f.checkCasualty();
+        }
+        //damage - low
+        for (int i = 0; i < 500; i++) {
+            f.checkDamage();
+        }
+        f.intensityChange(); //changes to high here
+        //casualty - high
+        for (int i = 0; i < 500; i++) {
+            f.checkCasualty();
+        }
+        //damage - high
+        for (int i = 0; i < 500; i++) {
+            f.checkDamage();
+        }
+        System.out.println("Casualty count: " + f.getCasualtyCount());
+        System.out.println("Damage count: " + f.getDmgCount());
+
+    }
+
 
 
 }

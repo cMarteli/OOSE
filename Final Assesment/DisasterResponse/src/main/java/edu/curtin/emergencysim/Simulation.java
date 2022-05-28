@@ -17,6 +17,7 @@ public class Simulation
 {
     private EventNotifier<Event> en;
     private ResponderComm rci;
+    private List<Event> activeEvents;
 
      /**
      * Logger from EmergencyResponse.java
@@ -32,7 +33,7 @@ public class Simulation
     {
         en = inEn;
         rci = inRci; //if clock desyncs move this to run()
-
+        activeEvents = new ArrayList<>();
         //System.out.println("TEST"); for(Event e : en.getEventQueue()){System.out.println(e.toString());} //DEBUG - Prints event queue
     }
 
@@ -45,13 +46,13 @@ public class Simulation
 
         boolean simIsActive = true;
         int seconds = 0; //timer
-        Map<String, Event> activeEvents = new HashMap<>(); //map key = emergency+location; references current events
+
         System.out.println("Starting Simulation...");
 
         while (simIsActive) {
 
-            simIsActive = poll(simIsActive, activeEvents);
-            send(seconds, activeEvents); //sends message to responders, adds to active event list
+            simIsActive = poll(simIsActive);
+            send(seconds); //sends message to responders, adds to active event list
 
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
@@ -73,7 +74,7 @@ public class Simulation
      * @param activeEvents
      * @return
      ************************************************************/
-    private boolean poll(boolean simIsActive, Map<String, Event> activeEvents) {
+    private boolean poll(boolean simIsActive) {
         List<String> messageList;
 
         messageList = rci.poll(); //gets latest message list from Responders
@@ -90,7 +91,7 @@ public class Simulation
                     {
                         en.receive(s); //Prints message
                         //TODO: need to get responders arrival status state pattern?
-                        clockTick(activeEvents); //reduce timer on every active event by 1
+                        simClockTick(); //reduce timer on every active event by 1
                     }
                     catch (IllegalArgumentException e) {System.out.println(e.getMessage());}
                 }
@@ -104,13 +105,13 @@ public class Simulation
      * @param seconds
      * @param activeEvents
      ************************************************************/
-    private void send(int seconds, Map<String, Event> activeEvents) {
+    private void send(int seconds) {
         for (Event nxt : en.getEventQueue()) {
             if(nxt.getStartTime() == seconds) //if there any events scheduled to start this second
             {
                 try {
                     //if(activeEvents.containsKey(nxt.getKey()))
-                    //activeEvents.put(nxt.getKey(), nxt); //add event to hashmap
+                    activeEvents.add(nxt); //add event to activeList
                     rci.send(en.notify(nxt)); //sends events to responder - prints
                 }
                 catch (IllegalArgumentException e) {
@@ -126,42 +127,41 @@ public class Simulation
     also removes events which are over
     TODO: Clock tick needs to only happen if arrival status = true
     ************************************************************/
-    private void clockTick(Map<String, Event> active)
+    private void simClockTick()
     {
-        // Event temp = null;
-        // boolean needsRemoval = false;
-        // for (Event event : active.values())
-        // {
-        //     if(!event.isOver() && event.rescuersPresent())//if not over && rescuers are present
-        //     {
-        //         event.cleanup();
-        //     }
-        //     else
-        //     {
-        //         System.out.println(event.getEmergencyType() + " at " + event.getLocation() + " is over");
-        //         temp = event;
-        //         needsRemoval = true;
-        //     }
-        // }
-        // if(needsRemoval)
-        // {
-        //     active.remove(temp.getKey()); //removes event from active list
-        // }
-        System.out.println("STUB");
+        Event temp = null;
+        boolean needsRemoval = false;
+        for (Event event : activeEvents)
+        {
+            if(event.getCleanupTime() > 0 && event.rescuerStatus())//if not over && rescuers are present
+            {
+                event.clockTick();
+            }
+            else
+            {
+                System.out.println(event.toString() + " is over");
+                temp = event;
+                needsRemoval = true;
+            }
+        }
+        if(needsRemoval)
+        {
+            activeEvents.remove(temp); //removes event from active list
+        }
 
     }
 
-    /************************************************************
-     * Generates random double to 2decimals given probability if
-     * r is lower or equal to probability returns true TODO: Currently not used
-     * @param prob
-     * @return
-     ************************************************************/
-    public boolean roll(double prob)
-    {
-        Random rand = new Random();
-        double r = Math.floor(rand.nextDouble()*100) / 100;
-        System.out.println("(" + r + "/" + prob + ")" ); //debug
-        return (r <= prob);
-    }
+    // /************************************************************
+    //  * Generates random double to 2decimals given probability if
+    //  * r is lower or equal to probability returns true TODO: Currently not used
+    //  * @param prob
+    //  * @return
+    //  ************************************************************/
+    // public boolean roll(double prob)
+    // {
+    //     Random rand = new Random();
+    //     double r = Math.floor(rand.nextDouble()*100) / 100;
+    //     System.out.println("(" + r + "/" + prob + ")" ); //debug
+    //     return (r <= prob);
+    // }
 }

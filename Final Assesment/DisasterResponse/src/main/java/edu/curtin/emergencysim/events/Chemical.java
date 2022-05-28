@@ -13,33 +13,50 @@ public class Chemical implements EventState
 
     private Event event;
 
-    @Override
-    public void arrive() {
-        // TODO Auto-generated method stub
+    public Chemical(Event event) {
+        this.event = event;
+    }
 
+    //TODO: not complete, needs testing
+    @Override
+    public void clockTick(boolean rescuers) {
+        if(!rescuers)
+        {
+            checkContam();
+        }
     }
 
     @Override
-    public void reset() {
-        // Ignore
+    public boolean roll(double prob) {
+        return event.roll(prob);
     }
 
     @Override
-    public void checkCasualty(boolean result) {
+    public boolean checkCasualty() {
         // TODO Auto-generated method stub
-
+        return false;
     }
 
     @Override
-    public void checkDamage(boolean result) {
+    public boolean checkDamage() {
         // TODO Auto-generated method stub
-
+        return false;
     }
 
     @Override
-    public void checkContam(boolean result) {
-        // TODO Auto-generated method stub
+    public String getEventType() {
+        return "CHEMICAL";
+    }
 
+    @Override
+    public int intensityChange() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public boolean checkContam() {
+        return roll(CHEM_CONTAM_PROB);
     }
 
 }

@@ -15,34 +15,51 @@ public class FireLow implements EventState
 
     private Event event;
 
+    public FireLow(Event e)
+    {
+        event = e;
+    }
+
     @Override
-    public void arrive() {
-        // TODO Auto-generated method stub
+    public void clockTick(boolean rescuers) {
+        if(!rescuers)
+        {
+            checkCasualty();
+            checkDamage();
+        }
+    }
+
+    /** low fire returns 1, high fire returns 2 */
+    @Override
+    public int intensityChange() {
+        return 1;
+    }
+
+    @Override
+    public boolean roll(double prob) {
+        return event.roll(prob);
+    }
+
+    @Override
+    public boolean checkCasualty() {
+        return roll(FIRE_LOW_CASUALTY_PROB);
+    }
+
+    @Override
+    public boolean checkDamage() {
+        return roll(FIRE_LOW_DAMAGE_PROB);
 
     }
 
     @Override
-    public void reset() {
-        //Ignore
-
+    public String getEventType() {
+        return "FIRE";
     }
 
     @Override
-    public void checkCasualty(boolean result) {
+    public boolean checkContam() {
         // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void checkDamage(boolean result) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void checkContam(boolean result) {
-        // TODO Auto-generated method stub
-
+        return false;
     }
 
 

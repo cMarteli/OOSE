@@ -14,34 +14,49 @@ public class FireHigh implements EventState
 
     private Event event;
 
-    @Override
-    public void arrive() {
-        // TODO Auto-generated method stub
-
+    public FireHigh(Event e) {
+        event = e;
     }
 
     @Override
-    public void reset() {
-        // Ignore
-
+    public boolean roll(double prob) {
+        return event.roll(prob);
     }
 
     @Override
-    public void checkCasualty(boolean result) {
-        // TODO Auto-generated method stub
-
+    public boolean checkCasualty() {
+        return roll(FIRE_HIGH_CASUALTY_PROB);
     }
 
     @Override
-    public void checkDamage(boolean result) {
-        // TODO Auto-generated method stub
-
+    public boolean checkDamage() {
+        return roll(FIRE_HIGH_DAMAGE_PROB);
     }
 
     @Override
-    public void checkContam(boolean result) {
-        // TODO Auto-generated method stub
+    public void clockTick(boolean rescuers) {
+        if(!rescuers)
+        {
+            checkCasualty();
+            checkDamage();
+        }
+    }
 
+    /** low fire returns 1, high fire returns 2 */
+    @Override
+    public int intensityChange() {
+        return 2;
+    }
+
+    @Override
+    public String getEventType() {
+        return "FIRE";
+    }
+
+    @Override
+    public boolean checkContam() {
+        // TODO Auto-generated method stub
+        return false;
     }
 
 

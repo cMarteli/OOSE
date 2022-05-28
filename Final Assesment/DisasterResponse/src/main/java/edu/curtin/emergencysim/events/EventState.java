@@ -7,19 +7,22 @@ package edu.curtin.emergencysim.events;
 
 public interface EventState
 {
-    /**Rescuers arrive set state to cleaning/casualty reduction */
-    public void arrive();
+    public void clockTick(boolean rescuers);
 
-    /**Starts event/resets all relevant values*/
-    public void reset();
+    public int intensityChange();
 
     /**checks for new casualties */
-    public void checkCasualty(boolean result);
+    public boolean checkCasualty();
 
     /**checks for new property damage */
-    public void checkDamage(boolean result);
+    public boolean checkDamage();
 
     /**checks for chemical contamination */
-    public void checkContam(boolean result);
+    public boolean checkContam();
+
+    /**Utility - Checks probability */
+    public boolean roll(double prob);
+
+    public String getEventType();
 
 }

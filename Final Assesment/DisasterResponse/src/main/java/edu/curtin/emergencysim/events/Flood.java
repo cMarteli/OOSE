@@ -14,33 +14,49 @@ public class Flood implements EventState
 
     private Event event;
 
-    @Override
-    public void arrive() {
-        // TODO Auto-generated method stub
-
+    public Flood(Event event) {
+        this.event = event;
     }
 
     @Override
-    public void reset() {
-        // Ignore
+    public void clockTick(boolean rescuers) {
+        if(!rescuers)
+        {
+            checkCasualty();
+            checkDamage();
+        }
     }
 
     @Override
-    public void checkCasualty(boolean result) {
-        // TODO Auto-generated method stub
-
+    public boolean roll(double prob) {
+        return event.roll(prob);
     }
 
     @Override
-    public void checkDamage(boolean result) {
-        // TODO Auto-generated method stub
-
+    public boolean checkCasualty() {
+        return roll(FLOOD_CASUALTY_PROB);
     }
 
     @Override
-    public void checkContam(boolean result) {
-        // TODO Auto-generated method stub
+    public boolean checkDamage() {
+        return roll(FLOOD_DAMAGE_PROB);
+    }
 
+    @Override
+    public String getEventType() {
+        return "FLOOD";
+    }
+
+    @Override
+    public int intensityChange() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public boolean checkContam() {
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }
