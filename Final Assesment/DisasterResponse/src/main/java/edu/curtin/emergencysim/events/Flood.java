@@ -19,11 +19,13 @@ public class Flood implements EventState
     }
 
     @Override
-    public void clockTick(boolean rescuers) {
-        if(!rescuers)
+    public void clockTick(boolean rescuers)
+    {
+        event.setCleanupRemaining(event.getCleanupRemaining() - 1); //always reduces by 1 no matter what
+        event.checkDamage();
+        if(!rescuers) //casualties will only happen if rescuers are absent
         {
-            checkCasualty();
-            checkDamage();
+            event.checkCasualty();
         }
     }
 
@@ -57,6 +59,11 @@ public class Flood implements EventState
     public boolean checkContam() {
         // TODO Auto-generated method stub
         return false;
+    }
+
+    @Override
+    public int getCleanupTotal() {
+        return FLOOD_END_TIME;
     }
 
 }

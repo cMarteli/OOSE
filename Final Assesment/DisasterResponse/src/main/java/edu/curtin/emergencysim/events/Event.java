@@ -17,9 +17,8 @@ public class Event implements EventState
     private EventState fireHigh;
     private EventState chem;
 
-    private int startTime, casualtyCount, dmgCount, cleanupTime;
+    private int startTime, casualtyCount, dmgCount, contamination, cleanupRemaining;
     private String location;
-    private boolean contamination;
     private boolean rescuersPresent;
 
     /**
@@ -43,9 +42,8 @@ public class Event implements EventState
         casualtyCount = 0;
         dmgCount = 0;
         rescuersPresent = false; //rescuers are not present at start
+        cleanupRemaining = getCleanupTotal(); //sets total cleanup
     }
-
-
 
     /**
      * sets type and initiates cleanup time - method is final as it's used during construction
@@ -69,13 +67,23 @@ public class Event implements EventState
         }
     }
 
+    public void setCleanupRemaining(int total)
+    {
+        cleanupRemaining = total;
+    }
+
     /**Getters */
+    public String getLocation()
+    {
+        return location;
+    }
+
     public int getStartTime(){
         return startTime;
     }
 
-    public int getCleanupTime(){
-        return cleanupTime;
+    public int getCleanupRemaining(){
+        return cleanupRemaining;
     }
 
     public boolean rescuerStatus(){
@@ -90,7 +98,7 @@ public class Event implements EventState
         return dmgCount;
     }
 
-    public boolean contamStatus(){
+    public int contamStatus(){
         return contamination;
     }
 
@@ -103,8 +111,6 @@ public class Event implements EventState
     public boolean compare(String inType, String inLoc)
     {
         String type = eventState.getEventType();
-        System.out.println("Type: " + type + "InType: " + inType);
-        System.out.println("loc: " + location + "inLoc: " + inLoc);
         if(type.equals(inType.toUpperCase()) &&
             location.toUpperCase().equals(inLoc.toUpperCase()))
         {
@@ -116,12 +122,16 @@ public class Event implements EventState
         }
     }
 
+
     public void arrive() {
         rescuersPresent = true;
     }
 
     public void leave() {
-        cleanupTime = 0;
+        if(!eventState.getEventType().equals("FLOOD")) //resets cleanup time except if flood
+        {
+            resetCleanp();
+        }
         rescuersPresent = false;
     }
 
@@ -150,13 +160,14 @@ public class Event implements EventState
 
     //overloaded method to be called by simulation
     public void clockTick() {
-        eventState.clockTick(rescuersPresent);
+        clockTick(rescuersPresent);
     }
 
 
     /** Toggles fire intensity, low fire returns 1, high fire returns 2 */
     @Override
     public int intensityChange() {
+        resetCleanp(); //resets cleanup remaining before state change
         if(eventState.intensityChange() == 1)
         {
             eventState = fireHigh;
@@ -168,7 +179,10 @@ public class Event implements EventState
         return 0;
     }
 
-
+    /**Resets cleanuptime back to default */
+    private void resetCleanp() {
+        setCleanupRemaining(eventState.getCleanupTotal());
+    }
 
     @Override
     public boolean checkCasualty() {
@@ -190,9 +204,21 @@ public class Event implements EventState
         if(result)
         {
             dmgCount++;
+            //System.out.println("Damage reported."); //TODO: PUT LOGGER HERE
         }
         return result;
 
+    }
+
+    @Override
+    public boolean checkContam() {
+        boolean result = eventState.checkContam();
+        if(result)
+        {
+            contamination++;
+            //System.out.println("Contamination reported."); //TODO: PUT LOGGER HERE
+        }
+        return result;
     }
 
 
@@ -205,15 +231,15 @@ public class Event implements EventState
     @Override
     public String toString()
     {
-        return getEventType() + "at" + location;
+        return getEventType().toLowerCase() + " at" + location;
     }
-
 
 
     @Override
-    public boolean checkContam() {
-        // TODO Auto-generated method stub
-        return false;
+    public final int getCleanupTotal() {
+        return eventState.getCleanupTotal();
     }
+
+
 
 }

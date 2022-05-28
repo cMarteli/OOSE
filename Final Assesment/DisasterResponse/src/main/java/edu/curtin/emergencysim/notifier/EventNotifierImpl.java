@@ -98,7 +98,7 @@ public class EventNotifierImpl implements EventNotifier<Event>
 
     /************************************************************
      * Validates then Formats message
-     * TODO: needs to return information on Event as well as location to Simulation class maybe look at state pattern fo solution
+     * TODO: needs to return information on Event as well as location to Simulation class
     ************************************************************/
     @Override
     public void receive(String s) throws IllegalArgumentException
@@ -134,29 +134,29 @@ public class EventNotifierImpl implements EventNotifier<Event>
     @Override
     public String notify(Event e) throws IllegalArgumentException
     {
-        // String outStr;
+        String outStr;
 
-        // switch (e.getEmergencyType())
-        // {
-        //     case FIRE:
-        //         outStr = "fire low"+ e.getLocation(); //fire always starts at low intensity
+        switch (e.getEventType())
+        {
+            case "FIRE":
+                outStr = "fire low"+ e.getLocation(); //fire always starts at low intensity
 
-        //         break;
+                break;
 
-        //     case FLOOD:
-        //         outStr = "flood start " + e.getLocation();
+            case "FLOOD":
+                outStr = "flood start " + e.getLocation();
 
-        //         break;
+                break;
 
-        //     case CHEMICAL:
-        //         outStr = "chemical start " + e.getLocation();
+            case "CHEMICAL":
+                outStr = "chemical start " + e.getLocation();
 
-        //         break;
+                break;
 
-        //     default:
-        //         throw new IllegalArgumentException("Invalid Emergency type: '" + e.getEmergencyType() + "'");
-        // }
-        return "[Notify STUBBED]";
+            default: //should never happen
+                throw new IllegalArgumentException("Invalid Emergency type: '" + e.getEventType() + "'");
+        }
+        return outStr;
     }
 
 

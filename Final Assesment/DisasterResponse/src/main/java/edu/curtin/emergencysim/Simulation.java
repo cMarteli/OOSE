@@ -133,7 +133,7 @@ public class Simulation
         boolean needsRemoval = false;
         for (Event event : activeEvents)
         {
-            if(event.getCleanupTime() > 0 && event.rescuerStatus())//if not over && rescuers are present
+            if(event.getCleanupRemaining() > 0)//if not over
             {
                 event.clockTick();
             }
@@ -150,18 +150,4 @@ public class Simulation
         }
 
     }
-
-    // /************************************************************
-    //  * Generates random double to 2decimals given probability if
-    //  * r is lower or equal to probability returns true TODO: Currently not used
-    //  * @param prob
-    //  * @return
-    //  ************************************************************/
-    // public boolean roll(double prob)
-    // {
-    //     Random rand = new Random();
-    //     double r = Math.floor(rand.nextDouble()*100) / 100;
-    //     System.out.println("(" + r + "/" + prob + ")" ); //debug
-    //     return (r <= prob);
-    // }
 }

@@ -25,4 +25,7 @@ public interface EventState
 
     public String getEventType();
 
+    /** */
+    public int getCleanupTotal();
+
 }
