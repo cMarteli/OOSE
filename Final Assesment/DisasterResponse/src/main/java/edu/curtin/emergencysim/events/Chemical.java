@@ -48,7 +48,7 @@ public class Chemical implements EventState
 
     @Override
     public String getEventType() {
-        return "CHEMICAL";
+        return "chemical";
     }
 
     @Override

@@ -61,7 +61,7 @@ public class FireHigh implements EventState
 
     @Override
     public String getEventType() {
-        return "FIRE";
+        return "fire";
     }
 
     @Override

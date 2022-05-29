@@ -97,31 +97,20 @@ public class EventNotifierImpl implements EventNotifier<Event>
 
 
     /************************************************************
-     * Validates then Formats message
-     * TODO: needs to return information on Event as well as location to Simulation class
+     * Validates Message and returns if valid. Throws error if not
+     * TODO: useless
     ************************************************************/
     @Override
-    public void receive(String s) throws IllegalArgumentException
+    public String validateMsg(String s) throws IllegalArgumentException
     {
+        //String outString = "";
         Matcher m = SEND_REGEX.matcher(s); //checks string against regex
         if(!m.matches())
         {
             throw new IllegalArgumentException("Invalid message format: '" + s + "'");
         }
-        String emergency = m.group("emergency");
-        String status = m.group("status");
-        String location = m.group("location");
 
-        //displays message
-        if(status.equals("+"))
-        {
-            System.out.println(emergency + " team arrived in " + location);
-
-        }
-        else
-        {
-            System.out.println(emergency + " team departed from " + location);
-        }
+        return s;
     }
 
 
@@ -138,17 +127,17 @@ public class EventNotifierImpl implements EventNotifier<Event>
 
         switch (e.getEventType())
         {
-            case "FIRE":
-                outStr = "fire low"+ e.getLocation(); //fire always starts at low intensity
+            case "fire":
+                outStr = "fire low "+ e.getLocation(); //fire always starts at low intensity
 
                 break;
 
-            case "FLOOD":
+            case "flood":
                 outStr = "flood start " + e.getLocation();
 
                 break;
 
-            case "CHEMICAL":
+            case "chemical":
                 outStr = "chemical start " + e.getLocation();
 
                 break;

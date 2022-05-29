@@ -8,6 +8,8 @@ package edu.curtin.emergencysim;
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import edu.curtin.emergencysim.events.*;
 import edu.curtin.emergencysim.notifier.*;
@@ -17,7 +19,8 @@ public class Simulation
 {
     private EventNotifier<Event> en;
     private ResponderComm rci;
-    private List<Event> activeEvents;
+    private Map<String, Event> activeEvents;
+    private int seconds;
 
      /**
      * Logger from EmergencyResponse.java
@@ -33,7 +36,7 @@ public class Simulation
     {
         en = inEn;
         rci = inRci; //if clock desyncs move this to run()
-        activeEvents = new ArrayList<>();
+        activeEvents = new HashMap<>();
         //System.out.println("TEST"); for(Event e : en.getEventQueue()){System.out.println(e.toString());} //DEBUG - Prints event queue
     }
 
@@ -45,7 +48,7 @@ public class Simulation
     {
 
         boolean simIsActive = true;
-        int seconds = 0; //timer
+        seconds = 0; //timer init
 
         System.out.println("Starting Simulation...");
 
@@ -53,6 +56,7 @@ public class Simulation
 
             simIsActive = poll(simIsActive);
             send(seconds); //sends message to responders, adds to active event list
+            simClockTick();
 
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
@@ -84,14 +88,16 @@ public class Simulation
                 if(s.equals("end")) //checks for end message
                 {
                     simIsActive = false; //end simulation
+                    //prints report
+                    for (Event e : activeEvents.values()) {
+                        System.out.println(e.toString());
+                    }
                 }
                 else
                 {
                     try
                     {
-                        en.receive(s); //Prints message
-                        //TODO: need to get responders arrival status state pattern?
-                        simClockTick(); //reduce timer on every active event by 1
+                        receive(s); //adds responders arrival status
                     }
                     catch (IllegalArgumentException e) {System.out.println(e.getMessage());}
                 }
@@ -102,6 +108,7 @@ public class Simulation
 
     /************************************************************
      * checks event queue for any events scheduled to start this second
+     * creates message
      * @param seconds
      * @param activeEvents
      ************************************************************/
@@ -110,8 +117,7 @@ public class Simulation
             if(nxt.getStartTime() == seconds) //if there any events scheduled to start this second
             {
                 try {
-                    //if(activeEvents.containsKey(nxt.getKey()))
-                    activeEvents.add(nxt); //add event to activeList
+                    activeEvents.put(nxt.getKey(), nxt); //add event to activeList
                     rci.send(en.notify(nxt)); //sends events to responder - prints
                 }
                 catch (IllegalArgumentException e) {
@@ -129,9 +135,9 @@ public class Simulation
     ************************************************************/
     private void simClockTick()
     {
-        Event temp = null;
+        String temp = "";
         boolean needsRemoval = false;
-        for (Event event : activeEvents)
+        for (Event event : activeEvents.values())
         {
             if(event.getCleanupRemaining() > 0)//if not over
             {
@@ -140,7 +146,7 @@ public class Simulation
             else
             {
                 System.out.println(event.toString() + " is over");
-                temp = event;
+                temp = event.getKey();
                 needsRemoval = true;
             }
         }
@@ -150,4 +156,39 @@ public class Simulation
         }
 
     }
+
+    /************************************************************
+     * Validates then Formats message
+     * Receives and sets arrival and leave status
+    ************************************************************/
+    public void receive(String s)
+    {
+            // A regular expression for validating and extracting parts of outgoing ('send') messages.
+        final Pattern SEND_REGEX = Pattern.compile(
+        "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
+        Matcher m = SEND_REGEX.matcher(s); //checks string against regex
+        if(!m.matches()){
+            throw new IllegalArgumentException("Invalid message format: '" + s + "'");
+        }
+        String emergency = m.group("emergency");
+        String status = m.group("status");
+        String location = m.group("location");
+
+        if(activeEvents.containsKey(emergency+location)){
+            Event match = activeEvents.get(emergency+location);
+            //sets arrival + departure
+            if(status.equals("+")){
+                match.arrive();
+            }
+            else{
+                match.leave();
+            }
+        }
+        // else{
+        //     //System.out.println("not found:" + emergency+location); //TODO: Remove
+        //     System.out.println(s);
+        // }
+
+    }
+
 }

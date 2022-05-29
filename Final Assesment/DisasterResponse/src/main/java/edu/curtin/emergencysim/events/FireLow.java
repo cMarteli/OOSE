@@ -20,32 +20,33 @@ public class FireLow implements EventState
     {
         event = e;
         event.setCleanupRemaining(FIRE_LOW_CLEANUP_TIME);
-        idleTime = 0;
+        idleTime = 0; //initial idle counter
     }
 
     @Override
     public void clockTick(boolean rescuers) {
         if(rescuers) //rescuers are present
         {
+            idleTime = 0; //every second responders are present idle counter is reset
             event.setCleanupRemaining(event.getCleanupRemaining() - 1); //cleans up by 1
         }
-        else
-        {   //check fire has been idle long enough
+        else //check fire has been idle long enough
+        {
+            idleTime++;
             if(idleTime >= FIRE_LOW_TO_HIGH_TIME)
             {
+                idleTime = 0;//reset counter before intensity change
                 event.intensityChange(); //change state to high
             }
-            idleTime++;
         }
-
         event.checkCasualty();
         event.checkDamage();
+        //System.out.println("idletime=["+idleTime +"] "+event.getLocation()); //TODO: Remove
     }
 
     /** low fire returns 1, high fire returns 2 */
     @Override
     public int intensityChange() {
-        idleTime = 0;
         return 1;
     }
 
@@ -68,7 +69,7 @@ public class FireLow implements EventState
 
     @Override
     public String getEventType() {
-        return "FIRE";
+        return "fire";
     }
 
     @Override

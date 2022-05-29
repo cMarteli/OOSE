@@ -38,9 +38,9 @@ public class FileIO<E>{
             String location;
             String eType;
             String command = sc.next(); //gets command to read
-            command = command.toUpperCase(); //converts to upper case
+            command = command.toLowerCase(); //converts to lower case
 
-            if(command.equals("FLOOD") || command.equals("FIRE") || command.equals("CHEMICAL"))//valid
+            if(command.equals("flood") || command.equals("fire") || command.equals("chemical"))//valid
             {
                 eType = command;
             }
@@ -54,7 +54,7 @@ public class FileIO<E>{
                 sc.close(); //close scanner
                 throw new IOException(err);
             }
-            location = sc.nextLine(); //location
+            location = sc.nextLine().trim(); //location
 
             if(en.checkDupes(eType, location)) //checks for duplicate events - throws IO exception
             {
@@ -66,7 +66,6 @@ public class FileIO<E>{
                 sc.close(); //close scanner
                 throw new IOException(err);
             }
-
             en.addEvent(time, eType, location);
         }
 

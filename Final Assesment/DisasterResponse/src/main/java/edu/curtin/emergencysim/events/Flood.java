@@ -46,7 +46,7 @@ public class Flood implements EventState
 
     @Override
     public String getEventType() {
-        return "FLOOD";
+        return "flood";
     }
 
     @Override

@@ -15,7 +15,7 @@ public interface EventNotifier<E>
      */
     public List<E> getEventQueue();
 
-    public void receive(String s);
+    public String validateMsg(String s);
 
     public String notify(E e);
 

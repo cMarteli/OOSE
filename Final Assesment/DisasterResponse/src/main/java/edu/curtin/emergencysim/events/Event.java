@@ -29,10 +29,10 @@ public class Event implements EventState
      */
     public Event(int t, String et, String l)
     {
-        flood = new Flood(this);
-        fireLow = new FireLow(this);
-        fireHigh = new FireHigh(this);
-        chem = new Chemical(this);
+        // flood = new Flood(this);
+        // fireLow = new FireLow(this);
+        // fireHigh = new FireHigh(this);
+        // chem = new Chemical(this);
 
         setEventState(et); //sets state according to string
         startTime = t;
@@ -52,17 +52,20 @@ public class Event implements EventState
      */
     public final void setEventState(String state)
     {
-        state = state.toUpperCase();
-        if(state.equals("FIRE"))
+        if(state.equals("fire"))
         {
+            fireLow = new FireLow(this);
+            fireHigh = new FireHigh(this);
             eventState = fireLow;
         }
-        else if(state.equals("FLOOD"))
+        else if(state.equals("flood"))
         {
+            flood = new Flood(this);
             eventState = flood;
         }
-        else if(state.equals("CHEMICAL"))
+        else if(state.equals("chemical"))
         {
+            chem = new Chemical(this);
             eventState = chem;
         }
     }
@@ -110,8 +113,7 @@ public class Event implements EventState
      */
     public boolean compare(String inType, String inLoc)
     {
-        String type = eventState.getEventType();
-        if(type.equals(inType.toUpperCase()) &&
+        if(getEventType().equals(inType) &&
             location.toUpperCase().equals(inLoc.toUpperCase()))
         {
             return true;
@@ -124,10 +126,12 @@ public class Event implements EventState
 
 
     public void arrive() {
+        System.out.println(getEventType() + " team arrived in " + location); //TODO DEBUG
         rescuersPresent = true;
     }
 
     public void leave() {
+        System.out.println("Team departed active " + getEventType() + " at " + location); //TODO DEBUG
         if(!eventState.getEventType().equals("FLOOD")) //resets cleanup time except if flood
         {
             resetCleanp();
@@ -171,10 +175,12 @@ public class Event implements EventState
         resetCleanp(); //resets cleanup remaining before state change
         if(eventState.intensityChange() == 1)
         {
+            System.out.println("Fire in " + location + " changed to High"); //TODO: DEBUG
             eventState = fireHigh;
         }
         else if(eventState.intensityChange() == 2)
         {
+            System.out.println("Fire in " + location + " changed to Low"); //TODO: DEBUG
             eventState = fireLow;
         }
         return 0;
@@ -232,13 +238,20 @@ public class Event implements EventState
     @Override
     public String toString()
     {
-        return getEventType().toLowerCase() + " at" + location;
+        return getEventType() + " at " + location + "\nCasualties: " + casualtyCount +
+        " - Damage: " + dmgCount;
     }
 
 
     @Override
     public final int getCleanupTotal() {
         return eventState.getCleanupTotal();
+    }
+
+    //Type+Location
+    public String getKey()
+    {
+        return getEventType()+location;
     }
 
 
