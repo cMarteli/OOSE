@@ -19,14 +19,14 @@ public class Chemical implements EventState
         event.setCleanupRemaining(CHEM_CLEANUP_TIME);
     }
 
-    //TODO: not complete, needs testing
+    //
     @Override
     public void clockTick(boolean rescuers) {
         if(rescuers)
         {
             event.setCleanupRemaining(event.getCleanupRemaining() - 1); //cleans up by 1
         }
-        event.checkContam();
+        event.checkDamage(); //"contamination" in this case prints as such in final status report
         event.checkCasualty();
     }
 
@@ -36,14 +36,13 @@ public class Chemical implements EventState
     }
 
     @Override
-    public boolean checkCasualty() {
-        return roll(CHEM_CASUALTY_PROB);
+    public double checkCasualty() {
+        return CHEM_CASUALTY_PROB;
     }
 
     @Override
-    public boolean checkDamage() {
-        // TODO Auto-generated method stub
-        return false;
+    public double checkDamage() {
+        return CHEM_CONTAM_PROB;
     }
 
     @Override
@@ -58,13 +57,15 @@ public class Chemical implements EventState
     }
 
     @Override
-    public boolean checkContam() {
-        return roll(CHEM_CONTAM_PROB);
+    public int getCleanupTotal() {
+        return CHEM_CLEANUP_TIME;
     }
 
     @Override
-    public int getCleanupTotal() {
-        return CHEM_CLEANUP_TIME;
+    public String toString()
+    {
+        return getEventType() + " at " + event.getLocation() + "\nCasualties: " + event.getCasualtyCount() +
+        " - Contamination: " + event.getDmgCount();
     }
 
 }

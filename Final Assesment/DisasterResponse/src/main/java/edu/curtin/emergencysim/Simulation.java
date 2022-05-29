@@ -20,7 +20,10 @@ public class Simulation
     private EventNotifier<Event> en;
     private ResponderComm rci;
     private Map<String, Event> activeEvents;
-    private int seconds;
+
+    // A regular expression for validating and extracting parts of outgoing ('send') messages.
+    private static final Pattern SEND_REGEX = Pattern.compile(
+        "(?<emergency>fire|flood|chemical) ((?<status>start|end|low|high)|(?<lossType>casualty|damage|contam) (?<lossCount>[0-9]+)) (?<location>.+)");
 
      /**
      * Logger from EmergencyResponse.java
@@ -48,7 +51,7 @@ public class Simulation
     {
 
         boolean simIsActive = true;
-        seconds = 0; //timer init
+        int seconds = 0; //timer init
 
         System.out.println("Starting Simulation...");
 
@@ -73,7 +76,7 @@ public class Simulation
 
     /************************************************************
      * gets message from responders and formats the prints; clocktick
-     * TODO: need to get responders arrival status state pattern?
+     * gets responders arrival status state pattern?
      * @param simIsActive
      * @param activeEvents
      * @return
@@ -88,7 +91,8 @@ public class Simulation
                 if(s.equals("end")) //checks for end message
                 {
                     simIsActive = false; //end simulation
-                    //prints report
+                    //prints final report TODO: Send this to observer
+                    System.out.println("Final Report:");
                     for (Event e : activeEvents.values()) {
                         System.out.println(e.toString());
                     }
@@ -145,7 +149,7 @@ public class Simulation
             }
             else
             {
-                System.out.println(event.toString() + " is over");
+                System.out.println("Event over: " + event.toString());
                 temp = event.getKey();
                 needsRemoval = true;
             }
@@ -163,9 +167,6 @@ public class Simulation
     ************************************************************/
     public void receive(String s)
     {
-            // A regular expression for validating and extracting parts of outgoing ('send') messages.
-        final Pattern SEND_REGEX = Pattern.compile(
-        "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
         Matcher m = SEND_REGEX.matcher(s); //checks string against regex
         if(!m.matches()){
             throw new IllegalArgumentException("Invalid message format: '" + s + "'");

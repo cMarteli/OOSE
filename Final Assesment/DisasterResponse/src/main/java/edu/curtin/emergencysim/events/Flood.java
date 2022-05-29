@@ -35,13 +35,13 @@ public class Flood implements EventState
     }
 
     @Override
-    public boolean checkCasualty() {
-        return roll(FLOOD_CASUALTY_PROB);
+    public double checkCasualty() {
+        return FLOOD_CASUALTY_PROB;
     }
 
     @Override
-    public boolean checkDamage() {
-        return roll(FLOOD_DAMAGE_PROB);
+    public double checkDamage() {
+        return FLOOD_DAMAGE_PROB;
     }
 
     @Override
@@ -56,14 +56,15 @@ public class Flood implements EventState
     }
 
     @Override
-    public boolean checkContam() {
-        // TODO Auto-generated method stub
-        return false;
+    public int getCleanupTotal() {
+        return FLOOD_END_TIME;
     }
 
     @Override
-    public int getCleanupTotal() {
-        return FLOOD_END_TIME;
+    public String toString()
+    {
+        return getEventType() + " at " + event.getLocation() + "\nCasualties: " + event.getCasualtyCount() +
+        " - Damage: " + event.getDmgCount();
     }
 
 }

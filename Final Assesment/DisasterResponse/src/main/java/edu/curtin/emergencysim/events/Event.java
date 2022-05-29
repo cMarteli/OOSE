@@ -17,7 +17,7 @@ public class Event implements EventState
     private EventState fireHigh;
     private EventState chem;
 
-    private int startTime, casualtyCount, dmgCount, contamination, cleanupRemaining;
+    private int startTime, casualtyCount, dmgCount, cleanupRemaining;
     private String location;
     private boolean rescuersPresent;
 
@@ -29,10 +29,10 @@ public class Event implements EventState
      */
     public Event(int t, String et, String l)
     {
-        // flood = new Flood(this);
-        // fireLow = new FireLow(this);
-        // fireHigh = new FireHigh(this);
-        // chem = new Chemical(this);
+        flood = new Flood(this);
+        fireLow = new FireLow(this);
+        fireHigh = new FireHigh(this);
+        chem = new Chemical(this);
 
         setEventState(et); //sets state according to string
         startTime = t;
@@ -42,7 +42,6 @@ public class Event implements EventState
         casualtyCount = 0;
         dmgCount = 0;
         rescuersPresent = false; //rescuers are not present at start
-        cleanupRemaining = getCleanupTotal(); //sets total cleanup
     }
 
     /**
@@ -54,18 +53,18 @@ public class Event implements EventState
     {
         if(state.equals("fire"))
         {
-            fireLow = new FireLow(this);
-            fireHigh = new FireHigh(this);
+            // fireLow = new FireLow(this);
+            // fireHigh = new FireHigh(this);
             eventState = fireLow;
         }
         else if(state.equals("flood"))
         {
-            flood = new Flood(this);
+            //flood = new Flood(this);
             eventState = flood;
         }
         else if(state.equals("chemical"))
         {
-            chem = new Chemical(this);
+            //chem = new Chemical(this);
             eventState = chem;
         }
     }
@@ -99,10 +98,6 @@ public class Event implements EventState
 
     public int getDmgCount(){
         return dmgCount;
-    }
-
-    public int contamStatus(){
-        return contamination;
     }
 
     /**
@@ -160,7 +155,7 @@ public class Event implements EventState
     @Override
     public void clockTick(boolean rescuers) {
         eventState.clockTick(rescuersPresent);
-        //TODO: Pass lambda function here
+        //TODO: Pass roll lambda function here
     }
 
     //overloaded method to be called by simulation
@@ -192,42 +187,28 @@ public class Event implements EventState
     }
 
     @Override
-    public boolean checkCasualty() {
-        boolean result = eventState.checkCasualty();
-        if(result)
+    public double checkCasualty() {
+        if(roll(eventState.checkCasualty()))
         {
             casualtyCount++;
             //System.out.println("Casualty reported."); //TODO: PUT LOGGER HERE
         }
-        return result;
+        return 0.0;
 
     }
 
 
 
     @Override
-    public boolean checkDamage() {
-        boolean result = eventState.checkDamage();
-        if(result)
+    public double checkDamage() {
+        if(roll(eventState.checkDamage()))
         {
             dmgCount++;
             //System.out.println("Damage reported."); //TODO: PUT LOGGER HERE
         }
-        return result;
+        return 0.0;
 
     }
-
-    @Override
-    public boolean checkContam() {
-        boolean result = eventState.checkContam();
-        if(result)
-        {
-            contamination++;
-            //System.out.println("Contamination reported."); //TODO: PUT LOGGER HERE
-        }
-        return result;
-    }
-
 
 
     @Override
@@ -238,13 +219,12 @@ public class Event implements EventState
     @Override
     public String toString()
     {
-        return getEventType() + " at " + location + "\nCasualties: " + casualtyCount +
-        " - Damage: " + dmgCount;
+        return eventState.toString();
     }
 
 
     @Override
-    public final int getCleanupTotal() {
+    public int getCleanupTotal() {
         return eventState.getCleanupTotal();
     }
 

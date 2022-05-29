@@ -12,13 +12,10 @@ public interface EventState
     public int intensityChange();
 
     /**checks for new casualties */
-    public boolean checkCasualty();
+    public double checkCasualty();
 
-    /**checks for new property damage */
-    public boolean checkDamage();
-
-    /**checks for chemical contamination */
-    public boolean checkContam();
+    /**checks for new property damage/Contamination */
+    public double checkDamage();
 
     /**Utility - Checks probability */
     public boolean roll(double prob);

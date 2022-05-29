@@ -56,14 +56,14 @@ public class FireLow implements EventState
     }
 
     @Override
-    public boolean checkCasualty() {
-        return roll(FIRE_LOW_CASUALTY_PROB);
+    public double checkCasualty() {
+        return FIRE_LOW_CASUALTY_PROB;
         //TODO: make these methods return ints
     }
 
     @Override
-    public boolean checkDamage() {
-        return roll(FIRE_LOW_DAMAGE_PROB);
+    public double checkDamage() {
+        return FIRE_LOW_DAMAGE_PROB;
 
     }
 
@@ -73,14 +73,15 @@ public class FireLow implements EventState
     }
 
     @Override
-    public boolean checkContam() {
-        // TODO Auto-generated method stub
-        return false;
+    public int getCleanupTotal() {
+        return FIRE_LOW_CLEANUP_TIME;
     }
 
     @Override
-    public int getCleanupTotal() {
-        return FIRE_LOW_CLEANUP_TIME;
+    public String toString()
+    {
+        return getEventType() + " at " + event.getLocation() + "\nCasualties: " + event.getCasualtyCount() +
+        " - Damage: " + event.getDmgCount();
     }
 
 
