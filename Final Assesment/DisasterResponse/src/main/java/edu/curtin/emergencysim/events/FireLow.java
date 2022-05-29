@@ -57,6 +57,7 @@ public class FireLow implements EventState
     @Override
     public boolean checkCasualty() {
         return roll(FIRE_LOW_CASUALTY_PROB);
+        //TODO: make these methods return ints
     }
 
     @Override

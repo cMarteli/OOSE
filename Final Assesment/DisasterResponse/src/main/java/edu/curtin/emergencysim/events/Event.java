@@ -156,6 +156,7 @@ public class Event implements EventState
     @Override
     public void clockTick(boolean rescuers) {
         eventState.clockTick(rescuersPresent);
+        //TODO: Pass lambda function here
     }
 
     //overloaded method to be called by simulation
