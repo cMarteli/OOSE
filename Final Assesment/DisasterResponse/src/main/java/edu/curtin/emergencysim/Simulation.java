@@ -20,6 +20,7 @@ public class Simulation
     private EventNotifier<Event> en;
     private ResponderComm rci;
     private Map<String, Event> activeEvents;
+    private List<Event> queue;
 
     // A regular expression for validating and extracting parts of outgoing ('send') messages.
     public static final Pattern SEND_REGEX = Pattern.compile(
@@ -34,12 +35,13 @@ public class Simulation
      * @param fileName
      * @throws IOException
     ************************************************************/
-    public Simulation(EventNotifier<Event> inEn, ResponderComm inRci)
+    public Simulation(EventNotifier<Event> inEn, ResponderComm inRci, List<Event> q)
     {
         en = inEn;
         rci = inRci; //if clock desyncs move this to run()
         activeEvents = new HashMap<>();
-        //System.out.println("TEST"); for(Event e : en.getEventQueue()){System.out.println(e.toString());} //DEBUG - Prints event queue
+        queue = q;
+        //System.out.println("TEST"); for(Event e : queue){System.out.println(e.toString());} //DEBUG - Prints event queue
     }
 
     /************************************************************
@@ -57,7 +59,7 @@ public class Simulation
         while (simIsActive) {
 
             simIsActive = poll(simIsActive);
-            send(seconds); //sends message to responders, adds to active event list
+            sendStartMsg(seconds); //sends message to responders, adds to active event list
             simClockTick();
 
             Thread.sleep(1000); //sleeps for 1 second
@@ -92,7 +94,7 @@ public class Simulation
                     simIsActive = false; //end simulation
                     //prints report
                     System.out.println("Final Simulation Report");
-                    for (Event e : en.getEventQueue()) {
+                    for (Event e : queue) {
                         System.out.println(e.toString());
                     }
                 }
@@ -115,13 +117,13 @@ public class Simulation
      * @param seconds
      * @param activeEvents
      ************************************************************/
-    private void send(int seconds) {
-        for (Event nxt : en.getEventQueue()) {
+    private void sendStartMsg(int seconds) {
+        for (Event nxt : queue) {
             if(nxt.getStartTime() == seconds) //if there any events scheduled to start this second
             {
                 try {
                     activeEvents.put(nxt.getKey(), nxt); //add event to activeList
-                    rci.send(en.notify(nxt)); //sends events to responder - prints
+                    rci.send(en.notify(nxt, "start")); //sends events to responder - prints
                 }
                 catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());

@@ -42,7 +42,6 @@ public class FireLow implements EventState
         }
         event.checkCasualty();
         event.checkDamage();
-        //System.out.println("idletime=["+idleTime +"] "+event.getLocation()); //TODO: Remove
     }
 
     /** low fire returns 1, high fire returns 2 */

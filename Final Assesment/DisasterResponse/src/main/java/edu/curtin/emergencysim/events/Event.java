@@ -225,6 +225,4 @@ public class Event implements EventState
         return getEventType()+location;
     }
 
-
-
 }

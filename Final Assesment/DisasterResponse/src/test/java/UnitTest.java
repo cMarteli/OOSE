@@ -8,7 +8,7 @@ package edu.curtin.emergencysim;
 
 import edu.curtin.emergencysim.events.*;
 //import edu.curtin.emergencysim.notifier.*;
-
+import edu.curtin.emergencysim.responders.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -72,6 +72,23 @@ public class UnitTest
     //     sim = new Simulation(en, rci);
 
     // }
+
+
+    @Test
+    public void testSend()
+    {
+        ResponderComm rc = new ResponderCommImpl();
+        System.out.println("\nTesting Send:");
+
+        rc.send("fire damage 1 Perth");
+        rc.send("fire damage 2 Perth");
+        rc.send("chemical damage 5 Armadale");
+        rc.send("chemical start Armadale");
+        rc.send("fire start Armadale");
+
+
+        System.out.println("\n***************");
+    }
 
     @Test
     public void testFireLow()

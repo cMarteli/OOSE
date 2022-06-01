@@ -41,9 +41,9 @@ public class EmergencyResponse
 
         try
         {
-            fio.readFile(fileName, en); //loads file into EventNotifier
+            //fio.readFile(fileName); //loads file into EventNotifier
             rci = new ResponderCommImpl(); //needs to be just before run() to avoid clock desyncs
-            sim = new Simulation(en, rci);
+            sim = new Simulation(en, rci, fio.readFile(fileName)); //loads file into EventNotifier
             sim.run(); //starts simulation
         }
         catch (java.io.IOException e) //for fio.readFile

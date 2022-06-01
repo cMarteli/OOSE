@@ -9,9 +9,12 @@ package edu.curtin.emergencysim;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.*;
-import edu.curtin.emergencysim.notifier.*;
+
+import edu.curtin.emergencysim.events.Event;
 
 @SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool
 public class FileIO<E>{
@@ -24,16 +27,18 @@ public class FileIO<E>{
     /************************************************************
      * Imports a text file and writes it to an object
      * @param fileName (String)
-     * @param en (EventNotifier)
+     * @return list (List<Event>)
      * @throws IOException
      ************************************************************/
-    public void readFile(String fileName, EventNotifier<E> en) throws IOException
+    public List<Event> readFile(String fileName) throws IOException
     {
         File inFile = new File(fileName);
         Scanner sc = new Scanner(inFile);
+        List<Event> list = new ArrayList<>();
 
         while(sc.hasNextLine())
         {
+            Event temp;
             int time = sc.nextInt(); //time
             String location;
             String eType;
@@ -56,7 +61,7 @@ public class FileIO<E>{
             }
             location = sc.nextLine().trim(); //location
 
-            if(en.checkDupes(eType, location)) //checks for duplicate events - throws IO exception
+            if(checkDupes(eType, location, list)) //checks for duplicate events - throws IO exception
             {
                 String err = "Duplicate " + eType + " event at: " + location;
                 if (LOGR.isLoggable(Level.FINE))
@@ -66,10 +71,12 @@ public class FileIO<E>{
                 sc.close(); //close scanner
                 throw new IOException(err);
             }
-            en.addEvent(time, eType, location);
+            temp = new Event(time, eType, location);
+            list.add(temp);
         }
-
         sc.close(); //close scanner
+
+        return list;
     }
 
 
@@ -127,6 +134,25 @@ public class FileIO<E>{
             }
         }
         return userInt;
+    }
+
+    /************************************************************
+    * Checks for duplicate events. Used by fileIO.java
+    * @param type (String)
+    * @param loc (String)
+    ************************************************************/
+
+    public boolean checkDupes(String type, String loc, List<Event> l)
+    {
+        boolean result = false;
+        for (Event ev : l)
+        {
+            if(ev.compare(type, loc))
+            {
+                result = true;
+            }
+        }
+        return result;
     }
 
 }

@@ -5,26 +5,12 @@
  */
 package edu.curtin.emergencysim.notifier;
 
-import java.util.List;
-
 public interface EventNotifier<E>
 {
-    /**
-     * Generic type allows for the use of either string or event class depending on implementation
-     * @return
-     */
-    public List<E> getEventQueue();
+    public void register(Observer o);
 
-    public String validateMsg(String s);
+    public void unregister(Observer o);
 
-    public String notify(E e);
-
-    public void addEvent(E e);
-
-    public void addEvent(int time, String type, String loc);
-
-    public void removeEvent(E e);
-
-    public boolean checkDupes(String type, String loc);
+    public String notify(E e, String msgType);
 
 }
