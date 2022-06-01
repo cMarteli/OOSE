@@ -17,7 +17,7 @@ public class Event implements EventState
     private EventState fireHigh;
     private EventState chem;
 
-    private int startTime, casualtyCount, dmgCount, contamination, cleanupRemaining;
+    private int startTime, casualtyCount, dmgCount, cleanupRemaining;
     private String location;
     private boolean rescuersPresent;
 
@@ -29,10 +29,10 @@ public class Event implements EventState
      */
     public Event(int t, String et, String l)
     {
-        // flood = new Flood(this);
-        // fireLow = new FireLow(this);
-        // fireHigh = new FireHigh(this);
-        // chem = new Chemical(this);
+        flood = new Flood(this);
+        fireLow = new FireLow(this);
+        fireHigh = new FireHigh(this);
+        chem = new Chemical(this);
 
         setEventState(et); //sets state according to string
         startTime = t;
@@ -42,7 +42,6 @@ public class Event implements EventState
         casualtyCount = 0;
         dmgCount = 0;
         rescuersPresent = false; //rescuers are not present at start
-        cleanupRemaining = getCleanupTotal(); //sets total cleanup
     }
 
     /**
@@ -54,18 +53,14 @@ public class Event implements EventState
     {
         if(state.equals("fire"))
         {
-            fireLow = new FireLow(this);
-            fireHigh = new FireHigh(this);
             eventState = fireLow;
         }
         else if(state.equals("flood"))
         {
-            flood = new Flood(this);
             eventState = flood;
         }
         else if(state.equals("chemical"))
         {
-            chem = new Chemical(this);
             eventState = chem;
         }
     }
@@ -101,10 +96,6 @@ public class Event implements EventState
         return dmgCount;
     }
 
-    public int contamStatus(){
-        return contamination;
-    }
-
     /**
      * Overloaded method Compares with just location and type
      * @param inType (String)
@@ -132,9 +123,9 @@ public class Event implements EventState
 
     public void leave() {
         System.out.println("Team departed active " + getEventType() + " at " + location); //TODO DEBUG
-        if(!eventState.getEventType().equals("FLOOD")) //resets cleanup time except if flood
+        if(!eventState.getEventType().equals("flood")) //resets cleanup time except if flood
         {
-            resetCleanp();
+            cleanupRemaining = checkCleanupTotal();
         }
         rescuersPresent = false;
     }
@@ -145,7 +136,6 @@ public class Event implements EventState
      * @param prob
      * @return boolean
      ************************************************************/
-    @Override
     public boolean roll(double prob)
     {
         Random rand = new Random();
@@ -172,7 +162,6 @@ public class Event implements EventState
     /** Toggles fire intensity, low fire returns 1, high fire returns 2 */
     @Override
     public int intensityChange() {
-        resetCleanp(); //resets cleanup remaining before state change
         if(eventState.intensityChange() == 1)
         {
             System.out.println("Fire in " + location + " changed to High"); //TODO: DEBUG
@@ -183,52 +172,34 @@ public class Event implements EventState
             System.out.println("Fire in " + location + " changed to Low"); //TODO: DEBUG
             eventState = fireLow;
         }
+        setCleanupRemaining(eventState.checkCleanupTotal());
         return 0;
     }
 
-    /**Resets cleanuptime back to default */
-    private void resetCleanp() {
-        setCleanupRemaining(eventState.getCleanupTotal());
-    }
-
     @Override
-    public boolean checkCasualty() {
-        boolean result = eventState.checkCasualty();
-        if(result)
+    public double checkCasualty() {
+        double casualtyProb = eventState.checkCasualty();
+        if(roll(casualtyProb))
         {
             casualtyCount++;
             //System.out.println("Casualty reported."); //TODO: PUT LOGGER HERE
         }
-        return result;
+        return casualtyProb;
 
     }
 
 
 
     @Override
-    public boolean checkDamage() {
-        boolean result = eventState.checkDamage();
-        if(result)
+    public double checkDamage() {
+        double dmgProb = eventState.checkDamage();
+        if(roll(dmgProb))
         {
             dmgCount++;
             //System.out.println("Damage reported."); //TODO: PUT LOGGER HERE
         }
-        return result;
-
+        return dmgProb;
     }
-
-    @Override
-    public boolean checkContam() {
-        boolean result = eventState.checkContam();
-        if(result)
-        {
-            contamination++;
-            //System.out.println("Contamination reported."); //TODO: PUT LOGGER HERE
-        }
-        return result;
-    }
-
-
 
     @Override
     public String getEventType() {
@@ -239,13 +210,13 @@ public class Event implements EventState
     public String toString()
     {
         return getEventType() + " at " + location + "\nCasualties: " + casualtyCount +
-        " - Damage: " + dmgCount;
+        eventState.toString();
     }
 
 
     @Override
-    public final int getCleanupTotal() {
-        return eventState.getCleanupTotal();
+    public int checkCleanupTotal() {
+        return eventState.checkCleanupTotal();
     }
 
     //Type+Location

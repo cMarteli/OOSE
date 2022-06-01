@@ -7,7 +7,7 @@
 package edu.curtin.emergencysim;
 
 import edu.curtin.emergencysim.events.*;
-import edu.curtin.emergencysim.notifier.*;
+//import edu.curtin.emergencysim.notifier.*;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -32,39 +32,37 @@ public class UnitTest
 
     //@Test
     public void testEvent() {
-        Event[] e = new Event[3];
-        e[0] = new Event(6, "FIRE", "Midtown");
-        e[1] = new Event(8, "FIRE", "Midtown");
-        e[2] = new Event(69, "FLOOD", "Midtown");
+        Event[] arr = new Event[3];
+        arr[0] = new Event(6, "fire", "Midtown");
+        arr[1] = new Event(8, "fire", "Midtown");
+        arr[2] = new Event(69, "flood", "Midtown");
 
-        assertTrue(e[0].compare("FIRE", "Midtown"));
-        assertTrue(e[0].compare("fire", "Midtown"));
+        assertTrue(arr[0].compare("fire", "Midtown"));
+        assertTrue(arr[0].compare("fire", "Midtown"));
         //Flood != fire Should be false
-        assertFalse(e[0].compare("flood", "Midtown"));
-        assertFalse(e[0].compare("FIRE", "Anywhere"));
+        assertFalse(arr[0].compare("flood", "Midtown"));
+        assertFalse(arr[0].compare("fire", "Anywhere"));
 
-        for (int i = 0; i < e.length; i++) {
-        // sanity check for probability
+        for (Event event : arr) {
             for (int j = 0; j < 100; j++) { //test each 100 times
-                assertFalse(e[i].roll(0.00)); //0 chance should always be false
-                assertTrue(e[i].roll(1.0)); //max chance should always be true
+                assertFalse(event.roll(0.00)); //0 chance should always be false
+                assertTrue(event.roll(1.0)); //max chance should always be true
             }
         }
-
     }
 
-    //@Test
-    public void testEventNotifier()
-    {
-        EventNotifier en = new EventNotifierImpl();
-        en.addEvent(24, "FLOOD", "Midtown");
-        en.addEvent(6, "FIRE", "Midtown");
-        en.addEvent(12, "FIRE", "Hill Valley");
-        en.addEvent(24, "FLOOD", "Hill Valley");
+    // //@Test
+    // public void testEventNotifier()
+    // {
+    //     EventNotifier en = new EventNotifierImpl();
+    //     en.addEvent(24, "FLOOD", "Midtown");
+    //     en.addEvent(6, "FIRE", "Midtown");
+    //     en.addEvent(12, "FIRE", "Hill Valley");
+    //     en.addEvent(24, "FLOOD", "Hill Valley");
 
-        assertFalse(en.checkDupes("FLOOD", "Anywhere"));
-        assertTrue(en.checkDupes("FLOOD", "Hill Valley"));
-    }
+    //     assertFalse(en.checkDupes("FLOOD", "Anywhere"));
+    //     assertTrue(en.checkDupes("FLOOD", "Hill Valley"));
+    // }
 
     // @Test
     // public void testSimulation()
@@ -79,7 +77,7 @@ public class UnitTest
     public void testFireLow()
     {
         System.out.println("Testing low fire:");
-        Event fl = new Event(5, "FIRE", "Midtown");
+        Event fl = new Event(5, "fire", "Midtown");
         //casualty
         for (int i = 0; i < 1000; i++) {
             fl.checkCasualty();
@@ -96,7 +94,7 @@ public class UnitTest
     public void testFireHigh()
     {
         System.out.println("Testing high fire:");
-        Event fh = new Event(5, "FIRE", "Midtown");
+        Event fh = new Event(5, "fire", "Midtown");
 
         fh.intensityChange(); //changes to high here
         //casualty
@@ -115,7 +113,7 @@ public class UnitTest
     public void testLowToHighFire()
     {
         System.out.println("Testing low-high fire:");
-        Event f = new Event(5, "FIRE", "Midtown");
+        Event f = new Event(5, "fire", "Midtown");
 
         //casualty - low
         for (int i = 0; i < 500; i++) {

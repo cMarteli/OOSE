@@ -20,8 +20,10 @@ public class Simulation
     private EventNotifier<Event> en;
     private ResponderComm rci;
     private Map<String, Event> activeEvents;
-    private int seconds;
 
+    // A regular expression for validating and extracting parts of outgoing ('send') messages.
+    public static final Pattern SEND_REGEX = Pattern.compile(
+        "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
      /**
      * Logger from EmergencyResponse.java
      */
@@ -48,7 +50,7 @@ public class Simulation
     {
 
         boolean simIsActive = true;
-        seconds = 0; //timer init
+        int seconds = 0; //timer init
 
         System.out.println("Starting Simulation...");
 
@@ -89,7 +91,8 @@ public class Simulation
                 {
                     simIsActive = false; //end simulation
                     //prints report
-                    for (Event e : activeEvents.values()) {
+                    System.out.println("Final Simulation Report");
+                    for (Event e : en.getEventQueue()) {
                         System.out.println(e.toString());
                     }
                 }
@@ -145,7 +148,7 @@ public class Simulation
             }
             else
             {
-                System.out.println(event.toString() + " is over");
+                System.out.println(event.getEventType() + " at " + event.getLocation() + " is over");
                 temp = event.getKey();
                 needsRemoval = true;
             }
@@ -163,9 +166,6 @@ public class Simulation
     ************************************************************/
     public void receive(String s)
     {
-            // A regular expression for validating and extracting parts of outgoing ('send') messages.
-        final Pattern SEND_REGEX = Pattern.compile(
-        "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
         Matcher m = SEND_REGEX.matcher(s); //checks string against regex
         if(!m.matches()){
             throw new IllegalArgumentException("Invalid message format: '" + s + "'");

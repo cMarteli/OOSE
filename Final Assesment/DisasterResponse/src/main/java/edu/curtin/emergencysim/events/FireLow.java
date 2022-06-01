@@ -19,7 +19,7 @@ public class FireLow implements EventState
     public FireLow(Event e)
     {
         event = e;
-        event.setCleanupRemaining(FIRE_LOW_CLEANUP_TIME);
+        event.setCleanupRemaining(FIRE_LOW_CLEANUP_TIME); //sets cleanupt total
         idleTime = 0; //initial idle counter
     }
 
@@ -35,6 +35,7 @@ public class FireLow implements EventState
             idleTime++;
             if(idleTime >= FIRE_LOW_TO_HIGH_TIME)
             {
+                event.setCleanupRemaining(FIRE_LOW_CLEANUP_TIME);
                 idleTime = 0;//reset counter before intensity change
                 event.intensityChange(); //change state to high
             }
@@ -51,19 +52,14 @@ public class FireLow implements EventState
     }
 
     @Override
-    public boolean roll(double prob) {
-        return event.roll(prob);
-    }
-
-    @Override
-    public boolean checkCasualty() {
-        return roll(FIRE_LOW_CASUALTY_PROB);
+    public double checkCasualty() {
+        return FIRE_LOW_CASUALTY_PROB;
         //TODO: make these methods return ints
     }
 
     @Override
-    public boolean checkDamage() {
-        return roll(FIRE_LOW_DAMAGE_PROB);
+    public double checkDamage() {
+        return FIRE_LOW_DAMAGE_PROB;
 
     }
 
@@ -73,14 +69,14 @@ public class FireLow implements EventState
     }
 
     @Override
-    public boolean checkContam() {
-        // TODO Auto-generated method stub
-        return false;
+    public int checkCleanupTotal() {
+        return FIRE_LOW_CLEANUP_TIME;
     }
 
     @Override
-    public int getCleanupTotal() {
-        return FIRE_LOW_CLEANUP_TIME;
+    public String toString()
+    {
+        return " Damage: " + event.getDmgCount();
     }
 
 

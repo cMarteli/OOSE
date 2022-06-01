@@ -26,24 +26,18 @@ public class Chemical implements EventState
         {
             event.setCleanupRemaining(event.getCleanupRemaining() - 1); //cleans up by 1
         }
-        event.checkContam();
+        event.checkDamage();
         event.checkCasualty();
     }
 
     @Override
-    public boolean roll(double prob) {
-        return event.roll(prob);
+    public double checkCasualty() {
+        return CHEM_CASUALTY_PROB;
     }
 
     @Override
-    public boolean checkCasualty() {
-        return roll(CHEM_CASUALTY_PROB);
-    }
-
-    @Override
-    public boolean checkDamage() {
-        // TODO Auto-generated method stub
-        return false;
+    public double checkDamage() {
+        return CHEM_CONTAM_PROB;
     }
 
     @Override
@@ -58,13 +52,14 @@ public class Chemical implements EventState
     }
 
     @Override
-    public boolean checkContam() {
-        return roll(CHEM_CONTAM_PROB);
+    public int checkCleanupTotal() {
+        return CHEM_CLEANUP_TIME;
     }
 
     @Override
-    public int getCleanupTotal() {
-        return CHEM_CLEANUP_TIME;
+    public String toString()
+    {
+        return " Contamination: " + event.getDmgCount();
     }
 
 }

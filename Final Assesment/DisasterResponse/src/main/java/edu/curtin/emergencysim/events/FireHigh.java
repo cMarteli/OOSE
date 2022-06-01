@@ -20,18 +20,13 @@ public class FireHigh implements EventState
     }
 
     @Override
-    public boolean roll(double prob) {
-        return event.roll(prob);
+    public double checkCasualty() {
+        return FIRE_HIGH_CASUALTY_PROB;
     }
 
     @Override
-    public boolean checkCasualty() {
-        return roll(FIRE_HIGH_CASUALTY_PROB);
-    }
-
-    @Override
-    public boolean checkDamage() {
-        return roll(FIRE_HIGH_DAMAGE_PROB);
+    public double checkDamage() {
+        return FIRE_HIGH_DAMAGE_PROB;
     }
 
     @Override
@@ -65,14 +60,14 @@ public class FireHigh implements EventState
     }
 
     @Override
-    public boolean checkContam() {
-        // TODO Auto-generated method stub
-        return false;
+    public int checkCleanupTotal() {
+        return FIRE_HIGH_TO_LOW_TIME;
     }
 
     @Override
-    public int getCleanupTotal() {
-        return FIRE_HIGH_TO_LOW_TIME;
+    public String toString()
+    {
+        return " Damage: " + event.getDmgCount() + " - High intensity!";
     }
 
 
