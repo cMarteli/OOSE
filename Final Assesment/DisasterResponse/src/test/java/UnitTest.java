@@ -16,19 +16,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class UnitTest
 {
-    //public static final String INPUT_FILE = "input2.txt";
-    //initializes classes for tests
-    // EventNotifier<Event> en;
-    // ResponderComm rci;
-    // Simulation sim;
-
-    // public UnitTest()
-    // {
-    //     FileIO<Event> fio = new FileIO<>(); //creates new file IO object that uses event
-    //     en = new EventNotifierImpl(); //Event notifier class
-    //     fio.readFile(INPUT_FILE, en);
-    //     rci = new ResponderCommImpl();
-    // }
 
     //@Test
     public void testEvent() {
@@ -50,28 +37,6 @@ public class UnitTest
             }
         }
     }
-
-    // //@Test
-    // public void testEventNotifier()
-    // {
-    //     EventNotifier en = new EventNotifierImpl();
-    //     en.addEvent(24, "FLOOD", "Midtown");
-    //     en.addEvent(6, "FIRE", "Midtown");
-    //     en.addEvent(12, "FIRE", "Hill Valley");
-    //     en.addEvent(24, "FLOOD", "Hill Valley");
-
-    //     assertFalse(en.checkDupes("FLOOD", "Anywhere"));
-    //     assertTrue(en.checkDupes("FLOOD", "Hill Valley"));
-    // }
-
-    // @Test
-    // public void testSimulation()
-    // {
-    //     fio.readFile(INPUT_FILE, en);
-    //     rci = new ResponderCommImpl();
-    //     sim = new Simulation(en, rci);
-
-    // }
 
 
     @Test

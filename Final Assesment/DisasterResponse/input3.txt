@@ -1,2 +1,5 @@
-1 fire Armadale
-5 flood Westtown
+35 flood Westtown
+56 fire Armadale
+6 chemical Perth
+6 chemical Westfield
+11 fire Armadale

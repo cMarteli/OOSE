@@ -122,12 +122,11 @@ public class Event implements EventState, Observable
     }
 
     public void arrive() {
-        notifyObserver(getEventType() + " start " + location); //TODO: print low or high for fire
+        //TODO: Put logger here
         rescuersPresent = true;
     }
-
+    //Sets Rescuers status TODO: Put logger here
     public void leave() {
-        notifyObserver(getEventType() + " end " + location);
         if(!eventState.getEventType().equals("flood")) //resets cleanup time except if flood
         {
             cleanupRemaining = checkCleanupTotal();

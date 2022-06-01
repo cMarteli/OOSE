@@ -55,10 +55,13 @@ add the ability for events to increase in size or dissipate
 
 Observer pattern:
 
-Observers are the ones who receive notifications of new events as they occur
-in this case Rescuers (usually has an update method, in our case "send" and "poll")
+The subject are the events themselves in this case the event class. As the observer wants to be notified of changes to the that classes fields
+(damage, contamination, status).
 
-Subject is what is being observed (event notifier?) and they may have an event subclass which hold the info of events (event)
+Observers are the ones who receive notifications of new events as they occur Simulation is one of them, as it needs to send the Respondercomm
+notice of any changes. However any other class may extend the observer interface if needed and simply call the .register() method of the Observer class
+to receive updates of any certain event. This may be only the events the Observer is interested on. So for example if a firefighter would like to subcribe to
+only fire events they could easily do so.
 
 Explanation of Generics:
 Event notifier interface takes in a generic instead of Event.
@@ -66,16 +69,21 @@ This was done to decouple the class from needing a specific 'Event' class if fut
 
 Only interfaces are directly referecended between classes.
 
-fileIO.java originally instantiated the EventNotifierImpl (the concrete class of the EventNotifier interface) it also instantiated the Event.java class and used the EventNotiferImpl.add(Event e) method to add to the list of Events.
-
-This was completely changed to loosen coupling and decrease dependencies.
-fileIO now takes a generic parameter and an additional overloaded version of .add() was created to take in strings and integers as parameters so the implementation of the interface can handle the creation of the new events. 
-This way fileIO.java does not need to know of the existence of Event.java or the EventNotifierImpl only the interface.
+fileIO.java originally instantiated the EventNotifierImpl (the concrete class of the EventNotifier interface) 
+it also instantiated the Event.java class and used the EventNotiferImpl.add(Event e) method to add to the list of Events.
+This was later changed to simply return a list of events. Events was kept as a sole dependancy so fileIO can check if the file is valid for the object
+type.
 
 Dependency injection:
 Originally the simulation class had all files instantiated in the constructor.
-To enable easier unit testing and implement DI I decided to use my Main class as a bootstrap that instantiates all objects relevant to the simulation and injects it into the constructor of the simulator class.
+To enable easier unit testing and implement Dependency Injection I decided to use my Main class as a bootstrap that instantiates
+all objects relevant to the simulation and injects it into the constructor of the simulator class.
 
 This solution did not require the use of factory methods, and for code simplicity sake I've elected not to implement them as the purpose of easier testing was achieved.
 
 State Pattern:
+The event class not only extends Observer but also EventState.
+Event state, has methods which are called by other classes representing the state an emergency can be in at any point.
+These include: FireLow, FireHigh, Chemical, Flood.
+These classes and the interfaces themselves have all been put into the package "emergencysim.events"
+

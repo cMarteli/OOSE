@@ -33,8 +33,8 @@ public class ResponderCommImpl implements ResponderComm
         "(?<emergency>fire|flood|chemical) ((?<status>start|end|low|high)|(?<lossType>casualty|damage|contam) (?<lossCount>[0-9]+)) (?<location>.+)");
 
     // We'll provide an 'end' message (to shut down the simulation) after this many seconds.
-    private static final long DURATION = 1000;
-    //private static final long DURATION = 30;
+    //private static final long DURATION = 1000;
+    private static final long DURATION = 30;
 
     // We need to keep track of time here, to work out what message to return from poll() at which
     // point.
@@ -47,20 +47,20 @@ public class ResponderCommImpl implements ResponderComm
     public ResponderCommImpl()
     {
         startTime = System.currentTimeMillis();
-        events.add(new REvent(100, "fire", true, "Midtown"));
-        events.add(new REvent(125, "fire", false, "Midtown"));
-        events.add(new REvent(130, "fire", true, "Hill Valley"));
-        events.add(new REvent(250, "fire", false, "Hill Valley"));
-        events.add(new REvent(250, "flood", true, "Westtown"));
-        events.add(new REvent(260, "fire", true, "Midtown"));
-        events.add(new REvent(550, "fire", false, "Midtown"));
-        // events.add(new REvent(10, "fire", true, "Midtown"));
-        // events.add(new REvent(12, "fire", false, "Midtown"));
-        // events.add(new REvent(13, "fire", true, "Hill Valley"));
-        // events.add(new REvent(25, "fire", false, "Hill Valley"));
-        // events.add(new REvent(25, "flood", true, "Westtown"));
-        // events.add(new REvent(26, "fire", true, "Midtown"));
-        // events.add(new REvent(55, "fire", false, "Midtown"));
+        // events.add(new REvent(100, "fire", true, "Midtown"));
+        // events.add(new REvent(125, "fire", false, "Midtown"));
+        // events.add(new REvent(130, "fire", true, "Hill Valley"));
+        // events.add(new REvent(250, "fire", false, "Hill Valley"));
+        // events.add(new REvent(250, "flood", true, "Westtown"));
+        // events.add(new REvent(260, "fire", true, "Midtown"));
+        // events.add(new REvent(550, "fire", false, "Midtown"));
+        events.add(new REvent(10, "fire", true, "Midtown"));
+        events.add(new REvent(12, "fire", false, "Midtown"));
+        events.add(new REvent(13, "fire", true, "Hill Valley"));
+        events.add(new REvent(25, "fire", false, "Hill Valley"));
+        events.add(new REvent(25, "flood", true, "Westtown"));
+        events.add(new REvent(26, "fire", true, "Midtown"));
+        events.add(new REvent(55, "fire", false, "Midtown"));
         // ...
     }
 

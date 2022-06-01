@@ -124,7 +124,11 @@ public class Simulation implements IObserver
             {
                 try {
                     activeEvents.put(nxt.getKey(), nxt); //add event to activeList
-                    rci.send(nxt.getEventType() + " start " + nxt.getLocation()); //sends events to responder - prints
+                    // String label = " start ";
+                    // if(nxt.getEventType().equals("fire")){
+                    //     label = " start low ";
+                    // }
+                    update(nxt.getEventType() + " start " + nxt.getLocation()); //sends events to responder - prints
 
                 }
                 catch (IllegalArgumentException e) {
@@ -151,8 +155,7 @@ public class Simulation implements IObserver
             }
             else
             {
-                //System.out.println(event.getEventType() + " end " + event.getLocation());
-                rci.send(event.getEventType() + " end " + event.getLocation());
+                update(event.getEventType() + " end " + event.getLocation());
                 temp = event.getKey();
                 needsRemoval = true;
             }
@@ -196,7 +199,7 @@ public class Simulation implements IObserver
      */
     @Override
     public void update(String msg) {
-        //System.out.println();
+        System.out.println();
         rci.send(msg);
     }
 
