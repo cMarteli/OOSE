@@ -5,8 +5,6 @@
  */
 package edu.curtin.emergencysim.events;
 
-import edu.curtin.emergencysim.notifier.IObserver;
-
 public class Flood implements EventState
 {
     //Constants for FLOOD
@@ -62,24 +60,6 @@ public class Flood implements EventState
     public String toString()
     {
         return " Damage: " + event.getDmgCount();
-    }
-
-    @Override
-    public void register(IObserver newObs) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void unregister(IObserver delObs) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void notifyObserver(String msg) {
-        // TODO Auto-generated method stub
-
     }
 
 }

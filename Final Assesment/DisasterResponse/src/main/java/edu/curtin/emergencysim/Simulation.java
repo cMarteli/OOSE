@@ -67,7 +67,7 @@ public class Simulation implements IObserver
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
 
-            //System.out.println("[t="+seconds+"]"); //DEBUG: prints seconds
+            System.out.print("[t="+seconds+"]"); //DEBUG: prints seconds
             if(LOGR.isLoggable(Level.INFO)){ LOGR.info(seconds + "s"); } //LOGGER: time passed LVL=INFO
         }
 
@@ -190,9 +190,13 @@ public class Simulation implements IObserver
         }
     }
 
+    /**
+     * Observer method
+     * @param msg
+     */
     @Override
     public void update(String msg) {
-        System.out.println();
+        //System.out.println();
         rci.send(msg);
     }
 

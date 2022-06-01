@@ -1,5 +1,8 @@
 /**
  * Event.java
+ * Implements EventState and Observable
+ * This class utilises the state pattern to keep track of its current state
+ * and the observer pattern to notify the simulation or any other subscribers of changes
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
@@ -9,23 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import edu.curtin.emergencysim.notifier.IObserver;
+import edu.curtin.emergencysim.notifier.*;
 
-public class Event implements EventState
+public class Event implements EventState, Observable
 {
-
     /** States */
-    private EventState eventState;
-    private EventState flood;
-    private EventState fireLow;
-    private EventState fireHigh;
-    private EventState chem;
-
+    private EventState eventState, flood, fireLow, fireHigh, chem;
+    /** Observers */
+    private List<IObserver> subscribers;
+    /**Fields */
     private int startTime, casualtyCount, dmgCount, cleanupRemaining;
     private String location;
     private boolean rescuersPresent;
-
-    private List<IObserver> subscribers; //list of all subscribed to this event
 
     /**
      * Constructor
@@ -123,7 +121,6 @@ public class Event implements EventState
         }
     }
 
-
     public void arrive() {
         notifyObserver(getEventType() + " start " + location); //TODO: print low or high for fire
         rescuersPresent = true;
@@ -139,18 +136,16 @@ public class Event implements EventState
     }
 
 
-    //clock tick changes depending on rescuer status
-    @Override
-    public void clockTick(boolean rescuers) {
-        eventState.clockTick(rescuersPresent);
-        //TODO: Pass lambda function here
-    }
-
     //overloaded method to be called by simulation
     public void clockTick() {
         clockTick(rescuersPresent);
     }
 
+    //clock tick changes depending on rescuer status
+    @Override
+    public void clockTick(boolean rescuers) {
+        eventState.clockTick(rescuersPresent);
+    }
 
     /** Toggles fire intensity, low fire returns 1, high fire returns 2 */
     @Override
@@ -169,6 +164,7 @@ public class Event implements EventState
         return 0;
     }
 
+    /** */
     @Override
     public double checkCasualty() {
         double casualtyProb = eventState.checkCasualty();
@@ -185,6 +181,8 @@ public class Event implements EventState
     /************************************************************
      * Generates random double to 2decimals given probability if
      * roll 'passes' if result is LOWER than probability
+     * TODO: Change this to lambda and move it to simulation
+     * then pass it to clockTick()
      * @param prob
      * @return boolean
      ************************************************************/
@@ -195,8 +193,6 @@ public class Event implements EventState
         //System.out.println("(" + r + "/" + prob + ")" ); //TODO: Put logger here
         return (r < prob);
     }
-
-
 
     @Override
     public double checkDamage() {
@@ -238,6 +234,9 @@ public class Event implements EventState
         return getEventType()+location;
     }
 
+    /**
+    * Observable methods
+    */
     @Override
     public void register(IObserver newObs) {
         subscribers.add(newObs);

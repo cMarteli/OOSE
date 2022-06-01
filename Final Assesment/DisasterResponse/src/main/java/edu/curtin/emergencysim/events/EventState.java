@@ -5,8 +5,6 @@
  */
 package edu.curtin.emergencysim.events;
 
-import edu.curtin.emergencysim.notifier.IObserver;
-
 public interface EventState
 {
     public void clockTick(boolean rescuers);
@@ -20,14 +18,7 @@ public interface EventState
     public double checkDamage();
 
     public String getEventType();
-
     /** */
     public int checkCleanupTotal();
-
-    public void register(IObserver newObs);
-
-    public void unregister(IObserver delObs);
-
-    public void notifyObserver(String msg);
 
 }

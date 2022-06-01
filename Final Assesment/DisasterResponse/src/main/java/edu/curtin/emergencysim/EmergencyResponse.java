@@ -12,15 +12,13 @@
  */
 package edu.curtin.emergencysim;
 
-import static edu.curtin.emergencysim.Colours.*; //imports GFX class
 import edu.curtin.emergencysim.events.*;
 import edu.curtin.emergencysim.responders.*;
 import java.util.logging.*;
 
 public class EmergencyResponse
 {
-
-    private static final String SPLASH = BLUE+ "**************************\n*" + RESET + " EMERGENCY RESPONSE SIM " + MAGENTA + "*\n**************************\n" + RESET;
+    public static final String SPLASH = "\033[34m**************************\n*\033[m EMERGENCY RESPONSE SIM \033[35m*\n**************************\n\033[m";
     /**
      * @param args the command line arguments
      */
@@ -29,7 +27,6 @@ public class EmergencyResponse
     {
         setupLogger();// sets up logging
         System.out.println(SPLASH); //displays splash title
-
         //instantiates classes to be injected into simulation
         FileIO<Event> fio = new FileIO<>(); //creates new file IO object that uses event
         ResponderComm rci;
@@ -62,9 +59,7 @@ public class EmergencyResponse
             System.out.println("The Program will now close...");
             Keyboard.close(); //closes Scanner therefore closing System.in - to satisfy PMD
         }
-
     }
-
     /**
      * Logger
      */
@@ -86,6 +81,4 @@ public class EmergencyResponse
             LOGR.log(Level.SEVERE, "Logger broke.", e);
         }
     }
-
-
 }
