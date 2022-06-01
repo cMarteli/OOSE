@@ -5,7 +5,11 @@
  */
 package edu.curtin.emergencysim.events;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import edu.curtin.emergencysim.notifier.IObserver;
 
 public class Event implements EventState
 {
@@ -21,6 +25,8 @@ public class Event implements EventState
     private String location;
     private boolean rescuersPresent;
 
+    private List<IObserver> subscribers; //list of all subscribed to this event
+
     /**
      * Constructor
      * @param t
@@ -29,6 +35,8 @@ public class Event implements EventState
      */
     public Event(int t, String et, String l)
     {
+        subscribers = new ArrayList<>();
+
         flood = new Flood(this);
         fireLow = new FireLow(this);
         fireHigh = new FireHigh(this);
@@ -117,33 +125,18 @@ public class Event implements EventState
 
 
     public void arrive() {
-        System.out.println(getEventType() + " team arrived in " + location); //TODO DEBUG
+        notifyObserver(getEventType() + " start " + location); //TODO: print low or high for fire
         rescuersPresent = true;
     }
 
     public void leave() {
-        System.out.println("Team departed active " + getEventType() + " at " + location); //TODO DEBUG
+        notifyObserver(getEventType() + " end " + location);
         if(!eventState.getEventType().equals("flood")) //resets cleanup time except if flood
         {
             cleanupRemaining = checkCleanupTotal();
         }
         rescuersPresent = false;
     }
-
-    /************************************************************
-     * Generates random double to 2decimals given probability if
-     * roll 'passes' if result is LOWER than probability
-     * @param prob
-     * @return boolean
-     ************************************************************/
-    public boolean roll(double prob)
-    {
-        Random rand = new Random();
-        double r = Math.floor(rand.nextDouble()*100) / 100;
-        //System.out.println("(" + r + "/" + prob + ")" ); //TODO: Put logger here
-        return (r < prob);
-    }
-
 
 
     //clock tick changes depending on rescuer status
@@ -164,12 +157,12 @@ public class Event implements EventState
     public int intensityChange() {
         if(eventState.intensityChange() == 1)
         {
-            System.out.println("Fire in " + location + " changed to High"); //TODO: DEBUG
+            notifyObserver("fire " + "high " + location);
             eventState = fireHigh;
         }
         else if(eventState.intensityChange() == 2)
         {
-            System.out.println("Fire in " + location + " changed to Low"); //TODO: DEBUG
+            notifyObserver("fire " + "low " + location);
             eventState = fireLow;
         }
         setCleanupRemaining(eventState.checkCleanupTotal());
@@ -182,10 +175,25 @@ public class Event implements EventState
         if(roll(casualtyProb))
         {
             casualtyCount++;
+            notifyObserver(eventState.getEventType() + " casualty " + casualtyCount + " " + location);
             //System.out.println("Casualty reported."); //TODO: PUT LOGGER HERE
         }
         return casualtyProb;
 
+    }
+
+    /************************************************************
+     * Generates random double to 2decimals given probability if
+     * roll 'passes' if result is LOWER than probability
+     * @param prob
+     * @return boolean
+     ************************************************************/
+    public boolean roll(double prob)
+    {
+        Random rand = new Random();
+        double r = Math.floor(rand.nextDouble()*100) / 100;
+        //System.out.println("(" + r + "/" + prob + ")" ); //TODO: Put logger here
+        return (r < prob);
     }
 
 
@@ -195,7 +203,12 @@ public class Event implements EventState
         double dmgProb = eventState.checkDamage();
         if(roll(dmgProb))
         {
+            String label = " damage ";
+            if(eventState.getEventType().equals("chemical")){
+                label = " contam ";
+            }
             dmgCount++;
+            notifyObserver(eventState.getEventType() + label + dmgCount + " " + location);
             //System.out.println("Damage reported."); //TODO: PUT LOGGER HERE
         }
         return dmgProb;
@@ -224,5 +237,32 @@ public class Event implements EventState
     {
         return getEventType()+location;
     }
+
+    @Override
+    public void register(IObserver newObs) {
+        subscribers.add(newObs);
+
+    }
+
+    @Override
+    public void unregister(IObserver delObs) {
+        // Get index
+        int obsIndx = subscribers.indexOf(delObs);
+        //prints msg
+        System.out.println("Observer " + (obsIndx+1) + " deleted");
+        //removes from list
+        subscribers.remove(obsIndx);
+    }
+
+    @Override
+    public void notifyObserver(String msg)
+    {
+        if(!msg.isEmpty()){
+            for (IObserver observer : subscribers) {
+                observer.update(msg);
+            }
+        }
+    }
+
 
 }

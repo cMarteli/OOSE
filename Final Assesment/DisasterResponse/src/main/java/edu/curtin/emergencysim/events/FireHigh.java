@@ -5,6 +5,8 @@
  */
 package edu.curtin.emergencysim.events;
 
+import edu.curtin.emergencysim.notifier.IObserver;
+
 public class FireHigh implements EventState
 {
     //constants for FIRE - High (A high level fire must be reduced to low before it can be extinguished)
@@ -68,6 +70,24 @@ public class FireHigh implements EventState
     public String toString()
     {
         return " Damage: " + event.getDmgCount() + " - High intensity!";
+    }
+
+    @Override
+    public void register(IObserver newObs) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void unregister(IObserver delObs) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void notifyObserver(String msg) {
+        // TODO Auto-generated method stub
+
     }
 
 

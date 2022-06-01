@@ -5,6 +5,8 @@
  */
 package edu.curtin.emergencysim.events;
 
+import edu.curtin.emergencysim.notifier.IObserver;
+
 public class FireLow implements EventState
 {
     //constants for FIRE - Low
@@ -53,7 +55,6 @@ public class FireLow implements EventState
     @Override
     public double checkCasualty() {
         return FIRE_LOW_CASUALTY_PROB;
-        //TODO: make these methods return ints
     }
 
     @Override
@@ -76,6 +77,24 @@ public class FireLow implements EventState
     public String toString()
     {
         return " Damage: " + event.getDmgCount();
+    }
+
+    @Override
+    public void register(IObserver newObs) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void unregister(IObserver delObs) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void notifyObserver(String msg) {
+        // TODO Auto-generated method stub
+
     }
 
 

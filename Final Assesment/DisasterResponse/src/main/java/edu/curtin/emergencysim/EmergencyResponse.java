@@ -14,7 +14,6 @@ package edu.curtin.emergencysim;
 
 import static edu.curtin.emergencysim.Colours.*; //imports GFX class
 import edu.curtin.emergencysim.events.*;
-import edu.curtin.emergencysim.notifier.*;
 import edu.curtin.emergencysim.responders.*;
 import java.util.logging.*;
 
@@ -33,7 +32,6 @@ public class EmergencyResponse
 
         //instantiates classes to be injected into simulation
         FileIO<Event> fio = new FileIO<>(); //creates new file IO object that uses event
-        EventNotifier<Event> en = new EventNotifierImpl(); //Event notifier class
         ResponderComm rci;
         Simulation sim;
 
@@ -41,9 +39,8 @@ public class EmergencyResponse
 
         try
         {
-            //fio.readFile(fileName); //loads file into EventNotifier
             rci = new ResponderCommImpl(); //needs to be just before run() to avoid clock desyncs
-            sim = new Simulation(en, rci, fio.readFile(fileName)); //loads file into EventNotifier
+            sim = new Simulation(rci, fio.readFile(fileName)); //loads file into EventNotifier
             sim.run(); //starts simulation
         }
         catch (java.io.IOException e) //for fio.readFile
