@@ -5,24 +5,21 @@
  * may contain code previously submitted for DSA Modified March 2022 for EmergencyResponse.java
  * Modified May,2022 for EmergencyResponse.java
 */
-package edu.curtin.emergencysim;
+package edu.curtin.emergencysim.io;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.*;
 
+import edu.curtin.emergencysim.EmergencySim;
 import edu.curtin.emergencysim.events.Event;
 
 @SuppressWarnings("PMD.CloseResource") //Scanner is closed, checked with VSCODE linting tool
 public class FileIO<E>{
 
-    /**
-     * Logger from EmergencyResponse.java
-     */
-    private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
+    /** Logger from EmergencyResponse.java   */
+    private final static Logger LOGR = Logger.getLogger(EmergencySim.class.getName());
 
     /************************************************************
      * Imports a text file and writes it to an object
@@ -113,7 +110,7 @@ public class FileIO<E>{
     /************************************************************
      * Validator Method. Gets user integer and repeats until it's a valid input
      * @param prompt (String)
-     * @return userInt (integer)
+     * @return userInt (Integer)
     ************************************************************/
     public int checkInteger(String prompt)
     {
@@ -135,11 +132,12 @@ public class FileIO<E>{
     }
 
     /************************************************************
-    * Checks for duplicate events. Used by fileIO.java
-    * @param type (String)
-    * @param loc (String)
+     * Checks for duplicate events. Used by fileIO.java
+     * @param type (String)
+     * @param loc (String)
+     * @param l (List<Event>)
+     * @return result (Boolean)
     ************************************************************/
-
     public boolean checkDupes(String type, String loc, List<Event> l)
     {
         boolean result = false;

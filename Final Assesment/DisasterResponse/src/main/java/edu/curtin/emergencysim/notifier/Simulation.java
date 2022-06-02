@@ -1,38 +1,36 @@
 /**
  * Simulation.java
- * OBSERVER
+ * Implements IObserver
+ * Contains main simulation loop,
+ * Observes events and communicates with ResponderComm
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
-package edu.curtin.emergencysim;
-import java.io.IOException;
+package edu.curtin.emergencysim.notifier;
 import java.util.*;
 import java.util.logging.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
+import edu.curtin.emergencysim.EmergencySim;
 import edu.curtin.emergencysim.events.*;
 import edu.curtin.emergencysim.responders.*;
-import edu.curtin.emergencysim.notifier.*;
 
 public class Simulation implements IObserver
 {
-    private ResponderComm rci;
-    private Map<String, Event> activeEvents;
-    private List<Event> queue;
+    private ResponderComm rci; //allows comms with responders
+    private Map<String, Event> activeEvents; //map with only events still ongoing
+    private List<Event> queue; //queue of all event from file
 
-    // A regular expression for validating and extracting parts of outgoing ('send') messages.
+    /** Regex for validating responder messages */
     public static final Pattern SEND_REGEX = Pattern.compile(
         "(?<emergency>fire|flood|chemical) (?<status>[+-]) (?<location>.+)");
-     /**
-     * Logger from EmergencyResponse.java
-     */
-    private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
+    /** Logger from EmergencyResponse.java  */
+    private final static Logger LOGR = Logger.getLogger(EmergencySim.class.getName());
 
     /************************************************************
      * Constructor: creates new RNG and RCI
-     * @param fileName
-     * @throws IOException
+     * @param inRci
+     * @param q
     ************************************************************/
     public Simulation(ResponderComm inRci, List<Event> q)
     {
@@ -42,12 +40,13 @@ public class Simulation implements IObserver
     }
 
     /************************************************************
-     * outgoing message and validates it.
+     * Loop that contains simulation logic.
+     * Will run until receives and "end" message or an exception is thrown
      * @throws InterruptedException
      ************************************************************/
     public void run() throws InterruptedException
     {
-        //subcribe to all events in list
+        //The simulation subcribes to all events in list
         for (Event event : queue) {
             event.register(this);
         }
@@ -59,36 +58,24 @@ public class Simulation implements IObserver
 
         while (simIsActive) {
 
-            simIsActive = poll(simIsActive);
-            sendStartMsg(seconds); //sends message to responders, adds to active event list
+            simIsActive = poll(simIsActive); //polls responders; sets active status if end is received
+            eventStart(seconds); //sends message to responders, adds to active event list
             simClockTick();
 
             Thread.sleep(1000); //sleeps for 1 second
-            seconds++;
+            seconds++; //increment timer
 
-            //System.out.print("[t="+seconds+"]"); //DEBUG: prints seconds
-            if(LOGR.isLoggable(Level.INFO)){ LOGR.info(seconds + "s"); } //LOGGER: time passed LVL=INFO
+            if(LOGR.isLoggable(Level.INFO)){ LOGR.info("[t="+seconds+"]"); } //LOGGER: time passed LVL=INFO
         }
 
         printReport();//prints final report
     }
 
-    /**
-     * Prints final report including damage, contam and casualties
-     */
-    private void printReport() {
-        System.out.println("Final Simulation Report");
-        for (Event e : queue) {
-            System.out.println(e.toString());
-        }
-        System.out.println("End of Simulation.");
-    }
-
     /************************************************************
-     * gets message from responders and formats the prints; clocktick
+     * Gets message list from responders, checks for end condition
+     * then adds/removes responders
      * @param simIsActive
-     * @param activeEvents
-     * @return
+     * @return simIsActive (Boolean)
      ************************************************************/
     private boolean poll(boolean simIsActive) {
         List<String> messageList;
@@ -116,12 +103,11 @@ public class Simulation implements IObserver
     }
 
     /************************************************************
-     * checks event queue for any events scheduled to start this second
-     * creates message
+     * Checks event queue for any events scheduled to start this second
+     * notifies responders
      * @param seconds
-     * @param activeEvents
      ************************************************************/
-    private void sendStartMsg(int seconds) {
+    private void eventStart(int seconds) {
         for (Event nxt : queue) {
             if(nxt.getStartTime() == seconds) //if there any events scheduled to start this second
             {
@@ -132,9 +118,8 @@ public class Simulation implements IObserver
     }
 
     /************************************************************
-    @param active (Map<String, Event>)
-    Iterates through active event map and ticks the clock down on each
-    also removes events which are over
+     * Iterates through active event map and ticks the clock down on each
+     * also removes events which are over
     ************************************************************/
     private void simClockTick()
     {
@@ -163,6 +148,8 @@ public class Simulation implements IObserver
     /************************************************************
      * Validates then Formats message
      * Receives and sets arrival and leave status
+     * @param s (String)
+     * @throws IllegalArgumentException
     ************************************************************/
     public void checkArrival(String s) throws IllegalArgumentException
     {
@@ -184,6 +171,15 @@ public class Simulation implements IObserver
                 match.leave();
             }
         }
+    }
+
+    /** Prints final report including damage, contam and casualties */
+    private void printReport() {
+        System.out.println("Final Simulation Report");
+        for (Event e : queue) {
+            System.out.println(e.toString());
+        }
+        System.out.println("End of Simulation.");
     }
 
     /**

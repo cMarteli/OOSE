@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-02T11:59:23.007966Z</date>
+  <millis>1654171163007</millis>
+  <nanos>966000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.EmergencySim</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>IO Exception: afas.txt (No such file or directory)</message>
+</record>
+</log>

@@ -1,16 +1,13 @@
 /**
  * EventNotifier.java
  * Observer Interface
+ * Allows observer pattern implementation
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.emergencysim.notifier;
 
 public interface IObserver
 {
-    /**
-     * Generic type allows for the use of either string or event class depending on implementation
-     * @return
-     */
+    /** Subject may call this to notify Observer of a change */
     public void update(String msg);
-
 }

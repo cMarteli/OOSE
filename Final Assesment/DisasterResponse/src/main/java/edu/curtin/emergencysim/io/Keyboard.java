@@ -5,7 +5,7 @@
  * @author Caio Marteli (19598552)
  * Marteli, C (2021) source code (Version 1.0) [Source code]. https://github.com/cMarteli/
  */
-package edu.curtin.emergencysim;
+package edu.curtin.emergencysim.io;
 import java.util.Scanner;
 public class Keyboard
 {

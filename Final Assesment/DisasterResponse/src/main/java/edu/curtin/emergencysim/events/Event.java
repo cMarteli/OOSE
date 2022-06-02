@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.*;
 
-import edu.curtin.emergencysim.EmergencyResponse;
+import edu.curtin.emergencysim.EmergencySim;
 import edu.curtin.emergencysim.notifier.*;
 
 public class Event implements EventState, IObservable
@@ -27,10 +27,8 @@ public class Event implements EventState, IObservable
     private String location;
     private boolean rescuersPresent;
 
-    /**
-     * Logger from EmergencyResponse.java
-     */
-    private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
+    /** Logger from EmergencyResponse.java  */
+    private final static Logger LOGR = Logger.getLogger(EmergencySim.class.getName());
 
     /**
      * Constructor
@@ -57,6 +55,8 @@ public class Event implements EventState, IObservable
         rescuersPresent = false; //rescuers are not present at start
     }
 
+    /**Setters  */
+
     /**
      * sets type and initiates cleanup time - method is final as it's used during construction
      * cleanup time is set to total time needed for cleanup depending on event type
@@ -81,6 +81,25 @@ public class Event implements EventState, IObservable
     public void setCleanupRemaining(int total)
     {
         cleanupRemaining = total;
+    }
+
+    /**
+     * Rescuers status setters
+     */
+    public void arrive()
+    {
+        rescuersPresent = true;
+
+        if(LOGR.isLoggable(Level.INFO)){ LOGR.info("arrival:["+eventState.toString()+"]"); } //LOGGER.INFO: arrival
+    }
+
+    public void leave() {
+        if(!eventState.getEventType().equals("flood")) //resets cleanup time except if flood
+        {
+            cleanupRemaining = checkCleanupTotal();
+        }
+        rescuersPresent = false;
+        if(LOGR.isLoggable(Level.INFO)){ LOGR.info("left:["+eventState.toString()+"]"); } //LOGGER.INFO: leaving
     }
 
     /**Getters */
@@ -110,10 +129,10 @@ public class Event implements EventState, IObservable
     }
 
     /**
-     * Overloaded method Compares with just location and type
+     * Compares two events given location and type
      * @param inType (String)
      * @param inLoc (String)
-     * @return
+     * @return boolean
      */
     public boolean compare(String inType, String inLoc)
     {
@@ -128,29 +147,15 @@ public class Event implements EventState, IObservable
         }
     }
 
-    public void arrive() {
-        rescuersPresent = true;
-        if(LOGR.isLoggable(Level.INFO)){ LOGR.info("arrival:["+eventState.toString()+"]"); } //LOGGER: arrival
-    }
-    //Sets Rescuers status
-    public void leave() {
-        if(!eventState.getEventType().equals("flood")) //resets cleanup time except if flood
-        {
-            cleanupRemaining = checkCleanupTotal();
-        }
-        rescuersPresent = false;
-    }
-
-
-    //overloaded method to be called by simulation
-    public void clockTick() {
-        clockTick(rescuersPresent);
-    }
-
-    //clock tick changes depending on rescuer status
+    /** Clock tick. Changes depending on rescuer status */
     @Override
     public void clockTick(boolean rescuers) {
         eventState.clockTick(rescuersPresent);
+    }
+
+    /** Overloaded method gets rescuer status automatically */
+    public void clockTick() {
+        clockTick(rescuersPresent);
     }
 
     /** Toggles fire intensity, low fire returns 1, high fire returns 2 */
@@ -170,7 +175,7 @@ public class Event implements EventState, IObservable
         return 0;
     }
 
-    /** */
+    /** Rolls and adds to casualty if true. Signals change to observers */
     @Override
     public double checkCasualty() {
         double casualtyProb = eventState.checkCasualty();
@@ -179,7 +184,7 @@ public class Event implements EventState, IObservable
             casualtyCount++;
             notifyObserver(eventState.getEventType() + " casualty " + casualtyCount + " " + location);
 
-            if(LOGR.isLoggable(Level.INFO)){ LOGR.info("Casualty reported:["+eventState.toString()+"]"); } //LOGGER: Casualty
+            if(LOGR.isLoggable(Level.INFO)){ LOGR.info("Casualty reported:["+eventState.toString()+"]"); } //LOGGER.INFO: Casualty
         }
         return casualtyProb;
 
@@ -196,10 +201,12 @@ public class Event implements EventState, IObservable
     {
         Random rand = new Random();
         double r = Math.floor(rand.nextDouble()*100) / 100;
-        if(LOGR.isLoggable(Level.INFO)){ LOGR.info("(" + r + "/" + prob + ")"); } //LOGGER: probability
+
+        if(LOGR.isLoggable(Level.INFO)){ LOGR.info("(" + r + "/" + prob + ")"); } //LOGGER.INFO: probability
         return (r < prob);
     }
 
+    /** Rolls and adds to damage if true. Signals change to observers */
     @Override
     public double checkDamage() {
         double dmgProb = eventState.checkDamage();
@@ -212,7 +219,7 @@ public class Event implements EventState, IObservable
             dmgCount++;
             notifyObserver(eventState.getEventType() + label + dmgCount + " " + location);
 
-            if(LOGR.isLoggable(Level.INFO)){ LOGR.info("Damage reported:["+eventState.toString()+"]"); } //LOGGER: Damage
+            if(LOGR.isLoggable(Level.INFO)){ LOGR.info("Damage reported:["+eventState.toString()+"]"); } //LOGGER.INFO: Damage
         }
         return dmgProb;
     }
@@ -235,33 +242,34 @@ public class Event implements EventState, IObservable
         return eventState.checkCleanupTotal();
     }
 
-    //Type+Location
+    /**
+     * Generates unique event key.
+     * Key=Type+Location
+     * @return (String)
+     */
     public String getKey()
     {
         return getEventType()+location;
     }
 
-    /**
-    * Observable methods
-    */
+    /** Observer pattern methods */
     @Override
-    public void register(IObserver newObs) {
+    public void register(IObserver newObs) { //adds observer to list
         subscribers.add(newObs);
 
+        if(LOGR.isLoggable(Level.FINE)){ LOGR.fine("Observer " + subscribers.indexOf(newObs) + " added"); } //LOGGER.FINE: Sub
     }
 
     @Override
-    public void unregister(IObserver delObs) {
-        // Get index
+    public void unregister(IObserver delObs) { //removes observer from list
         int obsIndx = subscribers.indexOf(delObs);
-        //prints msg
-        System.out.println("Observer " + (obsIndx+1) + " deleted");
-        //removes from list
         subscribers.remove(obsIndx);
+
+        if(LOGR.isLoggable(Level.FINE)){ LOGR.fine("Observer " + (obsIndx+1) + " deleted"); } //LOGGER.FINE: Unsub
     }
 
     @Override
-    public void notifyObserver(String msg)
+    public void notifyObserver(String msg) //notifies all observers
     {
         if(!msg.isEmpty()){
             for (IObserver observer : subscribers) {

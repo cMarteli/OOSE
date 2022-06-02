@@ -24,3 +24,8 @@ Please enter a file name:
 #input2 - short simulation
 #input - long simulation
 #input3 - duplicate events. Will be caught during validation and end simulation.
+
+KNOWN ISSUES
+Door lock/unlock function is unimplemented
+Edges of some walls are missing
+sometimes double prints are you sure message when reading file

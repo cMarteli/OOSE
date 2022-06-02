@@ -9,7 +9,7 @@ repositories {
 }
 
 application {
-    mainClass = 'edu.curtin.emergencysim.EmergencyResponse'
+    mainClass = 'edu.curtin.emergencysim.EmergencySim'
 }
 
 tasks.run.configure {

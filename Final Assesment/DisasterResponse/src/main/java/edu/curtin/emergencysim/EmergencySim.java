@@ -1,5 +1,5 @@
 /**
- * EmergencyResponse.java
+ * EmergencySim.java
  * MAIN class of Emergency Response App
  * Instatiates FileIO, EventNotifier, ResponderComm and Simulation classes
  * serves as an injector to Simulation class and performs error handling for fileIO
@@ -13,12 +13,15 @@
 package edu.curtin.emergencysim;
 
 import edu.curtin.emergencysim.events.*;
+import edu.curtin.emergencysim.io.*;
+import edu.curtin.emergencysim.notifier.Simulation;
 import edu.curtin.emergencysim.responders.*;
 import java.util.logging.*;
 
-public class EmergencyResponse
+public class EmergencySim
 {
-    public static final String SPLASH = "\033[34m**************************\n*\033[m EMERGENCY RESPONSE SIM \033[35m*\n**************************\n\033[m";
+    public static final String SPLASH =
+    "\033[34m**************************\n*\033[m EMERGENCY RESPONSE SIM \033[35m*\n**************************\n\033[m";
     /**
      * @param args the command line arguments
      */
@@ -60,10 +63,8 @@ public class EmergencyResponse
             Keyboard.close(); //closes Scanner therefore closing System.in - to satisfy PMD
         }
     }
-    /**
-     * Logger
-     */
-    private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
+    /** Logger  */
+    private final static Logger LOGR = Logger.getLogger(EmergencySim.class.getName());
     private static void setupLogger() {
         LogManager.getLogManager().reset();
         LOGR.setLevel(Level.ALL);
@@ -73,7 +74,7 @@ public class EmergencyResponse
         LOGR.addHandler(ch);
 
         try {
-            FileHandler fh = new FileHandler("Mylog.log", true);
+            FileHandler fh = new FileHandler("emergencysim.log", true);
             fh.setLevel(Level.FINE);
             LOGR.addHandler(fh);
         } catch (java.io.IOException e)

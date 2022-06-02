@@ -1,5 +1,6 @@
 /**
- * Event.java
+ * Chemical.java
+ * Implements EventState interface
  * 2022/OOSE Assignment
  * @author Caio Marteli (19598552)
  */
