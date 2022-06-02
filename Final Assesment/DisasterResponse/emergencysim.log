@@ -14,3 +14,4419 @@
   <message>IO Exception: afas.txt (No such file or directory)</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-02T13:26:47.516817Z</date>
+  <millis>1654176407516</millis>
+  <nanos>817000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:47.524105Z</date>
+  <millis>1654176407524</millis>
+  <nanos>105000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:47.524301Z</date>
+  <millis>1654176407524</millis>
+  <nanos>301000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:47.524443Z</date>
+  <millis>1654176407524</millis>
+  <nanos>443000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:47.524581Z</date>
+  <millis>1654176407524</millis>
+  <nanos>581000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:48.528816Z</date>
+  <millis>1654176408528</millis>
+  <nanos>816000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:49.544763Z</date>
+  <millis>1654176409544</millis>
+  <nanos>763000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:50.549171Z</date>
+  <millis>1654176410549</millis>
+  <nanos>171000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:51.565868Z</date>
+  <millis>1654176411565</millis>
+  <nanos>868000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:52.569445Z</date>
+  <millis>1654176412569</millis>
+  <nanos>445000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=5]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:53.571165Z</date>
+  <millis>1654176413571</millis>
+  <nanos>165000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=6]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:53.589690Z</date>
+  <millis>1654176413589</millis>
+  <nanos>690000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.97/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:53.589921Z</date>
+  <millis>1654176413589</millis>
+  <nanos>921000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.43/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:53.602020Z</date>
+  <millis>1654176413602</millis>
+  <nanos>20000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:54.611364Z</date>
+  <millis>1654176414611</millis>
+  <nanos>364000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=7]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:54.612583Z</date>
+  <millis>1654176414612</millis>
+  <nanos>583000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.82/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:54.613502Z</date>
+  <millis>1654176414613</millis>
+  <nanos>502000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.22/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:54.615555Z</date>
+  <millis>1654176414615</millis>
+  <nanos>555000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:55.629054Z</date>
+  <millis>1654176415629</millis>
+  <nanos>54000</nanos>
+  <sequence>18</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=8]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:55.630967Z</date>
+  <millis>1654176415630</millis>
+  <nanos>967000</nanos>
+  <sequence>19</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.78/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:55.632344Z</date>
+  <millis>1654176415632</millis>
+  <nanos>344000</nanos>
+  <sequence>20</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.35/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:55.634099Z</date>
+  <millis>1654176415634</millis>
+  <nanos>99000</nanos>
+  <sequence>21</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:56.642789Z</date>
+  <millis>1654176416642</millis>
+  <nanos>789000</nanos>
+  <sequence>22</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=9]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:56.643138Z</date>
+  <millis>1654176416643</millis>
+  <nanos>138000</nanos>
+  <sequence>23</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.54/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:56.643346Z</date>
+  <millis>1654176416643</millis>
+  <nanos>346000</nanos>
+  <sequence>24</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.55/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:57.646389Z</date>
+  <millis>1654176417646</millis>
+  <nanos>389000</nanos>
+  <sequence>25</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=10]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:57.650523Z</date>
+  <millis>1654176417650</millis>
+  <nanos>523000</nanos>
+  <sequence>26</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>arrive</method>
+  <thread>1</thread>
+  <message>arrival:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:57.651358Z</date>
+  <millis>1654176417651</millis>
+  <nanos>358000</nanos>
+  <sequence>27</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.42/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:57.652025Z</date>
+  <millis>1654176417652</millis>
+  <nanos>25000</nanos>
+  <sequence>28</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.42/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:57.653628Z</date>
+  <millis>1654176417653</millis>
+  <nanos>628000</nanos>
+  <sequence>29</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:58.663256Z</date>
+  <millis>1654176418663</millis>
+  <nanos>256000</nanos>
+  <sequence>30</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=11]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:58.664153Z</date>
+  <millis>1654176418664</millis>
+  <nanos>153000</nanos>
+  <sequence>31</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.84/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:58.664817Z</date>
+  <millis>1654176418664</millis>
+  <nanos>817000</nanos>
+  <sequence>32</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.49/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:59.665672Z</date>
+  <millis>1654176419665</millis>
+  <nanos>672000</nanos>
+  <sequence>33</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=12]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:59.666215Z</date>
+  <millis>1654176419666</millis>
+  <nanos>215000</nanos>
+  <sequence>34</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>leave</method>
+  <thread>1</thread>
+  <message>left:[ Damage: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:59.666552Z</date>
+  <millis>1654176419666</millis>
+  <nanos>552000</nanos>
+  <sequence>35</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.46/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:59.666696Z</date>
+  <millis>1654176419666</millis>
+  <nanos>696000</nanos>
+  <sequence>36</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.39/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:59.666968Z</date>
+  <millis>1654176419666</millis>
+  <nanos>968000</nanos>
+  <sequence>37</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 5]</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:59.667110Z</date>
+  <millis>1654176419667</millis>
+  <nanos>110000</nanos>
+  <sequence>38</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.8/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:26:59.667223Z</date>
+  <millis>1654176419667</millis>
+  <nanos>223000</nanos>
+  <sequence>39</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.9/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:00.682627Z</date>
+  <millis>1654176420682</millis>
+  <nanos>627000</nanos>
+  <sequence>40</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=13]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:00.683938Z</date>
+  <millis>1654176420683</millis>
+  <nanos>938000</nanos>
+  <sequence>41</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>arrive</method>
+  <thread>1</thread>
+  <message>arrival:[ Damage: 0]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:00.684559Z</date>
+  <millis>1654176420684</millis>
+  <nanos>559000</nanos>
+  <sequence>42</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.22/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:00.685526Z</date>
+  <millis>1654176420685</millis>
+  <nanos>526000</nanos>
+  <sequence>43</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.58/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:00.686441Z</date>
+  <millis>1654176420686</millis>
+  <nanos>441000</nanos>
+  <sequence>44</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.1/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:00.695146Z</date>
+  <millis>1654176420695</millis>
+  <nanos>146000</nanos>
+  <sequence>45</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 0]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:00.695397Z</date>
+  <millis>1654176420695</millis>
+  <nanos>397000</nanos>
+  <sequence>46</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.19/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:00.695795Z</date>
+  <millis>1654176420695</millis>
+  <nanos>795000</nanos>
+  <sequence>47</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:01.697766Z</date>
+  <millis>1654176421697</millis>
+  <nanos>766000</nanos>
+  <sequence>48</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=14]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:01.698626Z</date>
+  <millis>1654176421698</millis>
+  <nanos>626000</nanos>
+  <sequence>49</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.71/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:01.699270Z</date>
+  <millis>1654176421699</millis>
+  <nanos>270000</nanos>
+  <sequence>50</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.58/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:01.699872Z</date>
+  <millis>1654176421699</millis>
+  <nanos>872000</nanos>
+  <sequence>51</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.66/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:01.700449Z</date>
+  <millis>1654176421700</millis>
+  <nanos>449000</nanos>
+  <sequence>52</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.15/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:01.702023Z</date>
+  <millis>1654176421702</millis>
+  <nanos>23000</nanos>
+  <sequence>53</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:02.713898Z</date>
+  <millis>1654176422713</millis>
+  <nanos>898000</nanos>
+  <sequence>54</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=15]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:02.715004Z</date>
+  <millis>1654176422715</millis>
+  <nanos>4000</nanos>
+  <sequence>55</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.55/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:02.715898Z</date>
+  <millis>1654176422715</millis>
+  <nanos>898000</nanos>
+  <sequence>56</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.75/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:02.716622Z</date>
+  <millis>1654176422716</millis>
+  <nanos>622000</nanos>
+  <sequence>57</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.3/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:02.717195Z</date>
+  <millis>1654176422717</millis>
+  <nanos>195000</nanos>
+  <sequence>58</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.11/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:02.718672Z</date>
+  <millis>1654176422718</millis>
+  <nanos>672000</nanos>
+  <sequence>59</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:03.729686Z</date>
+  <millis>1654176423729</millis>
+  <nanos>686000</nanos>
+  <sequence>60</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=16]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:03.735453Z</date>
+  <millis>1654176423735</millis>
+  <nanos>453000</nanos>
+  <sequence>61</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.17/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:03.735932Z</date>
+  <millis>1654176423735</millis>
+  <nanos>932000</nanos>
+  <sequence>62</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 5 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:03.736061Z</date>
+  <millis>1654176423736</millis>
+  <nanos>61000</nanos>
+  <sequence>63</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.82/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:03.736193Z</date>
+  <millis>1654176423736</millis>
+  <nanos>193000</nanos>
+  <sequence>64</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.83/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:03.736299Z</date>
+  <millis>1654176423736</millis>
+  <nanos>299000</nanos>
+  <sequence>65</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.41/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:03.736586Z</date>
+  <millis>1654176423736</millis>
+  <nanos>586000</nanos>
+  <sequence>66</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:04.748732Z</date>
+  <millis>1654176424748</millis>
+  <nanos>732000</nanos>
+  <sequence>67</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=17]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:04.749067Z</date>
+  <millis>1654176424749</millis>
+  <nanos>67000</nanos>
+  <sequence>68</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.2/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:04.749567Z</date>
+  <millis>1654176424749</millis>
+  <nanos>567000</nanos>
+  <sequence>69</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 5 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:04.749701Z</date>
+  <millis>1654176424749</millis>
+  <nanos>701000</nanos>
+  <sequence>70</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.53/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:04.750090Z</date>
+  <millis>1654176424750</millis>
+  <nanos>90000</nanos>
+  <sequence>71</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 6 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:04.750241Z</date>
+  <millis>1654176424750</millis>
+  <nanos>241000</nanos>
+  <sequence>72</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.78/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:04.750355Z</date>
+  <millis>1654176424750</millis>
+  <nanos>355000</nanos>
+  <sequence>73</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.31/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:04.750642Z</date>
+  <millis>1654176424750</millis>
+  <nanos>642000</nanos>
+  <sequence>74</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 5]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:05.751055Z</date>
+  <millis>1654176425751</millis>
+  <nanos>55000</nanos>
+  <sequence>75</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=18]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:05.752024Z</date>
+  <millis>1654176425752</millis>
+  <nanos>24000</nanos>
+  <sequence>76</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.16/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:05.753460Z</date>
+  <millis>1654176425753</millis>
+  <nanos>460000</nanos>
+  <sequence>77</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 6 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:05.754084Z</date>
+  <millis>1654176425754</millis>
+  <nanos>84000</nanos>
+  <sequence>78</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.41/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:05.755629Z</date>
+  <millis>1654176425755</millis>
+  <nanos>629000</nanos>
+  <sequence>79</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 7 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:06.764502Z</date>
+  <millis>1654176426764</millis>
+  <nanos>502000</nanos>
+  <sequence>80</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=19]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:06.765585Z</date>
+  <millis>1654176426765</millis>
+  <nanos>585000</nanos>
+  <sequence>81</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.25/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:06.767051Z</date>
+  <millis>1654176426767</millis>
+  <nanos>51000</nanos>
+  <sequence>82</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 7 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:06.767713Z</date>
+  <millis>1654176426767</millis>
+  <nanos>713000</nanos>
+  <sequence>83</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.12/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:06.769011Z</date>
+  <millis>1654176426769</millis>
+  <nanos>11000</nanos>
+  <sequence>84</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 8 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:07.782332Z</date>
+  <millis>1654176427782</millis>
+  <nanos>332000</nanos>
+  <sequence>85</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=20]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:07.783305Z</date>
+  <millis>1654176427783</millis>
+  <nanos>305000</nanos>
+  <sequence>86</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.89/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:07.783922Z</date>
+  <millis>1654176427783</millis>
+  <nanos>922000</nanos>
+  <sequence>87</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.96/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:08.785336Z</date>
+  <millis>1654176428785</millis>
+  <nanos>336000</nanos>
+  <sequence>88</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=21]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:08.785711Z</date>
+  <millis>1654176428785</millis>
+  <nanos>711000</nanos>
+  <sequence>89</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.95/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:08.785867Z</date>
+  <millis>1654176428785</millis>
+  <nanos>867000</nanos>
+  <sequence>90</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.62/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:08.786188Z</date>
+  <millis>1654176428786</millis>
+  <nanos>188000</nanos>
+  <sequence>91</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 9 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:09.789504Z</date>
+  <millis>1654176429789</millis>
+  <nanos>504000</nanos>
+  <sequence>92</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=22]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:09.789736Z</date>
+  <millis>1654176429789</millis>
+  <nanos>736000</nanos>
+  <sequence>93</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.66/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:09.789853Z</date>
+  <millis>1654176429789</millis>
+  <nanos>853000</nanos>
+  <sequence>94</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.59/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:09.790211Z</date>
+  <millis>1654176429790</millis>
+  <nanos>211000</nanos>
+  <sequence>95</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 10 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:10.790898Z</date>
+  <millis>1654176430790</millis>
+  <nanos>898000</nanos>
+  <sequence>96</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=23]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:10.791139Z</date>
+  <millis>1654176430791</millis>
+  <nanos>139000</nanos>
+  <sequence>97</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.12/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:10.791417Z</date>
+  <millis>1654176430791</millis>
+  <nanos>417000</nanos>
+  <sequence>98</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 10 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:10.791533Z</date>
+  <millis>1654176430791</millis>
+  <nanos>533000</nanos>
+  <sequence>99</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.97/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.793660Z</date>
+  <millis>1654176431793</millis>
+  <nanos>660000</nanos>
+  <sequence>100</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=24]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.795784Z</date>
+  <millis>1654176431795</millis>
+  <nanos>784000</nanos>
+  <sequence>101</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.05/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.797328Z</date>
+  <millis>1654176431797</millis>
+  <nanos>328000</nanos>
+  <sequence>102</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 10 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.797905Z</date>
+  <millis>1654176431797</millis>
+  <nanos>905000</nanos>
+  <sequence>103</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.93/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.798393Z</date>
+  <millis>1654176431798</millis>
+  <nanos>393000</nanos>
+  <sequence>104</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.48/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.798905Z</date>
+  <millis>1654176431798</millis>
+  <nanos>905000</nanos>
+  <sequence>105</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.15/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.800573Z</date>
+  <millis>1654176431800</millis>
+  <nanos>573000</nanos>
+  <sequence>106</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Contamination: 0]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.801096Z</date>
+  <millis>1654176431801</millis>
+  <nanos>96000</nanos>
+  <sequence>107</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.64/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.802700Z</date>
+  <millis>1654176431802</millis>
+  <nanos>700000</nanos>
+  <sequence>108</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.803196Z</date>
+  <millis>1654176431803</millis>
+  <nanos>196000</nanos>
+  <sequence>109</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.64/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.804130Z</date>
+  <millis>1654176431804</millis>
+  <nanos>130000</nanos>
+  <sequence>110</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.804622Z</date>
+  <millis>1654176431804</millis>
+  <nanos>622000</nanos>
+  <sequence>111</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.22/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.805642Z</date>
+  <millis>1654176431805</millis>
+  <nanos>642000</nanos>
+  <sequence>112</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.806114Z</date>
+  <millis>1654176431806</millis>
+  <nanos>114000</nanos>
+  <sequence>113</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.09/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:11.807454Z</date>
+  <millis>1654176431807</millis>
+  <nanos>454000</nanos>
+  <sequence>114</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.819846Z</date>
+  <millis>1654176432819</millis>
+  <nanos>846000</nanos>
+  <sequence>115</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=25]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.821413Z</date>
+  <millis>1654176432821</millis>
+  <nanos>413000</nanos>
+  <sequence>116</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.58/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.821992Z</date>
+  <millis>1654176432821</millis>
+  <nanos>992000</nanos>
+  <sequence>117</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.62/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.823129Z</date>
+  <millis>1654176432823</millis>
+  <nanos>129000</nanos>
+  <sequence>118</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 11 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.823765Z</date>
+  <millis>1654176432823</millis>
+  <nanos>765000</nanos>
+  <sequence>119</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.41/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.824925Z</date>
+  <millis>1654176432824</millis>
+  <nanos>925000</nanos>
+  <sequence>120</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Contamination: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.825511Z</date>
+  <millis>1654176432825</millis>
+  <nanos>511000</nanos>
+  <sequence>121</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.98/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.826046Z</date>
+  <millis>1654176432826</millis>
+  <nanos>46000</nanos>
+  <sequence>122</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.35/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.827124Z</date>
+  <millis>1654176432827</millis>
+  <nanos>124000</nanos>
+  <sequence>123</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.827658Z</date>
+  <millis>1654176432827</millis>
+  <nanos>658000</nanos>
+  <sequence>124</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.09/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.828972Z</date>
+  <millis>1654176432828</millis>
+  <nanos>972000</nanos>
+  <sequence>125</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.829819Z</date>
+  <millis>1654176432829</millis>
+  <nanos>819000</nanos>
+  <sequence>126</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.31/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.831814Z</date>
+  <millis>1654176432831</millis>
+  <nanos>814000</nanos>
+  <sequence>127</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:12.833099Z</date>
+  <millis>1654176432833</millis>
+  <nanos>99000</nanos>
+  <sequence>128</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.94/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.845659Z</date>
+  <millis>1654176433845</millis>
+  <nanos>659000</nanos>
+  <sequence>129</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=26]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.846717Z</date>
+  <millis>1654176433846</millis>
+  <nanos>717000</nanos>
+  <sequence>130</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>arrive</method>
+  <thread>1</thread>
+  <message>arrival:[ Damage: 11 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.847327Z</date>
+  <millis>1654176433847</millis>
+  <nanos>327000</nanos>
+  <sequence>131</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.13/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.848518Z</date>
+  <millis>1654176433848</millis>
+  <nanos>518000</nanos>
+  <sequence>132</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 11 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.849076Z</date>
+  <millis>1654176433849</millis>
+  <nanos>76000</nanos>
+  <sequence>133</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.77/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.849616Z</date>
+  <millis>1654176433849</millis>
+  <nanos>616000</nanos>
+  <sequence>134</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.39/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.850736Z</date>
+  <millis>1654176433850</millis>
+  <nanos>736000</nanos>
+  <sequence>135</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Contamination: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.851250Z</date>
+  <millis>1654176433851</millis>
+  <nanos>250000</nanos>
+  <sequence>136</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.73/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.851779Z</date>
+  <millis>1654176433851</millis>
+  <nanos>779000</nanos>
+  <sequence>137</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.96/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.852258Z</date>
+  <millis>1654176433852</millis>
+  <nanos>258000</nanos>
+  <sequence>138</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.65/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.853305Z</date>
+  <millis>1654176433853</millis>
+  <nanos>305000</nanos>
+  <sequence>139</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.853822Z</date>
+  <millis>1654176433853</millis>
+  <nanos>822000</nanos>
+  <sequence>140</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.15/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.854817Z</date>
+  <millis>1654176433854</millis>
+  <nanos>817000</nanos>
+  <sequence>141</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:13.855310Z</date>
+  <millis>1654176433855</millis>
+  <nanos>310000</nanos>
+  <sequence>142</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.76/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.865123Z</date>
+  <millis>1654176434865</millis>
+  <nanos>123000</nanos>
+  <sequence>143</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=27]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.865702Z</date>
+  <millis>1654176434865</millis>
+  <nanos>702000</nanos>
+  <sequence>144</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.03/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.866550Z</date>
+  <millis>1654176434866</millis>
+  <nanos>550000</nanos>
+  <sequence>145</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 11 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.866937Z</date>
+  <millis>1654176434866</millis>
+  <nanos>937000</nanos>
+  <sequence>146</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.42/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.867692Z</date>
+  <millis>1654176434867</millis>
+  <nanos>692000</nanos>
+  <sequence>147</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 12 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.868092Z</date>
+  <millis>1654176434868</millis>
+  <nanos>92000</nanos>
+  <sequence>148</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.08/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.869441Z</date>
+  <millis>1654176434869</millis>
+  <nanos>441000</nanos>
+  <sequence>149</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Contamination: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.869880Z</date>
+  <millis>1654176434869</millis>
+  <nanos>880000</nanos>
+  <sequence>150</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.87/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.870187Z</date>
+  <millis>1654176434870</millis>
+  <nanos>187000</nanos>
+  <sequence>151</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.29/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.870760Z</date>
+  <millis>1654176434870</millis>
+  <nanos>760000</nanos>
+  <sequence>152</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.871069Z</date>
+  <millis>1654176434871</millis>
+  <nanos>69000</nanos>
+  <sequence>153</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.74/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.871619Z</date>
+  <millis>1654176434871</millis>
+  <nanos>619000</nanos>
+  <sequence>154</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.871911Z</date>
+  <millis>1654176434871</millis>
+  <nanos>911000</nanos>
+  <sequence>155</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.55/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.872433Z</date>
+  <millis>1654176434872</millis>
+  <nanos>433000</nanos>
+  <sequence>156</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.872698Z</date>
+  <millis>1654176434872</millis>
+  <nanos>698000</nanos>
+  <sequence>157</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.21/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:14.873217Z</date>
+  <millis>1654176434873</millis>
+  <nanos>217000</nanos>
+  <sequence>158</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.879158Z</date>
+  <millis>1654176435879</millis>
+  <nanos>158000</nanos>
+  <sequence>159</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=28]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.879781Z</date>
+  <millis>1654176435879</millis>
+  <nanos>781000</nanos>
+  <sequence>160</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.64/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.880247Z</date>
+  <millis>1654176435880</millis>
+  <nanos>247000</nanos>
+  <sequence>161</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.41/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.881071Z</date>
+  <millis>1654176435881</millis>
+  <nanos>71000</nanos>
+  <sequence>162</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 13 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.881499Z</date>
+  <millis>1654176435881</millis>
+  <nanos>499000</nanos>
+  <sequence>163</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.16/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.882318Z</date>
+  <millis>1654176435882</millis>
+  <nanos>318000</nanos>
+  <sequence>164</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Contamination: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.882730Z</date>
+  <millis>1654176435882</millis>
+  <nanos>730000</nanos>
+  <sequence>165</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.81/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.883166Z</date>
+  <millis>1654176435883</millis>
+  <nanos>166000</nanos>
+  <sequence>166</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.99/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.883575Z</date>
+  <millis>1654176435883</millis>
+  <nanos>575000</nanos>
+  <sequence>167</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.57/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.884126Z</date>
+  <millis>1654176435884</millis>
+  <nanos>126000</nanos>
+  <sequence>168</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.884254Z</date>
+  <millis>1654176435884</millis>
+  <nanos>254000</nanos>
+  <sequence>169</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.85/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.884342Z</date>
+  <millis>1654176435884</millis>
+  <nanos>342000</nanos>
+  <sequence>170</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.31/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:15.884522Z</date>
+  <millis>1654176435884</millis>
+  <nanos>522000</nanos>
+  <sequence>171</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:16.894036Z</date>
+  <millis>1654176436894</millis>
+  <nanos>36000</nanos>
+  <sequence>172</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=29]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:16.894807Z</date>
+  <millis>1654176436894</millis>
+  <nanos>807000</nanos>
+  <sequence>173</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.54/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:16.895311Z</date>
+  <millis>1654176436895</millis>
+  <nanos>311000</nanos>
+  <sequence>174</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.16/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:16.896486Z</date>
+  <millis>1654176436896</millis>
+  <nanos>486000</nanos>
+  <sequence>175</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 14 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:16.897021Z</date>
+  <millis>1654176436897</millis>
+  <nanos>21000</nanos>
+  <sequence>176</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.75/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:16.897503Z</date>
+  <millis>1654176436897</millis>
+  <nanos>503000</nanos>
+  <sequence>177</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.04/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:16.898387Z</date>
+  <millis>1654176436898</millis>
+  <nanos>387000</nanos>
+  <sequence>178</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Contamination: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:17.900598Z</date>
+  <millis>1654176437900</millis>
+  <nanos>598000</nanos>
+  <sequence>179</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=30]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:17.901409Z</date>
+  <millis>1654176437901</millis>
+  <nanos>409000</nanos>
+  <sequence>180</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.19/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:17.902529Z</date>
+  <millis>1654176437902</millis>
+  <nanos>529000</nanos>
+  <sequence>181</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 14 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:17.903030Z</date>
+  <millis>1654176437903</millis>
+  <nanos>30000</nanos>
+  <sequence>182</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.44/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:17.903899Z</date>
+  <millis>1654176437903</millis>
+  <nanos>899000</nanos>
+  <sequence>183</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 15 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:17.904377Z</date>
+  <millis>1654176437904</millis>
+  <nanos>377000</nanos>
+  <sequence>184</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.82/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:17.904840Z</date>
+  <millis>1654176437904</millis>
+  <nanos>840000</nanos>
+  <sequence>185</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.35/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:27:18.911664Z</date>
+  <millis>1654176438911</millis>
+  <nanos>664000</nanos>
+  <sequence>186</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=31]</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-02T13:28:35.223687Z</date>
+  <millis>1654176515223</millis>
+  <nanos>687000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.io.FileIO</class>
+  <method>readFile</method>
+  <thread>1</thread>
+  <message>Duplicate fire event at: Armadale</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:35.231228Z</date>
+  <millis>1654176515231</millis>
+  <nanos>228000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.EmergencySim</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>IO Exception: Duplicate fire event at: Armadale</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-02T13:28:45.198584Z</date>
+  <millis>1654176525198</millis>
+  <nanos>584000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:45.205609Z</date>
+  <millis>1654176525205</millis>
+  <nanos>609000</nanos>
+  <sequence>1</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:45.205788Z</date>
+  <millis>1654176525205</millis>
+  <nanos>788000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:45.205936Z</date>
+  <millis>1654176525205</millis>
+  <nanos>936000</nanos>
+  <sequence>3</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:45.206076Z</date>
+  <millis>1654176525206</millis>
+  <nanos>76000</nanos>
+  <sequence>4</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>FINE</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>Observer 0 added</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:46.222422Z</date>
+  <millis>1654176526222</millis>
+  <nanos>422000</nanos>
+  <sequence>5</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:47.224299Z</date>
+  <millis>1654176527224</millis>
+  <nanos>299000</nanos>
+  <sequence>6</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:48.225377Z</date>
+  <millis>1654176528225</millis>
+  <nanos>377000</nanos>
+  <sequence>7</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:49.241182Z</date>
+  <millis>1654176529241</millis>
+  <nanos>182000</nanos>
+  <sequence>8</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:50.253969Z</date>
+  <millis>1654176530253</millis>
+  <nanos>969000</nanos>
+  <sequence>9</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=5]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:51.255853Z</date>
+  <millis>1654176531255</millis>
+  <nanos>853000</nanos>
+  <sequence>10</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=6]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:51.274238Z</date>
+  <millis>1654176531274</millis>
+  <nanos>238000</nanos>
+  <sequence>11</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.99/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:51.274487Z</date>
+  <millis>1654176531274</millis>
+  <nanos>487000</nanos>
+  <sequence>12</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.61/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:52.289923Z</date>
+  <millis>1654176532289</millis>
+  <nanos>923000</nanos>
+  <sequence>13</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=7]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:52.290279Z</date>
+  <millis>1654176532290</millis>
+  <nanos>279000</nanos>
+  <sequence>14</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.51/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:52.290527Z</date>
+  <millis>1654176532290</millis>
+  <nanos>527000</nanos>
+  <sequence>15</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.61/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:53.301638Z</date>
+  <millis>1654176533301</millis>
+  <nanos>638000</nanos>
+  <sequence>16</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=8]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:53.302685Z</date>
+  <millis>1654176533302</millis>
+  <nanos>685000</nanos>
+  <sequence>17</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.63/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:53.303526Z</date>
+  <millis>1654176533303</millis>
+  <nanos>526000</nanos>
+  <sequence>18</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.56/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:54.314577Z</date>
+  <millis>1654176534314</millis>
+  <nanos>577000</nanos>
+  <sequence>19</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=9]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:54.315690Z</date>
+  <millis>1654176534315</millis>
+  <nanos>690000</nanos>
+  <sequence>20</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.87/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:54.316401Z</date>
+  <millis>1654176534316</millis>
+  <nanos>401000</nanos>
+  <sequence>21</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.77/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:55.331410Z</date>
+  <millis>1654176535331</millis>
+  <nanos>410000</nanos>
+  <sequence>22</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=10]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:55.337850Z</date>
+  <millis>1654176535337</millis>
+  <nanos>850000</nanos>
+  <sequence>23</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>arrive</method>
+  <thread>1</thread>
+  <message>arrival:[ Damage: 0]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:55.338064Z</date>
+  <millis>1654176535338</millis>
+  <nanos>64000</nanos>
+  <sequence>24</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.91/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:55.338199Z</date>
+  <millis>1654176535338</millis>
+  <nanos>199000</nanos>
+  <sequence>25</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.66/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:56.346613Z</date>
+  <millis>1654176536346</millis>
+  <nanos>613000</nanos>
+  <sequence>26</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=11]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:56.346904Z</date>
+  <millis>1654176536346</millis>
+  <nanos>904000</nanos>
+  <sequence>27</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.15/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:56.347077Z</date>
+  <millis>1654176536347</millis>
+  <nanos>77000</nanos>
+  <sequence>28</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.31/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:56.361229Z</date>
+  <millis>1654176536361</millis>
+  <nanos>229000</nanos>
+  <sequence>29</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:57.367611Z</date>
+  <millis>1654176537367</millis>
+  <nanos>611000</nanos>
+  <sequence>30</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=12]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:57.370390Z</date>
+  <millis>1654176537370</millis>
+  <nanos>390000</nanos>
+  <sequence>31</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>leave</method>
+  <thread>1</thread>
+  <message>left:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:57.371932Z</date>
+  <millis>1654176537371</millis>
+  <nanos>932000</nanos>
+  <sequence>32</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.45/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:57.372659Z</date>
+  <millis>1654176537372</millis>
+  <nanos>659000</nanos>
+  <sequence>33</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.68/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:57.373017Z</date>
+  <millis>1654176537373</millis>
+  <nanos>17000</nanos>
+  <sequence>34</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.79/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:57.373143Z</date>
+  <millis>1654176537373</millis>
+  <nanos>143000</nanos>
+  <sequence>35</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.05/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:57.373423Z</date>
+  <millis>1654176537373</millis>
+  <nanos>423000</nanos>
+  <sequence>36</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:58.384080Z</date>
+  <millis>1654176538384</millis>
+  <nanos>80000</nanos>
+  <sequence>37</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=13]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:58.385033Z</date>
+  <millis>1654176538385</millis>
+  <nanos>33000</nanos>
+  <sequence>38</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>arrive</method>
+  <thread>1</thread>
+  <message>arrival:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:58.385530Z</date>
+  <millis>1654176538385</millis>
+  <nanos>530000</nanos>
+  <sequence>39</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.16/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:58.385944Z</date>
+  <millis>1654176538385</millis>
+  <nanos>944000</nanos>
+  <sequence>40</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.44/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:58.387252Z</date>
+  <millis>1654176538387</millis>
+  <nanos>252000</nanos>
+  <sequence>41</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:58.387767Z</date>
+  <millis>1654176538387</millis>
+  <nanos>767000</nanos>
+  <sequence>42</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.45/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:58.388370Z</date>
+  <millis>1654176538388</millis>
+  <nanos>370000</nanos>
+  <sequence>43</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.33/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:58.389672Z</date>
+  <millis>1654176538389</millis>
+  <nanos>672000</nanos>
+  <sequence>44</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:59.400869Z</date>
+  <millis>1654176539400</millis>
+  <nanos>869000</nanos>
+  <sequence>45</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=14]</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:59.401203Z</date>
+  <millis>1654176539401</millis>
+  <nanos>203000</nanos>
+  <sequence>46</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.66/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:59.401412Z</date>
+  <millis>1654176539401</millis>
+  <nanos>412000</nanos>
+  <sequence>47</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.92/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:59.401587Z</date>
+  <millis>1654176539401</millis>
+  <nanos>587000</nanos>
+  <sequence>48</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.55/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:28:59.401756Z</date>
+  <millis>1654176539401</millis>
+  <nanos>756000</nanos>
+  <sequence>49</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.69/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:00.413916Z</date>
+  <millis>1654176540413</millis>
+  <nanos>916000</nanos>
+  <sequence>50</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=15]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:00.414874Z</date>
+  <millis>1654176540414</millis>
+  <nanos>874000</nanos>
+  <sequence>51</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.75/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:00.415653Z</date>
+  <millis>1654176540415</millis>
+  <nanos>653000</nanos>
+  <sequence>52</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.38/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:00.417447Z</date>
+  <millis>1654176540417</millis>
+  <nanos>447000</nanos>
+  <sequence>53</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:00.417976Z</date>
+  <millis>1654176540417</millis>
+  <nanos>976000</nanos>
+  <sequence>54</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.33/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:00.418408Z</date>
+  <millis>1654176540418</millis>
+  <nanos>408000</nanos>
+  <sequence>55</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.67/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:01.426841Z</date>
+  <millis>1654176541426</millis>
+  <nanos>841000</nanos>
+  <sequence>56</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=16]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:01.434460Z</date>
+  <millis>1654176541434</millis>
+  <nanos>460000</nanos>
+  <sequence>57</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.51/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:01.435134Z</date>
+  <millis>1654176541435</millis>
+  <nanos>134000</nanos>
+  <sequence>58</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.93/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:01.435743Z</date>
+  <millis>1654176541435</millis>
+  <nanos>743000</nanos>
+  <sequence>59</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.51/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:01.436303Z</date>
+  <millis>1654176541436</millis>
+  <nanos>303000</nanos>
+  <sequence>60</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.63/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:02.447444Z</date>
+  <millis>1654176542447</millis>
+  <nanos>444000</nanos>
+  <sequence>61</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=17]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:02.448320Z</date>
+  <millis>1654176542448</millis>
+  <nanos>320000</nanos>
+  <sequence>62</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.27/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:02.458978Z</date>
+  <millis>1654176542458</millis>
+  <nanos>978000</nanos>
+  <sequence>63</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 3 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:02.459186Z</date>
+  <millis>1654176542459</millis>
+  <nanos>186000</nanos>
+  <sequence>64</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.0/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:02.459449Z</date>
+  <millis>1654176542459</millis>
+  <nanos>449000</nanos>
+  <sequence>65</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 4 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:02.459560Z</date>
+  <millis>1654176542459</millis>
+  <nanos>560000</nanos>
+  <sequence>66</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.59/0.15)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:02.459672Z</date>
+  <millis>1654176542459</millis>
+  <nanos>672000</nanos>
+  <sequence>67</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.09/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:02.459941Z</date>
+  <millis>1654176542459</millis>
+  <nanos>941000</nanos>
+  <sequence>68</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:03.474287Z</date>
+  <millis>1654176543474</millis>
+  <nanos>287000</nanos>
+  <sequence>69</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=18]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:03.475184Z</date>
+  <millis>1654176543475</millis>
+  <nanos>184000</nanos>
+  <sequence>70</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.76/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:03.475801Z</date>
+  <millis>1654176543475</millis>
+  <nanos>801000</nanos>
+  <sequence>71</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.36/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:03.477433Z</date>
+  <millis>1654176543477</millis>
+  <nanos>433000</nanos>
+  <sequence>72</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 5 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:04.491753Z</date>
+  <millis>1654176544491</millis>
+  <nanos>753000</nanos>
+  <sequence>73</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=19]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:04.492283Z</date>
+  <millis>1654176544492</millis>
+  <nanos>283000</nanos>
+  <sequence>74</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.81/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:04.492632Z</date>
+  <millis>1654176544492</millis>
+  <nanos>632000</nanos>
+  <sequence>75</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.34/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:04.493412Z</date>
+  <millis>1654176544493</millis>
+  <nanos>412000</nanos>
+  <sequence>76</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 6 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:05.498859Z</date>
+  <millis>1654176545498</millis>
+  <nanos>859000</nanos>
+  <sequence>77</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=20]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:05.499745Z</date>
+  <millis>1654176545499</millis>
+  <nanos>745000</nanos>
+  <sequence>78</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.04/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:05.501638Z</date>
+  <millis>1654176545501</millis>
+  <nanos>638000</nanos>
+  <sequence>79</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 6 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:05.502320Z</date>
+  <millis>1654176545502</millis>
+  <nanos>320000</nanos>
+  <sequence>80</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.46/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:05.503780Z</date>
+  <millis>1654176545503</millis>
+  <nanos>780000</nanos>
+  <sequence>81</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 7 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:06.514713Z</date>
+  <millis>1654176546514</millis>
+  <nanos>713000</nanos>
+  <sequence>82</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=21]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:06.515762Z</date>
+  <millis>1654176546515</millis>
+  <nanos>762000</nanos>
+  <sequence>83</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.45/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:06.516378Z</date>
+  <millis>1654176546516</millis>
+  <nanos>378000</nanos>
+  <sequence>84</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.83/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:07.519315Z</date>
+  <millis>1654176547519</millis>
+  <nanos>315000</nanos>
+  <sequence>85</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=22]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:07.520278Z</date>
+  <millis>1654176547520</millis>
+  <nanos>278000</nanos>
+  <sequence>86</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.86/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:07.520924Z</date>
+  <millis>1654176547520</millis>
+  <nanos>924000</nanos>
+  <sequence>87</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.4/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:07.522693Z</date>
+  <millis>1654176547522</millis>
+  <nanos>693000</nanos>
+  <sequence>88</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 8 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:08.534931Z</date>
+  <millis>1654176548534</millis>
+  <nanos>931000</nanos>
+  <sequence>89</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=23]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:08.535961Z</date>
+  <millis>1654176548535</millis>
+  <nanos>961000</nanos>
+  <sequence>90</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.94/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:08.536594Z</date>
+  <millis>1654176548536</millis>
+  <nanos>594000</nanos>
+  <sequence>91</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.43/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:08.538044Z</date>
+  <millis>1654176548538</millis>
+  <nanos>44000</nanos>
+  <sequence>92</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 9 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.550424Z</date>
+  <millis>1654176549550</millis>
+  <nanos>424000</nanos>
+  <sequence>93</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=24]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.553369Z</date>
+  <millis>1654176549553</millis>
+  <nanos>369000</nanos>
+  <sequence>94</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.79/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.554019Z</date>
+  <millis>1654176549554</millis>
+  <nanos>19000</nanos>
+  <sequence>95</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.54/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.555380Z</date>
+  <millis>1654176549555</millis>
+  <nanos>380000</nanos>
+  <sequence>96</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 10 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.556028Z</date>
+  <millis>1654176549556</millis>
+  <nanos>28000</nanos>
+  <sequence>97</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.79/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.556606Z</date>
+  <millis>1654176549556</millis>
+  <nanos>606000</nanos>
+  <sequence>98</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.63/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.556988Z</date>
+  <millis>1654176549556</millis>
+  <nanos>988000</nanos>
+  <sequence>99</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.52/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.557391Z</date>
+  <millis>1654176549557</millis>
+  <nanos>391000</nanos>
+  <sequence>100</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.557498Z</date>
+  <millis>1654176549557</millis>
+  <nanos>498000</nanos>
+  <sequence>101</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.35/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.557707Z</date>
+  <millis>1654176549557</millis>
+  <nanos>707000</nanos>
+  <sequence>102</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.557811Z</date>
+  <millis>1654176549557</millis>
+  <nanos>811000</nanos>
+  <sequence>103</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.66/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.558030Z</date>
+  <millis>1654176549558</millis>
+  <nanos>30000</nanos>
+  <sequence>104</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:09.558132Z</date>
+  <millis>1654176549558</millis>
+  <nanos>132000</nanos>
+  <sequence>105</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.95/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.560734Z</date>
+  <millis>1654176550560</millis>
+  <nanos>734000</nanos>
+  <sequence>106</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=25]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.561127Z</date>
+  <millis>1654176550561</millis>
+  <nanos>127000</nanos>
+  <sequence>107</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.06/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.561393Z</date>
+  <millis>1654176550561</millis>
+  <nanos>393000</nanos>
+  <sequence>108</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 10 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.561505Z</date>
+  <millis>1654176550561</millis>
+  <nanos>505000</nanos>
+  <sequence>109</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.35/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.561787Z</date>
+  <millis>1654176550561</millis>
+  <nanos>787000</nanos>
+  <sequence>110</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 11 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.561916Z</date>
+  <millis>1654176550561</millis>
+  <nanos>916000</nanos>
+  <sequence>111</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.49/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.562023Z</date>
+  <millis>1654176550562</millis>
+  <nanos>23000</nanos>
+  <sequence>112</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.31/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.562132Z</date>
+  <millis>1654176550562</millis>
+  <nanos>132000</nanos>
+  <sequence>113</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.58/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.562375Z</date>
+  <millis>1654176550562</millis>
+  <nanos>375000</nanos>
+  <sequence>114</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.562518Z</date>
+  <millis>1654176550562</millis>
+  <nanos>518000</nanos>
+  <sequence>115</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.27/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.562753Z</date>
+  <millis>1654176550562</millis>
+  <nanos>753000</nanos>
+  <sequence>116</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.562862Z</date>
+  <millis>1654176550562</millis>
+  <nanos>862000</nanos>
+  <sequence>117</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.49/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.563090Z</date>
+  <millis>1654176550563</millis>
+  <nanos>90000</nanos>
+  <sequence>118</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.563201Z</date>
+  <millis>1654176550563</millis>
+  <nanos>201000</nanos>
+  <sequence>119</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.68/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:10.563441Z</date>
+  <millis>1654176550563</millis>
+  <nanos>441000</nanos>
+  <sequence>120</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.577281Z</date>
+  <millis>1654176551577</millis>
+  <nanos>281000</nanos>
+  <sequence>121</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=26]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.578542Z</date>
+  <millis>1654176551578</millis>
+  <nanos>542000</nanos>
+  <sequence>122</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>arrive</method>
+  <thread>1</thread>
+  <message>arrival:[ Damage: 11 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.579337Z</date>
+  <millis>1654176551579</millis>
+  <nanos>337000</nanos>
+  <sequence>123</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.36/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.581022Z</date>
+  <millis>1654176551581</millis>
+  <nanos>22000</nanos>
+  <sequence>124</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 11 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.581890Z</date>
+  <millis>1654176551581</millis>
+  <nanos>890000</nanos>
+  <sequence>125</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.64/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.582175Z</date>
+  <millis>1654176551582</millis>
+  <nanos>175000</nanos>
+  <sequence>126</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 12 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.582307Z</date>
+  <millis>1654176551582</millis>
+  <nanos>307000</nanos>
+  <sequence>127</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.42/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.582745Z</date>
+  <millis>1654176551582</millis>
+  <nanos>745000</nanos>
+  <sequence>128</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Contamination: 1]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.582852Z</date>
+  <millis>1654176551582</millis>
+  <nanos>852000</nanos>
+  <sequence>129</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.97/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.582948Z</date>
+  <millis>1654176551582</millis>
+  <nanos>948000</nanos>
+  <sequence>130</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.1/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.583152Z</date>
+  <millis>1654176551583</millis>
+  <nanos>152000</nanos>
+  <sequence>131</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.583246Z</date>
+  <millis>1654176551583</millis>
+  <nanos>246000</nanos>
+  <sequence>132</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.84/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.583343Z</date>
+  <millis>1654176551583</millis>
+  <nanos>343000</nanos>
+  <sequence>133</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.37/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.583535Z</date>
+  <millis>1654176551583</millis>
+  <nanos>535000</nanos>
+  <sequence>134</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.583667Z</date>
+  <millis>1654176551583</millis>
+  <nanos>667000</nanos>
+  <sequence>135</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.43/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:11.583847Z</date>
+  <millis>1654176551583</millis>
+  <nanos>847000</nanos>
+  <sequence>136</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.593569Z</date>
+  <millis>1654176552593</millis>
+  <nanos>569000</nanos>
+  <sequence>137</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=27]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.593784Z</date>
+  <millis>1654176552593</millis>
+  <nanos>784000</nanos>
+  <sequence>138</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.45/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.593903Z</date>
+  <millis>1654176552593</millis>
+  <nanos>903000</nanos>
+  <sequence>139</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.2/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.594147Z</date>
+  <millis>1654176552594</millis>
+  <nanos>147000</nanos>
+  <sequence>140</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 13 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.594255Z</date>
+  <millis>1654176552594</millis>
+  <nanos>255000</nanos>
+  <sequence>141</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.89/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.594362Z</date>
+  <millis>1654176552594</millis>
+  <nanos>362000</nanos>
+  <sequence>142</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.29/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.594467Z</date>
+  <millis>1654176552594</millis>
+  <nanos>467000</nanos>
+  <sequence>143</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.74/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.594686Z</date>
+  <millis>1654176552594</millis>
+  <nanos>686000</nanos>
+  <sequence>144</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.594790Z</date>
+  <millis>1654176552594</millis>
+  <nanos>790000</nanos>
+  <sequence>145</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.79/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.594893Z</date>
+  <millis>1654176552594</millis>
+  <nanos>893000</nanos>
+  <sequence>146</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.61/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.595170Z</date>
+  <millis>1654176552595</millis>
+  <nanos>170000</nanos>
+  <sequence>147</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 4]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:12.595280Z</date>
+  <millis>1654176552595</millis>
+  <nanos>280000</nanos>
+  <sequence>148</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.94/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.608451Z</date>
+  <millis>1654176553608</millis>
+  <nanos>451000</nanos>
+  <sequence>149</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=28]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.609198Z</date>
+  <millis>1654176553609</millis>
+  <nanos>198000</nanos>
+  <sequence>150</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.93/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.609775Z</date>
+  <millis>1654176553609</millis>
+  <nanos>775000</nanos>
+  <sequence>151</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.7/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.610943Z</date>
+  <millis>1654176553610</millis>
+  <nanos>943000</nanos>
+  <sequence>152</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 14 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.611503Z</date>
+  <millis>1654176553611</millis>
+  <nanos>503000</nanos>
+  <sequence>153</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.25/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.612553Z</date>
+  <millis>1654176553612</millis>
+  <nanos>553000</nanos>
+  <sequence>154</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Contamination: 2]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.613139Z</date>
+  <millis>1654176553613</millis>
+  <nanos>139000</nanos>
+  <sequence>155</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.22/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.613682Z</date>
+  <millis>1654176553613</millis>
+  <nanos>682000</nanos>
+  <sequence>156</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.8/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.613986Z</date>
+  <millis>1654176553613</millis>
+  <nanos>986000</nanos>
+  <sequence>157</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.91/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.614120Z</date>
+  <millis>1654176553614</millis>
+  <nanos>120000</nanos>
+  <sequence>158</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.03/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.614308Z</date>
+  <millis>1654176553614</millis>
+  <nanos>308000</nanos>
+  <sequence>159</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 5]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.614399Z</date>
+  <millis>1654176553614</millis>
+  <nanos>399000</nanos>
+  <sequence>160</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.05/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:13.614636Z</date>
+  <millis>1654176553614</millis>
+  <nanos>636000</nanos>
+  <sequence>161</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 5]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:14.627609Z</date>
+  <millis>1654176554627</millis>
+  <nanos>609000</nanos>
+  <sequence>162</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=29]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:14.628477Z</date>
+  <millis>1654176554628</millis>
+  <nanos>477000</nanos>
+  <sequence>163</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.97/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:14.629002Z</date>
+  <millis>1654176554629</millis>
+  <nanos>2000</nanos>
+  <sequence>164</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.06/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:14.630092Z</date>
+  <millis>1654176554630</millis>
+  <nanos>92000</nanos>
+  <sequence>165</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 15 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:14.630639Z</date>
+  <millis>1654176554630</millis>
+  <nanos>639000</nanos>
+  <sequence>166</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.96/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:14.631128Z</date>
+  <millis>1654176554631</millis>
+  <nanos>128000</nanos>
+  <sequence>167</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.97/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.647856Z</date>
+  <millis>1654176555647</millis>
+  <nanos>856000</nanos>
+  <sequence>168</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=30]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.648919Z</date>
+  <millis>1654176555648</millis>
+  <nanos>919000</nanos>
+  <sequence>169</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.0/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.650060Z</date>
+  <millis>1654176555650</millis>
+  <nanos>60000</nanos>
+  <sequence>170</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Damage: 15 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.650601Z</date>
+  <millis>1654176555650</millis>
+  <nanos>601000</nanos>
+  <sequence>171</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.17/0.75)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.651626Z</date>
+  <millis>1654176555651</millis>
+  <nanos>626000</nanos>
+  <sequence>172</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Damage: 16 - High intensity!]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.652137Z</date>
+  <millis>1654176555652</millis>
+  <nanos>137000</nanos>
+  <sequence>173</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.35/0.45)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.652947Z</date>
+  <millis>1654176555652</millis>
+  <nanos>947000</nanos>
+  <sequence>174</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkDamage</method>
+  <thread>1</thread>
+  <message>Damage reported:[ Contamination: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.653036Z</date>
+  <millis>1654176555653</millis>
+  <nanos>36000</nanos>
+  <sequence>175</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>roll</method>
+  <thread>1</thread>
+  <message>(0.19/0.2)</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:15.653246Z</date>
+  <millis>1654176555653</millis>
+  <nanos>246000</nanos>
+  <sequence>176</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.events.Event</class>
+  <method>checkCasualty</method>
+  <thread>1</thread>
+  <message>Casualty reported:[ Contamination: 3]</message>
+</record>
+<record>
+  <date>2022-06-02T13:29:16.654127Z</date>
+  <millis>1654176556654</millis>
+  <nanos>127000</nanos>
+  <sequence>177</sequence>
+  <logger>edu.curtin.emergencysim.EmergencySim</logger>
+  <level>INFO</level>
+  <class>edu.curtin.emergencysim.notifier.Simulation</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>[t=31]</message>
+</record>
+</log>

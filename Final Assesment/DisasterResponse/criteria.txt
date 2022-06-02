@@ -1,59 +1,68 @@
-Justification
-Caio Marteli - 19598552
-
-Criteria (2) - Containers
-I utilised HashMaps to store values related to tiles and a 2D array
-to hold the Strings used to draw the maze.
-Hash tables were implemented with a Point object as the key, this allowed
-any coordinate to quickly return the corresponding tile object.
-Initially an array list was considered but the need to iterate over the
-list several times made HashMap seem like the better choice.
-
-As for the drawing of the maze itself a 2D array was used due to easy manipulation
-of the index which allowed for direct insertion into any cell. This was very
-useful when drawing.
-
-Criteria (3) - Class/method/interface responsibilites
-This submission includes over 15 classes. I separated them based on few concerns
-a) Classes which print to screen
-Menu and Game are the classes which can call println methods.
-
-b) Classes that receive direct input from the user
-Keyboard.java is the only class with a Scanner(System.in) call, it is static and
-used whenever needed it is closed when the App wrapper class (MazeApp.java) is closed.
-FileIO.java handles file Input/Output and reading to object.
-
-c) Classes related to graphics
-Maze.java holds all methods related to drawing the maze to an array and it's fields.
-Graphics.java is a final class holding final static fields related to ANSI characters.
-
-d) Classes related to the tiles
-Tile.java(Abstract), Door.java, Key.java, etc... Are responsible for the objects 
-contained within tiles that the player interacts with.
-
-e) Classes related to game logic
-Game.java handles the logic associated with each game round.
-
-e) Classes related to player movement
-Player.java handles input and allows for movement of player character as well as
-collision validation.
-
-Criteria (4) - error handling/logging
-Validator methods in Menu.java such as checkInteger catch NumberFormatExceptions
-FileIO.java readMazeFile() method throws IOException which is caught back in the
-menu when it's called. The whole App is wrapped with the only generic exception
-to let program "fail gracefully" still returns error to user in a print statement. 
-This may be controversial but it's a deliberate use to at least provide a message
-formatted in a useful format to the user instead of just letting the program crash.
-
-A logging class is included in MazeApp.java it is is referenced in FileIO.java and PLAYER.java
-it can be set to receive detailed info or just exceptions. SEVERE/INFO the output file
-is named mylog.xml
-
-Criteria (5) - Template method Pattern
-Template method was used so I could have a useful abstract class in the form of
-Tile.java this allowed me to have access to the x y coordinates of the multiple
-tile types in the program without having to repeat code.
+Criteria.txt 
+Author: Caio Marteli 19598552 - OOSE Assignment 2 (2022)
 
 
-Criteria (6) - Decorator Pattern
+/** [1] Clear and distinct package/class/interface/method responsibilities **/
+
+	- The Main method is contained in the package "edu.curtin.emergencysim" this contains sub packages:
+	* edu.curtin.emergencysim
+	- Contains only the Main class file "EmergencySim.java" this is the starting point and bootstrap dependecy injector of the
+	application.
+	* edu.curtin.emergencysim.notifier
+	- Contains what is needed for the Observer Pattern.
+	Including the Observable and Observer interfaces and the class Simulation. Simulation implements observer and as such was moved here.	
+	* edu.curtin.emergencysim.events
+	- Includes EventState interface and all of it's implementations this class contains what is needed for the State Pattern.	
+	* edu.curtin.emergencysim.responders
+	- Includes the interface and implementation provided for the assesment. No changes were made to the files.
+	This package was left separate as to maintain it as decoupled from the rest of the program as possible.	
+	* edu.curtin.emergencysim.io
+	- Includes classes relating to input and output such as the utility Keyboard.java (wrapper for scanner) and FileIO.java.
+	
+/** [2] Appropriate error handling and logging. */
+	- EmergencySim.java wraps the whole program in a Try-Catch clause to catch IOException and InterruptedException
+	which can be thrown by FileIO and Simulation respectively.
+	It also contains a logger (line 67) which logs any caught exception
+	FileIO has 2 validator methods to handle user input: CheckInteger and CheckFileName
+	Simulation.java checks if message from responders is valid against a regex string and throws IllegalArgumentException which is logged.	
+	* Logging:
+	- Aside from exceptions which are set to level.SEVERE the logger is present in Simulation.java and Event.java to store relevant debugging
+	information (level.INFO) these include printing the internal seconds counter of the simulation, arrival and departure from responders
+	and also the probability + outcome from each roll from the random number generator.
+		
+/** [3] Implementation of dependency injection. **/
+	- New objects are created in Main (EmergencySim.java) which creates an instance of ResponderCommImpl, FileIO and Simulation the first two are parsed into 
+	the constructor for Simulation.	
+	The sole exception being the Event dependancy in FileIO. This choice was made so FileIO could handle validation of the event file at the input point
+	and return a list of type List<Event>. 
+	If the file to had been saved to List<String> the list would have to be later split and validated in another class.
+	it made sense to have fileIO check the file validity as it still arguably part of the same concern (reading a valid input file)
+	additionally having an invalid file throw an exception when it's first read may save the user time instead of running a simulation then checking for errors later.
+	
+	- JUnit testing harness is also present which I used to test classes individually thanks to D.I.
+	- Only interfaces are directly referecended between classes.
+	- This solution did not require the use of factory methods, and for code simplicity sake I've elected not to implement them as the purpose of easier testing was achieved.	
+	
+
+/** [4] Use of the Observer Pattern. **/
+
+	- The subject are the events themselves in this case the Event class and as such implement the interface IObservable.
+	As the observer wants to be notified of changes to the that classes fields (damage, contamination, status). And as such whenever a method that alters these
+	values such as for eg. Event.checkCasualty() the method calls .notifyObserver() which in turn iterates through the subscriber list and calls .update()
+	for each.
+	
+	- Observers are the ones who receive notifications of new events as they occur Simulation is one of them, as it needs to send the Respondercomm
+	notice of any changes. However any other class may extend the observer interface if needed and simply call the .register() method of the Observer class
+	to receive updates of any certain event. This may be only the events the Observer is interested on. So for example if a firefighter would like to subcribe to
+	only fire events they could easily do so. This is not present in the current version of the program but could easily be added simply by implementing the
+	existing IObserver interface.
+	
+/** [5] Use of the State Pattern. **/
+	The Event class not only extends Observer but also EventState interface.
+	EventState, has methods which are called by other classes representing the state an emergency can be in at any point.
+	These classes include: FireLow, FireHigh, Chemical, Flood.
+	
+	The Event class is the active event and it has a variable eventState which points towards an instance of a class matching the current state.
+	Depending on the state  methods such as clockTick() will perform different tasks by returning a method call using this variable. For eg. if the state
+	is fireLow clockTick() will increase a counter every tick responders aren't present and then after a set time change state to FireHigh.
+	These classes and the interfaces themselves have all been put into the package "emergencysim.events"

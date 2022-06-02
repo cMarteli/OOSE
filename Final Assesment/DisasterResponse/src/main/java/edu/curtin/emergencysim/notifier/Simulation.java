@@ -18,7 +18,8 @@ import edu.curtin.emergencysim.responders.*;
 public class Simulation implements IObserver
 {
     private ResponderComm rci; //allows comms with responders
-    private Map<String, Event> activeEvents; //map with only events still ongoing
+    //Map for active events. Allows for linear time finding event
+    private Map<String, Event> activeEvents;
     private List<Event> queue; //queue of all event from file
 
     /** Regex for validating responder messages */
@@ -68,7 +69,7 @@ public class Simulation implements IObserver
             if(LOGR.isLoggable(Level.INFO)){ LOGR.info("[t="+seconds+"]"); } //LOGGER: time passed LVL=INFO
         }
 
-        printReport();//prints final report
+        //printReport();//prints final report
     }
 
     /************************************************************
@@ -174,13 +175,13 @@ public class Simulation implements IObserver
     }
 
     /** Prints final report including damage, contam and casualties */
-    private void printReport() {
-        System.out.println("Final Simulation Report");
-        for (Event e : queue) {
-            System.out.println(e.toString());
-        }
-        System.out.println("End of Simulation.");
-    }
+    // private void printReport() {
+    //     System.out.println("** Final Simulation Report **");
+    //     for (Event e : queue) {
+    //         System.out.println(e.toString());
+    //     }
+    //     System.out.println("End of Simulation.");
+    // }
 
     /**
      * IObserver interface method

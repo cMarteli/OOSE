@@ -25,7 +25,6 @@ Please enter a file name:
 #input - long simulation
 #input3 - duplicate events. Will be caught during validation and end simulation.
 
-KNOWN ISSUES
-Door lock/unlock function is unimplemented
-Edges of some walls are missing
-sometimes double prints are you sure message when reading file
+To test:
+#To run PMD and test with JUnit test harness in src/test/java.
+:~/$ ./gradlew check
