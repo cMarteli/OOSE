@@ -122,14 +122,12 @@ public class FileIO<E>{
 
         while (!isValid)
         {
-            try
-            {
+            try{
                 System.out.println(prompt);
                 userInt = Integer.parseInt(Keyboard.nextLine());
                 isValid = true;
             }
-            catch(NumberFormatException e)
-            {
+            catch(NumberFormatException e){
                 System.out.println("Enter a number");
             }
         }

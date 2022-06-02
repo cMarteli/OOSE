@@ -11,10 +11,12 @@ package edu.curtin.emergencysim.events;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.*;
 
+import edu.curtin.emergencysim.EmergencyResponse;
 import edu.curtin.emergencysim.notifier.*;
 
-public class Event implements EventState, Observable
+public class Event implements EventState, IObservable
 {
     /** States */
     private EventState eventState, flood, fireLow, fireHigh, chem;
@@ -24,6 +26,11 @@ public class Event implements EventState, Observable
     private int startTime, casualtyCount, dmgCount, cleanupRemaining;
     private String location;
     private boolean rescuersPresent;
+
+    /**
+     * Logger from EmergencyResponse.java
+     */
+    private final static Logger LOGR = Logger.getLogger(EmergencyResponse.class.getName());
 
     /**
      * Constructor
@@ -122,10 +129,10 @@ public class Event implements EventState, Observable
     }
 
     public void arrive() {
-        //TODO: Put logger here
         rescuersPresent = true;
+        if(LOGR.isLoggable(Level.INFO)){ LOGR.info("arrival:["+eventState.toString()+"]"); } //LOGGER: arrival
     }
-    //Sets Rescuers status TODO: Put logger here
+    //Sets Rescuers status
     public void leave() {
         if(!eventState.getEventType().equals("flood")) //resets cleanup time except if flood
         {
@@ -171,7 +178,8 @@ public class Event implements EventState, Observable
         {
             casualtyCount++;
             notifyObserver(eventState.getEventType() + " casualty " + casualtyCount + " " + location);
-            //System.out.println("Casualty reported."); //TODO: PUT LOGGER HERE
+
+            if(LOGR.isLoggable(Level.INFO)){ LOGR.info("Casualty reported:["+eventState.toString()+"]"); } //LOGGER: Casualty
         }
         return casualtyProb;
 
@@ -180,7 +188,6 @@ public class Event implements EventState, Observable
     /************************************************************
      * Generates random double to 2decimals given probability if
      * roll 'passes' if result is LOWER than probability
-     * TODO: Change this to lambda and move it to simulation
      * then pass it to clockTick()
      * @param prob
      * @return boolean
@@ -189,7 +196,7 @@ public class Event implements EventState, Observable
     {
         Random rand = new Random();
         double r = Math.floor(rand.nextDouble()*100) / 100;
-        //System.out.println("(" + r + "/" + prob + ")" ); //TODO: Put logger here
+        if(LOGR.isLoggable(Level.INFO)){ LOGR.info("(" + r + "/" + prob + ")"); } //LOGGER: probability
         return (r < prob);
     }
 
@@ -204,7 +211,8 @@ public class Event implements EventState, Observable
             }
             dmgCount++;
             notifyObserver(eventState.getEventType() + label + dmgCount + " " + location);
-            //System.out.println("Damage reported."); //TODO: PUT LOGGER HERE
+
+            if(LOGR.isLoggable(Level.INFO)){ LOGR.info("Damage reported:["+eventState.toString()+"]"); } //LOGGER: Damage
         }
         return dmgProb;
     }

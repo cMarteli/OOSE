@@ -39,7 +39,6 @@ public class Simulation implements IObserver
         rci = inRci; //if clock desyncs move this to run()
         activeEvents = new HashMap<>();
         queue = q;
-        //System.out.println("TEST"); for(Event e : queue){System.out.println(e.toString());} //DEBUG - Prints event queue
     }
 
     /************************************************************
@@ -67,19 +66,22 @@ public class Simulation implements IObserver
             Thread.sleep(1000); //sleeps for 1 second
             seconds++;
 
-            System.out.print("[t="+seconds+"]"); //DEBUG: prints seconds
+            //System.out.print("[t="+seconds+"]"); //DEBUG: prints seconds
             if(LOGR.isLoggable(Level.INFO)){ LOGR.info(seconds + "s"); } //LOGGER: time passed LVL=INFO
         }
 
-        //prints report
+        printReport();//prints final report
+    }
+
+    /**
+     * Prints final report including damage, contam and casualties
+     */
+    private void printReport() {
         System.out.println("Final Simulation Report");
         for (Event e : queue) {
             System.out.println(e.toString());
         }
-
         System.out.println("End of Simulation.");
-
-
     }
 
     /************************************************************
@@ -101,11 +103,12 @@ public class Simulation implements IObserver
                 }
                 else
                 {
-                    try
-                    {
+                    try{
                         checkArrival(s); //adds responders arrival status
                     }
-                    catch (IllegalArgumentException e) {System.out.println(e.getMessage());}
+                    catch (IllegalArgumentException e) {//incorrect message type
+                        if (LOGR.isLoggable(Level.SEVERE)){ LOGR.log(Level.SEVERE, "Illegal Argument: " + e.getMessage());}
+                    }
                 }
             }
         }
@@ -122,18 +125,8 @@ public class Simulation implements IObserver
         for (Event nxt : queue) {
             if(nxt.getStartTime() == seconds) //if there any events scheduled to start this second
             {
-                try {
-                    activeEvents.put(nxt.getKey(), nxt); //add event to activeList
-                    // String label = " start ";
-                    // if(nxt.getEventType().equals("fire")){
-                    //     label = " start low ";
-                    // }
-                    update(nxt.getEventType() + " start " + nxt.getLocation()); //sends events to responder - prints
-
-                }
-                catch (IllegalArgumentException e) {
-                    System.out.println(e.getMessage());
-                }
+                activeEvents.put(nxt.getKey(), nxt); //add event to activeList
+                update(nxt.getEventType() + " start " + nxt.getLocation()); //sends to responders
             }
         }
     }
@@ -171,7 +164,7 @@ public class Simulation implements IObserver
      * Validates then Formats message
      * Receives and sets arrival and leave status
     ************************************************************/
-    public void checkArrival(String s)
+    public void checkArrival(String s) throws IllegalArgumentException
     {
         Matcher m = SEND_REGEX.matcher(s); //checks string against regex
         if(!m.matches()){
@@ -194,7 +187,8 @@ public class Simulation implements IObserver
     }
 
     /**
-     * Observer method
+     * IObserver interface method
+     * Informs responders
      * @param msg
      */
     @Override

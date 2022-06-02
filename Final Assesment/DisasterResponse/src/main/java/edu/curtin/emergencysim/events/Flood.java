@@ -47,7 +47,7 @@ public class Flood implements EventState
 
     @Override
     public int intensityChange() {
-        // TODO Auto-generated method stub
+        // Ignore
         return 0;
     }
 

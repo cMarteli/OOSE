@@ -1,24 +1,23 @@
 /**
  * UnitTest.java
- * Testing Harness
+ * JUnit Testing Harness
  * 2022/OOSE Assignment 2
+ * see report at:
+ * /build/reports/tests/test.index.html
  * @author Caio Marteli (19598552)
  */
 package edu.curtin.emergencysim;
 
 import edu.curtin.emergencysim.events.*;
-//import edu.curtin.emergencysim.notifier.*;
-import edu.curtin.emergencysim.responders.*;
+//import edu.curtin.emergencysim.responders.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-//import java.util.*;
 
 public class UnitTest
 {
 
-    //@Test
-    public void testEvent() {
+    @Test
+    public void testEventCompare() {
         Event[] arr = new Event[3];
         arr[0] = new Event(6, "fire", "Midtown");
         arr[1] = new Event(8, "fire", "Midtown");
@@ -36,23 +35,6 @@ public class UnitTest
                 assertTrue(event.roll(1.0)); //max chance should always be true
             }
         }
-    }
-
-
-    @Test
-    public void testSend()
-    {
-        ResponderComm rc = new ResponderCommImpl();
-        System.out.println("\nTesting Send:");
-
-        rc.send("fire damage 1 Perth");
-        rc.send("fire damage 2 Perth");
-        rc.send("chemical damage 5 Armadale");
-        rc.send("chemical start Armadale");
-        rc.send("fire start Armadale");
-
-
-        System.out.println("\n***************");
     }
 
     @Test
@@ -116,9 +98,61 @@ public class UnitTest
         }
         System.out.println("Casualty count: " + f.getCasualtyCount());
         System.out.println("Damage count: " + f.getDmgCount());
-
     }
 
+    @Test
+    public void testChemical()
+    {
+        System.out.println("Testing Chemical:");
+        Event ch = new Event(5, "chemical", "Midtown");
+
+        ch.intensityChange(); //changes to high here
+        //casualty
+        for (int i = 0; i < 1000; i++) {
+            ch.checkCasualty();
+        }
+        System.out.println("Casualty count: " + ch.getCasualtyCount());
+        //damage
+        for (int i = 0; i < 1000; i++) {
+            ch.checkDamage();
+        }
+        System.out.println("Damage count: " + ch.getDmgCount());
+    }
+
+    @Test
+    public void testFlood()
+    {
+        System.out.println("Testing Flood:");
+        Event fl = new Event(5, "flood", "Armadale");
+
+        fl.intensityChange(); //changes to high here
+        //casualty
+        for (int i = 0; i < 1000; i++) {
+            fl.checkCasualty();
+        }
+        System.out.println("Casualty count: " + fl.getCasualtyCount());
+        //damage
+        for (int i = 0; i < 1000; i++) {
+            fl.checkDamage();
+        }
+        System.out.println("Damage count: " + fl.getDmgCount());
+    }
+
+    // @Test
+    // public void testSend()
+    // {
+    //     ResponderComm rc = new ResponderCommImpl();
+    //     System.out.println("\nTesting Send:");
+
+    //     rc.send("fire damage 1 Perth");
+    //     rc.send("fire damage 2 Perth");
+    //     rc.send("chemical damage 5 Armadale");
+    //     rc.send("chemical start Armadale");
+    //     rc.send("fire start Armadale");
+
+
+    //     System.out.println("\n***************");
+    // }
 
 
 }

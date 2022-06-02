@@ -7,7 +7,6 @@ package edu.curtin.emergencysim.events;
 
 public class Chemical implements EventState
 {
-    //chemical
     public static final int CHEM_CLEANUP_TIME = 5; //time(seconds) to actively clean a chemical spill
     public static final double CHEM_CONTAM_PROB = 0.45; //probability of environmental contamination
     public static final double CHEM_CASUALTY_PROB = 0.2; //probability of hospitalising someone
@@ -19,7 +18,7 @@ public class Chemical implements EventState
         event.setCleanupRemaining(CHEM_CLEANUP_TIME);
     }
 
-    //TODO: not complete, needs testing
+    //Chemical will be cleaned up by one, every clock tick if responders are present
     @Override
     public void clockTick(boolean rescuers) {
         if(rescuers)
@@ -47,7 +46,7 @@ public class Chemical implements EventState
 
     @Override
     public int intensityChange() {
-        // TODO Auto-generated method stub
+        // Ignore
         return 0;
     }
 
